@@ -35,6 +35,7 @@ int T_VAR = 0;
 int Square_Dist = 0;
 int mod = 0;
 UINT8 BumpSensor = 0;
+UINT8 Vitual_Wall_Sensor = 0;
 UINT8 Cliff_FRight = 0;
 UINT8 Cliff_FLeft = 0;
 UINT8 Cliff_Right = 0;
@@ -164,6 +165,12 @@ void Get_Sensor_State() {
     eusartSend(142); // get state of sensor
     eusartSend(7); // bump sensor 
     BumpSensor = (eusartRec() & 0b00000011);
+}
+
+void Get_VirtualWall_State(){
+    eusartSend(142);    // get state of sensor
+    eusartSend(13);     // virtual wall detect 
+    Vitual_Wall_Sensor = (eusartRec());
 }
 
 int UpdateDistance() { // Update the distance from sensor reading 

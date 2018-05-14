@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F67J50 ]
 [d frameptr 4065 ]
-"34 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"34 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [e E6903 . `uc
 eP0 0
 eP1 1
@@ -55,7 +55,7 @@ eSPI_9Bit 1
 eLED1 0
 eLED2 1
 ]
-"16 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LED.c
+"16 C:\Users\Noel_\Documents\GitHub\mech2\Library/LED.c
 [e E6739 . `uc
 eLED1 0
 eLED2 1
@@ -85,7 +85,7 @@ ePinErrorCannotDrive 3
 ePinErrorPinInput 4
 ePinErrorState 5
 ]
-"22 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"22 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [e E6786 . `uc
 ePortA 0
 ePortB 1
@@ -149,7 +149,7 @@ eTypeOutputOpenDrain 1
 eTypeOutputOpenSource 2
 eTypeOutputPushPull 3
 ]
-"10 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"10 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [e E6754 . `uc
 eSPI_8Bit 0
 eSPI_9Bit 1
@@ -190,7 +190,7 @@ ePinErrorCannotDrive 3
 ePinErrorPinInput 4
 ePinErrorState 5
 ]
-"209 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"209 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [e E6469 . `uc
 eHL 0
 eLow 1
@@ -272,7 +272,7 @@ eY 102
 eZ 91
 eDot 128
 ]
-"29 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"29 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [e E7007 . `uc
 eP0 0
 eP1 1
@@ -376,14 +376,14 @@ eY 102
 eZ 91
 eDot 128
 ]
-"6 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ADC.c
+"6 C:\Users\Noel_\Documents\GitHub\mech2\Library/ADC.c
 [e E6742 . `uc
 eADC_Ch0 0
 eADC_Ch1 1
 eADC_Ch2 2
 eADC_Ch3 3
 ]
-"8 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/I2C.c
+"8 C:\Users\Noel_\Documents\GitHub\mech2\Library/I2C.c
 [e E6880 . `uc
 eI2C_Idle 0
 eI2C_WriteStart 1
@@ -456,7 +456,7 @@ ePinErrorState 5
 eI2C_NACK 0
 eI2C_ACK 1
 ]
-"33 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Motor.c
+"33 C:\Users\Noel_\Documents\GitHub\mech2\Library/Motor.c
 [e E6758 . `uc
 eP0 0
 eP1 1
@@ -489,7 +489,7 @@ eMXK_HMI 1
 eMXK_FPGA 2
 eMXK_None 0
 ]
-"12 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"12 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [e E6750 . `uc
 eP0 0
 eP1 1
@@ -553,7 +553,7 @@ eMXK_HMI 1
 eMXK_FPGA 2
 eMXK_None 0
 ]
-"41 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/system.c
+"41 C:\Users\Noel_\Documents\GitHub\mech2\Library/system.c
 [e E6429 . `uc
 SYSTEM_STATE_USB_START 0
 SYSTEM_STATE_USB_SUSPEND 1
@@ -564,24 +564,24 @@ SYSTEM_STATE_USB_RESUME 2
 eLED1 0
 eLED2 1
 ]
-"19 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Events.c
+"19 C:\Users\Noel_\Documents\GitHub\mech2\Events.c
 [e E6786 . `uc
 eLED1 0
 eLED2 1
 ]
-"26 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Functions.c
+"26 C:\Users\Noel_\Documents\GitHub\mech2\Functions.c
 [e E7239 . `uc
 eADC_Ch0 0
 eADC_Ch1 1
 eADC_Ch2 2
 eADC_Ch3 3
 ]
-"527 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"447 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [e E7217 . `uc
 eLED1 0
 eLED2 1
 ]
-"531
+"449
 [e E6940 . `uc
 eMXK_Motor 8
 eMXK_IMU 4
@@ -589,63 +589,63 @@ eMXK_HMI 1
 eMXK_FPGA 2
 eMXK_None 0
 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"464 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
+"464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\evalpoly.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\evalpoly.c
 [v _eval_poly eval_poly `(d  1 e 4 0 ]
-"12 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\exp.c
+"12 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\exp.c
 [v _exp exp `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\flge.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\flneg.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"13 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\floor.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\floor.c
 [v _floor floor `(d  1 e 4 0 ]
-"43 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fltol.c
+"43 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"254 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\frexp.c
+"254 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\frexp.c
 [v _frexp frexp `(d  1 e 4 0 ]
 "277
 [v _ldexp ldexp `(d  1 e 4 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftsub.c
+"20 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lldiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\llmod.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\log.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\log.c
 [v _log log `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwmod.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\pow.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\pow.c
 [v _pow pow `(d  1 e 4 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcadd.c
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcdiv.c
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\xxtofl.c
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"9 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Events.c
+"9 C:\Users\Noel_\Documents\GitHub\mech2\Events.c
 [v _Event_NULL Event_NULL `(v  1 e 1 0 ]
 "14
 [v _Event_ADCSequenceComplete Event_ADCSequenceComplete `(v  1 e 1 0 ]
@@ -653,9 +653,9 @@ eMXK_None 0
 [v _Event_DIPSwitch Event_DIPSwitch `(v  1 e 1 0 ]
 "52
 [v _Event_TestButton Event_TestButton `(v  1 e 1 0 ]
-"16 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Functions.c
+"16 C:\Users\Noel_\Documents\GitHub\mech2\Functions.c
 [v _FunctInitButton FunctInitButton `(v  1 e 1 0 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_InitButtons HMI_InitButtons `(v  1 e 1 0 ]
 "27
 [v _HMI_LeftSwitch HMI_LeftSwitch `(uc  1 e 1 0 ]
@@ -693,7 +693,7 @@ eMXK_None 0
 [v _HMI_SetSegments HMI_SetSegments `(v  1 e 1 0 ]
 "252
 [v _HMI_Poll HMI_Poll `(v  1 e 1 0 ]
-"19 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ADC.c
+"19 C:\Users\Noel_\Documents\GitHub\mech2\Library/ADC.c
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 "63
 [v _ADC_Calibrate ADC_Calibrate `(v  1 e 1 0 ]
@@ -717,13 +717,13 @@ eMXK_None 0
 [v _ADC_Sample ADC_Sample `(uc  1 e 1 0 ]
 "271
 [v _rand rand `(uc  1 e 1 0 ]
-"18 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Button.c
+"18 C:\Users\Noel_\Documents\GitHub\mech2\Library/Button.c
 [v _Button_Init Button_Init `(v  1 e 1 0 ]
 "57
 [v _Button_Poll Button_Poll `(uc  1 e 1 0 ]
-"3 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Colours.c
+"3 C:\Users\Noel_\Documents\GitHub\mech2\Library/Colours.c
 [v _Colour_To565 Colour_To565 `(us  1 e 2 0 ]
-"157 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"157 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Init Console_Init `(v  1 e 1 0 ]
 "175
 [v _Console_NewLine Console_NewLine `(v  1 e 1 0 ]
@@ -747,7 +747,7 @@ eMXK_None 0
 [v _Console_MakeField Console_MakeField `(*.39us  1 e 2 0 ]
 "454
 [v _putch putch `(v  1 e 1 0 ]
-"29 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/I2C.c
+"29 C:\Users\Noel_\Documents\GitHub\mech2\Library/I2C.c
 [v _I2CT_InitR I2CT_InitR `(uc  1 e 1 0 ]
 "45
 [v _I2CT_InitW I2CT_InitW `(uc  1 e 1 0 ]
@@ -775,11 +775,11 @@ eMXK_None 0
 [v _I2C1_ISR I2C1_ISR `T(v  1 e 1 0 ]
 "487
 [v _I2C2_ISR I2C2_ISR `T(v  1 e 1 0 ]
-"27 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ISR.c
+"27 C:\Users\Noel_\Documents\GitHub\mech2\Library/ISR.c
 [v _ISR_Enable ISR_Enable `(v  1 e 1 0 ]
 "38
 [v _ISR_Function ISR_Function `II(v  1 e 1 0 ]
-"32 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"32 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _Reset_Low Reset_Low `T(v  1 e 1 0 ]
 "36
 [v _Reset_High Reset_High `T(v  1 e 1 0 ]
@@ -803,9 +803,9 @@ eMXK_None 0
 [v _LCD_Fill LCD_Fill `(v  1 e 1 0 ]
 "318
 [v _LCD_FillRectangle LCD_FillRectangle `(v  1 e 1 0 ]
-"15 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Point.h
+"15 C:\Users\Noel_\Documents\GitHub\mech2\Library/Point.h
 [s S595 Point 4 `s 1 x 2 0 `s 1 y 2 2 ]
-"336 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"336 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _ToPoint ToPoint `T(S595  1 e 4 0 ]
 "343
 [v _LCD_DrawPixel LCD_DrawPixel `(v  1 e 1 0 ]
@@ -813,16 +813,16 @@ eMXK_None 0
 [v _LCD_DrawLine LCD_DrawLine `(v  1 e 1 0 ]
 "393
 [v _LCD_DrawField LCD_DrawField `(v  1 e 1 0 ]
-"15 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LED.c
+"15 C:\Users\Noel_\Documents\GitHub\mech2\Library/LED.c
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
 "33
 [v _LED_Set LED_Set `(v  1 e 1 0 ]
 "50
 [v _LED_Toggle LED_Toggle `(v  1 e 1 0 ]
-"75 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Motor.c
+"75 C:\Users\Noel_\Documents\GitHub\mech2\Library/Motor.c
 [v _Motor_Step Motor_Step `(v  1 e 1 0 ]
 [v i2_Motor_Step Motor_Step `(v  1 e 1 0 ]
-"10 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"10 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_InitTestButton MXK_InitTestButton `(v  1 e 1 0 ]
 "14
 [v _MXK_TestButton MXK_TestButton `(uc  1 e 1 0 ]
@@ -847,9 +847,9 @@ eMXK_None 0
 [v i2_MXK_Queue MXK_Queue `(v  1 e 1 0 ]
 "153
 [v _MXK_Dequeue MXK_Dequeue `(v  1 e 1 0 ]
-"3 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Point.c
+"3 C:\Users\Noel_\Documents\GitHub\mech2\Library/Point.c
 [v _Point_Init Point_Init `(v  1 e 1 0 ]
-"533 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"533 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "509
 "512
 "515
@@ -859,60 +859,60 @@ eMXK_None 0
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -922,77 +922,77 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [s S124 . 2 `S122 1 LS_Byte 1 0 `S122 1 MS_Byte 1 1 ]
-"520 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"520 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S127 . 2 `uc 1 L 1 0 `uc 1 H 1 1 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S130 . 2 `us 1 mBits 2 0 `S124 1 . 2 0 `S127 1 . 2 0 ]
 [s S134 Word 2 `S130 1 . 2 0 ]
 [u S136 PortProperty 2 `us 1 mWord 2 0 `S134 1 mType 2 0 ]
 [v _GetPortProperties GetPortProperties `(*.32S136  1 e 2 0 ]
-"426 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"426 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "429
 "434
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -1002,70 +1002,70 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [v _GetPortPORT GetPortPORT `(*.39S122  1 e 2 0 ]
-"426 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"426 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "429
 "434
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -1075,7 +1075,7 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [v _GetPortTRIS GetPortTRIS `(*.39S122  1 e 2 0 ]
@@ -1112,7 +1112,7 @@ eMXK_None 0
 [v _Port_Set Port_Set `(v  1 e 1 0 ]
 "613
 [v _Port_Get Port_Get `(uc  1 e 1 0 ]
-"12 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"12 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 "133
 [v _SPI_Busy SPI_Busy `T(uc  1 e 1 0 ]
@@ -1128,7 +1128,7 @@ eMXK_None 0
 [v _SPI_DCS SPI_DCS `(v  1 e 1 0 ]
 "226
 [v _SPI_Send SPI_Send `(uc  1 e 1 0 ]
-"20 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer0.c
+"20 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer0.c
 [v _Timer0_Clear Timer0_Clear `(v  1 e 1 0 ]
 "25
 [v _Timer0_Init Timer0_Init `(v  1 e 1 0 ]
@@ -1142,11 +1142,11 @@ eMXK_None 0
 [v i2_Timer0_Stop Timer0_Stop `(v  1 e 1 0 ]
 "94
 [v _Timer0_ISR Timer0_ISR `(v  1 e 1 0 ]
-"3 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer2.c
+"3 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer2.c
 [v _Timer2_Clear Timer2_Clear `(v  1 e 1 0 ]
 "10
 [v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
-"32 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"32 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _Byte_SetBit Byte_SetBit `(v  1 e 1 0 ]
 [v i2_Byte_SetBit Byte_SetBit `(v  1 e 1 0 ]
 "38
@@ -1189,63 +1189,67 @@ eMXK_None 0
 [v _itos itos `(v  1 e 1 0 ]
 "393
 [v _swap swap `(v  1 e 1 0 ]
-"74 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"72 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _Init_Timer0 Init_Timer0 `(i  1 e 2 0 ]
-"92
+"86
 [v _InitADC InitADC `(v  1 e 1 0 ]
-"100
+"94
 [v _FunctReadADC FunctReadADC `(i  1 e 2 0 ]
-"111
+"106
 [v _ADCAverage ADCAverage `(i  1 e 2 0 ]
-"138
+"131
 [v _InitSerialCommunication InitSerialCommunication `(v  1 e 1 0 ]
-"157
+"147
 [v _eusartSend eusartSend `(v  1 e 1 0 ]
-"166
-[v _Get_Sensor_State Get_Sensor_State `(i  1 e 2 0 ]
-"196
-[v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
-"216
-[v _Drive Drive `(v  1 e 1 0 ]
-"224
-[v _BangBang BangBang `(v  1 e 1 0 ]
-"233
+"152
+[v _eusartRec eusartRec `(uc  1 e 1 0 ]
+"157
 [v _Robot_Stop Robot_Stop `(v  1 e 1 0 ]
-"240
-[v _Robot_Init Robot_Init `(v  1 e 1 0 ]
-"247
-[v _LEDOn LEDOn `(v  1 e 1 0 ]
-"254
-[v _LEDOff LEDOff `(v  1 e 1 0 ]
-"261
-[v _LEDToggle LEDToggle `(v  1 e 1 0 ]
-"277
-[v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
-"290
-[v _SteppingCW SteppingCW `(i  1 e 2 0 ]
-"303
-[v _STP1 STP1 `(i  1 e 2 0 ]
-"315
-[v _STP2 STP2 `(i  1 e 2 0 ]
-"326
-[v _STP3 STP3 `(i  1 e 2 0 ]
-"337
-[v _STP4 STP4 `(i  1 e 2 0 ]
-"349
-[v _Sensor_Observe2 Sensor_Observe2 `(v  1 e 1 0 ]
-"383
-[v _Closest_Object2 Closest_Object2 `(v  1 e 1 0 ]
-"401
-[v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
-"433
-[v _Closest_Object Closest_Object `(v  1 e 1 0 ]
-"454
+"164
+[v _Get_Sensor_State Get_Sensor_State `(v  1 e 1 0 ]
+"176
+[v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
+"189
+[v _Drive Drive `(v  1 e 1 0 ]
+"198
 [v _Turn Turn `(i  1 e 2 0 ]
-"495
+"217
+[v _BangBang BangBang `(v  1 e 1 0 ]
+"228
+[v _Robot_Init Robot_Init `(v  1 e 1 0 ]
+"235
+[v _LEDOn LEDOn `(v  1 e 1 0 ]
+"242
+[v _LEDOff LEDOff `(v  1 e 1 0 ]
+"249
+[v _LEDToggle LEDToggle `(v  1 e 1 0 ]
+"264
+[v _Coil_Setup Coil_Setup `(v  1 e 1 0 ]
+"275
+[v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
+"286
+[v _SteppingCW SteppingCW `(i  1 e 2 0 ]
+"298
+[v _STP1 STP1 `(i  1 e 2 0 ]
+"303
+[v _STP2 STP2 `(i  1 e 2 0 ]
+"308
+[v _STP3 STP3 `(i  1 e 2 0 ]
+"313
+[v _STP4 STP4 `(i  1 e 2 0 ]
+"318
+[v _Sensor_Observe2 Sensor_Observe2 `(v  1 e 1 0 ]
+"351
+[v _Closest_Object2 Closest_Object2 `(v  1 e 1 0 ]
+"369
+[v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
+"399
+[v _Closest_Object Closest_Object `(v  1 e 1 0 ]
+"421
 [v _Reset_variables Reset_variables `(v  1 e 1 0 ]
-"518
+"438
 [v _main main `(v  1 e 1 0 ]
-"2847 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
+"2847 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
 [v _SSP2CON2 SSP2CON2 `VEuc  1 e 1 @3947 ]
 [s S12136 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
@@ -1984,15 +1988,15 @@ eMXK_None 0
 [v _TRISD5 TRISD5 `VEb  1 e 0 @31917 ]
 "18002
 [v _TRISD7 TRISD7 `VEb  1 e 0 @31919 ]
-"354 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
+"354 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"3 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\errno.c
+"3 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"51 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Events.c
+"51 C:\Users\Noel_\Documents\GitHub\mech2\Events.c
 [v _val val `us  1 s 2 val ]
 "75
 [v _pShiftVal pShiftVal `us  1 e 2 0 ]
-"26 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Functions.c
+"26 C:\Users\Noel_\Documents\GitHub\mech2\Functions.c
 [s S11482 ADC 5 `E6742 1 mChannel 1 0 `us 1 mValue 2 1 `*.39S11482 1 mNext 2 3 ]
 [v _ADC_AN0 ADC_AN0 `S11482  1 e 5 0 ]
 "27
@@ -2004,7 +2008,7 @@ eMXK_None 0
 [s S10977 . 1 `uc 1 pButton 1 0 :4:0 
 `uc 1 . 1 0 :4:4 
 ]
-"17 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"17 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [s S10980 . 1 `uc 1 GLED 1 0 :1:0 
 `uc 1 RLED 1 0 :1:1 
 `uc 1 BLED 1 0 :1:2 
@@ -2023,11 +2027,11 @@ eMXK_None 0
 [s S23 Button 10 `uc 1 mState 1 0 `uc 1 mCount 1 1 `us 1 mThreshold 2 2 `*.38(v 1 mFunction 3 4 `*.38(uc 1 mGetState 3 7 ]
 [s S11015 HMI 58 `S11000 1 . 8 0 `S23 1 mRight 10 8 `S23 1 mLeft 10 18 `S23 1 mUp 10 28 `S23 1 mDown 10 38 `S23 1 mDIP 10 48 ]
 [v _HMIBoard HMIBoard `S11015  1 e 58 0 ]
-"5 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ADC.c
+"5 C:\Users\Noel_\Documents\GitHub\mech2\Library/ADC.c
 [v _ADC_Initialised ADC_Initialised `uc  1 s 1 ADC_Initialised ]
 "6
 [v _lCurrent lCurrent `*.39S11482  1 s 2 lCurrent ]
-"30 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"30 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _change change `uc  1 s 1 change ]
 "31
 [v _clearall clearall `uc  1 s 1 clearall ]
@@ -2051,7 +2055,7 @@ eMXK_None 0
 [v _gBackcolour gBackcolour `us  1 s 2 gBackcolour ]
 "56
 [v _Font5x7 Font5x7 `C[480]uc  1 e 480 0 ]
-"6 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/I2C.c
+"6 C:\Users\Noel_\Documents\GitHub\mech2\Library/I2C.c
 [v _I2C1_Done I2C1_Done `*.38(v  1 e 3 0 ]
 "7
 [v _I2C2_Done I2C2_Done `*.38(v  1 e 3 0 ]
@@ -2059,22 +2063,22 @@ eMXK_None 0
 [v _I2C1_More I2C1_More `*.38(uc  1 e 3 0 ]
 "9
 [v _I2C2_More I2C2_More `*.38(uc  1 e 3 0 ]
-[s S11800 I2CT 7 `uc 1 mAddress 1 0 `*.2uc 1 mData 3 1 `uc 1 mIndex 1 4 `uc 1 mCount 1 5 `E6880 1 mState 1 6 ]
+[s S11800 I2CT 6 `uc 1 mAddress 1 0 `*.2uc 1 mData 2 1 `uc 1 mIndex 1 3 `uc 1 mCount 1 4 `E6880 1 mState 1 5 ]
 "11
-[v _I2C1T I2C1T `S11800  1 e 7 0 ]
-[v _I2C2T I2C2T `S11800  1 e 7 0 ]
-"7 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+[v _I2C1T I2C1T `S11800  1 e 6 0 ]
+[v _I2C2T I2C2T `S11800  1 e 6 0 ]
+"7 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _w w `uc  1 s 1 w ]
 "8
 [v _l l `uc  1 s 1 l ]
 "114
 [v _InitList InitList `C[89]us  1 e 178 0 ]
-"20 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Motor.c
+"20 C:\Users\Noel_\Documents\GitHub\mech2\Library/Motor.c
 [v _lStepFunction lStepFunction `*.38(v  1 e 3 0 ]
 [s S12593 Motor 6 `s 1 mDelta 2 0 `s 1 mFrequency 2 2 `us 1 mAddress 2 4 ]
 "21
 [v _lMotor lMotor `*.2S12593  1 e 2 0 ]
-"5 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"5 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _TestButton TestButton `S23  1 e 10 0 ]
 "6
 [v _DIPSwitch DIPSwitch `S23  1 e 10 0 ]
@@ -2085,7 +2089,7 @@ eMXK_None 0
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"8 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"8 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
@@ -2160,44 +2164,38 @@ eMXK_None 0
 [v _PortF_Property PortF_Property `CS136  1 s 2 PortF_Property ]
 "19
 [v _PortG_Property PortG_Property `CS136  1 s 2 PortG_Property ]
-"10 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"10 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [u S479 . 3 `*.2S122 1 SSPSTATT 3 0 `*.2S463 1 SSPSTATTb 3 0 ]
 [u S506 . 3 `*.2S122 1 SSPCON1T 3 0 `S502 1 SSPCON1Tb 1 0 ]
 [s S509 SPI 11 `uc 1 mBusy 1 0 `E6834 1 mBits 1 1 `E6824 1 mChannel 1 2 `S479 1 . 3 3 `S506 1 . 3 6 `*.39uc 1 SSPBUF 2 9 ]
 [v _SPI2 SPI2 `S509  1 e 11 0 ]
 [v _SPI1 SPI1 `S509  1 e 11 0 ]
-"17 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer0.c
+"17 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer0.c
 [v _COUNTER COUNTER `us  1 s 2 COUNTER ]
 "18
 [v _INDEX INDEX `uc  1 s 1 INDEX ]
 "74
 [v _gISR gISR `*.38(v  1 s 3 gISR ]
-"3 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"3 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _MASKS MASKS `C[9]uc  1 s 9 MASKS ]
-"29 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"30 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _Current_Dist Current_Dist `i  1 e 2 0 ]
-"30
-[v _Current_Dist1 Current_Dist1 `i  1 e 2 0 ]
 "31
-[v _Current_Dist2 Current_Dist2 `i  1 e 2 0 ]
+[v _Current_Dist1 Current_Dist1 `uc  1 e 1 0 ]
 "32
-[v _mode mode `i  1 e 2 0 ]
+[v _Current_Dist2 Current_Dist2 `uc  1 e 1 0 ]
 "33
-[v _T_VAR T_VAR `i  1 e 2 0 ]
+[v _mode mode `i  1 e 2 0 ]
 "34
-[v _Square_Dist Square_Dist `i  1 e 2 0 ]
+[v _T_VAR T_VAR `i  1 e 2 0 ]
 "35
-[v _mod mod `i  1 e 2 0 ]
+[v _Square_Dist Square_Dist `i  1 e 2 0 ]
 "36
-[v _BumpSensor BumpSensor `uc  1 e 1 0 ]
+[v _mod mod `i  1 e 2 0 ]
 "37
-[v _Cliff_FRight Cliff_FRight `uc  1 e 1 0 ]
+[v _BumpSensor BumpSensor `uc  1 e 1 0 ]
 "38
-[v _Cliff_FLeft Cliff_FLeft `uc  1 e 1 0 ]
-"39
-[v _Cliff_Right Cliff_Right `uc  1 e 1 0 ]
-"40
-[v _Cliff_Left Cliff_Left `uc  1 e 1 0 ]
+[v _Vitual_Wall_Sensor Vitual_Wall_Sensor `uc  1 e 1 0 ]
 "47
 [v _Motor_Count Motor_Count `i  1 e 2 0 ]
 "48
@@ -2234,68 +2232,67 @@ eMXK_None 0
 [v _timercount timercount `i  1 e 2 0 ]
 "70
 [v _test test `i  1 e 2 0 ]
-"518
+"438
 [v _main main `(v  1 e 1 0 ]
 {
-"658
+"571
 [v main@Target_Distance Target_Distance `i  1 a 2 132 ]
-"556
+"468
 [v main@up up `uc  1 a 1 131 ]
-"557
+"469
 [v main@left left `uc  1 a 1 130 ]
-"555
+"467
 [v main@right right `uc  1 a 1 129 ]
-"554
+"466
 [v main@down down `uc  1 a 1 128 ]
-"735
+"638
 } 0
-"196
-[v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
-{
-"214
-} 0
-"454
+"198
 [v _Turn Turn `(i  1 e 2 0 ]
 {
-"457
-[v Turn@Speed Speed `i  1 a 2 10 ]
-"463
-[v Turn@C_Angle C_Angle `i  1 a 2 8 ]
-"454
-[v Turn@Angle Angle `i  1 p 2 6 ]
-"493
+"204
+[v Turn@C_Angle C_Angle `i  1 a 2 5 ]
+"198
+[v Turn@Angle Angle `i  1 p 2 1 ]
+[v Turn@Speed Speed `i  1 p 2 3 ]
+"215
 } 0
-"349
+"318
 [v _Sensor_Observe2 Sensor_Observe2 `(v  1 e 1 0 ]
 {
-"381
+"349
 } 0
-"401
+"369
 [v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
 {
-"431
+"397
 } 0
-"240
+"228
 [v _Robot_Init Robot_Init `(v  1 e 1 0 ]
 {
-"244
-} 0
 "233
+} 0
+"176
+[v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
+{
+"187
+} 0
+"157
 [v _Robot_Stop Robot_Stop `(v  1 e 1 0 ]
 {
-"239
+"163
 } 0
-"495
+"421
 [v _Reset_variables Reset_variables `(v  1 e 1 0 ]
 {
-"514
+"433
 } 0
-"33 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"33 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_Init MXK_Init `(v  1 e 1 0 ]
 {
 "69
 } 0
-"150 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"150 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_Init Port_Init `(v  1 e 1 0 ]
 {
 "166
@@ -2563,7 +2560,7 @@ eMXK_None 0
 [v Port_Set@pValue pValue `uc  1 p 1 17 ]
 "612
 } 0
-"110 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"110 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _Byte_SetByte Byte_SetByte `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -2620,66 +2617,66 @@ eMXK_None 0
 [v Byte_SetByte@pValue pValue `uc  1 p 1 2 ]
 "113
 } 0
-"426 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"426 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "429
 "434
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -2689,7 +2686,7 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"67 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"67 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [v _GetPortTRIS GetPortTRIS `(*.39S122  1 e 2 0 ]
@@ -2699,7 +2696,7 @@ eMXK_None 0
 [v GetPortTRIS@pInput pInput `E6786  1 a 1 2 ]
 "88
 } 0
-"533 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"533 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "509
 "512
 "515
@@ -2709,60 +2706,60 @@ eMXK_None 0
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -2772,13 +2769,13 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [s S124 . 2 `S122 1 LS_Byte 1 0 `S122 1 MS_Byte 1 1 ]
-"520 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"520 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S127 . 2 `uc 1 L 1 0 `uc 1 H 1 1 ]
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S130 . 2 `us 1 mBits 2 0 `S124 1 . 2 0 `S127 1 . 2 0 ]
 [s S134 Word 2 `S130 1 . 2 0 ]
 [u S136 PortProperty 2 `us 1 mWord 2 0 `S134 1 mType 2 0 ]
@@ -2789,66 +2786,66 @@ eMXK_None 0
 [v GetPortProperties@pInput pInput `E6786  1 a 1 2 ]
 "42
 } 0
-"426 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"426 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 "429
 "434
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
 `uc 1 mBit4_7 1 0 :4:4 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"439 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"439 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_4 1 0 :4:1 
 `uc 1 . 1 0 :3:5 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"445 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"445 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S69 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_5 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"451 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"451 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S73 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 mBit3_6 1 0 :4:3 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"459 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"459 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S77 . 1 `uc 1 mBit0_2 1 0 :3:0 
 `uc 1 mBit3_5 1 0 :3:3 
 `uc 1 mBit6_7 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"465 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"465 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_3 1 0 :3:1 
 `uc 1 mBit4_6 1 0 :3:4 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"472 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"472 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 mBit2_4 1 0 :3:2 
 `uc 1 mBit5_7 1 0 :3:5 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"480 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"480 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S90 . 1 `uc 1 mBit0_1 1 0 :2:0 
 `uc 1 mBit2_3 1 0 :2:2 
 `uc 1 mBit4_5 1 0 :2:4 
 `uc 1 . 1 0 :2:6 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"487 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"487 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S95 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 mBit1_2 1 0 :2:1 
 `uc 1 mBit3_4 1 0 :2:3 
 `uc 1 mBit5_6 1 0 :2:5 
 `uc 1 . 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
-"497 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.h
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
+"497 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.h
 [s S101 . 1 `uc 1 mBit0 1 0 :1:0 
 `uc 1 mBit1 1 0 :1:1 
 `uc 1 mBit2 1 0 :1:2 
@@ -2858,7 +2855,7 @@ eMXK_None 0
 `uc 1 mBit6 1 0 :1:6 
 `uc 1 mBit7 1 0 :1:7 
 ]
-"44 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"44 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [u S110 . 1 `uc 1 mBits 1 0 `S62 1 . 1 0 `S65 1 . 1 0 `S69 1 . 1 0 `S73 1 . 1 0 `S77 1 . 1 0 `S81 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S95 1 . 1 0 `S101 1 . 1 0 ]
 [s S122 Byte 1 `S110 1 . 1 0 ]
 [v _GetPortPORT GetPortPORT `(*.39S122  1 e 2 0 ]
@@ -2868,7 +2865,7 @@ eMXK_None 0
 [v GetPortPORT@pInput pInput `E6786  1 a 1 2 ]
 "65
 } 0
-"15 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LED.c
+"15 C:\Users\Noel_\Documents\GitHub\mech2\Library/LED.c
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
 {
 [v LED_Init@pLED pLED `E6739  1 a 1 wreg ]
@@ -2885,17 +2882,17 @@ eMXK_None 0
 [v LED_Set@pLED pLED `E6739  1 a 1 21 ]
 "44
 } 0
-"153 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"153 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_Dequeue MXK_Dequeue `(v  1 e 1 0 ]
 {
 "158
 } 0
-"75 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Motor.c
+"75 C:\Users\Noel_\Documents\GitHub\mech2\Library/Motor.c
 [v _Motor_Step Motor_Step `(v  1 e 1 0 ]
 {
 "112
 } 0
-"89 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer0.c
+"89 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer0.c
 [v _Timer0_Stop Timer0_Stop `(v  1 e 1 0 ]
 {
 "93
@@ -2905,7 +2902,7 @@ eMXK_None 0
 {
 "88
 } 0
-"105 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"105 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_SwitchTo MXK_SwitchTo `(uc  1 e 1 0 ]
 {
 [v MXK_SwitchTo@pModule pModule `E6927  1 a 1 wreg ]
@@ -2940,7 +2937,7 @@ eMXK_None 0
 [v MXK_BlockSwitchTo@pModule pModule `E6927  1 a 1 7 ]
 "99
 } 0
-"255 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"255 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _delay_us delay_us `(v  1 e 1 0 ]
 {
 "256
@@ -2949,22 +2946,22 @@ eMXK_None 0
 [v delay_us@us us `us  1 p 2 0 ]
 "266
 } 0
-"261 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"249 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _LEDToggle LEDToggle `(v  1 e 1 0 ]
 {
-"274
+"262
 } 0
-"247
+"235
 [v _LEDOn LEDOn `(v  1 e 1 0 ]
 {
-"252
+"240
 } 0
-"254
+"242
 [v _LEDOff LEDOff `(v  1 e 1 0 ]
 {
-"259
+"247
 } 0
-"172 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"172 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
 "174
@@ -2999,7 +2996,7 @@ eMXK_None 0
 {
 "66
 } 0
-"201 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"201 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [v _SPI_MaxSpeed SPI_MaxSpeed `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -3153,7 +3150,7 @@ eMXK_None 0
 [v SPI_MaxSpeed@pInput pInput `*.39S509  1 p 2 15 ]
 "211
 } 0
-"95 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"95 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _LCD_Reset LCD_Reset `(v  1 e 1 0 ]
 {
 "107
@@ -3168,32 +3165,32 @@ eMXK_None 0
 {
 "39
 } 0
-"74 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"72 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _Init_Timer0 Init_Timer0 `(i  1 e 2 0 ]
 {
-"89
+"84
 } 0
-"138
+"131
 [v _InitSerialCommunication InitSerialCommunication `(v  1 e 1 0 ]
 {
-"155
+"145
 } 0
-"92
+"86
 [v _InitADC InitADC `(v  1 e 1 0 ]
 {
-"98
+"92
 } 0
-"27 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ISR.c
+"27 C:\Users\Noel_\Documents\GitHub\mech2\Library/ISR.c
 [v _ISR_Enable ISR_Enable `(v  1 e 1 0 ]
 {
 "33
 } 0
-"252 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"252 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_Poll HMI_Poll `(v  1 e 1 0 ]
 {
 "260
 } 0
-"57 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Button.c
+"57 C:\Users\Noel_\Documents\GitHub\mech2\Library/Button.c
 [v _Button_Poll Button_Poll `(uc  1 e 1 0 ]
 {
 "59
@@ -3204,12 +3201,12 @@ eMXK_None 0
 [v Button_Poll@pIncrement pIncrement `uc  1 p 1 29 ]
 "88
 } 0
-"24 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"24 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_DIPSwitch MXK_DIPSwitch `(uc  1 e 1 0 ]
 {
 "27
 } 0
-"47 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"47 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_DIPSwitch HMI_DIPSwitch `(uc  1 e 1 0 ]
 {
 "50
@@ -3234,12 +3231,12 @@ eMXK_None 0
 {
 "30
 } 0
-"14 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"14 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_TestButton MXK_TestButton `(uc  1 e 1 0 ]
 {
 "17
 } 0
-"498 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"498 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_GetQuad Port_GetQuad `(uc  1 e 1 0 ]
 {
 "500
@@ -3305,7 +3302,7 @@ eMXK_None 0
 [v Port_GetQuad@pQuad pQuad `E6776  1 p 1 2 ]
 "504
 } 0
-"22 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Events.c
+"22 C:\Users\Noel_\Documents\GitHub\mech2\Events.c
 [v _Event_DIPSwitch Event_DIPSwitch `(v  1 e 1 0 ]
 {
 [v Event_DIPSwitch@pState pState `uc  1 a 1 wreg ]
@@ -3333,7 +3330,7 @@ eMXK_None 0
 [v Event_TestButton@pState pState `uc  1 a 1 25 ]
 "73
 } 0
-"186 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"186 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_SetButton HMI_SetButton `(v  1 e 1 0 ]
 {
 [v HMI_SetButton@pValue pValue `uc  1 a 1 wreg ]
@@ -3348,7 +3345,7 @@ eMXK_None 0
 [v HMI_SetButton@pValue pValue `uc  1 a 1 6 ]
 "195
 } 0
-"50 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LED.c
+"50 C:\Users\Noel_\Documents\GitHub\mech2\Library/LED.c
 [v _LED_Toggle LED_Toggle `(v  1 e 1 0 ]
 {
 [v LED_Toggle@pLED pLED `E6739  1 a 1 wreg ]
@@ -3356,7 +3353,7 @@ eMXK_None 0
 [v LED_Toggle@pLED pLED `E6739  1 a 1 24 ]
 "61
 } 0
-"278 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"278 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_TogglePin Port_TogglePin `(v  1 e 1 0 ]
 {
 "280
@@ -3555,7 +3552,7 @@ eMXK_None 0
 [v Port_GetPin@pPin pPin `E6750  1 p 1 2 ]
 "277
 } 0
-"205 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"205 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_SetBar HMI_SetBar `(v  1 e 1 0 ]
 {
 [v HMI_SetBar@pValue pValue `uc  1 a 1 wreg ]
@@ -3576,7 +3573,7 @@ eMXK_None 0
 [v HMI_Init@in in `us  1 a 2 72 ]
 "135
 } 0
-"190 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"190 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [v _SPI_MinSpeed SPI_MinSpeed `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -3889,7 +3886,7 @@ eMXK_None 0
 [v SPI_Init@pMode pMode `E6748  1 p 1 50 ]
 "132
 } 0
-"10 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer2.c
+"10 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer2.c
 [v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
 {
 "18
@@ -3910,7 +3907,7 @@ eMXK_None 0
 [v Timer2_Init@DIV DIV `ul  1 s 4 DIV ]
 "51
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lldiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "11
@@ -3922,12 +3919,12 @@ eMXK_None 0
 [v ___lldiv@divisor divisor `ul  1 p 4 4 ]
 "31
 } 0
-"3 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer2.c
+"3 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer2.c
 [v _Timer2_Clear Timer2_Clear `(v  1 e 1 0 ]
 {
 "8
 } 0
-"181 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"181 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [v _SPI_DisableISR SPI_DisableISR `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -4235,17 +4232,22 @@ eMXK_None 0
 [v SPI_DCS@pInput pInput `*.39S509  1 p 2 0 ]
 "225
 } 0
-"166 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
-[v _Get_Sensor_State Get_Sensor_State `(i  1 e 2 0 ]
+"164 C:\Users\Noel_\Documents\GitHub\mech2\main.c
+[v _Get_Sensor_State Get_Sensor_State `(v  1 e 1 0 ]
 {
-"194
+"168
 } 0
-"16 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Functions.c
+"152
+[v _eusartRec eusartRec `(uc  1 e 1 0 ]
+{
+"155
+} 0
+"16 C:\Users\Noel_\Documents\GitHub\mech2\Functions.c
 [v _FunctInitButton FunctInitButton `(v  1 e 1 0 ]
 {
 "24
 } 0
-"18 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Button.c
+"18 C:\Users\Noel_\Documents\GitHub\mech2\Library/Button.c
 [v _Button_Init Button_Init `(v  1 e 1 0 ]
 {
 [s S23 Button 10 `uc 1 mState 1 0 `uc 1 mCount 1 1 `us 1 mThreshold 2 2 `*.38(v 1 mFunction 3 4 `*.38(uc 1 mGetState 3 7 ]
@@ -4257,22 +4259,22 @@ eMXK_None 0
 [v Button_Init@pFunction pFunction `*.38(v  1 p 3 69 ]
 "43
 } 0
-"20 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"20 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_InitDIPSwitch MXK_InitDIPSwitch `(v  1 e 1 0 ]
 {
 "23
 } 0
-"21 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"21 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_InitButtons HMI_InitButtons `(v  1 e 1 0 ]
 {
 "24
 } 0
-"10 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"10 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_InitTestButton MXK_InitTestButton `(v  1 e 1 0 ]
 {
 "13
 } 0
-"189 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"189 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_SetPinType Port_SetPinType `(E6475  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -4341,7 +4343,7 @@ eMXK_None 0
 [v Port_SetPinType@pType pType `E6795  1 p 1 41 ]
 "246
 } 0
-"32 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"32 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _Byte_SetBit Byte_SetBit `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -4399,7 +4401,7 @@ eMXK_None 0
 [v Byte_SetBit@pValue pValue `uc  1 p 1 3 ]
 "37
 } 0
-"399 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"399 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_SetQuadType Port_SetQuadType `(E6475  1 e 1 0 ]
 {
 "401
@@ -4466,7 +4468,7 @@ eMXK_None 0
 [v Port_SetQuadType@pType pType `E6795  1 p 1 57 ]
 "459
 } 0
-"149 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"149 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _Word_SetPair Word_SetPair `(v  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -4586,7 +4588,7 @@ eMXK_None 0
 [v Byte_SetPair@pValue pValue `uc  1 p 1 14 ]
 "86
 } 0
-"126 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"126 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v _Port_CheckQuadType Port_CheckQuadType `(E6475  1 e 1 0 ]
 {
 "128
@@ -4730,7 +4732,7 @@ eMXK_None 0
 [v Port_CheckPairType@pDrive pDrive `E6469  1 p 1 41 ]
 "125
 } 0
-"220 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"220 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _PortProperty_Valid PortProperty_Valid `(E6475  1 e 1 0 ]
 {
 "223
@@ -5107,16 +5109,16 @@ eMXK_None 0
 [v Byte_SetZone@pValue pValue `uc  1 p 1 5 ]
 "63
 } 0
-"216 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"189 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _Drive Drive `(v  1 e 1 0 ]
 {
-"217
+"190
 [v Drive@Rad Rad `i  1 a 2 3 ]
-"216
+"189
 [v Drive@Speed Speed `i  1 p 2 1 ]
-"223
+"196
 } 0
-"157 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"157 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Init Console_Init `(v  1 e 1 0 ]
 {
 "163
@@ -5124,22 +5126,22 @@ eMXK_None 0
 [v Console_Init@x x `uc  1 a 1 2 ]
 "173
 } 0
-"383 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"351 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _Closest_Object2 Closest_Object2 `(v  1 e 1 0 ]
 {
-"399
+"367
 } 0
-"290
+"286
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
 {
-"300
+"296
 } 0
-"433
+"399
 [v _Closest_Object Closest_Object `(v  1 e 1 0 ]
 {
-"452
+"417
 } 0
-"464 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
+"464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "528
@@ -5156,7 +5158,7 @@ eMXK_None 0
 [v printf@f f `*.32Cuc  1 p 2 21 ]
 "1541
 } 0
-"454 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"454 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@c c `uc  1 a 1 wreg ]
@@ -5217,12 +5219,12 @@ eMXK_None 0
 {
 "315
 } 0
-"277 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"275 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
 {
-"288
+"284
 } 0
-"240 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"240 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
 "242
@@ -5231,27 +5233,32 @@ eMXK_None 0
 [v delay_ms@ms ms `us  1 p 2 0 ]
 "254
 } 0
-"337 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"313 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _STP4 STP4 `(i  1 e 2 0 ]
 {
-"347
+"316
 } 0
-"326
+"308
 [v _STP3 STP3 `(i  1 e 2 0 ]
 {
-"336
-} 0
-"315
-[v _STP2 STP2 `(i  1 e 2 0 ]
-{
-"325
+"311
 } 0
 "303
+[v _STP2 STP2 `(i  1 e 2 0 ]
+{
+"306
+} 0
+"298
 [v _STP1 STP1 `(i  1 e 2 0 ]
 {
-"313
+"301
 } 0
-"377 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"264
+[v _Coil_Setup Coil_Setup `(v  1 e 1 0 ]
+{
+"273
+} 0
+"377 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Render Console_Render `(v  1 e 1 0 ]
 {
 [s S595 Point 4 `s 1 x 2 0 `s 1 y 2 2 ]
@@ -5265,7 +5272,7 @@ eMXK_None 0
 [v Console_Render@F6956 F6956 `S595  1 s 4 F6956 ]
 "421
 } 0
-"318 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"318 C:\Users\Noel_\Documents\GitHub\mech2\Library/LCD.c
 [v _LCD_FillRectangle LCD_FillRectangle `(v  1 e 1 0 ]
 {
 "321
@@ -5297,17 +5304,7 @@ eMXK_None 0
 [v LCD_DrawField@pSize pSize `S595  1 p 4 24 ]
 "406
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
-} 0
-"214 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/LCD.c
+"214
 [v _Set_Addr_Window Set_Addr_Window `(v  1 e 1 0 ]
 {
 [v Set_Addr_Window@xs xs `uc  1 a 1 wreg ]
@@ -5344,7 +5341,7 @@ eMXK_None 0
 [v Mode_Set@pMode pMode `E6761  1 a 1 0 ]
 "43
 } 0
-"435 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Console.c
+"435 C:\Users\Noel_\Documents\GitHub\mech2\Library/Console.c
 [v _Console_MakeField Console_MakeField `(*.39us  1 e 2 0 ]
 {
 [v Console_MakeField@pInput pInput `uc  1 a 1 wreg ]
@@ -5413,7 +5410,7 @@ eMXK_None 0
 [v Console_MakeField@pInput pInput `uc  1 a 1 11 ]
 "451
 } 0
-"38 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"38 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _Byte_GetBit Byte_GetBit `(uc  1 e 1 0 ]
 {
 "40
@@ -5473,12 +5470,12 @@ eMXK_None 0
 [v Byte_GetBit@pBit pBit `uc  1 p 1 2 ]
 "45
 } 0
-"111 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"106 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _ADCAverage ADCAverage `(i  1 e 2 0 ]
 {
-"136
+"129
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\pow.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\pow.c
 [v _pow pow `(d  1 e 4 0 ]
 {
 "8
@@ -5490,7 +5487,7 @@ eMXK_None 0
 [v pow@y y `d  1 p 4 102 ]
 "31
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\log.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\log.c
 [v _log log `(d  1 e 4 0 ]
 {
 "7
@@ -5501,7 +5498,7 @@ eMXK_None 0
 [v log@coeff coeff `C[9]d  1 s 36 coeff ]
 "36
 } 0
-"12 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\exp.c
+"12 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\exp.c
 [v _exp exp `(d  1 e 4 0 ]
 {
 "14
@@ -5514,14 +5511,14 @@ eMXK_None 0
 [v exp@coeff coeff `C[10]d  1 s 40 coeff ]
 "57
 } 0
-"277 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\frexp.c
+"277 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\frexp.c
 [v _ldexp ldexp `(d  1 e 4 0 ]
 {
 [v ldexp@value value `d  1 p 4 79 ]
 [v ldexp@newexp newexp `i  1 p 2 83 ]
 "307
 } 0
-"13 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\floor.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\floor.c
 [v _floor floor `(d  1 e 4 0 ]
 {
 "15
@@ -5532,14 +5529,14 @@ eMXK_None 0
 [v floor@x x `d  1 p 4 73 ]
 "30
 } 0
-"254 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\frexp.c
+"254 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\frexp.c
 [v _frexp frexp `(d  1 e 4 0 ]
 {
 [v frexp@value value `d  1 p 4 0 ]
 [v frexp@eptr eptr `*.39i  1 p 2 4 ]
 "274
 } 0
-"10 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\xxtofl.c
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -5554,7 +5551,7 @@ eMXK_None 0
 [v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"43 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fltol.c
+"43 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -5564,14 +5561,14 @@ eMXK_None 0
 [v ___fltol@f1 f1 `d  1 p 4 63 ]
 "70
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\flge.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
 [v ___flge@ff1 ff1 `d  1 p 4 0 ]
 [v ___flge@ff2 ff2 `d  1 p 4 4 ]
 "19
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\evalpoly.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\evalpoly.c
 [v _eval_poly eval_poly `(d  1 e 4 0 ]
 {
 "6
@@ -5582,20 +5579,20 @@ eMXK_None 0
 [v eval_poly@n n `i  1 p 2 69 ]
 "12
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S14313 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S14319 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S14318 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S14321 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14313 1 fAsBytes 4 0 `S14318 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S14321  1 a 4 33 ]
+[s S14324 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S14327 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14319 1 fAsBytes 4 0 `S14324 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S14327  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S14389 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S14395 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S14392 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14389 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S14392  1 a 2 37 ]
+[u S14398 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14395 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S14398  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -5607,7 +5604,7 @@ eMXK_None 0
 [v ___flmul@a a `d  1 p 4 18 ]
 "205
 } 0
-"245 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcadd.c
+"245 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
 [v ___flsub@b b `d  1 p 4 63 ]
@@ -5630,13 +5627,13 @@ eMXK_None 0
 [v ___fladd@a a `d  1 p 4 47 ]
 "237
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\flneg.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
 {
 [v ___flneg@f1 f1 `d  1 p 4 39 ]
 "20
 } 0
-"11 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcdiv.c
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
@@ -5656,7 +5653,17 @@ eMXK_None 0
 [v ___fldiv@a a `d  1 p 4 4 ]
 "184
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11
@@ -5669,13 +5676,13 @@ eMXK_None 0
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"221 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"221 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_SetNumber HMI_SetNumber `(v  1 e 1 0 ]
 {
 [v HMI_SetNumber@pInput pInput `i  1 p 2 22 ]
 "225
 } 0
-"369 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"369 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _itos itos `(v  1 e 1 0 ]
 {
 "371
@@ -5701,7 +5708,7 @@ eMXK_None 0
 [v reverse@length length `us  1 p 2 2 ]
 "368
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwmod.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
@@ -5711,7 +5718,7 @@ eMXK_None 0
 [v ___lwmod@divisor divisor `ui  1 p 2 9 ]
 "26
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
@@ -5723,7 +5730,7 @@ eMXK_None 0
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "31
 } 0
-"226 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"226 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_SetSegments HMI_SetSegments `(v  1 e 1 0 ]
 {
 "228
@@ -5732,7 +5739,7 @@ eMXK_None 0
 [v HMI_SetSegments@pString pString `*.39uc  1 p 2 1 ]
 "249
 } 0
-"284 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"284 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v _ToSegment ToSegment `(uc  1 e 1 0 ]
 {
 [v ToSegment@pCHR pCHR `uc  1 a 1 wreg ]
@@ -5740,7 +5747,7 @@ eMXK_None 0
 [v ToSegment@pCHR pCHR `uc  1 a 1 0 ]
 "355
 } 0
-"138 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\HMI.c
+"138 C:\Users\Noel_\Documents\GitHub\mech2\HMI.c
 [v _HMI_Render HMI_Render `(v  1 e 1 0 ]
 {
 "141
@@ -5766,7 +5773,7 @@ eMXK_None 0
 [v OutSeg@pInput pInput `uc  1 a 1 6 ]
 "101
 } 0
-"226 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/SPI.c
+"226 C:\Users\Noel_\Documents\GitHub\mech2\Library/SPI.c
 [v _SPI_Send SPI_Send `(uc  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -5921,45 +5928,45 @@ eMXK_None 0
 [v SPI_Send@pData pData `uc  1 p 1 2 ]
 "272
 } 0
-"100 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\main.c
+"94 C:\Users\Noel_\Documents\GitHub\mech2\main.c
 [v _FunctReadADC FunctReadADC `(i  1 e 2 0 ]
 {
 [v FunctReadADC@channel channel `i  1 p 2 0 ]
-"110
+"104
 } 0
-"224
+"217
 [v _BangBang BangBang `(v  1 e 1 0 ]
 {
 [v BangBang@RSpeedH RSpeedH `i  1 p 2 1 ]
 [v BangBang@RSpeedL RSpeedL `i  1 p 2 3 ]
 [v BangBang@LSpeedH LSpeedH `i  1 p 2 5 ]
 [v BangBang@LSpeedL LSpeedL `i  1 p 2 7 ]
-"231
+"224
 } 0
-"157
+"147
 [v _eusartSend eusartSend `(v  1 e 1 0 ]
 {
 [v eusartSend@sendChar sendChar `uc  1 a 1 wreg ]
 [v eusartSend@sendChar sendChar `uc  1 a 1 wreg ]
 [v eusartSend@sendChar sendChar `uc  1 a 1 0 ]
-"160
+"150
 } 0
-"38 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/ISR.c
+"38 C:\Users\Noel_\Documents\GitHub\mech2\Library/ISR.c
 [v _ISR_Function ISR_Function `II(v  1 e 1 0 ]
 {
 "81
 } 0
-"94 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer0.c
+"94 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer0.c
 [v _Timer0_ISR Timer0_ISR `(v  1 e 1 0 ]
 {
 "101
 } 0
-"75 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Motor.c
+"75 C:\Users\Noel_\Documents\GitHub\mech2\Library/Motor.c
 [v i2_Motor_Step Motor_Step `(v  1 e 1 0 ]
 {
 "112
 } 0
-"89 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Timer0.c
+"89 C:\Users\Noel_\Documents\GitHub\mech2\Library/Timer0.c
 [v i2_Timer0_Stop Timer0_Stop `(v  1 e 1 0 ]
 {
 "93
@@ -5969,7 +5976,7 @@ eMXK_None 0
 {
 "88
 } 0
-"247 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Port.c
+"247 C:\Users\Noel_\Documents\GitHub\mech2\Library/Port.c
 [v i2_Port_SetPin Port_SetPin `(v  1 e 1 0 ]
 {
 [v i2Port_SetPin@Type Port_SetPin `E6795  1 a 1 19 ]
@@ -6034,7 +6041,7 @@ eMXK_None 0
 [v i2Port_SetPin@pValue pValue `uc  1 p 1 18 ]
 "270
 } 0
-"156 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"156 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v i2_Word_GetPair Word_GetPair `(uc  1 e 1 0 ]
 {
 [s S62 . 1 `uc 1 mBit0_3 1 0 :4:0 
@@ -6272,7 +6279,7 @@ eMXK_None 0
 [v i2Byte_SetBit@pValue pValue `uc  1 p 1 3 ]
 "37
 } 0
-"105 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"105 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v i2_MXK_SwitchTo MXK_SwitchTo `(uc  1 e 1 0 ]
 {
 [v i2MXK_SwitchTo@pModule pModule `E6927  1 a 1 wreg ]
@@ -6282,14 +6289,14 @@ eMXK_None 0
 [v i2MXK_SwitchTo@pModule pModule `E6927  1 a 1 7 ]
 "123
 } 0
-"255 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/Types.c
+"255 C:\Users\Noel_\Documents\GitHub\mech2\Library/Types.c
 [v i2_delay_us delay_us `(v  1 e 1 0 ]
 {
 [v i2delay_us@u delay_us `ul  1 a 4 2 ]
 [v i2delay_us@us us `us  1 p 2 0 ]
 "266
 } 0
-"130 C:\Users\Daniel\Desktop\Mech 2\Assignment 2 Almost Complete\MX2_W6_Skeleton - Copy\Library/MXK.c
+"130 C:\Users\Noel_\Documents\GitHub\mech2\Library/MXK.c
 [v i2_MXK_Release MXK_Release `(uc  1 e 1 0 ]
 {
 "138

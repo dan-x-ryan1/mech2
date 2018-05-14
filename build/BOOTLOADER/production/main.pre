@@ -1,17 +1,17 @@
 
 # 1 "main.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h"
 extern volatile unsigned short PMSTAT @ 0xF40;
 
 asm("PMSTAT equ 0F40h");
@@ -7895,7 +7895,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -7936,7 +7936,7 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config MSSPMSK = MSK5
 #pragma config CCP2MX = DEFAULT
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
 # 273 "Library\Types.h"
@@ -8482,7 +8482,7 @@ void FunctMotor();
 void FunctHMI();
 void FunctADC();
 
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -8533,10 +8533,10 @@ inline void Console_SetBackcolour (Colour pColour);
 inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
 inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -8545,17 +8545,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -8569,7 +8569,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -8762,33 +8762,32 @@ void HMI_SetSegments (str pString);
 
 void HMI_Poll ();
 
-# 29 "main.c"
+# 30 "main.c"
 int Current_Dist = 0;
-int Current_Dist1 = 0;
-int Current_Dist2 = 0;
-int mode=0;
+UINT8 Current_Dist1 = 0;
+UINT8 Current_Dist2 = 0;
+int mode = 0;
 int T_VAR = 0;
 int Square_Dist = 0;
 int mod = 0;
 UINT8 BumpSensor = 0;
+UINT8 Vitual_Wall_Sensor = 0;
 UINT8 Cliff_FRight = 0;
 UINT8 Cliff_FLeft = 0;
 UINT8 Cliff_Right = 0;
 UINT8 Cliff_Left = 0;
-
-
 int BumpState = 0;
 
 
 int mode;
-int Motor_Count=0;
-int Low_Sensor=10000;
-int ADC_Reading=0;
+int Motor_Count = 0;
+int Low_Sensor = 10000;
+int ADC_Reading = 0;
 int Close_Pos = 0;
-int count=0;
+int count = 0;
 int CCW_Count;
 int CW_Count;
-int Sensor_Observe_Fin=0;
+int Sensor_Observe_Fin = 0;
 
 int numReadings = 50;
 int thisReading;
@@ -8806,25 +8805,19 @@ int timercount = 0;
 
 int test;
 
-
-
-int Init_Timer0()
-{
+int Init_Timer0() {
 T0CONbits.TMR0ON = 1;
 T0CONbits.T08BIT = 1;
-T0CONbits.T0CS=0;
-T0CONbits.T0SE=0;
-T0CONbits.PSA=0;
-T0CONbits.T0PS2=1;
-T0CONbits.T0PS1=1;
-T0CONbits.T0PS0=1;
-
+T0CONbits.T0CS = 0;
+T0CONbits.T0SE = 0;
+T0CONbits.PSA = 0;
+T0CONbits.T0PS2 = 1;
+T0CONbits.T0PS1 = 1;
+T0CONbits.T0PS0 = 1;
 INTCONbits.TMR0IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
-
 }
-
 
 void InitADC()
 {
@@ -8836,16 +8829,17 @@ readings[thisReading] = 0;
 
 int FunctReadADC(int channel)
 {
-if(channel>4) return 0;
-ADCON0=0x00;
-ADCON0=(channel<<2);
-ADON=1;
-GODONE=1;
-while(GODONE);
-ADON=0;
+if (channel > 4) return 0;
+ADCON0 = 0x00;
+ADCON0 = (channel << 2);
+ADON = 1;
+GODONE = 1;
+while (GODONE);
+ADON = 0;
 return ADRES;
 }
-int ADCAverage (){
+
+int ADCAverage() {
 
 total = total - readings[readIndex];
 
@@ -8855,102 +8849,80 @@ total = total + readings[readIndex];
 
 readIndex++;
 
-
 if (readIndex >= numReadings) {
 
 readIndex = 0;
 }
 
-
 average = total / numReadings;
-average = -0.0000009*pow(average, 3)+0.0015*pow(average, 2)-0.9208*average+227.33;
+average = -0.0000009 * pow(average, 3) + 0.0015 * pow(average, 2) - 0.9208 * average + 227.33;
 
+average *= 10;
 
 HMI_SetNumber(average);
 HMI_Render();
 return average;
-
 }
 
-void InitSerialCommunication(){
+void InitSerialCommunication() {
 
 TRISCbits.TRISC6 = 0;
 TRISCbits.TRISC7 = 1;
-
 TXSTA1 = 0b00100100;
 RCSTA1 = 0b10010000;
-
 BAUDCON1bits.DTRXP = 0;
 BAUDCON1bits.SCKP = 0;
 BAUDCON1bits.WUE = 0;
 BAUDCON1bits.ABDEN = 0;
-
 
 TXSTA1bits.BRGH = 1;
 BAUDCON1bits.BRG16 = 0;
 SPBRG1 = 51;
 }
 
-void eusartSend (UINT8 sendChar){
-while(!TXSTA1bits.TRMT){};
+void eusartSend(UINT8 sendChar) {
+while (!TXSTA1bits.TRMT) {}
 TXREG1 = sendChar;
 }
-UINT8 eusartRec(){
-while(!PIR1bits.RC1IF){}
-return (int) RCREG1;
+
+UINT8 eusartRec() {
+while (!PIR1bits.RC1IF) {}
+return RCREG1;
 }
 
-int Get_Sensor_State(){
-
+void Robot_Stop() {
+eusartSend(137);
+eusartSend(0);
+eusartSend(0);
+eusartSend(0);
+eusartSend(0);
+}
+void Get_Sensor_State() {
 eusartSend(142);
 eusartSend(7);
-while(!PIR1bits.RC1IF);
-BumpSensor = RCREG1;
-
-eusartSend(142);
-eusartSend(9);
-while(!PIR1bits.RC1IF);
-Cliff_Left = RCREG1;
-
-eusartSend(142);
-eusartSend(10);
-while(!PIR1bits.RC1IF);
-Cliff_FLeft = RCREG1;
-
-eusartSend(142);
-eusartSend(11);
-while(!PIR1bits.RC1IF);
-Cliff_FRight = RCREG1;
-
-eusartSend(142);
-eusartSend(12);
-while(!PIR1bits.RC1IF);
-Cliff_Right = RCREG1;
-
-return 1;
+BumpSensor = (eusartRec() & 0b00000011);
 }
 
-int UpdateDistance (){
-eusartSend(149);
-eusartSend(1);
+void Get_VirtualWall_State(){
+eusartSend(142);
+eusartSend(13);
+Vitual_Wall_Sensor = (eusartRec());
+}
+
+int UpdateDistance() {
+eusartSend(142);
 eusartSend(19);
-
-delay_ms(10);
-
-while(!PIR1bits.RC1IF);
-Current_Dist1 = RCREG1;
-
-while(!PIR1bits.RC1IF);
-Current_Dist2 = RCREG1;
+Current_Dist1 = eusartRec();
+Current_Dist2 = eusartRec();
 
 Current_Dist = Current_Dist2;
 
 
-return ((Current_Dist<0)?-Current_Dist:Current_Dist);
+return Current_Dist;
 
 }
 
-void Drive(int Speed){
+void Drive(int Speed) {
 int Rad = 32768;
 eusartSend(137);
 eusartSend((((Speed)>>8) & 255));
@@ -8958,7 +8930,27 @@ eusartSend(((Speed) & 255));
 eusartSend((((Rad)>>8) & 255));
 eusartSend(((Rad) & 255));
 }
-void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL){
+
+int Turn(int Angle, int Speed) {
+eusartSend(137);
+eusartSend((((Speed)>>8) & 255));
+eusartSend(((Speed) & 255));
+eusartSend((((0)>>8) & 255));
+eusartSend(((1) & 255));
+int C_Angle = 0;
+eusartSend(157);
+eusartSend((((Angle)>>8) & 255));
+eusartSend(((Angle) & 255));
+
+Robot_Stop();
+
+eusartSend(142);
+eusartSend(7);
+eusartRec();
+
+}
+
+void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL) {
 
 eusartSend(145);
 eusartSend((((RSpeedH)>>8) & 255));
@@ -8967,51 +8959,56 @@ eusartSend((((LSpeedH)>>8) & 255));
 eusartSend(((LSpeedL) & 255));
 }
 
-void Robot_Stop(){
-eusartSend(137);
-eusartSend(0);
-eusartSend(0);
-eusartSend(0);
-eusartSend(0);
-}
-void Robot_Init(){
+
+
+void Robot_Init() {
 eusartSend(128);
 eusartSend(132);
 Robot_Stop();
+UpdateDistance();
 }
 
-
-void LEDOn (){
+void LEDOn() {
 eusartSend(139);
 eusartSend(10);
 eusartSend(255);
 eusartSend(255);
 }
 
-void LEDOff (){
+void LEDOff() {
 eusartSend(139);
 eusartSend(10);
 eusartSend(0);
 eusartSend(0);
 }
 
-void LEDToggle(){
+void LEDToggle() {
 
-if (INTCONbits.TMR0IF == 1){
-INTCONbits.TMR0IF=0;
+if (INTCONbits.TMR0IF == 1) {
+INTCONbits.TMR0IF = 0;
 timercount++;
-if (timercount==countOn){
+if (timercount == countOn) {
 LEDOn();
 }
-if(timercount==countOff){
+if (timercount == countOff) {
 LEDOff();
-timercount=0;
+timercount = 0;
 }
 }
 }
 
+void Coil_Setup() {
+TRISA2 = 0;
+TRISA3 = 0;
+TRISD5 = 0;
+TRISD7 = 0;
+RD5 = 0;
+RD7 = 0;
+RA2 = 0;
+RA3 = 0;
+}
 
-int SteppingCCW(){
+int SteppingCCW() {
 STP4();
 delay_ms(2);
 STP3();
@@ -9020,11 +9017,9 @@ STP2();
 delay_ms(2);
 STP1();
 delay_ms(2);
-
-
 }
 
-int SteppingCW(){
+int SteppingCW() {
 STP1();
 delay_ms(2);
 STP2();
@@ -9036,54 +9031,27 @@ delay_ms(2);
 
 }
 
-
-int STP1 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
+int STP1() {
+Coil_Setup();
 RA2 = 1;
 }
 
-int STP2 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
+int STP2() {
+Coil_Setup();
 RA3 = 1;
 }
-int STP3 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
+
+int STP3() {
+Coil_Setup();
 RD5 = 1;
 }
-int STP4 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
+
+int STP4() {
+Coil_Setup();
 RD7 = 1;
 }
 
-void Sensor_Observe2 (){
+void Sensor_Observe2() {
 printf("%c", (char)35);
 printf("                 \n");
 printf("Sensor Moving!\n");
@@ -9095,50 +9063,49 @@ printf("                 \n");
 printf("                 \n");
 printf("                 \n");
 Console_Render();
-while(Motor_Count<=512){
-
+while (Motor_Count <= 512) {
 Motor_Count++;
-ADCAverage ();
-if (Low_Sensor>average){
-Low_Sensor=average;
+ADCAverage();
+if (Low_Sensor > average) {
+Low_Sensor = average;
 Close_Pos = Motor_Count;
 }
 SteppingCCW();
 }
 
 Console_Render();
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-Sensor_Observe_Fin=1;
+RD5 = 0;
+RD7 = 0;
+RA2 = 0;
+RA3 = 0;
+Sensor_Observe_Fin = 1;
 
 CW_Count = 512 - Close_Pos;
 return;
 }
 
-void Closest_Object2(){
-while (!CW_Count<=0){
+void Closest_Object2() {
+while (!CW_Count <= 0) {
 CW_Count--;
 printf("%c", (char)35);
 printf("Stepped 360 degrees");
 printf("\nThe Closes object (mm): %d", Low_Sensor);
 printf("\nGoing back to: %d", Close_Pos);
 Console_Render();
-ADCAverage ();
+ADCAverage();
 SteppingCW();
 }
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
+RD5 = 0;
+RD7 = 0;
+RA2 = 0;
+RA3 = 0;
 return;
 }
 
-void Sensor_Observe(){
+void Sensor_Observe() {
 printf("%c", (char)35);
 printf("                 \n");
-printf("Sensor Moving!\n");
+printf("Sensor Moving!   \n");
 printf("                 \n");
 printf("                 \n");
 printf("                 \n");
@@ -9146,94 +9113,65 @@ printf("                 \n");
 printf("                 \n");
 printf("                 \n");
 Console_Render();
-while(Motor_Count<=512){
+while (Motor_Count <= 512) {
 Motor_Count++;
-ADCAverage ();
-if (Low_Sensor>average){
-Low_Sensor=average;
+ADCAverage();
+if (Low_Sensor > average) {
+Low_Sensor = average;
 Close_Pos = Motor_Count;
 }
 SteppingCW();
 }
-
-Console_Render();
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-Sensor_Observe_Fin=1;
+RD5 = 0;
+RD7 = 0;
+RA2 = 0;
+RA3 = 0;
+Sensor_Observe_Fin = 1;
 
 CCW_Count = 512 - Close_Pos;
 return;
 }
 
-void Closest_Object(){
+void Closest_Object() {
 printf("%c", (char)35);
 printf("Stepped 360 degrees");
 printf("\nThe Closes object (mm): %d", Low_Sensor);
 printf("\nGoing back to: %d", Close_Pos);
 Console_Render();
-while (!CCW_Count<=0){
+while (!CCW_Count <= 0) {
 CCW_Count--;
 printf("%c", (char)35);
-printf("\nSteps Travelled: %d",CCW_Count);
+printf("\nSteps Travelled: %d", CCW_Count);
 Console_Render();
-ADCAverage ();
+ADCAverage();
 SteppingCCW();
 }
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-return;
+RD5 = 0;
+RD7 = 0;
+RA2 = 0;
+RA3 = 0;
 }
 
-int Turn(int Angle){
 
 
-int Speed = 100;
-eusartSend(137);
-eusartSend((((Speed)>>8) & 255));
-eusartSend(((Speed) & 255));
-eusartSend((((0)>>8) & 255));
-eusartSend(((1) & 255));
-int C_Angle = 0;
+void Reset_variables() {
 
-eusartSend(157);
-
-eusartSend((((Angle)>>8) & 255));
-eusartSend(((Angle) & 255));
-
-eusartSend(137);
-eusartSend((((0)>>8) & 255));
-eusartSend(((0) & 255));
-eusartSend((((0)>>8) & 255));
-eusartSend(((0) & 255));
-delay_ms(1000);
-
-# 493
-}
-
-void Reset_variables(){
-
-Square_Dist=0;
-Sensor_Observe_Fin=0;
+Square_Dist = 0;
+Sensor_Observe_Fin = 0;
 Motor_Count = 0;
-Low_Sensor=10000;
-ADC_Reading=0;
+Low_Sensor = 10000;
+ADC_Reading = 0;
 Close_Pos = 0;
-count=0;
+count = 0;
 T_VAR = 0;
-
 mod = 0;
-
-# 513
 return;
 }
 
 
 
-void main(){
+
+void main() {
 
 MXK_Init();
 Init_Timer0();
@@ -9244,8 +9182,6 @@ FunctInitButton();
 InitADC();
 LED_Init(eLED2);
 
-
-
 if (MXK_BlockSwitchTo(eMXK_HMI)) {
 HMI_Init();
 LCD_Init();
@@ -9254,36 +9190,39 @@ if (MXK_Release())
 MXK_Dequeue();
 }
 
-
-for(;;){
+for(;;) {
 
 LEDToggle();
-
 ADCAverage();
 
 HMI_SetNumber(average);
-
 HMI_Render();
-
 HMI_Poll();
-
-
 
 bool down = HMIBoard.mDown.mGetState();
 bool right = HMIBoard.mRight.mGetState();
 bool up = HMIBoard.mUp.mGetState();
 bool left = HMIBoard.mLeft.mGetState();
-if (down) {mode=3;}
-if (right) {mode =1;}
-if (up) {mode=2;}
-if (left) {mode=4;}
+
+if (down) {
+mode = 3;
+}
+if (right) {
+mode = 1;
+}
+if (up) {
+mode = 2;
+}
+if (left) {
+mode = 4;
+}
 
 
 
 
 if (MXK_BlockSwitchTo(eMXK_HMI)) {
 
-if (mode==0){
+if (mode == 0) {
 LED_Set(eLED2, 0);
 Robot_Stop();
 Reset_variables();
@@ -9291,7 +9230,7 @@ Reset_variables();
 printf("%c", (char)35);
 printf("Robot Ready! \n");
 printf("Press right for 5m\n drive,\n");
-printf("Press down for\nsqr drive,\n");
+printf("Press down for\nsquare drive,\n");
 printf("Press up for IR scan mode,\n");
 printf("Press left for wall follow\n");
 
@@ -9301,10 +9240,9 @@ printf("                 \n");
 printf("                 \n");
 Console_Render();
 }
-
-else if(mode == 1){
+else if (mode == 1) {
 LED_Set(eLED2, 1);
-Drive(300);
+Drive(200);
 T_VAR += UpdateDistance();
 printf("%c", (char)35);
 printf("Traveled Distance:\n%d", T_VAR);
@@ -9317,22 +9255,20 @@ printf("                 \n");
 printf("                 \n");
 printf("                 \n");
 Console_Render();
-if (T_VAR >= 5000){
+if (T_VAR >= 5000) {
 Robot_Stop();
 mode = 0;
 }
 }
-
-else if (mode == 2){
+else if (mode == 2) {
 LED_Set(eLED2, 1);
 Sensor_Observe();
 
 Closest_Object();
 delay_ms(2000);
-mode=0;
+mode = 0;
 }
-
-else if(mode == 3){
+else if (mode == 3) {
 Drive(250);
 LED_Set(eLED2, 1);
 T_VAR += UpdateDistance();
@@ -9351,38 +9287,31 @@ printf("                 \n");
 printf("                 \n");
 Console_Render();
 
-if (T_VAR >= 1000){
-Turn(82);
+if (T_VAR >= 1000) {
+Turn(82, 100);
 T_VAR = 0;
 mod += 1000;
 }
 
-if (Square_Dist >= 4000){
+if (Square_Dist >= 4000) {
 
 Robot_Stop();
-
 delay_ms(500);
-
-mode=0;
+mode = 0;
 }
 
-}
-else if (mode == 4){
-
+} else if (mode == 4) {
 Sensor_Observe2();
-
 Closest_Object2();
 
 int Target_Distance = Low_Sensor;
 LED_Set(eLED2, 1);
 Get_Sensor_State();
-test = (BumpSensor & 0b00000011);
-if (test>0){
-mode=0;
+if (test > 0) {
+mode = 0;
 }
 
-while (test == 0){
-
+while (BumpSensor == 0) {
 ADCAverage();
 printf("%c", (char)35);
 printf("The target distance is: %d\n", Target_Distance);
@@ -9401,47 +9330,42 @@ HMI_SetNumber(average);
 HMI_Render();
 
 HMI_Poll();
-if (Target_Distance <= average+2 || Target_Distance >= average-2){
-BangBang(50,50,50,50);
+if (Target_Distance <= average + 2 || Target_Distance >= average - 2) {
+BangBang(50, 50, 50, 50);
 }
-if (Target_Distance > average + 2){
-
-BangBang(50,50,40,40);
-}
-if (Target_Distance < average - 2){
-BangBang(40,40,50,50);
+if (Target_Distance > average + 2) {
+BangBang(50, 50, 40, 40);
 }
 
-if (Target_Distance > average + 5){
+if (Target_Distance < average - 2) {
+BangBang(40, 40, 50, 50);
+}
 
-BangBang(50,50,30,30);
+if (Target_Distance > average + 5) {
+BangBang(50, 50, 30, 30);
 }
-if (Target_Distance < average - 5){
-BangBang(30,30,50,50);
+
+if (Target_Distance < average - 5) {
+BangBang(30, 30, 50, 50);
 }
+
 Get_Sensor_State();
-test = (BumpSensor & 0b00000011);
-if (test > 0){
-Target_Distance=0;
+printf("Besneor: %d", BumpSensor);
+if (BumpSensor > 0) {
+Target_Distance = 0;
 break;
 }
 
-
-
-if(HMIBoard.mUp.mGetState()==1){
+if (HMIBoard.mUp.mGetState()) {
 up = HMIBoard.mUp.mGetState();
-if (up){
+if (up) {
 mode = 0;
 }
 break;
 }
-
 }
-mode=0;
-
-# 728
+mode = 0;
 }
-
 Console_Render();
 if (MXK_Release())
 MXK_Dequeue();
