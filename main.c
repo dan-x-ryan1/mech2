@@ -180,13 +180,20 @@ int UpdateDistance() { // Update the distance from sensor reading
     Current_Dist2 = eusartRec();
     
     Current_Dist = Current_Dist2; // Using the low byte as the distance reading
-
+ 
+    if (Current_Dist < 0){
+        Current_Dist = ~Current_Dist;
+    }
 
     return Current_Dist;
 
 }
 
 void Drive(int Speed) {
+    if (Speed < 0){
+        Speed = -1*Speed;
+        Speed = ~Speed;
+    }
     int Rad = 32768;
     eusartSend(137); //drive, (speed hb, lb, radius hb, lb)
     eusartSend(HIGH_BYTE(Speed));
@@ -195,12 +202,18 @@ void Drive(int Speed) {
     eusartSend(LOW_BYTE(Rad));
 }
 
-int Turn(int Angle, int Speed) { // function for wheel turn angle  
+int Turn(int Angle, int Speed, int Dir) { // function for wheel turn angle  
+    int Rad = 1;
+    if (Dir == 0){
+        Rad = 65535; //turn cw
+        Angle = ~Angle;
+    } 
+
     eusartSend(137); //drive, (speed hb, lb, radius hb, lb)
     eusartSend(HIGH_BYTE(Speed));
     eusartSend(LOW_BYTE(Speed));
-    eusartSend(HIGH_BYTE(0));
-    eusartSend(LOW_BYTE(1));
+    eusartSend(HIGH_BYTE(Rad));
+    eusartSend(LOW_BYTE(Rad));
     int C_Angle = 0;
     eusartSend(157);
     eusartSend(HIGH_BYTE(Angle));
@@ -222,8 +235,6 @@ void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL) { // Function 
     eusartSend(HIGH_BYTE(LSpeedH));
     eusartSend(LOW_BYTE(LSpeedL));
 }
-
-
 
 void Robot_Init() {
     eusartSend(128); // TURN IO ON
@@ -416,10 +427,7 @@ void Closest_Object() {
     RA3 = 0; //Set all pins to low and return from this function             
 }
 
-
-
 void Reset_variables() { //A list of all the variables that need to be reset every time they exit the mode
-
     Square_Dist = 0;
     Sensor_Observe_Fin = 0;
     Motor_Count = 0;
@@ -431,8 +439,6 @@ void Reset_variables() { //A list of all the variables that need to be reset eve
     mod = 0;
     return;
 }
-
-
 //END SETUP
 
 void main() {
@@ -506,7 +512,7 @@ void main() {
             }
             else if (mode == 1) { // Mode 1 5 meter drive 
                 LED_Set(eLED2, ON);
-                Drive(200);
+                Drive(-200);
                 T_VAR += UpdateDistance();
                 printf("%c", ENDOFTEXT);
                 printf("Traveled Distance:\n%d", T_VAR);
@@ -533,7 +539,7 @@ void main() {
                 mode = 0;
             }
             else if (mode == 3) { //Mode 3: Square Drive
-                Drive(250);
+                Drive(100);
                 LED_Set(eLED2, ON);
                 T_VAR += UpdateDistance();
 
@@ -552,7 +558,7 @@ void main() {
                 Console_Render();
 
                 if (T_VAR >= 1000) {
-                    Turn(82, 100);
+                    Turn(82, 100, 0);
                     T_VAR = 0;
                     mod += 1000;
                 }
