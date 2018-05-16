@@ -1,5 +1,68 @@
 
-# 1 "main.c"
+# 1 "dans.c"
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -7922,20 +7985,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-
-# 18 "ProcessorConfig.h"
-#pragma config XINST = OFF
-#pragma config STVREN = ON
-#pragma config PLLDIV = 3
-#pragma config WDTEN = OFF
-#pragma config CPUDIV = OSC1
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config FOSC = HSPLL
-#pragma config WDTPS = 32768
-#pragma config MSSPMSK = MSK5
-#pragma config CCP2MX = DEFAULT
-
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
 typedef unsigned char bool;
 
@@ -8231,144 +8280,120 @@ void swap(UINT8Ptr pA, UINT8Ptr pB);
 void reverse(char * input , UINT16 length);
 void itos(UINT16 input, char* destination);
 
-# 15 "Library\Timer0.h"
-void Timer0_Init(UINT32 pFrequency);
-void Timer0_Clear();
+# 11 "dans.h"
+enum direction {NORTH, SOUTH, EAST, WEST};
 
-void Timer0_Start(Function pFunction);
-void Timer0_ISR();
-void Timer0_Stop();
-void Timer0_Restart();
 
-# 16 "Library\ISR.h"
-extern bool Timer0_ISR_Enterable;
+int top = -1;
 
-void ISR_Disable();
-void ISR_Enable();
-void interrupt ISR_Function();
-
-# 19 "Library\Port.h"
-typedef struct Port Port;
-typedef Port * const PortPtr;
+int stack[20];
 
 
 
 
-extern Port PortA, PortB, PortC, PortD, PortE, PortF, PortG;
+int Current_Dist = 0;
+int Current_Dist1 = 0;
+int Current_Dist2 = 0;
+int Found_Flag = 0;
+int mode=0;
+int Motor_Count = 0;
+int Steps= 0;
+
+
+int numReadings = 10;
+int thisReading;
+int readings[10 ];
+int readIndex = 0;
+int total = 0;
+int average = 0;
+int x = 0;
 
 
 
+void InitADC();
+int FunctReadADC(int channel);
+int ADCAverage ();
+bool isempty();
+bool isfull();
+int peek();
+int pop();
+int push(int data);
+void giveID();
+void Init_Pos_Array();
+int Travel(int Dist, int TEST_ADC);
+Turn(int Angle, int Speed, int Dir);
+void movement1();
+void movement2();
+void movement4();
+void Drive(int SpeedL, int SpeedR);
+void eusartSend (UINT8 sendChar);
+UINT8 eusartRec();
+int UpdateDistance();
+void Robot_Stop();
+void untilVirtual();
+int Get_VirtualWall_State();
+int SteppingCCW();
+int SteppingCW();
+void Sensor_Observe();
+void Move_ADC_To (int Angle);
+void Find_Flag () ;
 
-typedef enum
-{
-eP0 = 0,
-eP1 = 1,
-eP2 = 2,
-eP3 = 3,
-eP4 = 4,
-eP5 = 5,
-eP6 = 6,
-eP7 = 7
-}ePin;
-typedef enum
-{
-eP0_1 = 0,
-eP2_3 = 1,
-eP4_5 = 2,
-eP6_7 = 3,
-eP8_9 = 4,
-eP10_11 = 5,
-eP12_13 = 6,
-eP14_15 = 7
-}ePair;
-typedef enum
-{
-eP0_2 = 0,
-eP3_5 = 1,
-eP4_6 = 2,
-eP5_7 = 3
-}eTriple;
-typedef enum
-{
-eP0_3 = 0,
-eP4_7 = 1,
-eP8_11 = 2,
-eP12_15 = 3,
-eP16_19 = 4,
-eP20_23 = 5,
-eP24_27 = 6,
-eP28_31 = 7
-}eQuad;
-
-
-
-
-typedef enum
-{
-ePortA,
-ePortB,
-ePortC,
-ePortD,
-ePortE,
-ePortF,
-ePortG
-}ePort;
-
-
-
-
-typedef enum
-{
-eTypeInput = 0,
-eTypeOutputOpenDrain = 1,
-eTypeOutputOpenSource = 2,
-eTypeOutputPushPull = 3
-}ePinType;
-
-
-
-
-struct Port
-{
-PortPropertyPtr mProperties;
-Byte* mDirection;
-Byte* mOutput;
-Byte* mInput;
-Word mType;
+# 76
+struct square {
+short pos;
+short id_number;
 };
 
-PortPropertyPtr GetPortProperties(ePort pInput);
-BytePtr GetPortPORT(ePort pInput);
-BytePtr GetPortTRIS(ePort pInput);
-BytePtr GetPortLAT(ePort pInput);
+# 14 "Library\Colours.h"
+typedef UINT16 Colour;
+typedef Colour * ColourPtr;
 
+# 33
+Colour Colour_To565(UINT8 r, UINT8 g, UINT8 b);
 
-ePinError Port_CheckPairType(PortPtr pInput, ePair pPair, ePinDrive pDrive);
-ePinError Port_CheckQuadType(PortPtr pInput, eQuad pQuad, ePinDrive pDrive);
-ePinError Port_CheckPortType(PortPtr pInput, ePinDrive pDrive);
+# 20 "Library\Console.h"
+void Console_Init ();
 
+# 24
+void Console_ClearCursor();
+inline void Console_PrintChar (char pInput);
+void Console_PrintString (str pInput);
 
-void Port_Init (PortPtr pInput, ePort pPort);
+void Console_Render();
 
-ePinError Port_SetPinType (PortPtr pInput, ePin pPin, ePinType pType);
-void Port_SetPin (PortPtr pInput, ePin pPin, UINT8 pValue);
-UINT8 Port_GetPin (PortPtr pInput, ePin pPin);
-void Port_TogglePin (PortPtr pInput, ePin pPin);
+# 34
+inline void Console_SetForecolour (Colour pColour);
+inline void Console_SetBackcolour (Colour pColour);
+inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
+inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
 
-ePinError Port_SetPairType(PortPtr pInput, ePair pPair, ePinType pType);
-void Port_SetPair (PortPtr pInput, ePair pPair, UINT8 pValue);
-UINT8 Port_GetPair (PortPtr pInput, ePair pPair);
-void Port_TogglePair (PortPtr pInput, ePair pPair);
-
-ePinError Port_SetQuadType(PortPtr pInput, eQuad pQuad, ePinType pType);
-void Port_SetQuad (PortPtr pInput, eQuad pQuad, UINT8 pValue);
-UINT8 Port_GetQuad (PortPtr pInput, eQuad pQuad);
-void Port_ToggleQuad (PortPtr pInput, eQuad pQuad);
-
-ePinError Port_SetType (PortPtr pInput, ePinType pType);
-void Port_Set (PortPtr pInput, UINT8 pValue);
-UINT8 Port_Get (PortPtr pInput);
-void Port_Toggle (PortPtr pInput);
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
 
 # 12 "./Events.h"
 typedef void (*EventFunction)(UINT8);
@@ -8407,276 +8432,6 @@ Button_InitIO pInitIO, Button_State pGetState, EventFunction pFunction);
 
 # 45
 bool Button_Poll(ButtonPtr pButton, UINT8 pIncrement);
-
-# 19 "Library\MXK.h"
-typedef enum
-{
-eMXK_Motor = 0b1000,
-eMXK_IMU = 0b0100,
-eMXK_HMI = 0b0001,
-eMXK_FPGA = 0b0010,
-eMXK_None = 0
-} eMXK_Module;
-typedef enum
-{
-eMXK_Busy,
-eMXK_Idle
-} eMXK_BusState;
-
-
-extern Button TestButton;
-extern Button DIPSwitch;
-
-
-
-
-void MXK_Init(void);
-
-
-
-
-void MXK_Poll(void);
-
-
-
-
-bool MXK_BlockSwitchTo(eMXK_Module pModule);
-bool MXK_SwitchTo(eMXK_Module pModule);
-bool MXK_Release();
-void MXK_Queue(Function pCallback);
-void MXK_Dequeue();
-
-
-
-
-void MXK_InitTestButton();
-UINT8 MXK_TestButton();
-
-
-void MXK_InitDIPSwitch();
-UINT8 MXK_DIPSwitch();
-
-
-
-
-UINT8 MXK_ReadIO();
-UINT8 MXK_ReadISR();
-
-# 14 "Functions.h"
-extern UINT8 i, j, u;
-extern Button TestButton;
-extern Button DIPSwitch;
-
-void FunctInitButton();
-void FunctInitIMU();
-void FunctInitMotor();
-void FunctInitLCD();
-void FunctInitADC();
-void FunctInitHMI();
-void FunctInitUSB();
-
-void FunctUSB();
-void FunctButton();
-void FunctIMU();
-void FunctMotor();
-void FunctHMI();
-void FunctADC();
-
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 14 "Library\Colours.h"
-typedef UINT16 Colour;
-typedef Colour * ColourPtr;
-
-# 33
-Colour Colour_To565(UINT8 r, UINT8 g, UINT8 b);
-
-# 20 "Library\Console.h"
-void Console_Init ();
-
-# 24
-void Console_ClearCursor();
-inline void Console_PrintChar (char pInput);
-void Console_PrintString (str pInput);
-
-void Console_Render();
-
-# 34
-inline void Console_SetForecolour (Colour pColour);
-inline void Console_SetBackcolour (Colour pColour);
-inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
-inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 16 "Library\Motor.h"
-typedef struct Motor Motor;
-typedef Motor * MotorPtr;
-
-
-
-
-struct Motor
-{
-INT16 mDelta;
-INT16 mFrequency;
-UINT16 mAddress;
-};
-
-# 38
-void Motor_Init(MotorPtr pMotor, UINT16 pAddress);
-
-# 49
-bool Motor_Move(MotorPtr pMotor, INT16 pDelta);
-
-# 61
-bool Motor_Speed(MotorPtr pMotor, UINT16 pFrequency);
-
-# 76
-bool Motor_Continious(MotorPtr pMotor, INT16 pDirection);
-
-# 12 "Library\Point.h"
-typedef struct Point Point;
-typedef Point * const PointPtr;
-
-struct Point
-{
-INT16 x;
-INT16 y;
-};
-
-typedef Point Size;
-typedef Point * SizePtr;
-
-void Point_Init(PointPtr pInput, INT16 x, INT16 y);
-void Size_Init(SizePtr pInput, INT16 x, INT16 y);
-
-# 93 "Library\LCD.h"
-typedef enum
-{
-eCommand = 0,
-eData = 1
-} eLCDMode;
-
-
-
-void LCD_Reset( void );
-void LCD_Init ( void );
-inline bool LCD_Busy ( void );
-
-void LCD_Fill ( Colour pColour);
-void LCD_FillRectangle ( Colour pColour, Point pPoint, Size pSize);
-void LCD_DrawPixel ( Colour pColour, Point pPoint);
-void LCD_DrawLine ( Colour pColour, Point pPoint1, Point pPoint2);
-void LCD_DrawField ( UINT16Ptr pField, Point pPoint, Size pSize);
-void LCD_DrawRectangle ( Colour pColour, Point pPoint1, Point pPoint2);
-void LCD_DrawCircle ( Colour pColour, Point pCentre, UINT16 pRadius);
-void LCD_FillCircle ( Colour pColour, Point pCentre, UINT16 pRadius);
-void Set_Addr_Window ( UINT8 xs, UINT8 ys, UINT8 xe, UINT8 ye);
-void LCD_Word_Write ( UINT16 value );
-
-# 15 "Library\LED.h"
-typedef enum
-{
-eLED1,
-eLED2
-} eLEDS;
-
-# 28
-void LED_Init(eLEDS pLED);
-
-# 36
-void LED_Set(eLEDS pLED, UINT8 pValue);
-
-# 42
-void LED_Toggle(eLEDS pLED);
 
 # 16 "Library\HMI.h"
 typedef struct HMI HMI;
@@ -8762,429 +8517,373 @@ void HMI_SetSegments (str pString);
 
 void HMI_Poll ();
 
-# 11 "dans.h"
-enum direction {NORTH, SOUTH, EAST, WEST};
+# 8 "dans.c"
+void InitADC()
+{
+ADCON1 = 0b10101101;
+for (thisReading = 0; thisReading < numReadings; thisReading++) {
+readings[thisReading] = 0;
+}
+}
+
+int FunctReadADC(int channel)
+{
+if(channel>4) return 0;
+ADCON0=0x00;
+ADCON0=(channel<<2);
+ADON=1;
+GODONE=1;
+while(GODONE);
+ADON=0;
+return ADRES;
+}
+
+int ADCAverage (){
+
+total = total - readings[readIndex];
+
+readings[readIndex] = (FunctReadADC(0));
+
+total = total + readings[readIndex];
+
+readIndex++;
 
 
-int top = -1;
+if (readIndex >= numReadings) {
 
-int stack[20];
-
-
-
-
-int Current_Dist = 0;
-int Current_Dist1 = 0;
-int Current_Dist2 = 0;
-int Found_Flag = 0;
-int mode=0;
-int Motor_Count = 0;
-int Steps= 0;
+readIndex = 0;
+}
 
 
-int numReadings = 10;
-int thisReading;
-int readings[10 ];
-int readIndex = 0;
-int total = 0;
-int average = 0;
-int x = 0;
+average = total / numReadings;
+average = -0.0000009*pow(average, 3)+0.0015*pow(average, 2)-0.9208*average+227.33;
+
+
+HMI_SetNumber(average);
+HMI_Render();
+return average;
+}
 
 
 
-void InitADC();
-int FunctReadADC(int channel);
-int ADCAverage ();
-bool isempty();
-bool isfull();
-int peek();
-int pop();
-int push(int data);
-void giveID();
-void Init_Pos_Array();
-int Travel(int Dist, int TEST_ADC);
-Turn(int Angle, int Speed, int Dir);
-void movement1();
-void movement2();
-void movement4();
-void Drive(int SpeedL, int SpeedR);
-void eusartSend (UINT8 sendChar);
-UINT8 eusartRec();
-int UpdateDistance();
-void Robot_Stop();
-void untilVirtual();
-int Get_VirtualWall_State();
-int SteppingCCW();
-int SteppingCW();
-void Sensor_Observe();
-void Move_ADC_To (int Angle);
-void Find_Flag () ;
 
-# 76
-struct square {
-short pos;
-short id_number;
+void eusartSend (UINT8 sendChar){
+while(!TXSTA1bits.TRMT){};
+TXREG1 = sendChar;
+}
+UINT8 eusartRec(){
+while(!PIR1bits.RC1IF){}
+return (int) RCREG1;
+}
+bool isempty() {
+
+if(top == -1)
+return 1;
+else
+return 0;
+}
+
+bool isfull() {
+
+if(top == 20)
+return 1;
+else
+return 0;
+}
+
+int peek() {
+return stack[top];
+}
+
+int pop() {
+int data;
+
+if(!isempty()) {
+data = stack[top];
+top = top - 1;
+return data;
+} else {
+printf("Could not retrieve data, Stack is empty.\n");
+
+}
+}
+
+int push(int data) {
+
+if(!isfull()) {
+top = top + 1;
+stack[top] = data;
+} else {
+printf("Could not insert data, Stack is full.\n");
+}
+}
+
+void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
+
+x_walls[0][0] = 1;
+x_walls[0][1] = 0;
+x_walls[0][2] = 1;
+x_walls[0][3] = 1;
+x_walls[0][4] = 0;
+x_walls[0][5] = 1;
+
+x_walls[1][0] = 1;
+x_walls[1][1] = 0;
+x_walls[1][2] = 0;
+x_walls[1][3] = 0;
+x_walls[1][4] = 1;
+x_walls[1][5] = 1;
+
+x_walls[2][0] = 1;
+x_walls[2][1] = 0;
+x_walls[2][2] = 1;
+x_walls[2][3] = 1;
+x_walls[2][4] = 0;
+x_walls[2][5] = 1;
+
+x_walls[3][0] = 1;
+x_walls[3][1] = 1;
+x_walls[3][2] = 0;
+x_walls[3][3] = 0;
+x_walls[3][4] = 0;
+x_walls[3][5] = 1;
+
+y_walls[0][0] = 1;
+y_walls[1][0] = 0;
+y_walls[2][0] = 1;
+y_walls[3][0] = 1;
+y_walls[4][0] = 0;
+y_walls[5][0] = 1;
+
+y_walls[0][1] = 1;
+y_walls[1][1] = 0;
+y_walls[2][1] = 0;
+y_walls[3][1] = 0;
+y_walls[4][1] = 1;
+y_walls[5][1] = 1;
+
+y_walls[0][2] = 1;
+y_walls[1][2] = 0;
+y_walls[2][2] = 1;
+y_walls[3][2] = 1;
+y_walls[4][2] = 0;
+y_walls[5][2] = 1;
+
+y_walls[0][3] = 1;
+y_walls[1][3] = 1;
+y_walls[2][3] = 0;
+y_walls[3][3] = 0;
+y_walls[4][3] = 0;
+y_walls[5][3] = 1;
+
+}
+
+void giveID (){
+struct square grid;
+int id_count = 0;
+int y;
+for(y = 0; y < 4; y++)
+{
+for(int x = 0; x < 5; x++)
+{
+
+grid.id_number=id_count;
+
+
+printf("%d \t", grid.id_number);
+
+id_count++;
+Console_Render();
+
+}
+printf("\n");
+
+}
+}
+void Init_Pos_Array(){
+short position[4][5] =
+{{0,0,0,0,0},
+{0,0,0,0,0},
+{0,0,0,0,0},
+{0,0,0,0,0}
 };
 
-# 33 "main.c"
-int T_VAR = 0;
-int Square_Dist = 0;
-int mod = 0;
-UINT8 BumpSensor = 0;
-UINT8 Cliff_FRight = 0;
-UINT8 Cliff_FLeft = 0;
-UINT8 Cliff_Right = 0;
-UINT8 Cliff_Left = 0;
-
-
-int BumpState = 0;
-
-
-int mode;
-
-int Low_Sensor=10000;
-int ADC_Reading=0;
-int Close_Pos = 0;
-int count=0;
-int CCW_Count;
-int CW_Count;
-int Sensor_Observe_Fin=0;
-
-
-
-
-int countOn = 124;
-int countOff = 248;
-int timercount = 0;
-
-
-int test;
-
-
-
-int Init_Timer0()
+for (int i = 0; i < 4; i++){
+for (int j = 0; j < 5; j++)
 {
-T0CONbits.TMR0ON = 1;
-T0CONbits.T08BIT = 1;
-T0CONbits.T0CS=0;
-T0CONbits.T0SE=0;
-T0CONbits.PSA=0;
-T0CONbits.T0PS2=1;
-T0CONbits.T0PS1=1;
-T0CONbits.T0PS0=1;
-
-INTCONbits.TMR0IE = 1;
-INTCONbits.PEIE = 1;
-INTCONbits.GIE = 1;
+printf("%c",(char)35);
+printf("%d\t", position[i][j]);
+Console_Render();
+}
+printf("\n");
+}
 
 }
 
-# 91
-void InitSerialCommunication(){
-
-TRISCbits.TRISC6 = 0;
-TRISCbits.TRISC7 = 1;
-
-TXSTA1 = 0b00100100;
-RCSTA1 = 0b10010000;
-
-BAUDCON1bits.DTRXP = 0;
-BAUDCON1bits.SCKP = 0;
-BAUDCON1bits.WUE = 0;
-BAUDCON1bits.ABDEN = 0;
-
-
-TXSTA1bits.BRGH = 1;
-BAUDCON1bits.BRG16 = 0;
-SPBRG1 = 51;
+void Drive(int SpeedL, int SpeedR) {
+if (SpeedL < 0){
+SpeedL = -1*SpeedL;
+SpeedL = ~SpeedL;
+}
+if (SpeedR < 0){
+SpeedR = -1*SpeedR;
+SpeedR = ~SpeedR;
 }
 
+eusartSend(145);
+eusartSend(((unsigned char)(((SpeedL)>>8)&0xFF)));
+eusartSend(((unsigned char)((SpeedL)&0xFF)));
+eusartSend(((unsigned char)(((SpeedR)>>8)&0xFF)));
+eusartSend(((unsigned char)((SpeedR)&0xFF)));
+}
+int UpdateDistance() {
+eusartSend(142);
+eusartSend(19);
+Current_Dist1 = eusartRec();
+Current_Dist2 = eusartRec();
 
+Current_Dist = Current_Dist2;
+return Current_Dist;
+}
+void Robot_Stop(){
+eusartSend(137);
+eusartSend(0);
+eusartSend(0);
+eusartSend(0);
+eusartSend(0);
+}
 
+int Get_VirtualWall_State(){
+eusartSend(142);
+eusartSend(13);
+int Vitual_Wall_Sensor = (eusartRec());
+return Vitual_Wall_Sensor;
+}
 
-int Get_Sensor_State(){
+Turn(int Angle, int Speed, int Dir) {
+int Rad = 1;
+if (Dir == 0){
+Rad = 65535;
+Angle = ~Angle;
+}
+
+eusartSend(137);
+eusartSend(((unsigned char)(((Speed)>>8)&0xFF)));
+eusartSend(((unsigned char)((Speed)&0xFF)));
+eusartSend(((unsigned char)(((Rad)>>8)&0xFF)));
+eusartSend(((unsigned char)((Rad)&0xFF)));
+int C_Angle = 0;
+eusartSend(157);
+eusartSend(((unsigned char)(((Angle)>>8)&0xFF)));
+eusartSend(((unsigned char)((Angle)&0xFF)));
+
+Robot_Stop();
 
 eusartSend(142);
 eusartSend(7);
-while(!PIR1bits.RC1IF);
-BumpSensor = RCREG1;
-
-eusartSend(142);
-eusartSend(9);
-while(!PIR1bits.RC1IF);
-Cliff_Left = RCREG1;
-
-eusartSend(142);
-eusartSend(10);
-while(!PIR1bits.RC1IF);
-Cliff_FLeft = RCREG1;
-
-eusartSend(142);
-eusartSend(11);
-while(!PIR1bits.RC1IF);
-Cliff_FRight = RCREG1;
-
-eusartSend(142);
-eusartSend(12);
-while(!PIR1bits.RC1IF);
-Cliff_Right = RCREG1;
-
-return 1;
+eusartRec();
 }
-
-
-
-void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL){
-
-eusartSend(145);
-eusartSend((((RSpeedH)>>8) & 255));
-eusartSend(((RSpeedL) & 255));
-eusartSend((((LSpeedH)>>8) & 255));
-eusartSend(((LSpeedL) & 255));
-}
-
-void Robot_Init(){
-eusartSend(128);
-eusartSend(132);
-Robot_Stop();
-}
-
-
-void LEDOn (){
-eusartSend(139);
-eusartSend(10);
-eusartSend(255);
-eusartSend(255);
-}
-
-void LEDOff (){
-eusartSend(139);
-eusartSend(10);
-eusartSend(0);
-eusartSend(0);
-}
-
-void LEDToggle(){
-
-if (INTCONbits.TMR0IF == 1){
-INTCONbits.TMR0IF=0;
-timercount++;
-if (timercount==countOn){
-LEDOn();
-}
-if(timercount==countOff){
-LEDOff();
-timercount=0;
-}
-}
-}
-
-# 194
-int STP1 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-RA2 = 1;
-}
-
-int STP2 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-RA3 = 1;
-}
-int STP3 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-RD5 = 1;
-}
-int STP4 (){
-TRISA2=0;
-TRISA3=0;
-TRISD5=0;
-TRISD7=0;
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-RD7 = 1;
-}
-
-void Sensor_Observe() {
-int High_Sensor = 0;
-int Low_Sensor = 10000;
-
+int Travel(int Dist, int Test_ADC){
+int Dist_Travelled = 0;
+while (Dist_Travelled<1000){
 printf("%c", (char)35);
-
-printf("Sensor Moving!   \n");
-
+Dist_Travelled += UpdateDistance();
+printf("%d", Dist_Travelled);
 Console_Render();
-
-while (Motor_Count <= 512) {
-printf("%c",(char)35);
-Motor_Count++;
-ADCAverage();
-printf("\nADC: %d \n\n", average);
+if (Get_VirtualWall_State()>0){
+Robot_Stop();
+printf("WALL FOUND");
 Console_Render();
-if (Low_Sensor > average) {
-Low_Sensor = average;
-Close_Pos = Motor_Count;
+delay_ms(100);
+return Dist_Travelled;
 }
-else if (average > High_Sensor){
-High_Sensor = average;
-Found_Flag = Motor_Count;
-printf ("\n Found Flag: %d", Found_Flag);
-Console_Render();
+if(Test_ADC && ADCAverage() < 50){
+break;
 }
-SteppingCW();
 }
-RD5 = 0;
-RD7 = 0;
-RA2 = 0;
-RA3 = 0;
-Sensor_Observe_Fin = 1;
+Robot_Stop();
+return 1000;
+}
 
 
-CCW_Count = 512 - Close_Pos;
-Found_Flag = 512 - Found_Flag;
+void movement1(){
+Drive(200,200);
+Travel(1000, 0);
 return;
 }
+void movement2(){
+Turn(83, 100, 0);
+Drive(200,200);
+Travel(1000, 0);
+}
+void untilVirtual (){
+int Rev_Dist = 0;
+Turn(83, 100, 0);
+Drive(200,200);
+Rev_Dist = Travel(1000,0);
+Turn(166,100,0);
+Drive(200, 200);
+Travel(Rev_Dist, 1);
+
+}
+
+void movement4(){
+Turn(83, 100, 0);
+Drive(200,200);
+Travel(1000, 0);
+}
+
+int SteppingCCW(){
+STP4();
+delay_ms(2);
+STP3();
+delay_ms(2);
+STP2();
+delay_ms(2);
+STP1();
+delay_ms(2);
 
 
+}
 
-void Closest_Object(){
+int SteppingCW(){
+STP1();
+delay_ms(2);
+STP2();
+delay_ms(2);
+STP3();
+delay_ms(2);
+STP4();
+delay_ms(2);
+
+}
+
+# 352
+void Find_Flag () {
+
+Sensor_Observe();
+while (!Found_Flag <= 0) {
+Found_Flag--;
 printf("%c", (char)35);
-printf("Stepped 360 degrees");
-printf("\nThe Closes object (mm): %d", Low_Sensor);
-printf("\nGoing back to: %d", Close_Pos);
+printf("\nSteps Travelled: %d \n\n", Found_Flag);
+
 Console_Render();
-while (!CCW_Count<=0){
-CCW_Count--;
-printf("%c", (char)35);
-printf("\nSteps Travelled: %d",CCW_Count);
-Console_Render();
-ADCAverage ();
+ADCAverage();
 SteppingCCW();
 }
-RD5=0;
-RD7=0;
-RA2=0;
-RA3=0;
-return;
 }
 
 
-void Reset_variables(){
+void Move_ADC_To (int Angle) {
 
-Square_Dist=0;
-Sensor_Observe_Fin=0;
-Motor_Count = 0;
-Low_Sensor=10000;
-ADC_Reading=0;
-Close_Pos = 0;
-count=0;
-T_VAR = 0;
-
-mod = 0;
-
-# 322
-return;
-}
-
-
-
-void main(){
-struct square square[4][5];
-
-
-
-MXK_Init();
-Init_Timer0();
-InitSerialCommunication();
-Robot_Init();
-ISR_Enable();
-FunctInitButton();
-InitADC();
-LED_Init(eLED2);
-
-# 345
-if (MXK_BlockSwitchTo(eMXK_HMI)) {
-HMI_Init();
-LCD_Init();
-Console_Init();
-if (MXK_Release())
-MXK_Dequeue();
-}
-
-
-for(;;){
-
-ADCAverage();
-
-HMI_SetNumber(average);
-
-HMI_Render();
-
-HMI_Poll();
-
-
-
-bool down = HMIBoard.mDown.mGetState();
-bool right = HMIBoard.mRight.mGetState();
-bool up = HMIBoard.mUp.mGetState();
-bool left = HMIBoard.mLeft.mGetState();
-if (down) {mode=3;}
-if (right) {mode =1;}
-if (up) {mode=2;}
-if (left) {mode=4;}
-
-
-
-
-if (MXK_BlockSwitchTo(eMXK_HMI)) {
-
-if (mode==0){
-
-
+Steps = (Angle * 1.42222)+200;
 printf("%c", (char)35);
-printf("Robot Ready! \n\n");
-
+printf("\nSteps %d", Steps);
 Console_Render();
-
+while (Steps >= 0){
+Steps --;
+SteppingCW();
 }
-if (mode == 3){
-
-Init_Pos_Array();
-Console_Render();
-
-# 405
-Console_Render();
-mode=0;
-
-
-Console_Render();
-
+return;
 }
 
-Console_Render();
-if (MXK_Release())
-MXK_Dequeue();
-}
-}
-}
