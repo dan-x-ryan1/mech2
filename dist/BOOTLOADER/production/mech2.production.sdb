@@ -576,12 +576,12 @@ eADC_Ch1 1
 eADC_Ch2 2
 eADC_Ch3 3
 ]
-"447 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"449 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [e E7217 . `uc
 eLED1 0
 eLED2 1
 ]
-"449
+"451
 [e E6940 . `uc
 eMXK_Motor 8
 eMXK_IMU 4
@@ -1209,45 +1209,45 @@ eMXK_None 0
 [v _Get_Sensor_State Get_Sensor_State `(v  1 e 1 0 ]
 "176
 [v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
-"189
+"188
 [v _Drive Drive `(v  1 e 1 0 ]
-"198
+"201
 [v _Turn Turn `(i  1 e 2 0 ]
-"217
+"226
 [v _BangBang BangBang `(v  1 e 1 0 ]
-"228
-[v _Robot_Init Robot_Init `(v  1 e 1 0 ]
 "235
-[v _LEDOn LEDOn `(v  1 e 1 0 ]
+[v _Robot_Init Robot_Init `(v  1 e 1 0 ]
 "242
-[v _LEDOff LEDOff `(v  1 e 1 0 ]
+[v _LEDOn LEDOn `(v  1 e 1 0 ]
 "249
+[v _LEDOff LEDOff `(v  1 e 1 0 ]
+"256
 [v _LEDToggle LEDToggle `(v  1 e 1 0 ]
-"264
+"271
 [v _Coil_Setup Coil_Setup `(v  1 e 1 0 ]
-"275
+"282
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
-"286
+"293
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
-"298
+"305
 [v _STP1 STP1 `(i  1 e 2 0 ]
-"303
+"310
 [v _STP2 STP2 `(i  1 e 2 0 ]
-"308
+"315
 [v _STP3 STP3 `(i  1 e 2 0 ]
-"313
+"320
 [v _STP4 STP4 `(i  1 e 2 0 ]
-"318
+"325
 [v _Sensor_Observe2 Sensor_Observe2 `(v  1 e 1 0 ]
-"351
+"358
 [v _Closest_Object2 Closest_Object2 `(v  1 e 1 0 ]
-"369
+"376
 [v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
-"399
+"406
 [v _Closest_Object Closest_Object `(v  1 e 1 0 ]
-"421
+"426
 [v _Reset_variables Reset_variables `(v  1 e 1 0 ]
-"438
+"440
 [v _main main `(v  1 e 1 0 ]
 "2847 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
 [v _SSP2CON2 SSP2CON2 `VEuc  1 e 1 @3947 ]
@@ -2179,7 +2179,7 @@ eMXK_None 0
 "3 C:\Users\Xplos\Documents\GitHub\mech2\Library/Types.c
 [v _MASKS MASKS `C[9]uc  1 s 9 MASKS ]
 "30 C:\Users\Xplos\Documents\GitHub\mech2\main.c
-[v _Current_Dist Current_Dist `i  1 e 2 0 ]
+[v _Current_Dist Current_Dist `uc  1 e 1 0 ]
 "31
 [v _Current_Dist1 Current_Dist1 `uc  1 e 1 0 ]
 "32
@@ -2232,60 +2232,63 @@ eMXK_None 0
 [v _timercount timercount `i  1 e 2 0 ]
 "70
 [v _test test `i  1 e 2 0 ]
-"438
+"440
 [v _main main `(v  1 e 1 0 ]
 {
-"571
+"573
 [v main@Target_Distance Target_Distance `i  1 a 2 132 ]
-"468
+"470
 [v main@up up `uc  1 a 1 131 ]
-"469
+"471
 [v main@left left `uc  1 a 1 130 ]
-"467
+"469
 [v main@right right `uc  1 a 1 129 ]
-"466
+"468
 [v main@down down `uc  1 a 1 128 ]
-"638
+"640
 } 0
-"198
+"201
 [v _Turn Turn `(i  1 e 2 0 ]
 {
-"204
-[v Turn@C_Angle C_Angle `i  1 a 2 5 ]
-"198
+"202
+[v Turn@Rad Rad `i  1 a 2 9 ]
+"213
+[v Turn@C_Angle C_Angle `i  1 a 2 7 ]
+"201
 [v Turn@Angle Angle `i  1 p 2 1 ]
 [v Turn@Speed Speed `i  1 p 2 3 ]
-"215
+[v Turn@Dir Dir `i  1 p 2 5 ]
+"224
 } 0
-"318
+"325
 [v _Sensor_Observe2 Sensor_Observe2 `(v  1 e 1 0 ]
 {
-"349
+"356
 } 0
-"369
+"376
 [v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
 {
-"397
+"404
 } 0
-"228
+"235
 [v _Robot_Init Robot_Init `(v  1 e 1 0 ]
 {
-"233
+"240
 } 0
 "176
 [v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
 {
-"187
+"186
 } 0
 "157
 [v _Robot_Stop Robot_Stop `(v  1 e 1 0 ]
 {
 "163
 } 0
-"421
+"426
 [v _Reset_variables Reset_variables `(v  1 e 1 0 ]
 {
-"433
+"437
 } 0
 "33 C:\Users\Xplos\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_Init MXK_Init `(v  1 e 1 0 ]
@@ -2946,20 +2949,20 @@ eMXK_None 0
 [v delay_us@us us `us  1 p 2 0 ]
 "266
 } 0
-"249 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"256 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [v _LEDToggle LEDToggle `(v  1 e 1 0 ]
 {
-"262
-} 0
-"235
-[v _LEDOn LEDOn `(v  1 e 1 0 ]
-{
-"240
+"269
 } 0
 "242
-[v _LEDOff LEDOff `(v  1 e 1 0 ]
+[v _LEDOn LEDOn `(v  1 e 1 0 ]
 {
 "247
+} 0
+"249
+[v _LEDOff LEDOff `(v  1 e 1 0 ]
+{
+"254
 } 0
 "172 C:\Users\Xplos\Documents\GitHub\mech2\Library/LCD.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
@@ -5109,14 +5112,14 @@ eMXK_None 0
 [v Byte_SetZone@pValue pValue `uc  1 p 1 5 ]
 "63
 } 0
-"189 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"188 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [v _Drive Drive `(v  1 e 1 0 ]
 {
-"190
+"193
 [v Drive@Rad Rad `i  1 a 2 3 ]
-"189
+"188
 [v Drive@Speed Speed `i  1 p 2 1 ]
-"196
+"199
 } 0
 "157 C:\Users\Xplos\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Init Console_Init `(v  1 e 1 0 ]
@@ -5126,20 +5129,20 @@ eMXK_None 0
 [v Console_Init@x x `uc  1 a 1 2 ]
 "173
 } 0
-"351 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"358 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [v _Closest_Object2 Closest_Object2 `(v  1 e 1 0 ]
 {
-"367
+"374
 } 0
-"286
+"293
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
 {
-"296
+"303
 } 0
-"399
+"406
 [v _Closest_Object Closest_Object `(v  1 e 1 0 ]
 {
-"417
+"424
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -5219,10 +5222,10 @@ eMXK_None 0
 {
 "315
 } 0
-"275 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"282 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
 {
-"284
+"291
 } 0
 "240 C:\Users\Xplos\Documents\GitHub\mech2\Library/Types.c
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
@@ -5233,30 +5236,30 @@ eMXK_None 0
 [v delay_ms@ms ms `us  1 p 2 0 ]
 "254
 } 0
-"313 C:\Users\Xplos\Documents\GitHub\mech2\main.c
+"320 C:\Users\Xplos\Documents\GitHub\mech2\main.c
 [v _STP4 STP4 `(i  1 e 2 0 ]
 {
-"316
+"323
 } 0
-"308
+"315
 [v _STP3 STP3 `(i  1 e 2 0 ]
 {
-"311
+"318
 } 0
-"303
+"310
 [v _STP2 STP2 `(i  1 e 2 0 ]
 {
-"306
+"313
 } 0
-"298
+"305
 [v _STP1 STP1 `(i  1 e 2 0 ]
 {
-"301
+"308
 } 0
-"264
+"271
 [v _Coil_Setup Coil_Setup `(v  1 e 1 0 ]
 {
-"273
+"280
 } 0
 "377 C:\Users\Xplos\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Render Console_Render `(v  1 e 1 0 ]
@@ -5582,17 +5585,17 @@ eMXK_None 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S14319 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S14321 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S14324 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S14327 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14319 1 fAsBytes 4 0 `S14324 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S14327  1 a 4 33 ]
+[s S14326 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S14329 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14321 1 fAsBytes 4 0 `S14326 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S14329  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S14395 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S14397 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S14398 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14395 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S14398  1 a 2 37 ]
+[u S14400 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14397 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S14400  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -5934,14 +5937,14 @@ eMXK_None 0
 [v FunctReadADC@channel channel `i  1 p 2 0 ]
 "104
 } 0
-"217
+"226
 [v _BangBang BangBang `(v  1 e 1 0 ]
 {
 [v BangBang@RSpeedH RSpeedH `i  1 p 2 1 ]
 [v BangBang@RSpeedL RSpeedL `i  1 p 2 3 ]
 [v BangBang@LSpeedH LSpeedH `i  1 p 2 5 ]
 [v BangBang@LSpeedL LSpeedL `i  1 p 2 7 ]
-"224
+"233
 } 0
 "147
 [v _eusartSend eusartSend `(v  1 e 1 0 ]

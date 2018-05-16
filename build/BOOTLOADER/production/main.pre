@@ -8763,7 +8763,7 @@ void HMI_SetSegments (str pString);
 void HMI_Poll ();
 
 # 30 "main.c"
-int Current_Dist = 0;
+UINT8 Current_Dist = 0;
 UINT8 Current_Dist1 = 0;
 UINT8 Current_Dist2 = 0;
 int mode = 0;
@@ -8917,12 +8917,15 @@ Current_Dist2 = eusartRec();
 
 Current_Dist = Current_Dist2;
 
-
 return Current_Dist;
 
 }
 
 void Drive(int Speed) {
+if (Speed < 0){
+Speed = -1*Speed;
+Speed = ~Speed;
+}
 int Rad = 32768;
 eusartSend(137);
 eusartSend((((Speed)>>8) & 255));
@@ -8931,12 +8934,18 @@ eusartSend((((Rad)>>8) & 255));
 eusartSend(((Rad) & 255));
 }
 
-int Turn(int Angle, int Speed) {
+int Turn(int Angle, int Speed, int Dir) {
+int Rad = 1;
+if (Dir == 0){
+Rad = 65535;
+Angle = ~Angle;
+}
+
 eusartSend(137);
 eusartSend((((Speed)>>8) & 255));
 eusartSend(((Speed) & 255));
-eusartSend((((0)>>8) & 255));
-eusartSend(((1) & 255));
+eusartSend((((Rad)>>8) & 255));
+eusartSend(((Rad) & 255));
 int C_Angle = 0;
 eusartSend(157);
 eusartSend((((Angle)>>8) & 255));
@@ -8958,8 +8967,6 @@ eusartSend(((RSpeedL) & 255));
 eusartSend((((LSpeedH)>>8) & 255));
 eusartSend(((LSpeedL) & 255));
 }
-
-
 
 void Robot_Init() {
 eusartSend(128);
@@ -9152,10 +9159,7 @@ RA2 = 0;
 RA3 = 0;
 }
 
-
-
 void Reset_variables() {
-
 Square_Dist = 0;
 Sensor_Observe_Fin = 0;
 Motor_Count = 0;
@@ -9167,8 +9171,6 @@ T_VAR = 0;
 mod = 0;
 return;
 }
-
-
 
 
 void main() {
@@ -9269,7 +9271,7 @@ delay_ms(2000);
 mode = 0;
 }
 else if (mode == 3) {
-Drive(250);
+Drive(100);
 LED_Set(eLED2, 1);
 T_VAR += UpdateDistance();
 
@@ -9288,7 +9290,7 @@ printf("                 \n");
 Console_Render();
 
 if (T_VAR >= 1000) {
-Turn(82, 100);
+Turn(82, 100, 0);
 T_VAR = 0;
 mod += 1000;
 }

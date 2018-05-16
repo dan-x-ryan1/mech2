@@ -139,15 +139,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RA2 `Vb ~T64 @X0 0 e@31746 ]
 "17390
 [v _RA3 `Vb ~T64 @X0 0 e@31747 ]
-"276 main.c
+"283 main.c
 [v _STP4 `(i ~T0 @X0 0 ef ]
 "606 Library\Types.h
 [v _delay_ms `(v ~T0 @X0 0 ef1`us ]
-"278 main.c
+"285 main.c
 [v _STP3 `(i ~T0 @X0 0 ef ]
-"280
+"287
 [v _STP2 `(i ~T0 @X0 0 ef ]
-"282
+"289
 [v _STP1 `(i ~T0 @X0 0 ef ]
 "195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
@@ -160,12 +160,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ISR_Enable `(v ~T0 @X0 0 ef ]
 "18 Functions.h
 [v _FunctInitButton `(v ~T0 @X0 0 ef ]
-"447 main.c
+"449 main.c
 [c E7217 0 1 .. ]
 [n E7217 . eLED1 eLED2  ]
 "28 Library\LED.h
 [v _LED_Init `(v ~T0 @X0 0 ef1`E7217 ]
-"449 main.c
+"451 main.c
 [c E6940 8 4 1 2 0 .. ]
 [n E6940 . eMXK_Motor eMXK_IMU eMXK_HMI eMXK_FPGA eMXK_None  ]
 "50 Library\MXK.h
@@ -6761,11 +6761,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;HMI.h: 104: void HMI_SetSegments (str pString);
 [; ;HMI.h: 106: void HMI_Poll ();
 "30 main.c
-[v _Current_Dist `i ~T0 @X0 1 e ]
+[v _Current_Dist `uc ~T0 @X0 1 e ]
 [i _Current_Dist
--> 0 `i
+-> -> 0 `i `uc
 ]
-[; ;main.c: 30: int Current_Dist = 0;
+[; ;main.c: 30: UINT8 Current_Dist = 0;
 "31
 [v _Current_Dist1 `uc ~T0 @X0 1 e ]
 [i _Current_Dist1
@@ -7293,175 +7293,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _Current_Dist2 ( _eusartRec ..  ]
 [; ;main.c: 182: Current_Dist = Current_Dist2;
 "182
-[e = _Current_Dist -> _Current_Dist2 `i ]
-[; ;main.c: 185: return Current_Dist;
-"185
-[e ) _Current_Dist ]
+[e = _Current_Dist _Current_Dist2 ]
+[; ;main.c: 184: return Current_Dist;
+"184
+[e ) -> _Current_Dist `i ]
 [e $UE 677  ]
-[; ;main.c: 187: }
-"187
+[; ;main.c: 186: }
+"186
 [e :UE 677 ]
 }
-"189
+"188
 [v _Drive `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 189: void Drive(int Speed) {
+[; ;main.c: 188: void Drive(int Speed) {
 [e :U _Drive ]
 [v _Speed `i ~T0 @X0 1 r1 ]
 [f ]
+[; ;main.c: 189: if (Speed < 0){
+"189
+[e $ ! < _Speed -> 0 `i 679  ]
+{
+[; ;main.c: 190: Speed = -1*Speed;
 "190
-[v _Rad `i ~T0 @X0 1 a ]
-[; ;main.c: 190: int Rad = 32768;
-[e = _Rad -> -> 32768 `l `i ]
-[; ;main.c: 191: eusartSend(137);
+[e = _Speed * -U -> 1 `i _Speed ]
+[; ;main.c: 191: Speed = ~Speed;
 "191
-[e ( _eusartSend (1 -> -> 137 `i `uc ]
-[; ;main.c: 192: eusartSend((((Speed)>>8) & 255));
+[e = _Speed ~ _Speed ]
 "192
-[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 193: eusartSend(((Speed) & 255));
+}
+[e :U 679 ]
 "193
-[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
-[; ;main.c: 194: eusartSend((((Rad)>>8) & 255));
+[v _Rad `i ~T0 @X0 1 a ]
+[; ;main.c: 192: }
+[; ;main.c: 193: int Rad = 32768;
+[e = _Rad -> -> 32768 `l `i ]
+[; ;main.c: 194: eusartSend(137);
 "194
-[e ( _eusartSend (1 -> & >> _Rad -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 195: eusartSend(((Rad) & 255));
+[e ( _eusartSend (1 -> -> 137 `i `uc ]
+[; ;main.c: 195: eusartSend((((Speed)>>8) & 255));
 "195
-[e ( _eusartSend (1 -> & _Rad -> 255 `i `uc ]
-[; ;main.c: 196: }
+[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 196: eusartSend(((Speed) & 255));
 "196
+[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
+[; ;main.c: 197: eusartSend((((Rad)>>8) & 255));
+"197
+[e ( _eusartSend (1 -> & >> _Rad -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 198: eusartSend(((Rad) & 255));
+"198
+[e ( _eusartSend (1 -> & _Rad -> 255 `i `uc ]
+[; ;main.c: 199: }
+"199
 [e :UE 678 ]
 }
-"198
-[v _Turn `(i ~T0 @X0 1 ef2`i`i ]
+"201
+[v _Turn `(i ~T0 @X0 1 ef3`i`i`i ]
 {
-[; ;main.c: 198: int Turn(int Angle, int Speed) {
+[; ;main.c: 201: int Turn(int Angle, int Speed, int Dir) {
 [e :U _Turn ]
 [v _Angle `i ~T0 @X0 1 r1 ]
 [v _Speed `i ~T0 @X0 1 r2 ]
+[v _Dir `i ~T0 @X0 1 r3 ]
 [f ]
-[; ;main.c: 199: eusartSend(137);
-"199
-[e ( _eusartSend (1 -> -> 137 `i `uc ]
-[; ;main.c: 200: eusartSend((((Speed)>>8) & 255));
-"200
-[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 201: eusartSend(((Speed) & 255));
-"201
-[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
-[; ;main.c: 202: eusartSend((((0)>>8) & 255));
 "202
-[e ( _eusartSend (1 -> & >> -> 0 `i -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 203: eusartSend(((1) & 255));
+[v _Rad `i ~T0 @X0 1 a ]
+[; ;main.c: 202: int Rad = 1;
+[e = _Rad -> 1 `i ]
+[; ;main.c: 203: if (Dir == 0){
 "203
-[e ( _eusartSend (1 -> & -> 1 `i -> 255 `i `uc ]
+[e $ ! == _Dir -> 0 `i 681  ]
+{
+[; ;main.c: 204: Rad = 65535;
 "204
-[v _C_Angle `i ~T0 @X0 1 a ]
-[; ;main.c: 204: int C_Angle = 0;
-[e = _C_Angle -> 0 `i ]
-[; ;main.c: 205: eusartSend(157);
+[e = _Rad -> -> 65535 `l `i ]
+[; ;main.c: 205: Angle = ~Angle;
 "205
-[e ( _eusartSend (1 -> -> 157 `i `uc ]
-[; ;main.c: 206: eusartSend((((Angle)>>8) & 255));
+[e = _Angle ~ _Angle ]
 "206
-[e ( _eusartSend (1 -> & >> _Angle -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 207: eusartSend(((Angle) & 255));
-"207
-[e ( _eusartSend (1 -> & _Angle -> 255 `i `uc ]
-[; ;main.c: 209: Robot_Stop();
-"209
-[e ( _Robot_Stop ..  ]
-[; ;main.c: 211: eusartSend(142);
-"211
-[e ( _eusartSend (1 -> -> 142 `i `uc ]
-[; ;main.c: 212: eusartSend(7);
-"212
-[e ( _eusartSend (1 -> -> 7 `i `uc ]
-[; ;main.c: 213: eusartRec();
-"213
-[e ( _eusartRec ..  ]
-[; ;main.c: 215: }
-"215
-[e :UE 679 ]
 }
-"217
+[e :U 681 ]
+[; ;main.c: 206: }
+[; ;main.c: 208: eusartSend(137);
+"208
+[e ( _eusartSend (1 -> -> 137 `i `uc ]
+[; ;main.c: 209: eusartSend((((Speed)>>8) & 255));
+"209
+[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 210: eusartSend(((Speed) & 255));
+"210
+[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
+[; ;main.c: 211: eusartSend((((Rad)>>8) & 255));
+"211
+[e ( _eusartSend (1 -> & >> _Rad -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 212: eusartSend(((Rad) & 255));
+"212
+[e ( _eusartSend (1 -> & _Rad -> 255 `i `uc ]
+"213
+[v _C_Angle `i ~T0 @X0 1 a ]
+[; ;main.c: 213: int C_Angle = 0;
+[e = _C_Angle -> 0 `i ]
+[; ;main.c: 214: eusartSend(157);
+"214
+[e ( _eusartSend (1 -> -> 157 `i `uc ]
+[; ;main.c: 215: eusartSend((((Angle)>>8) & 255));
+"215
+[e ( _eusartSend (1 -> & >> _Angle -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 216: eusartSend(((Angle) & 255));
+"216
+[e ( _eusartSend (1 -> & _Angle -> 255 `i `uc ]
+[; ;main.c: 218: Robot_Stop();
+"218
+[e ( _Robot_Stop ..  ]
+[; ;main.c: 220: eusartSend(142);
+"220
+[e ( _eusartSend (1 -> -> 142 `i `uc ]
+[; ;main.c: 221: eusartSend(7);
+"221
+[e ( _eusartSend (1 -> -> 7 `i `uc ]
+[; ;main.c: 222: eusartRec();
+"222
+[e ( _eusartRec ..  ]
+[; ;main.c: 224: }
+"224
+[e :UE 680 ]
+}
+"226
 [v _BangBang `(v ~T0 @X0 1 ef4`i`i`i`i ]
 {
-[; ;main.c: 217: void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL) {
+[; ;main.c: 226: void BangBang(int RSpeedH, int RSpeedL, int LSpeedH, int LSpeedL) {
 [e :U _BangBang ]
 [v _RSpeedH `i ~T0 @X0 1 r1 ]
 [v _RSpeedL `i ~T0 @X0 1 r2 ]
 [v _LSpeedH `i ~T0 @X0 1 r3 ]
 [v _LSpeedL `i ~T0 @X0 1 r4 ]
 [f ]
-[; ;main.c: 219: eusartSend(145);
-"219
-[e ( _eusartSend (1 -> -> 145 `i `uc ]
-[; ;main.c: 220: eusartSend((((RSpeedH)>>8) & 255));
-"220
-[e ( _eusartSend (1 -> & >> _RSpeedH -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 221: eusartSend(((RSpeedL) & 255));
-"221
-[e ( _eusartSend (1 -> & _RSpeedL -> 255 `i `uc ]
-[; ;main.c: 222: eusartSend((((LSpeedH)>>8) & 255));
-"222
-[e ( _eusartSend (1 -> & >> _LSpeedH -> 8 `i -> 255 `i `uc ]
-[; ;main.c: 223: eusartSend(((LSpeedL) & 255));
-"223
-[e ( _eusartSend (1 -> & _LSpeedL -> 255 `i `uc ]
-[; ;main.c: 224: }
-"224
-[e :UE 680 ]
-}
+[; ;main.c: 228: eusartSend(145);
 "228
-[v _Robot_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 228: void Robot_Init() {
-[e :U _Robot_Init ]
-[f ]
-[; ;main.c: 229: eusartSend(128);
+[e ( _eusartSend (1 -> -> 145 `i `uc ]
+[; ;main.c: 229: eusartSend((((RSpeedH)>>8) & 255));
 "229
-[e ( _eusartSend (1 -> -> 128 `i `uc ]
-[; ;main.c: 230: eusartSend(132);
+[e ( _eusartSend (1 -> & >> _RSpeedH -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 230: eusartSend(((RSpeedL) & 255));
 "230
-[e ( _eusartSend (1 -> -> 132 `i `uc ]
-[; ;main.c: 231: Robot_Stop();
+[e ( _eusartSend (1 -> & _RSpeedL -> 255 `i `uc ]
+[; ;main.c: 231: eusartSend((((LSpeedH)>>8) & 255));
 "231
-[e ( _Robot_Stop ..  ]
-[; ;main.c: 232: UpdateDistance();
+[e ( _eusartSend (1 -> & >> _LSpeedH -> 8 `i -> 255 `i `uc ]
+[; ;main.c: 232: eusartSend(((LSpeedL) & 255));
 "232
-[e ( _UpdateDistance ..  ]
+[e ( _eusartSend (1 -> & _LSpeedL -> 255 `i `uc ]
 [; ;main.c: 233: }
 "233
-[e :UE 681 ]
-}
-"235
-[v _LEDOn `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 235: void LEDOn() {
-[e :U _LEDOn ]
-[f ]
-[; ;main.c: 236: eusartSend(139);
-"236
-[e ( _eusartSend (1 -> -> 139 `i `uc ]
-[; ;main.c: 237: eusartSend(10);
-"237
-[e ( _eusartSend (1 -> -> 10 `i `uc ]
-[; ;main.c: 238: eusartSend(255);
-"238
-[e ( _eusartSend (1 -> -> 255 `i `uc ]
-[; ;main.c: 239: eusartSend(255);
-"239
-[e ( _eusartSend (1 -> -> 255 `i `uc ]
-[; ;main.c: 240: }
-"240
 [e :UE 682 ]
 }
-"242
-[v _LEDOff `(v ~T0 @X0 1 ef ]
+"235
+[v _Robot_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 242: void LEDOff() {
-[e :U _LEDOff ]
+[; ;main.c: 235: void Robot_Init() {
+[e :U _Robot_Init ]
+[f ]
+[; ;main.c: 236: eusartSend(128);
+"236
+[e ( _eusartSend (1 -> -> 128 `i `uc ]
+[; ;main.c: 237: eusartSend(132);
+"237
+[e ( _eusartSend (1 -> -> 132 `i `uc ]
+[; ;main.c: 238: Robot_Stop();
+"238
+[e ( _Robot_Stop ..  ]
+[; ;main.c: 239: UpdateDistance();
+"239
+[e ( _UpdateDistance ..  ]
+[; ;main.c: 240: }
+"240
+[e :UE 683 ]
+}
+"242
+[v _LEDOn `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 242: void LEDOn() {
+[e :U _LEDOn ]
 [f ]
 [; ;main.c: 243: eusartSend(139);
 "243
@@ -7469,1190 +7480,1212 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 244: eusartSend(10);
 "244
 [e ( _eusartSend (1 -> -> 10 `i `uc ]
-[; ;main.c: 245: eusartSend(0);
+[; ;main.c: 245: eusartSend(255);
 "245
-[e ( _eusartSend (1 -> -> 0 `i `uc ]
-[; ;main.c: 246: eusartSend(0);
+[e ( _eusartSend (1 -> -> 255 `i `uc ]
+[; ;main.c: 246: eusartSend(255);
 "246
-[e ( _eusartSend (1 -> -> 0 `i `uc ]
+[e ( _eusartSend (1 -> -> 255 `i `uc ]
 [; ;main.c: 247: }
 "247
-[e :UE 683 ]
-}
-"249
-[v _LEDToggle `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 249: void LEDToggle() {
-[e :U _LEDToggle ]
-[f ]
-[; ;main.c: 251: if (INTCONbits.TMR0IF == 1) {
-"251
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 685  ]
-{
-[; ;main.c: 252: INTCONbits.TMR0IF = 0;
-"252
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 253: timercount++;
-"253
-[e ++ _timercount -> 1 `i ]
-[; ;main.c: 254: if (timercount == countOn) {
-"254
-[e $ ! == _timercount _countOn 686  ]
-{
-[; ;main.c: 255: LEDOn();
-"255
-[e ( _LEDOn ..  ]
-"256
-}
-[e :U 686 ]
-[; ;main.c: 256: }
-[; ;main.c: 257: if (timercount == countOff) {
-"257
-[e $ ! == _timercount _countOff 687  ]
-{
-[; ;main.c: 258: LEDOff();
-"258
-[e ( _LEDOff ..  ]
-[; ;main.c: 259: timercount = 0;
-"259
-[e = _timercount -> 0 `i ]
-"260
-}
-[e :U 687 ]
-"261
-}
-[e :U 685 ]
-[; ;main.c: 260: }
-[; ;main.c: 261: }
-[; ;main.c: 262: }
-"262
 [e :UE 684 ]
 }
+"249
+[v _LEDOff `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 249: void LEDOff() {
+[e :U _LEDOff ]
+[f ]
+[; ;main.c: 250: eusartSend(139);
+"250
+[e ( _eusartSend (1 -> -> 139 `i `uc ]
+[; ;main.c: 251: eusartSend(10);
+"251
+[e ( _eusartSend (1 -> -> 10 `i `uc ]
+[; ;main.c: 252: eusartSend(0);
+"252
+[e ( _eusartSend (1 -> -> 0 `i `uc ]
+[; ;main.c: 253: eusartSend(0);
+"253
+[e ( _eusartSend (1 -> -> 0 `i `uc ]
+[; ;main.c: 254: }
+"254
+[e :UE 685 ]
+}
+"256
+[v _LEDToggle `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 256: void LEDToggle() {
+[e :U _LEDToggle ]
+[f ]
+[; ;main.c: 258: if (INTCONbits.TMR0IF == 1) {
+"258
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 687  ]
+{
+[; ;main.c: 259: INTCONbits.TMR0IF = 0;
+"259
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 260: timercount++;
+"260
+[e ++ _timercount -> 1 `i ]
+[; ;main.c: 261: if (timercount == countOn) {
+"261
+[e $ ! == _timercount _countOn 688  ]
+{
+[; ;main.c: 262: LEDOn();
+"262
+[e ( _LEDOn ..  ]
+"263
+}
+[e :U 688 ]
+[; ;main.c: 263: }
+[; ;main.c: 264: if (timercount == countOff) {
 "264
+[e $ ! == _timercount _countOff 689  ]
+{
+[; ;main.c: 265: LEDOff();
+"265
+[e ( _LEDOff ..  ]
+[; ;main.c: 266: timercount = 0;
+"266
+[e = _timercount -> 0 `i ]
+"267
+}
+[e :U 689 ]
+"268
+}
+[e :U 687 ]
+[; ;main.c: 267: }
+[; ;main.c: 268: }
+[; ;main.c: 269: }
+"269
+[e :UE 686 ]
+}
+"271
 [v _Coil_Setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 264: void Coil_Setup() {
+[; ;main.c: 271: void Coil_Setup() {
 [e :U _Coil_Setup ]
 [f ]
-[; ;main.c: 265: TRISA2 = 0;
-"265
-[e = _TRISA2 -> -> 0 `i `b ]
-[; ;main.c: 266: TRISA3 = 0;
-"266
-[e = _TRISA3 -> -> 0 `i `b ]
-[; ;main.c: 267: TRISD5 = 0;
-"267
-[e = _TRISD5 -> -> 0 `i `b ]
-[; ;main.c: 268: TRISD7 = 0;
-"268
-[e = _TRISD7 -> -> 0 `i `b ]
-[; ;main.c: 269: RD5 = 0;
-"269
-[e = _RD5 -> -> 0 `i `b ]
-[; ;main.c: 270: RD7 = 0;
-"270
-[e = _RD7 -> -> 0 `i `b ]
-[; ;main.c: 271: RA2 = 0;
-"271
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 272: RA3 = 0;
+[; ;main.c: 272: TRISA2 = 0;
 "272
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 273: }
+[e = _TRISA2 -> -> 0 `i `b ]
+[; ;main.c: 273: TRISA3 = 0;
 "273
-[e :UE 688 ]
-}
+[e = _TRISA3 -> -> 0 `i `b ]
+[; ;main.c: 274: TRISD5 = 0;
+"274
+[e = _TRISD5 -> -> 0 `i `b ]
+[; ;main.c: 275: TRISD7 = 0;
 "275
+[e = _TRISD7 -> -> 0 `i `b ]
+[; ;main.c: 276: RD5 = 0;
+"276
+[e = _RD5 -> -> 0 `i `b ]
+[; ;main.c: 277: RD7 = 0;
+"277
+[e = _RD7 -> -> 0 `i `b ]
+[; ;main.c: 278: RA2 = 0;
+"278
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 279: RA3 = 0;
+"279
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 280: }
+"280
+[e :UE 690 ]
+}
+"282
 [v _SteppingCCW `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 275: int SteppingCCW() {
+[; ;main.c: 282: int SteppingCCW() {
 [e :U _SteppingCCW ]
 [f ]
-[; ;main.c: 276: STP4();
-"276
-[e ( _STP4 ..  ]
-[; ;main.c: 277: delay_ms(2);
-"277
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 278: STP3();
-"278
-[e ( _STP3 ..  ]
-[; ;main.c: 279: delay_ms(2);
-"279
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 280: STP2();
-"280
-[e ( _STP2 ..  ]
-[; ;main.c: 281: delay_ms(2);
-"281
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 282: STP1();
-"282
-[e ( _STP1 ..  ]
-[; ;main.c: 283: delay_ms(2);
+[; ;main.c: 283: STP4();
 "283
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 284: }
+[e ( _STP4 ..  ]
+[; ;main.c: 284: delay_ms(2);
 "284
-[e :UE 689 ]
-}
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 285: STP3();
+"285
+[e ( _STP3 ..  ]
+[; ;main.c: 286: delay_ms(2);
 "286
-[v _SteppingCW `(i ~T0 @X0 1 ef ]
-{
-[; ;main.c: 286: int SteppingCW() {
-[e :U _SteppingCW ]
-[f ]
-[; ;main.c: 287: STP1();
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 287: STP2();
 "287
-[e ( _STP1 ..  ]
+[e ( _STP2 ..  ]
 [; ;main.c: 288: delay_ms(2);
 "288
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 289: STP2();
+[; ;main.c: 289: STP1();
 "289
-[e ( _STP2 ..  ]
+[e ( _STP1 ..  ]
 [; ;main.c: 290: delay_ms(2);
 "290
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 291: STP3();
+[; ;main.c: 291: }
 "291
-[e ( _STP3 ..  ]
-[; ;main.c: 292: delay_ms(2);
-"292
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 293: STP4();
-"293
-[e ( _STP4 ..  ]
-[; ;main.c: 294: delay_ms(2);
-"294
-[e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;main.c: 296: }
-"296
-[e :UE 690 ]
-}
-"298
-[v _STP1 `(i ~T0 @X0 1 ef ]
-{
-[; ;main.c: 298: int STP1() {
-[e :U _STP1 ]
-[f ]
-[; ;main.c: 299: Coil_Setup();
-"299
-[e ( _Coil_Setup ..  ]
-[; ;main.c: 300: RA2 = 1;
-"300
-[e = _RA2 -> -> 1 `i `b ]
-[; ;main.c: 301: }
-"301
 [e :UE 691 ]
 }
-"303
-[v _STP2 `(i ~T0 @X0 1 ef ]
+"293
+[v _SteppingCW `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 303: int STP2() {
-[e :U _STP2 ]
+[; ;main.c: 293: int SteppingCW() {
+[e :U _SteppingCW ]
 [f ]
-[; ;main.c: 304: Coil_Setup();
-"304
-[e ( _Coil_Setup ..  ]
-[; ;main.c: 305: RA3 = 1;
-"305
-[e = _RA3 -> -> 1 `i `b ]
-[; ;main.c: 306: }
-"306
+[; ;main.c: 294: STP1();
+"294
+[e ( _STP1 ..  ]
+[; ;main.c: 295: delay_ms(2);
+"295
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 296: STP2();
+"296
+[e ( _STP2 ..  ]
+[; ;main.c: 297: delay_ms(2);
+"297
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 298: STP3();
+"298
+[e ( _STP3 ..  ]
+[; ;main.c: 299: delay_ms(2);
+"299
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 300: STP4();
+"300
+[e ( _STP4 ..  ]
+[; ;main.c: 301: delay_ms(2);
+"301
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;main.c: 303: }
+"303
 [e :UE 692 ]
 }
-"308
-[v _STP3 `(i ~T0 @X0 1 ef ]
+"305
+[v _STP1 `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 308: int STP3() {
-[e :U _STP3 ]
+[; ;main.c: 305: int STP1() {
+[e :U _STP1 ]
 [f ]
-[; ;main.c: 309: Coil_Setup();
-"309
+[; ;main.c: 306: Coil_Setup();
+"306
 [e ( _Coil_Setup ..  ]
-[; ;main.c: 310: RD5 = 1;
-"310
-[e = _RD5 -> -> 1 `i `b ]
-[; ;main.c: 311: }
-"311
+[; ;main.c: 307: RA2 = 1;
+"307
+[e = _RA2 -> -> 1 `i `b ]
+[; ;main.c: 308: }
+"308
 [e :UE 693 ]
 }
-"313
-[v _STP4 `(i ~T0 @X0 1 ef ]
+"310
+[v _STP2 `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 313: int STP4() {
-[e :U _STP4 ]
+[; ;main.c: 310: int STP2() {
+[e :U _STP2 ]
 [f ]
-[; ;main.c: 314: Coil_Setup();
-"314
+[; ;main.c: 311: Coil_Setup();
+"311
 [e ( _Coil_Setup ..  ]
-[; ;main.c: 315: RD7 = 1;
-"315
-[e = _RD7 -> -> 1 `i `b ]
-[; ;main.c: 316: }
-"316
+[; ;main.c: 312: RA3 = 1;
+"312
+[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 313: }
+"313
 [e :UE 694 ]
 }
-"318
-[v _Sensor_Observe2 `(v ~T0 @X0 1 ef ]
+"315
+[v _STP3 `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 318: void Sensor_Observe2() {
-[e :U _Sensor_Observe2 ]
+[; ;main.c: 315: int STP3() {
+[e :U _STP3 ]
 [f ]
-[; ;main.c: 319: printf("%c", (char)35);
-"319
-[e ( _printf , (. :s 1C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 320: printf("                 \n");
-"320
-[e ( _printf :s 2C ]
-[; ;main.c: 321: printf("Sensor Moving!\n");
-"321
-[e ( _printf :s 3C ]
-[; ;main.c: 322: printf("                 \n");
-"322
-[e ( _printf :s 4C ]
-[; ;main.c: 323: printf("                 \n");
-"323
-[e ( _printf :s 5C ]
-[; ;main.c: 324: printf("                 \n");
-"324
-[e ( _printf :s 6C ]
-[; ;main.c: 325: printf("                 \n");
-"325
-[e ( _printf :s 7C ]
-[; ;main.c: 326: printf("                 \n");
-"326
-[e ( _printf :s 8C ]
-[; ;main.c: 327: printf("                 \n");
-"327
-[e ( _printf :s 9C ]
-[; ;main.c: 328: printf("                 \n");
-"328
-[e ( _printf :s 10C ]
-[; ;main.c: 329: Console_Render();
-"329
-[e ( _Console_Render ..  ]
-[; ;main.c: 330: while (Motor_Count <= 512) {
-"330
-[e $U 696  ]
-[e :U 697 ]
-{
-[; ;main.c: 331: Motor_Count++;
-"331
-[e ++ _Motor_Count -> 1 `i ]
-[; ;main.c: 332: ADCAverage();
-"332
-[e ( _ADCAverage ..  ]
-[; ;main.c: 333: if (Low_Sensor > average) {
-"333
-[e $ ! > _Low_Sensor _average 699  ]
-{
-[; ;main.c: 334: Low_Sensor = average;
-"334
-[e = _Low_Sensor _average ]
-[; ;main.c: 335: Close_Pos = Motor_Count;
-"335
-[e = _Close_Pos _Motor_Count ]
-"336
-}
-[e :U 699 ]
-[; ;main.c: 336: }
-[; ;main.c: 337: SteppingCCW();
-"337
-[e ( _SteppingCCW ..  ]
-"338
-}
-[e :U 696 ]
-"330
-[e $ <= _Motor_Count -> 512 `i 697  ]
-[e :U 698 ]
-[; ;main.c: 338: }
-[; ;main.c: 340: Console_Render();
-"340
-[e ( _Console_Render ..  ]
-[; ;main.c: 341: RD5 = 0;
-"341
-[e = _RD5 -> -> 0 `i `b ]
-[; ;main.c: 342: RD7 = 0;
-"342
-[e = _RD7 -> -> 0 `i `b ]
-[; ;main.c: 343: RA2 = 0;
-"343
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 344: RA3 = 0;
-"344
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 345: Sensor_Observe_Fin = 1;
-"345
-[e = _Sensor_Observe_Fin -> 1 `i ]
-[; ;main.c: 347: CW_Count = 512 - Close_Pos;
-"347
-[e = _CW_Count - -> 512 `i _Close_Pos ]
-[; ;main.c: 348: return;
-"348
-[e $UE 695  ]
-[; ;main.c: 349: }
-"349
+[; ;main.c: 316: Coil_Setup();
+"316
+[e ( _Coil_Setup ..  ]
+[; ;main.c: 317: RD5 = 1;
+"317
+[e = _RD5 -> -> 1 `i `b ]
+[; ;main.c: 318: }
+"318
 [e :UE 695 ]
 }
-"351
-[v _Closest_Object2 `(v ~T0 @X0 1 ef ]
+"320
+[v _STP4 `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 351: void Closest_Object2() {
-[e :U _Closest_Object2 ]
+[; ;main.c: 320: int STP4() {
+[e :U _STP4 ]
 [f ]
-[; ;main.c: 352: while (!CW_Count <= 0) {
-"352
-[e $U 701  ]
-[e :U 702 ]
+[; ;main.c: 321: Coil_Setup();
+"321
+[e ( _Coil_Setup ..  ]
+[; ;main.c: 322: RD7 = 1;
+"322
+[e = _RD7 -> -> 1 `i `b ]
+[; ;main.c: 323: }
+"323
+[e :UE 696 ]
+}
+"325
+[v _Sensor_Observe2 `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 353: CW_Count--;
-"353
-[e -- _CW_Count -> 1 `i ]
-[; ;main.c: 354: printf("%c", (char)35);
-"354
-[e ( _printf , (. :s 11C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 355: printf("Stepped 360 degrees");
-"355
-[e ( _printf :s 12C ]
-[; ;main.c: 356: printf("\nThe Closes object (mm): %d", Low_Sensor);
-"356
-[e ( _printf , (. :s 13C _Low_Sensor ]
-[; ;main.c: 357: printf("\nGoing back to: %d", Close_Pos);
-"357
-[e ( _printf , (. :s 14C _Close_Pos ]
-[; ;main.c: 358: Console_Render();
-"358
+[; ;main.c: 325: void Sensor_Observe2() {
+[e :U _Sensor_Observe2 ]
+[f ]
+[; ;main.c: 326: printf("%c", (char)35);
+"326
+[e ( _printf , (. :s 1C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 327: printf("                 \n");
+"327
+[e ( _printf :s 2C ]
+[; ;main.c: 328: printf("Sensor Moving!\n");
+"328
+[e ( _printf :s 3C ]
+[; ;main.c: 329: printf("                 \n");
+"329
+[e ( _printf :s 4C ]
+[; ;main.c: 330: printf("                 \n");
+"330
+[e ( _printf :s 5C ]
+[; ;main.c: 331: printf("                 \n");
+"331
+[e ( _printf :s 6C ]
+[; ;main.c: 332: printf("                 \n");
+"332
+[e ( _printf :s 7C ]
+[; ;main.c: 333: printf("                 \n");
+"333
+[e ( _printf :s 8C ]
+[; ;main.c: 334: printf("                 \n");
+"334
+[e ( _printf :s 9C ]
+[; ;main.c: 335: printf("                 \n");
+"335
+[e ( _printf :s 10C ]
+[; ;main.c: 336: Console_Render();
+"336
 [e ( _Console_Render ..  ]
-[; ;main.c: 359: ADCAverage();
-"359
+[; ;main.c: 337: while (Motor_Count <= 512) {
+"337
+[e $U 698  ]
+[e :U 699 ]
+{
+[; ;main.c: 338: Motor_Count++;
+"338
+[e ++ _Motor_Count -> 1 `i ]
+[; ;main.c: 339: ADCAverage();
+"339
 [e ( _ADCAverage ..  ]
-[; ;main.c: 360: SteppingCW();
-"360
-[e ( _SteppingCW ..  ]
-"361
+[; ;main.c: 340: if (Low_Sensor > average) {
+"340
+[e $ ! > _Low_Sensor _average 701  ]
+{
+[; ;main.c: 341: Low_Sensor = average;
+"341
+[e = _Low_Sensor _average ]
+[; ;main.c: 342: Close_Pos = Motor_Count;
+"342
+[e = _Close_Pos _Motor_Count ]
+"343
 }
 [e :U 701 ]
-"352
-[e $ <= -> ! != _CW_Count -> 0 `i `i -> 0 `i 702  ]
-[e :U 703 ]
-[; ;main.c: 361: }
-[; ;main.c: 362: RD5 = 0;
-"362
-[e = _RD5 -> -> 0 `i `b ]
-[; ;main.c: 363: RD7 = 0;
-"363
-[e = _RD7 -> -> 0 `i `b ]
-[; ;main.c: 364: RA2 = 0;
-"364
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 365: RA3 = 0;
-"365
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 366: return;
-"366
-[e $UE 700  ]
-[; ;main.c: 367: }
-"367
-[e :UE 700 ]
+[; ;main.c: 343: }
+[; ;main.c: 344: SteppingCCW();
+"344
+[e ( _SteppingCCW ..  ]
+"345
 }
+[e :U 698 ]
+"337
+[e $ <= _Motor_Count -> 512 `i 699  ]
+[e :U 700 ]
+[; ;main.c: 345: }
+[; ;main.c: 347: Console_Render();
+"347
+[e ( _Console_Render ..  ]
+[; ;main.c: 348: RD5 = 0;
+"348
+[e = _RD5 -> -> 0 `i `b ]
+[; ;main.c: 349: RD7 = 0;
+"349
+[e = _RD7 -> -> 0 `i `b ]
+[; ;main.c: 350: RA2 = 0;
+"350
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 351: RA3 = 0;
+"351
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 352: Sensor_Observe_Fin = 1;
+"352
+[e = _Sensor_Observe_Fin -> 1 `i ]
+[; ;main.c: 354: CW_Count = 512 - Close_Pos;
+"354
+[e = _CW_Count - -> 512 `i _Close_Pos ]
+[; ;main.c: 355: return;
+"355
+[e $UE 697  ]
+[; ;main.c: 356: }
+"356
+[e :UE 697 ]
+}
+"358
+[v _Closest_Object2 `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 358: void Closest_Object2() {
+[e :U _Closest_Object2 ]
+[f ]
+[; ;main.c: 359: while (!CW_Count <= 0) {
+"359
+[e $U 703  ]
+[e :U 704 ]
+{
+[; ;main.c: 360: CW_Count--;
+"360
+[e -- _CW_Count -> 1 `i ]
+[; ;main.c: 361: printf("%c", (char)35);
+"361
+[e ( _printf , (. :s 11C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 362: printf("Stepped 360 degrees");
+"362
+[e ( _printf :s 12C ]
+[; ;main.c: 363: printf("\nThe Closes object (mm): %d", Low_Sensor);
+"363
+[e ( _printf , (. :s 13C _Low_Sensor ]
+[; ;main.c: 364: printf("\nGoing back to: %d", Close_Pos);
+"364
+[e ( _printf , (. :s 14C _Close_Pos ]
+[; ;main.c: 365: Console_Render();
+"365
+[e ( _Console_Render ..  ]
+[; ;main.c: 366: ADCAverage();
+"366
+[e ( _ADCAverage ..  ]
+[; ;main.c: 367: SteppingCW();
+"367
+[e ( _SteppingCW ..  ]
+"368
+}
+[e :U 703 ]
+"359
+[e $ <= -> ! != _CW_Count -> 0 `i `i -> 0 `i 704  ]
+[e :U 705 ]
+[; ;main.c: 368: }
+[; ;main.c: 369: RD5 = 0;
 "369
+[e = _RD5 -> -> 0 `i `b ]
+[; ;main.c: 370: RD7 = 0;
+"370
+[e = _RD7 -> -> 0 `i `b ]
+[; ;main.c: 371: RA2 = 0;
+"371
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 372: RA3 = 0;
+"372
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 373: return;
+"373
+[e $UE 702  ]
+[; ;main.c: 374: }
+"374
+[e :UE 702 ]
+}
+"376
 [v _Sensor_Observe `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 369: void Sensor_Observe() {
+[; ;main.c: 376: void Sensor_Observe() {
 [e :U _Sensor_Observe ]
 [f ]
-[; ;main.c: 370: printf("%c", (char)35);
-"370
-[e ( _printf , (. :s 15C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 371: printf("                 \n");
-"371
-[e ( _printf :s 16C ]
-[; ;main.c: 372: printf("Sensor Moving!   \n");
-"372
-[e ( _printf :s 17C ]
-[; ;main.c: 373: printf("                 \n");
-"373
-[e ( _printf :s 18C ]
-[; ;main.c: 374: printf("                 \n");
-"374
-[e ( _printf :s 19C ]
-[; ;main.c: 375: printf("                 \n");
-"375
-[e ( _printf :s 20C ]
-[; ;main.c: 376: printf("                 \n");
-"376
-[e ( _printf :s 21C ]
-[; ;main.c: 377: printf("                 \n");
+[; ;main.c: 377: printf("%c", (char)35);
 "377
-[e ( _printf :s 22C ]
+[e ( _printf , (. :s 15C -> -> -> 35 `i `uc `i ]
 [; ;main.c: 378: printf("                 \n");
 "378
-[e ( _printf :s 23C ]
-[; ;main.c: 379: Console_Render();
+[e ( _printf :s 16C ]
+[; ;main.c: 379: printf("Sensor Moving!   \n");
 "379
-[e ( _Console_Render ..  ]
-[; ;main.c: 380: while (Motor_Count <= 512) {
+[e ( _printf :s 17C ]
+[; ;main.c: 380: printf("                 \n");
 "380
-[e $U 705  ]
-[e :U 706 ]
-{
-[; ;main.c: 381: Motor_Count++;
+[e ( _printf :s 18C ]
+[; ;main.c: 381: printf("                 \n");
 "381
-[e ++ _Motor_Count -> 1 `i ]
-[; ;main.c: 382: ADCAverage();
+[e ( _printf :s 19C ]
+[; ;main.c: 382: printf("                 \n");
 "382
-[e ( _ADCAverage ..  ]
-[; ;main.c: 383: if (Low_Sensor > average) {
+[e ( _printf :s 20C ]
+[; ;main.c: 383: printf("                 \n");
 "383
-[e $ ! > _Low_Sensor _average 708  ]
-{
-[; ;main.c: 384: Low_Sensor = average;
+[e ( _printf :s 21C ]
+[; ;main.c: 384: printf("                 \n");
 "384
-[e = _Low_Sensor _average ]
-[; ;main.c: 385: Close_Pos = Motor_Count;
+[e ( _printf :s 22C ]
+[; ;main.c: 385: printf("                 \n");
 "385
-[e = _Close_Pos _Motor_Count ]
+[e ( _printf :s 23C ]
+[; ;main.c: 386: Console_Render();
 "386
-}
-[e :U 708 ]
-[; ;main.c: 386: }
-[; ;main.c: 387: SteppingCW();
+[e ( _Console_Render ..  ]
+[; ;main.c: 387: while (Motor_Count <= 512) {
 "387
-[e ( _SteppingCW ..  ]
+[e $U 707  ]
+[e :U 708 ]
+{
+[; ;main.c: 388: Motor_Count++;
 "388
-}
-[e :U 705 ]
-"380
-[e $ <= _Motor_Count -> 512 `i 706  ]
-[e :U 707 ]
-[; ;main.c: 388: }
-[; ;main.c: 389: RD5 = 0;
+[e ++ _Motor_Count -> 1 `i ]
+[; ;main.c: 389: ADCAverage();
 "389
-[e = _RD5 -> -> 0 `i `b ]
-[; ;main.c: 390: RD7 = 0;
-"390
-[e = _RD7 -> -> 0 `i `b ]
-[; ;main.c: 391: RA2 = 0;
-"391
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 392: RA3 = 0;
-"392
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 393: Sensor_Observe_Fin = 1;
-"393
-[e = _Sensor_Observe_Fin -> 1 `i ]
-[; ;main.c: 395: CCW_Count = 512 - Close_Pos;
-"395
-[e = _CCW_Count - -> 512 `i _Close_Pos ]
-[; ;main.c: 396: return;
-"396
-[e $UE 704  ]
-[; ;main.c: 397: }
-"397
-[e :UE 704 ]
-}
-"399
-[v _Closest_Object `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 399: void Closest_Object() {
-[e :U _Closest_Object ]
-[f ]
-[; ;main.c: 400: printf("%c", (char)35);
-"400
-[e ( _printf , (. :s 24C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 401: printf("Stepped 360 degrees");
-"401
-[e ( _printf :s 25C ]
-[; ;main.c: 402: printf("\nThe Closes object (mm): %d", Low_Sensor);
-"402
-[e ( _printf , (. :s 26C _Low_Sensor ]
-[; ;main.c: 403: printf("\nGoing back to: %d", Close_Pos);
-"403
-[e ( _printf , (. :s 27C _Close_Pos ]
-[; ;main.c: 404: Console_Render();
-"404
-[e ( _Console_Render ..  ]
-[; ;main.c: 405: while (!CCW_Count <= 0) {
-"405
-[e $U 710  ]
-[e :U 711 ]
-{
-[; ;main.c: 406: CCW_Count--;
-"406
-[e -- _CCW_Count -> 1 `i ]
-[; ;main.c: 407: printf("%c", (char)35);
-"407
-[e ( _printf , (. :s 28C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 408: printf("\nSteps Travelled: %d", CCW_Count);
-"408
-[e ( _printf , (. :s 29C _CCW_Count ]
-[; ;main.c: 409: Console_Render();
-"409
-[e ( _Console_Render ..  ]
-[; ;main.c: 410: ADCAverage();
-"410
 [e ( _ADCAverage ..  ]
-[; ;main.c: 411: SteppingCCW();
-"411
-[e ( _SteppingCCW ..  ]
-"412
+[; ;main.c: 390: if (Low_Sensor > average) {
+"390
+[e $ ! > _Low_Sensor _average 710  ]
+{
+[; ;main.c: 391: Low_Sensor = average;
+"391
+[e = _Low_Sensor _average ]
+[; ;main.c: 392: Close_Pos = Motor_Count;
+"392
+[e = _Close_Pos _Motor_Count ]
+"393
 }
 [e :U 710 ]
-"405
-[e $ <= -> ! != _CCW_Count -> 0 `i `i -> 0 `i 711  ]
-[e :U 712 ]
-[; ;main.c: 412: }
-[; ;main.c: 413: RD5 = 0;
-"413
-[e = _RD5 -> -> 0 `i `b ]
-[; ;main.c: 414: RD7 = 0;
-"414
-[e = _RD7 -> -> 0 `i `b ]
-[; ;main.c: 415: RA2 = 0;
-"415
-[e = _RA2 -> -> 0 `i `b ]
-[; ;main.c: 416: RA3 = 0;
-"416
-[e = _RA3 -> -> 0 `i `b ]
-[; ;main.c: 417: }
-"417
-[e :UE 709 ]
+[; ;main.c: 393: }
+[; ;main.c: 394: SteppingCW();
+"394
+[e ( _SteppingCW ..  ]
+"395
 }
+[e :U 707 ]
+"387
+[e $ <= _Motor_Count -> 512 `i 708  ]
+[e :U 709 ]
+[; ;main.c: 395: }
+[; ;main.c: 396: RD5 = 0;
+"396
+[e = _RD5 -> -> 0 `i `b ]
+[; ;main.c: 397: RD7 = 0;
+"397
+[e = _RD7 -> -> 0 `i `b ]
+[; ;main.c: 398: RA2 = 0;
+"398
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 399: RA3 = 0;
+"399
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 400: Sensor_Observe_Fin = 1;
+"400
+[e = _Sensor_Observe_Fin -> 1 `i ]
+[; ;main.c: 402: CCW_Count = 512 - Close_Pos;
+"402
+[e = _CCW_Count - -> 512 `i _Close_Pos ]
+[; ;main.c: 403: return;
+"403
+[e $UE 706  ]
+[; ;main.c: 404: }
+"404
+[e :UE 706 ]
+}
+"406
+[v _Closest_Object `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 406: void Closest_Object() {
+[e :U _Closest_Object ]
+[f ]
+[; ;main.c: 407: printf("%c", (char)35);
+"407
+[e ( _printf , (. :s 24C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 408: printf("Stepped 360 degrees");
+"408
+[e ( _printf :s 25C ]
+[; ;main.c: 409: printf("\nThe Closes object (mm): %d", Low_Sensor);
+"409
+[e ( _printf , (. :s 26C _Low_Sensor ]
+[; ;main.c: 410: printf("\nGoing back to: %d", Close_Pos);
+"410
+[e ( _printf , (. :s 27C _Close_Pos ]
+[; ;main.c: 411: Console_Render();
+"411
+[e ( _Console_Render ..  ]
+[; ;main.c: 412: while (!CCW_Count <= 0) {
+"412
+[e $U 712  ]
+[e :U 713 ]
+{
+[; ;main.c: 413: CCW_Count--;
+"413
+[e -- _CCW_Count -> 1 `i ]
+[; ;main.c: 414: printf("%c", (char)35);
+"414
+[e ( _printf , (. :s 28C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 415: printf("\nSteps Travelled: %d", CCW_Count);
+"415
+[e ( _printf , (. :s 29C _CCW_Count ]
+[; ;main.c: 416: Console_Render();
+"416
+[e ( _Console_Render ..  ]
+[; ;main.c: 417: ADCAverage();
+"417
+[e ( _ADCAverage ..  ]
+[; ;main.c: 418: SteppingCCW();
+"418
+[e ( _SteppingCCW ..  ]
+"419
+}
+[e :U 712 ]
+"412
+[e $ <= -> ! != _CCW_Count -> 0 `i `i -> 0 `i 713  ]
+[e :U 714 ]
+[; ;main.c: 419: }
+[; ;main.c: 420: RD5 = 0;
+"420
+[e = _RD5 -> -> 0 `i `b ]
+[; ;main.c: 421: RD7 = 0;
 "421
+[e = _RD7 -> -> 0 `i `b ]
+[; ;main.c: 422: RA2 = 0;
+"422
+[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 423: RA3 = 0;
+"423
+[e = _RA3 -> -> 0 `i `b ]
+[; ;main.c: 424: }
+"424
+[e :UE 711 ]
+}
+"426
 [v _Reset_variables `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 421: void Reset_variables() {
+[; ;main.c: 426: void Reset_variables() {
 [e :U _Reset_variables ]
 [f ]
-[; ;main.c: 423: Square_Dist = 0;
-"423
-[e = _Square_Dist -> 0 `i ]
-[; ;main.c: 424: Sensor_Observe_Fin = 0;
-"424
-[e = _Sensor_Observe_Fin -> 0 `i ]
-[; ;main.c: 425: Motor_Count = 0;
-"425
-[e = _Motor_Count -> 0 `i ]
-[; ;main.c: 426: Low_Sensor = 10000;
-"426
-[e = _Low_Sensor -> 10000 `i ]
-[; ;main.c: 427: ADC_Reading = 0;
+[; ;main.c: 427: Square_Dist = 0;
 "427
-[e = _ADC_Reading -> 0 `i ]
-[; ;main.c: 428: Close_Pos = 0;
+[e = _Square_Dist -> 0 `i ]
+[; ;main.c: 428: Sensor_Observe_Fin = 0;
 "428
-[e = _Close_Pos -> 0 `i ]
-[; ;main.c: 429: count = 0;
+[e = _Sensor_Observe_Fin -> 0 `i ]
+[; ;main.c: 429: Motor_Count = 0;
 "429
-[e = _count -> 0 `i ]
-[; ;main.c: 430: T_VAR = 0;
+[e = _Motor_Count -> 0 `i ]
+[; ;main.c: 430: Low_Sensor = 10000;
 "430
-[e = _T_VAR -> 0 `i ]
-[; ;main.c: 431: mod = 0;
+[e = _Low_Sensor -> 10000 `i ]
+[; ;main.c: 431: ADC_Reading = 0;
 "431
-[e = _mod -> 0 `i ]
-[; ;main.c: 432: return;
+[e = _ADC_Reading -> 0 `i ]
+[; ;main.c: 432: Close_Pos = 0;
 "432
-[e $UE 713  ]
-[; ;main.c: 433: }
+[e = _Close_Pos -> 0 `i ]
+[; ;main.c: 433: count = 0;
 "433
-[e :UE 713 ]
+[e = _count -> 0 `i ]
+[; ;main.c: 434: T_VAR = 0;
+"434
+[e = _T_VAR -> 0 `i ]
+[; ;main.c: 435: mod = 0;
+"435
+[e = _mod -> 0 `i ]
+[; ;main.c: 436: return;
+"436
+[e $UE 715  ]
+[; ;main.c: 437: }
+"437
+[e :UE 715 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"438
+"440
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 438: void main() {
+[; ;main.c: 440: void main() {
 [e :U _main ]
 [f ]
-[; ;main.c: 440: MXK_Init();
-"440
-[e ( _MXK_Init ..  ]
-[; ;main.c: 441: Init_Timer0();
-"441
-[e ( _Init_Timer0 ..  ]
-[; ;main.c: 442: InitSerialCommunication();
+[; ;main.c: 442: MXK_Init();
 "442
-[e ( _InitSerialCommunication ..  ]
-[; ;main.c: 443: Robot_Init();
+[e ( _MXK_Init ..  ]
+[; ;main.c: 443: Init_Timer0();
 "443
-[e ( _Robot_Init ..  ]
-[; ;main.c: 444: ISR_Enable();
+[e ( _Init_Timer0 ..  ]
+[; ;main.c: 444: InitSerialCommunication();
 "444
-[e ( _ISR_Enable ..  ]
-[; ;main.c: 445: FunctInitButton();
+[e ( _InitSerialCommunication ..  ]
+[; ;main.c: 445: Robot_Init();
 "445
-[e ( _FunctInitButton ..  ]
-[; ;main.c: 446: InitADC();
+[e ( _Robot_Init ..  ]
+[; ;main.c: 446: ISR_Enable();
 "446
-[e ( _InitADC ..  ]
-[; ;main.c: 447: LED_Init(eLED2);
+[e ( _ISR_Enable ..  ]
+[; ;main.c: 447: FunctInitButton();
 "447
-[e ( _LED_Init (1 . `E7217 1 ]
-[; ;main.c: 449: if (MXK_BlockSwitchTo(eMXK_HMI)) {
+[e ( _FunctInitButton ..  ]
+[; ;main.c: 448: InitADC();
+"448
+[e ( _InitADC ..  ]
+[; ;main.c: 449: LED_Init(eLED2);
 "449
-[e $ ! != -> ( _MXK_BlockSwitchTo (1 . `E6940 2 `i -> -> -> 0 `i `uc `i 715  ]
-{
-[; ;main.c: 450: HMI_Init();
-"450
-[e ( _HMI_Init ..  ]
-[; ;main.c: 451: LCD_Init();
+[e ( _LED_Init (1 . `E7217 1 ]
+[; ;main.c: 451: if (MXK_BlockSwitchTo(eMXK_HMI)) {
 "451
-[e ( _LCD_Init ..  ]
-[; ;main.c: 452: Console_Init();
+[e $ ! != -> ( _MXK_BlockSwitchTo (1 . `E6940 2 `i -> -> -> 0 `i `uc `i 717  ]
+{
+[; ;main.c: 452: HMI_Init();
 "452
-[e ( _Console_Init ..  ]
-[; ;main.c: 453: if (MXK_Release())
+[e ( _HMI_Init ..  ]
+[; ;main.c: 453: LCD_Init();
 "453
-[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 716  ]
-[; ;main.c: 454: MXK_Dequeue();
+[e ( _LCD_Init ..  ]
+[; ;main.c: 454: Console_Init();
 "454
-[e ( _MXK_Dequeue ..  ]
-[e :U 716 ]
+[e ( _Console_Init ..  ]
+[; ;main.c: 455: if (MXK_Release())
 "455
-}
-[e :U 715 ]
-[; ;main.c: 455: }
-[; ;main.c: 457: for(;;) {
+[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 718  ]
+[; ;main.c: 456: MXK_Dequeue();
+"456
+[e ( _MXK_Dequeue ..  ]
+[e :U 718 ]
 "457
-{
+}
 [e :U 717 ]
-{
-[; ;main.c: 459: LEDToggle();
+[; ;main.c: 457: }
+[; ;main.c: 459: for(;;) {
 "459
+{
+[e :U 719 ]
+{
+[; ;main.c: 461: LEDToggle();
+"461
 [e ( _LEDToggle ..  ]
-[; ;main.c: 460: ADCAverage();
-"460
-[e ( _ADCAverage ..  ]
-[; ;main.c: 462: HMI_SetNumber(average);
+[; ;main.c: 462: ADCAverage();
 "462
-[e ( _HMI_SetNumber (1 _average ]
-[; ;main.c: 463: HMI_Render();
-"463
-[e ( _HMI_Render ..  ]
-[; ;main.c: 464: HMI_Poll();
+[e ( _ADCAverage ..  ]
+[; ;main.c: 464: HMI_SetNumber(average);
 "464
-[e ( _HMI_Poll ..  ]
+[e ( _HMI_SetNumber (1 _average ]
+[; ;main.c: 465: HMI_Render();
+"465
+[e ( _HMI_Render ..  ]
+[; ;main.c: 466: HMI_Poll();
 "466
-[v _down `uc ~T0 @X0 1 a ]
-[; ;main.c: 466: bool down = HMIBoard.mDown.mGetState();
-[e = _down ( *U . . _HMIBoard 4 4 ..  ]
-"467
-[v _right `uc ~T0 @X0 1 a ]
-[; ;main.c: 467: bool right = HMIBoard.mRight.mGetState();
-[e = _right ( *U . . _HMIBoard 1 4 ..  ]
+[e ( _HMI_Poll ..  ]
 "468
-[v _up `uc ~T0 @X0 1 a ]
-[; ;main.c: 468: bool up = HMIBoard.mUp.mGetState();
-[e = _up ( *U . . _HMIBoard 3 4 ..  ]
+[v _down `uc ~T0 @X0 1 a ]
+[; ;main.c: 468: bool down = HMIBoard.mDown.mGetState();
+[e = _down ( *U . . _HMIBoard 4 4 ..  ]
 "469
-[v _left `uc ~T0 @X0 1 a ]
-[; ;main.c: 469: bool left = HMIBoard.mLeft.mGetState();
-[e = _left ( *U . . _HMIBoard 2 4 ..  ]
-[; ;main.c: 471: if (down) {
+[v _right `uc ~T0 @X0 1 a ]
+[; ;main.c: 469: bool right = HMIBoard.mRight.mGetState();
+[e = _right ( *U . . _HMIBoard 1 4 ..  ]
+"470
+[v _up `uc ~T0 @X0 1 a ]
+[; ;main.c: 470: bool up = HMIBoard.mUp.mGetState();
+[e = _up ( *U . . _HMIBoard 3 4 ..  ]
 "471
-[e $ ! != -> _down `i -> -> -> 0 `i `uc `i 720  ]
-{
-[; ;main.c: 472: mode = 3;
-"472
-[e = _mode -> 3 `i ]
+[v _left `uc ~T0 @X0 1 a ]
+[; ;main.c: 471: bool left = HMIBoard.mLeft.mGetState();
+[e = _left ( *U . . _HMIBoard 2 4 ..  ]
+[; ;main.c: 473: if (down) {
 "473
-}
-[e :U 720 ]
-[; ;main.c: 473: }
-[; ;main.c: 474: if (right) {
+[e $ ! != -> _down `i -> -> -> 0 `i `uc `i 722  ]
+{
+[; ;main.c: 474: mode = 3;
 "474
-[e $ ! != -> _right `i -> -> -> 0 `i `uc `i 721  ]
-{
-[; ;main.c: 475: mode = 1;
+[e = _mode -> 3 `i ]
 "475
-[e = _mode -> 1 `i ]
-"476
-}
-[e :U 721 ]
-[; ;main.c: 476: }
-[; ;main.c: 477: if (up) {
-"477
-[e $ ! != -> _up `i -> -> -> 0 `i `uc `i 722  ]
-{
-[; ;main.c: 478: mode = 2;
-"478
-[e = _mode -> 2 `i ]
-"479
 }
 [e :U 722 ]
-[; ;main.c: 479: }
-[; ;main.c: 480: if (left) {
-"480
-[e $ ! != -> _left `i -> -> -> 0 `i `uc `i 723  ]
+[; ;main.c: 475: }
+[; ;main.c: 476: if (right) {
+"476
+[e $ ! != -> _right `i -> -> -> 0 `i `uc `i 723  ]
 {
-[; ;main.c: 481: mode = 4;
-"481
-[e = _mode -> 4 `i ]
-"482
+[; ;main.c: 477: mode = 1;
+"477
+[e = _mode -> 1 `i ]
+"478
 }
 [e :U 723 ]
-[; ;main.c: 482: }
-[; ;main.c: 487: if (MXK_BlockSwitchTo(eMXK_HMI)) {
-"487
-[e $ ! != -> ( _MXK_BlockSwitchTo (1 . `E6940 2 `i -> -> -> 0 `i `uc `i 724  ]
+[; ;main.c: 478: }
+[; ;main.c: 479: if (up) {
+"479
+[e $ ! != -> _up `i -> -> -> 0 `i `uc `i 724  ]
 {
-[; ;main.c: 489: if (mode == 0) {
-"489
-[e $ ! == _mode -> 0 `i 725  ]
-{
-[; ;main.c: 490: LED_Set(eLED2, 0);
-"490
-[e ( _LED_Set (2 , . `E7217 1 -> -> 0 `i `uc ]
-[; ;main.c: 491: Robot_Stop();
-"491
-[e ( _Robot_Stop ..  ]
-[; ;main.c: 492: Reset_variables();
-"492
-[e ( _Reset_variables ..  ]
-[; ;main.c: 494: printf("%c", (char)35);
-"494
-[e ( _printf , (. :s 30C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 495: printf("Robot Ready! \n");
-"495
-[e ( _printf :s 31C ]
-[; ;main.c: 496: printf("Press right for 5m\n drive,\n");
-"496
-[e ( _printf :s 32C ]
-[; ;main.c: 497: printf("Press down for\nsquare drive,\n");
-"497
-[e ( _printf :s 33C ]
-[; ;main.c: 498: printf("Press up for IR scan mode,\n");
-"498
-[e ( _printf :s 34C ]
-[; ;main.c: 499: printf("Press left for wall follow\n");
-"499
-[e ( _printf :s 35C ]
-[; ;main.c: 501: printf("                 \n");
-"501
-[e ( _printf :s 36C ]
-[; ;main.c: 502: printf("                 \n");
-"502
-[e ( _printf :s 37C ]
-[; ;main.c: 503: printf("                 \n");
-"503
-[e ( _printf :s 38C ]
-[; ;main.c: 504: printf("                 \n");
-"504
-[e ( _printf :s 39C ]
-[; ;main.c: 505: Console_Render();
-"505
-[e ( _Console_Render ..  ]
-"506
-}
-[; ;main.c: 506: }
-[e $U 726  ]
-"507
-[e :U 725 ]
-[; ;main.c: 507: else if (mode == 1) {
-[e $ ! == _mode -> 1 `i 727  ]
-{
-[; ;main.c: 508: LED_Set(eLED2, 1);
-"508
-[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
-[; ;main.c: 509: Drive(200);
-"509
-[e ( _Drive (1 -> 200 `i ]
-[; ;main.c: 510: T_VAR += UpdateDistance();
-"510
-[e =+ _T_VAR ( _UpdateDistance ..  ]
-[; ;main.c: 511: printf("%c", (char)35);
-"511
-[e ( _printf , (. :s 40C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 512: printf("Traveled Distance:\n%d", T_VAR);
-"512
-[e ( _printf , (. :s 41C _T_VAR ]
-[; ;main.c: 513: printf("                 \n");
-"513
-[e ( _printf :s 42C ]
-[; ;main.c: 514: printf("                 \n");
-"514
-[e ( _printf :s 43C ]
-[; ;main.c: 515: printf("                 \n");
-"515
-[e ( _printf :s 44C ]
-[; ;main.c: 516: printf("                 \n");
-"516
-[e ( _printf :s 45C ]
-[; ;main.c: 517: printf("                 \n");
-"517
-[e ( _printf :s 46C ]
-[; ;main.c: 518: printf("                 \n");
-"518
-[e ( _printf :s 47C ]
-[; ;main.c: 519: printf("                 \n");
-"519
-[e ( _printf :s 48C ]
-[; ;main.c: 520: printf("                 \n");
-"520
-[e ( _printf :s 49C ]
-[; ;main.c: 521: Console_Render();
-"521
-[e ( _Console_Render ..  ]
-[; ;main.c: 522: if (T_VAR >= 5000) {
-"522
-[e $ ! >= _T_VAR -> 5000 `i 728  ]
-{
-[; ;main.c: 523: Robot_Stop();
-"523
-[e ( _Robot_Stop ..  ]
-[; ;main.c: 524: mode = 0;
-"524
-[e = _mode -> 0 `i ]
-"525
-}
-[e :U 728 ]
-"526
-}
-[; ;main.c: 525: }
-[; ;main.c: 526: }
-[e $U 729  ]
-"527
-[e :U 727 ]
-[; ;main.c: 527: else if (mode == 2) {
-[e $ ! == _mode -> 2 `i 730  ]
-{
-[; ;main.c: 528: LED_Set(eLED2, 1);
-"528
-[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
-[; ;main.c: 529: Sensor_Observe();
-"529
-[e ( _Sensor_Observe ..  ]
-[; ;main.c: 531: Closest_Object();
-"531
-[e ( _Closest_Object ..  ]
-[; ;main.c: 532: delay_ms(2000);
-"532
-[e ( _delay_ms (1 -> -> 2000 `i `us ]
-[; ;main.c: 533: mode = 0;
-"533
-[e = _mode -> 0 `i ]
-"534
-}
-[; ;main.c: 534: }
-[e $U 731  ]
-"535
-[e :U 730 ]
-[; ;main.c: 535: else if (mode == 3) {
-[e $ ! == _mode -> 3 `i 732  ]
-{
-[; ;main.c: 536: Drive(250);
-"536
-[e ( _Drive (1 -> 250 `i ]
-[; ;main.c: 537: LED_Set(eLED2, 1);
-"537
-[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
-[; ;main.c: 538: T_VAR += UpdateDistance();
-"538
-[e =+ _T_VAR ( _UpdateDistance ..  ]
-[; ;main.c: 540: Square_Dist = T_VAR + mod;
-"540
-[e = _Square_Dist + _T_VAR _mod ]
-[; ;main.c: 541: printf("%c", (char)35);
-"541
-[e ( _printf , (. :s 50C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 542: printf("SQUARE DRIVE MODE 3! \n");
-"542
-[e ( _printf :s 51C ]
-[; ;main.c: 543: printf("Total: %d\n", Square_Dist);
-"543
-[e ( _printf , (. :s 52C _Square_Dist ]
-[; ;main.c: 544: printf("                 \n");
-"544
-[e ( _printf :s 53C ]
-[; ;main.c: 545: printf("                 \n");
-"545
-[e ( _printf :s 54C ]
-[; ;main.c: 546: printf("                 \n");
-"546
-[e ( _printf :s 55C ]
-[; ;main.c: 547: printf("                 \n");
-"547
-[e ( _printf :s 56C ]
-[; ;main.c: 548: printf("                 \n");
-"548
-[e ( _printf :s 57C ]
-[; ;main.c: 549: printf("                 \n");
-"549
-[e ( _printf :s 58C ]
-[; ;main.c: 550: printf("                 \n");
-"550
-[e ( _printf :s 59C ]
-[; ;main.c: 551: printf("                 \n");
-"551
-[e ( _printf :s 60C ]
-[; ;main.c: 552: Console_Render();
-"552
-[e ( _Console_Render ..  ]
-[; ;main.c: 554: if (T_VAR >= 1000) {
-"554
-[e $ ! >= _T_VAR -> 1000 `i 733  ]
-{
-[; ;main.c: 555: Turn(82, 100);
-"555
-[e ( _Turn (2 , -> 82 `i -> 100 `i ]
-[; ;main.c: 556: T_VAR = 0;
-"556
-[e = _T_VAR -> 0 `i ]
-[; ;main.c: 557: mod += 1000;
-"557
-[e =+ _mod -> 1000 `i ]
-"558
-}
-[e :U 733 ]
-[; ;main.c: 558: }
-[; ;main.c: 560: if (Square_Dist >= 4000) {
-"560
-[e $ ! >= _Square_Dist -> 4000 `i 734  ]
-{
-[; ;main.c: 562: Robot_Stop();
-"562
-[e ( _Robot_Stop ..  ]
-[; ;main.c: 563: delay_ms(500);
-"563
-[e ( _delay_ms (1 -> -> 500 `i `us ]
-[; ;main.c: 564: mode = 0;
-"564
-[e = _mode -> 0 `i ]
-"565
-}
-[e :U 734 ]
-"567
-}
-[; ;main.c: 565: }
-[; ;main.c: 567: } else if (mode == 4) {
-[e $U 735  ]
-[e :U 732 ]
-[e $ ! == _mode -> 4 `i 736  ]
-{
-[; ;main.c: 568: Sensor_Observe2();
-"568
-[e ( _Sensor_Observe2 ..  ]
-[; ;main.c: 569: Closest_Object2();
-"569
-[e ( _Closest_Object2 ..  ]
-"571
-[v _Target_Distance `i ~T0 @X0 1 a ]
-[; ;main.c: 571: int Target_Distance = Low_Sensor;
-[e = _Target_Distance _Low_Sensor ]
-[; ;main.c: 572: LED_Set(eLED2, 1);
-"572
-[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
-[; ;main.c: 573: Get_Sensor_State();
-"573
-[e ( _Get_Sensor_State ..  ]
-[; ;main.c: 574: if (test > 0) {
-"574
-[e $ ! > _test -> 0 `i 737  ]
-{
-[; ;main.c: 575: mode = 0;
-"575
-[e = _mode -> 0 `i ]
-"576
-}
-[e :U 737 ]
-[; ;main.c: 576: }
-[; ;main.c: 578: while (BumpSensor == 0) {
-"578
-[e $U 738  ]
-[e :U 739 ]
-{
-[; ;main.c: 579: ADCAverage();
-"579
-[e ( _ADCAverage ..  ]
-[; ;main.c: 580: printf("%c", (char)35);
-"580
-[e ( _printf , (. :s 61C -> -> -> 35 `i `uc `i ]
-[; ;main.c: 581: printf("The target distance is: %d\n", Target_Distance);
-"581
-[e ( _printf , (. :s 62C _Target_Distance ]
-[; ;main.c: 582: printf("ADC AVERAGE %d\n", average);
-"582
-[e ( _printf , (. :s 63C _average ]
-[; ;main.c: 583: printf("                 \n");
-"583
-[e ( _printf :s 64C ]
-[; ;main.c: 584: printf("                 \n");
-"584
-[e ( _printf :s 65C ]
-[; ;main.c: 585: printf("                 \n");
-"585
-[e ( _printf :s 66C ]
-[; ;main.c: 586: printf("                 \n");
-"586
-[e ( _printf :s 67C ]
-[; ;main.c: 587: printf("                 \n");
-"587
-[e ( _printf :s 68C ]
-[; ;main.c: 588: printf("                 \n");
-"588
-[e ( _printf :s 69C ]
-[; ;main.c: 589: printf("                 \n");
-"589
-[e ( _printf :s 70C ]
-[; ;main.c: 590: printf("                 \n");
-"590
-[e ( _printf :s 71C ]
-[; ;main.c: 591: Console_Render();
-"591
-[e ( _Console_Render ..  ]
-[; ;main.c: 592: HMI_SetNumber(average);
-"592
-[e ( _HMI_SetNumber (1 _average ]
-[; ;main.c: 594: HMI_Render();
-"594
-[e ( _HMI_Render ..  ]
-[; ;main.c: 596: HMI_Poll();
-"596
-[e ( _HMI_Poll ..  ]
-[; ;main.c: 597: if (Target_Distance <= average + 2 || Target_Distance >= average - 2) {
-"597
-[e $ ! || <= _Target_Distance + _average -> 2 `i >= _Target_Distance - _average -> 2 `i 741  ]
-{
-[; ;main.c: 598: BangBang(50, 50, 50, 50);
-"598
-[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 50 `i -> 50 `i ]
-"599
-}
-[e :U 741 ]
-[; ;main.c: 599: }
-[; ;main.c: 600: if (Target_Distance > average + 2) {
-"600
-[e $ ! > _Target_Distance + _average -> 2 `i 742  ]
-{
-[; ;main.c: 601: BangBang(50, 50, 40, 40);
-"601
-[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 40 `i -> 40 `i ]
-"602
-}
-[e :U 742 ]
-[; ;main.c: 602: }
-[; ;main.c: 604: if (Target_Distance < average - 2) {
-"604
-[e $ ! < _Target_Distance - _average -> 2 `i 743  ]
-{
-[; ;main.c: 605: BangBang(40, 40, 50, 50);
-"605
-[e ( _BangBang (4 , , , -> 40 `i -> 40 `i -> 50 `i -> 50 `i ]
-"606
-}
-[e :U 743 ]
-[; ;main.c: 606: }
-[; ;main.c: 608: if (Target_Distance > average + 5) {
-"608
-[e $ ! > _Target_Distance + _average -> 5 `i 744  ]
-{
-[; ;main.c: 609: BangBang(50, 50, 30, 30);
-"609
-[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 30 `i -> 30 `i ]
-"610
-}
-[e :U 744 ]
-[; ;main.c: 610: }
-[; ;main.c: 612: if (Target_Distance < average - 5) {
-"612
-[e $ ! < _Target_Distance - _average -> 5 `i 745  ]
-{
-[; ;main.c: 613: BangBang(30, 30, 50, 50);
-"613
-[e ( _BangBang (4 , , , -> 30 `i -> 30 `i -> 50 `i -> 50 `i ]
-"614
-}
-[e :U 745 ]
-[; ;main.c: 614: }
-[; ;main.c: 616: Get_Sensor_State();
-"616
-[e ( _Get_Sensor_State ..  ]
-[; ;main.c: 617: printf("Besneor: %d", BumpSensor);
-"617
-[e ( _printf , (. :s 72C -> _BumpSensor `i ]
-[; ;main.c: 618: if (BumpSensor > 0) {
-"618
-[e $ ! > -> _BumpSensor `i -> 0 `i 746  ]
-{
-[; ;main.c: 619: Target_Distance = 0;
-"619
-[e = _Target_Distance -> 0 `i ]
-[; ;main.c: 620: break;
-"620
-[e $U 740  ]
-"621
-}
-[e :U 746 ]
-[; ;main.c: 621: }
-[; ;main.c: 623: if (HMIBoard.mUp.mGetState()) {
-"623
-[e $ ! != -> ( *U . . _HMIBoard 3 4 ..  `i -> -> -> 0 `i `uc `i 747  ]
-{
-[; ;main.c: 624: up = HMIBoard.mUp.mGetState();
-"624
-[e = _up ( *U . . _HMIBoard 3 4 ..  ]
-[; ;main.c: 625: if (up) {
-"625
-[e $ ! != -> _up `i -> -> -> 0 `i `uc `i 748  ]
-{
-[; ;main.c: 626: mode = 0;
-"626
-[e = _mode -> 0 `i ]
-"627
-}
-[e :U 748 ]
-[; ;main.c: 627: }
-[; ;main.c: 628: break;
-"628
-[e $U 740  ]
-"629
-}
-[e :U 747 ]
-"630
-}
-[e :U 738 ]
-"578
-[e $ == -> _BumpSensor `i -> 0 `i 739  ]
-[e :U 740 ]
-[; ;main.c: 629: }
-[; ;main.c: 630: }
-[; ;main.c: 631: mode = 0;
-"631
-[e = _mode -> 0 `i ]
-"632
-}
-[e :U 736 ]
-"633
-[e :U 735 ]
-[e :U 731 ]
-[e :U 729 ]
-[e :U 726 ]
-[; ;main.c: 632: }
-[; ;main.c: 633: Console_Render();
-[e ( _Console_Render ..  ]
-[; ;main.c: 634: if (MXK_Release())
-"634
-[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 749  ]
-[; ;main.c: 635: MXK_Dequeue();
-"635
-[e ( _MXK_Dequeue ..  ]
-[e :U 749 ]
-"636
+[; ;main.c: 480: mode = 2;
+"480
+[e = _mode -> 2 `i ]
+"481
 }
 [e :U 724 ]
-"637
+[; ;main.c: 481: }
+[; ;main.c: 482: if (left) {
+"482
+[e $ ! != -> _left `i -> -> -> 0 `i `uc `i 725  ]
+{
+[; ;main.c: 483: mode = 4;
+"483
+[e = _mode -> 4 `i ]
+"484
 }
-[; ;main.c: 636: }
-[; ;main.c: 637: }
-[e $U 717  ]
-[e :U 718 ]
+[e :U 725 ]
+[; ;main.c: 484: }
+[; ;main.c: 489: if (MXK_BlockSwitchTo(eMXK_HMI)) {
+"489
+[e $ ! != -> ( _MXK_BlockSwitchTo (1 . `E6940 2 `i -> -> -> 0 `i `uc `i 726  ]
+{
+[; ;main.c: 491: if (mode == 0) {
+"491
+[e $ ! == _mode -> 0 `i 727  ]
+{
+[; ;main.c: 492: LED_Set(eLED2, 0);
+"492
+[e ( _LED_Set (2 , . `E7217 1 -> -> 0 `i `uc ]
+[; ;main.c: 493: Robot_Stop();
+"493
+[e ( _Robot_Stop ..  ]
+[; ;main.c: 494: Reset_variables();
+"494
+[e ( _Reset_variables ..  ]
+[; ;main.c: 496: printf("%c", (char)35);
+"496
+[e ( _printf , (. :s 30C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 497: printf("Robot Ready! \n");
+"497
+[e ( _printf :s 31C ]
+[; ;main.c: 498: printf("Press right for 5m\n drive,\n");
+"498
+[e ( _printf :s 32C ]
+[; ;main.c: 499: printf("Press down for\nsquare drive,\n");
+"499
+[e ( _printf :s 33C ]
+[; ;main.c: 500: printf("Press up for IR scan mode,\n");
+"500
+[e ( _printf :s 34C ]
+[; ;main.c: 501: printf("Press left for wall follow\n");
+"501
+[e ( _printf :s 35C ]
+[; ;main.c: 503: printf("                 \n");
+"503
+[e ( _printf :s 36C ]
+[; ;main.c: 504: printf("                 \n");
+"504
+[e ( _printf :s 37C ]
+[; ;main.c: 505: printf("                 \n");
+"505
+[e ( _printf :s 38C ]
+[; ;main.c: 506: printf("                 \n");
+"506
+[e ( _printf :s 39C ]
+[; ;main.c: 507: Console_Render();
+"507
+[e ( _Console_Render ..  ]
+"508
+}
+[; ;main.c: 508: }
+[e $U 728  ]
+"509
+[e :U 727 ]
+[; ;main.c: 509: else if (mode == 1) {
+[e $ ! == _mode -> 1 `i 729  ]
+{
+[; ;main.c: 510: LED_Set(eLED2, 1);
+"510
+[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
+[; ;main.c: 511: Drive(200);
+"511
+[e ( _Drive (1 -> 200 `i ]
+[; ;main.c: 512: T_VAR += UpdateDistance();
+"512
+[e =+ _T_VAR ( _UpdateDistance ..  ]
+[; ;main.c: 513: printf("%c", (char)35);
+"513
+[e ( _printf , (. :s 40C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 514: printf("Traveled Distance:\n%d", T_VAR);
+"514
+[e ( _printf , (. :s 41C _T_VAR ]
+[; ;main.c: 515: printf("                 \n");
+"515
+[e ( _printf :s 42C ]
+[; ;main.c: 516: printf("                 \n");
+"516
+[e ( _printf :s 43C ]
+[; ;main.c: 517: printf("                 \n");
+"517
+[e ( _printf :s 44C ]
+[; ;main.c: 518: printf("                 \n");
+"518
+[e ( _printf :s 45C ]
+[; ;main.c: 519: printf("                 \n");
+"519
+[e ( _printf :s 46C ]
+[; ;main.c: 520: printf("                 \n");
+"520
+[e ( _printf :s 47C ]
+[; ;main.c: 521: printf("                 \n");
+"521
+[e ( _printf :s 48C ]
+[; ;main.c: 522: printf("                 \n");
+"522
+[e ( _printf :s 49C ]
+[; ;main.c: 523: Console_Render();
+"523
+[e ( _Console_Render ..  ]
+[; ;main.c: 524: if (T_VAR >= 5000) {
+"524
+[e $ ! >= _T_VAR -> 5000 `i 730  ]
+{
+[; ;main.c: 525: Robot_Stop();
+"525
+[e ( _Robot_Stop ..  ]
+[; ;main.c: 526: mode = 0;
+"526
+[e = _mode -> 0 `i ]
+"527
+}
+[e :U 730 ]
+"528
+}
+[; ;main.c: 527: }
+[; ;main.c: 528: }
+[e $U 731  ]
+"529
+[e :U 729 ]
+[; ;main.c: 529: else if (mode == 2) {
+[e $ ! == _mode -> 2 `i 732  ]
+{
+[; ;main.c: 530: LED_Set(eLED2, 1);
+"530
+[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
+[; ;main.c: 531: Sensor_Observe();
+"531
+[e ( _Sensor_Observe ..  ]
+[; ;main.c: 533: Closest_Object();
+"533
+[e ( _Closest_Object ..  ]
+[; ;main.c: 534: delay_ms(2000);
+"534
+[e ( _delay_ms (1 -> -> 2000 `i `us ]
+[; ;main.c: 535: mode = 0;
+"535
+[e = _mode -> 0 `i ]
+"536
+}
+[; ;main.c: 536: }
+[e $U 733  ]
+"537
+[e :U 732 ]
+[; ;main.c: 537: else if (mode == 3) {
+[e $ ! == _mode -> 3 `i 734  ]
+{
+[; ;main.c: 538: Drive(100);
+"538
+[e ( _Drive (1 -> 100 `i ]
+[; ;main.c: 539: LED_Set(eLED2, 1);
+"539
+[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
+[; ;main.c: 540: T_VAR += UpdateDistance();
+"540
+[e =+ _T_VAR ( _UpdateDistance ..  ]
+[; ;main.c: 542: Square_Dist = T_VAR + mod;
+"542
+[e = _Square_Dist + _T_VAR _mod ]
+[; ;main.c: 543: printf("%c", (char)35);
+"543
+[e ( _printf , (. :s 50C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 544: printf("SQUARE DRIVE MODE 3! \n");
+"544
+[e ( _printf :s 51C ]
+[; ;main.c: 545: printf("Total: %d\n", Square_Dist);
+"545
+[e ( _printf , (. :s 52C _Square_Dist ]
+[; ;main.c: 546: printf("                 \n");
+"546
+[e ( _printf :s 53C ]
+[; ;main.c: 547: printf("                 \n");
+"547
+[e ( _printf :s 54C ]
+[; ;main.c: 548: printf("                 \n");
+"548
+[e ( _printf :s 55C ]
+[; ;main.c: 549: printf("                 \n");
+"549
+[e ( _printf :s 56C ]
+[; ;main.c: 550: printf("                 \n");
+"550
+[e ( _printf :s 57C ]
+[; ;main.c: 551: printf("                 \n");
+"551
+[e ( _printf :s 58C ]
+[; ;main.c: 552: printf("                 \n");
+"552
+[e ( _printf :s 59C ]
+[; ;main.c: 553: printf("                 \n");
+"553
+[e ( _printf :s 60C ]
+[; ;main.c: 554: Console_Render();
+"554
+[e ( _Console_Render ..  ]
+[; ;main.c: 556: if (T_VAR >= 1000) {
+"556
+[e $ ! >= _T_VAR -> 1000 `i 735  ]
+{
+[; ;main.c: 557: Turn(82, 100, 0);
+"557
+[e ( _Turn (3 , , -> 82 `i -> 100 `i -> 0 `i ]
+[; ;main.c: 558: T_VAR = 0;
+"558
+[e = _T_VAR -> 0 `i ]
+[; ;main.c: 559: mod += 1000;
+"559
+[e =+ _mod -> 1000 `i ]
+"560
+}
+[e :U 735 ]
+[; ;main.c: 560: }
+[; ;main.c: 562: if (Square_Dist >= 4000) {
+"562
+[e $ ! >= _Square_Dist -> 4000 `i 736  ]
+{
+[; ;main.c: 564: Robot_Stop();
+"564
+[e ( _Robot_Stop ..  ]
+[; ;main.c: 565: delay_ms(500);
+"565
+[e ( _delay_ms (1 -> -> 500 `i `us ]
+[; ;main.c: 566: mode = 0;
+"566
+[e = _mode -> 0 `i ]
+"567
+}
+[e :U 736 ]
+"569
+}
+[; ;main.c: 567: }
+[; ;main.c: 569: } else if (mode == 4) {
+[e $U 737  ]
+[e :U 734 ]
+[e $ ! == _mode -> 4 `i 738  ]
+{
+[; ;main.c: 570: Sensor_Observe2();
+"570
+[e ( _Sensor_Observe2 ..  ]
+[; ;main.c: 571: Closest_Object2();
+"571
+[e ( _Closest_Object2 ..  ]
+"573
+[v _Target_Distance `i ~T0 @X0 1 a ]
+[; ;main.c: 573: int Target_Distance = Low_Sensor;
+[e = _Target_Distance _Low_Sensor ]
+[; ;main.c: 574: LED_Set(eLED2, 1);
+"574
+[e ( _LED_Set (2 , . `E7217 1 -> -> 1 `i `uc ]
+[; ;main.c: 575: Get_Sensor_State();
+"575
+[e ( _Get_Sensor_State ..  ]
+[; ;main.c: 576: if (test > 0) {
+"576
+[e $ ! > _test -> 0 `i 739  ]
+{
+[; ;main.c: 577: mode = 0;
+"577
+[e = _mode -> 0 `i ]
+"578
+}
+[e :U 739 ]
+[; ;main.c: 578: }
+[; ;main.c: 580: while (BumpSensor == 0) {
+"580
+[e $U 740  ]
+[e :U 741 ]
+{
+[; ;main.c: 581: ADCAverage();
+"581
+[e ( _ADCAverage ..  ]
+[; ;main.c: 582: printf("%c", (char)35);
+"582
+[e ( _printf , (. :s 61C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 583: printf("The target distance is: %d\n", Target_Distance);
+"583
+[e ( _printf , (. :s 62C _Target_Distance ]
+[; ;main.c: 584: printf("ADC AVERAGE %d\n", average);
+"584
+[e ( _printf , (. :s 63C _average ]
+[; ;main.c: 585: printf("                 \n");
+"585
+[e ( _printf :s 64C ]
+[; ;main.c: 586: printf("                 \n");
+"586
+[e ( _printf :s 65C ]
+[; ;main.c: 587: printf("                 \n");
+"587
+[e ( _printf :s 66C ]
+[; ;main.c: 588: printf("                 \n");
+"588
+[e ( _printf :s 67C ]
+[; ;main.c: 589: printf("                 \n");
+"589
+[e ( _printf :s 68C ]
+[; ;main.c: 590: printf("                 \n");
+"590
+[e ( _printf :s 69C ]
+[; ;main.c: 591: printf("                 \n");
+"591
+[e ( _printf :s 70C ]
+[; ;main.c: 592: printf("                 \n");
+"592
+[e ( _printf :s 71C ]
+[; ;main.c: 593: Console_Render();
+"593
+[e ( _Console_Render ..  ]
+[; ;main.c: 594: HMI_SetNumber(average);
+"594
+[e ( _HMI_SetNumber (1 _average ]
+[; ;main.c: 596: HMI_Render();
+"596
+[e ( _HMI_Render ..  ]
+[; ;main.c: 598: HMI_Poll();
+"598
+[e ( _HMI_Poll ..  ]
+[; ;main.c: 599: if (Target_Distance <= average + 2 || Target_Distance >= average - 2) {
+"599
+[e $ ! || <= _Target_Distance + _average -> 2 `i >= _Target_Distance - _average -> 2 `i 743  ]
+{
+[; ;main.c: 600: BangBang(50, 50, 50, 50);
+"600
+[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 50 `i -> 50 `i ]
+"601
+}
+[e :U 743 ]
+[; ;main.c: 601: }
+[; ;main.c: 602: if (Target_Distance > average + 2) {
+"602
+[e $ ! > _Target_Distance + _average -> 2 `i 744  ]
+{
+[; ;main.c: 603: BangBang(50, 50, 40, 40);
+"603
+[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 40 `i -> 40 `i ]
+"604
+}
+[e :U 744 ]
+[; ;main.c: 604: }
+[; ;main.c: 606: if (Target_Distance < average - 2) {
+"606
+[e $ ! < _Target_Distance - _average -> 2 `i 745  ]
+{
+[; ;main.c: 607: BangBang(40, 40, 50, 50);
+"607
+[e ( _BangBang (4 , , , -> 40 `i -> 40 `i -> 50 `i -> 50 `i ]
+"608
+}
+[e :U 745 ]
+[; ;main.c: 608: }
+[; ;main.c: 610: if (Target_Distance > average + 5) {
+"610
+[e $ ! > _Target_Distance + _average -> 5 `i 746  ]
+{
+[; ;main.c: 611: BangBang(50, 50, 30, 30);
+"611
+[e ( _BangBang (4 , , , -> 50 `i -> 50 `i -> 30 `i -> 30 `i ]
+"612
+}
+[e :U 746 ]
+[; ;main.c: 612: }
+[; ;main.c: 614: if (Target_Distance < average - 5) {
+"614
+[e $ ! < _Target_Distance - _average -> 5 `i 747  ]
+{
+[; ;main.c: 615: BangBang(30, 30, 50, 50);
+"615
+[e ( _BangBang (4 , , , -> 30 `i -> 30 `i -> 50 `i -> 50 `i ]
+"616
+}
+[e :U 747 ]
+[; ;main.c: 616: }
+[; ;main.c: 618: Get_Sensor_State();
+"618
+[e ( _Get_Sensor_State ..  ]
+[; ;main.c: 619: printf("Besneor: %d", BumpSensor);
+"619
+[e ( _printf , (. :s 72C -> _BumpSensor `i ]
+[; ;main.c: 620: if (BumpSensor > 0) {
+"620
+[e $ ! > -> _BumpSensor `i -> 0 `i 748  ]
+{
+[; ;main.c: 621: Target_Distance = 0;
+"621
+[e = _Target_Distance -> 0 `i ]
+[; ;main.c: 622: break;
+"622
+[e $U 742  ]
+"623
+}
+[e :U 748 ]
+[; ;main.c: 623: }
+[; ;main.c: 625: if (HMIBoard.mUp.mGetState()) {
+"625
+[e $ ! != -> ( *U . . _HMIBoard 3 4 ..  `i -> -> -> 0 `i `uc `i 749  ]
+{
+[; ;main.c: 626: up = HMIBoard.mUp.mGetState();
+"626
+[e = _up ( *U . . _HMIBoard 3 4 ..  ]
+[; ;main.c: 627: if (up) {
+"627
+[e $ ! != -> _up `i -> -> -> 0 `i `uc `i 750  ]
+{
+[; ;main.c: 628: mode = 0;
+"628
+[e = _mode -> 0 `i ]
+"629
+}
+[e :U 750 ]
+[; ;main.c: 629: }
+[; ;main.c: 630: break;
+"630
+[e $U 742  ]
+"631
+}
+[e :U 749 ]
+"632
+}
+[e :U 740 ]
+"580
+[e $ == -> _BumpSensor `i -> 0 `i 741  ]
+[e :U 742 ]
+[; ;main.c: 631: }
+[; ;main.c: 632: }
+[; ;main.c: 633: mode = 0;
+"633
+[e = _mode -> 0 `i ]
+"634
+}
+[e :U 738 ]
+"635
+[e :U 737 ]
+[e :U 733 ]
+[e :U 731 ]
+[e :U 728 ]
+[; ;main.c: 634: }
+[; ;main.c: 635: Console_Render();
+[e ( _Console_Render ..  ]
+[; ;main.c: 636: if (MXK_Release())
+"636
+[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 751  ]
+[; ;main.c: 637: MXK_Dequeue();
+"637
+[e ( _MXK_Dequeue ..  ]
+[e :U 751 ]
+"638
+}
+[e :U 726 ]
+"639
 }
 [; ;main.c: 638: }
-"638
-[e :UE 714 ]
+[; ;main.c: 639: }
+[e $U 719  ]
+[e :U 720 ]
+}
+[; ;main.c: 640: }
+"640
+[e :UE 716 ]
 }
 [p f _printf 8913024 ]
 [a 12C 83 116 101 112 112 101 100 32 51 54 48 32 100 101 103 114 101 101 115 0 ]

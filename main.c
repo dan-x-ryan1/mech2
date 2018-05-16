@@ -27,7 +27,7 @@
 #define LOW_BYTE(y) ((y) & 255)
 //Laclan Global Variables 
 
-int Current_Dist = 0;
+UINT8 Current_Dist = 0;
 UINT8 Current_Dist1 = 0;
 UINT8 Current_Dist2 = 0;
 int mode = 0;
@@ -180,26 +180,25 @@ int UpdateDistance() { // Update the distance from sensor reading
     Current_Dist2 = eusartRec();
     
     Current_Dist = Current_Dist2; // Using the low byte as the distance reading
- 
-    if (Current_Dist < 0){
-        Current_Dist = ~Current_Dist;
-    }
-
     return Current_Dist;
 
 }
 
-void Drive(int Speed) {
-    if (Speed < 0){
-        Speed = -1*Speed;
-        Speed = ~Speed;
+void Drive(int SpeedL, int SpeedR) {
+    if (SpeedL < 0){
+        SpeedL = -1*SpeedL;
+        SpeedL = ~SpeedL;
     }
-    int Rad = 32768;
-    eusartSend(137); //drive, (speed hb, lb, radius hb, lb)
-    eusartSend(HIGH_BYTE(Speed));
-    eusartSend(LOW_BYTE(Speed));
-    eusartSend(HIGH_BYTE(Rad));
-    eusartSend(LOW_BYTE(Rad));
+    if (SpeedR < 0){
+        SpeedR = -1*SpeedR;
+        SpeedR = ~SpeedR;
+    }
+    
+    eusartSend(145); //drive, (speed hb, lb, radius hb, lb)
+    eusartSend(HIGH_BYTE(SpeedL));
+    eusartSend(LOW_BYTE(SpeedL));
+    eusartSend(HIGH_BYTE(SpeedR));
+    eusartSend(LOW_BYTE(SpeedR));
 }
 
 int Turn(int Angle, int Speed, int Dir) { // function for wheel turn angle  
@@ -512,7 +511,7 @@ void main() {
             }
             else if (mode == 1) { // Mode 1 5 meter drive 
                 LED_Set(eLED2, ON);
-                Drive(-200);
+                Drive(200,200);
                 T_VAR += UpdateDistance();
                 printf("%c", ENDOFTEXT);
                 printf("Traveled Distance:\n%d", T_VAR);
@@ -539,7 +538,7 @@ void main() {
                 mode = 0;
             }
             else if (mode == 3) { //Mode 3: Square Drive
-                Drive(100);
+                Drive(100,100);
                 LED_Set(eLED2, ON);
                 T_VAR += UpdateDistance();
 
