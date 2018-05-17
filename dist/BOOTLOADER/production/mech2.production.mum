@@ -1,12 +1,7 @@
 
 Memory Summary:
-<<<<<<< HEAD:dist/BOOTLOADER/production/MX2_W6_Skeleton_-_Copy.production.mum
-    Program space        used  5A99h ( 23193) of 1DBF4h bytes   ( 19.0%)
-    Data space           used   41Fh (  1055) of   F3Fh bytes   ( 27.0%)
-=======
-    Program space        used  6609h ( 26121) of 1DBF4h bytes   ( 21.4%)
-    Data space           used   41Dh (  1053) of   F3Fh bytes   ( 27.0%)
->>>>>>> fc987f5a21ac58e0a84d8ea0a5f91bc3b9e3a42b:dist/BOOTLOADER/production/mech2.production.mum
+    Program space        used  6077h ( 24695) of 1DBF4h bytes   ( 20.3%)
+    Data space           used   421h (  1057) of   F3Fh bytes   ( 27.1%)
     Configuration bits   used     3h (     3) of     3h words   (100.0%)
     Data stack space     used     0h (     0) of   AFCh bytes   (  0.0%)
 

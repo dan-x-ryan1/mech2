@@ -1,10 +1,10 @@
 
 # 1 "dans.c"
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -13,17 +13,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -37,7 +37,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -64,17 +64,17 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h"
 extern volatile unsigned short PMSTAT @ 0xF40;
 
 asm("PMSTAT equ 0F40h");
@@ -7958,7 +7958,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -7985,7 +7985,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
 # 273 "Library\Types.h"
@@ -8280,8 +8280,8 @@ void swap(UINT8Ptr pA, UINT8Ptr pB);
 void reverse(char * input , UINT16 length);
 void itos(UINT16 input, char* destination);
 
-# 11 "dans.h"
-enum direction {NORTH, SOUTH, EAST, WEST};
+# 13 "dans.h"
+int Current_Direction = 3;
 
 
 int top = -1;
@@ -8295,9 +8295,9 @@ int Current_Dist = 0;
 int Current_Dist1 = 0;
 int Current_Dist2 = 0;
 int Found_Flag = 0;
-int mode=0;
+int mode = 0;
 int Motor_Count = 0;
-int Steps= 0;
+int Steps = 0;
 
 
 int numReadings = 10;
@@ -8309,10 +8309,13 @@ int average = 0;
 int x = 0;
 
 
+int X_Pos;
+int Y_Pos;
+
 
 void InitADC();
 int FunctReadADC(int channel);
-int ADCAverage ();
+int ADCAverage();
 bool isempty();
 bool isfull();
 int peek();
@@ -8320,13 +8323,13 @@ int pop();
 int push(int data);
 void giveID();
 void Init_Pos_Array();
-int Travel(int Dist, int TEST_ADC);
+int Travel(int direction, int Dist, int Test_ADC, int Spd);
 Turn(int Angle, int Speed, int Dir);
 void movement1();
 void movement2();
 void movement4();
 void Drive(int SpeedL, int SpeedR);
-void eusartSend (UINT8 sendChar);
+void eusartSend(UINT8 sendChar);
 UINT8 eusartRec();
 int UpdateDistance();
 void Robot_Stop();
@@ -8335,13 +8338,15 @@ int Get_VirtualWall_State();
 int SteppingCCW();
 int SteppingCW();
 void Sensor_Observe();
-void Move_ADC_To (int Angle);
-void Find_Flag () ;
+void Move_ADC_To(int Angle);
+void Find_Flag();
 
-# 76
-struct square {
-short pos;
-short id_number;
+# 80
+struct square
+{
+int id;
+int victim;
+
 };
 
 # 14 "Library\Colours.h"
@@ -8367,7 +8372,7 @@ inline void Console_SetBackcolour (Colour pColour);
 inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
 inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
 
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -8518,6 +8523,24 @@ void HMI_SetSegments (str pString);
 void HMI_Poll ();
 
 # 8 "dans.c"
+int Create_Maze(){
+int count = 0;
+struct square maze[4][5];
+for(int i = 0 ; i < 4; ++i){
+for(int j = 0 ; j < 5; ++j){
+maze[i][j].id = count;
+++count;
+}
+}
+for(int i = 0 ; i < 4; ++i){
+for(int j = 0 ; j < 5; ++j){
+maze[i][j].victim = 0;
+}
+}
+X_Pos = 3;
+Y_Pos = 1;
+}
+
 void InitADC()
 {
 ADCON1 = 0b10101101;
@@ -8563,10 +8586,6 @@ HMI_SetNumber(average);
 HMI_Render();
 return average;
 }
-
-
-
-
 void eusartSend (UINT8 sendChar){
 while(!TXSTA1bits.TRMT){};
 TXREG1 = sendChar;
@@ -8582,7 +8601,6 @@ return 1;
 else
 return 0;
 }
-
 bool isfull() {
 
 if(top == 20)
@@ -8590,11 +8608,9 @@ return 1;
 else
 return 0;
 }
-
 int peek() {
 return stack[top];
 }
-
 int pop() {
 int data;
 
@@ -8607,7 +8623,6 @@ printf("Could not retrieve data, Stack is empty.\n");
 
 }
 }
-
 int push(int data) {
 
 if(!isfull()) {
@@ -8617,7 +8632,6 @@ stack[top] = data;
 printf("Could not insert data, Stack is full.\n");
 }
 }
-
 void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
 
 x_walls[0][0] = 1;
@@ -8678,28 +8692,7 @@ y_walls[5][3] = 1;
 
 }
 
-void giveID (){
-struct square grid;
-int id_count = 0;
-int y;
-for(y = 0; y < 4; y++)
-{
-for(int x = 0; x < 5; x++)
-{
-
-grid.id_number=id_count;
-
-
-printf("%d \t", grid.id_number);
-
-id_count++;
-Console_Render();
-
-}
-printf("\n");
-
-}
-}
+# 198
 void Init_Pos_Array(){
 short position[4][5] =
 {{0,0,0,0,0},
@@ -8719,7 +8712,6 @@ printf("\n");
 }
 
 }
-
 void Drive(int SpeedL, int SpeedR) {
 if (SpeedL < 0){
 SpeedL = -1*SpeedL;
@@ -8742,7 +8734,7 @@ eusartSend(19);
 Current_Dist1 = eusartRec();
 Current_Dist2 = eusartRec();
 
-Current_Dist = Current_Dist2;
+Current_Dist = ((Current_Dist1 <<(8)) & 0b1111111100000000 | (Current_Dist2 & 255));
 return Current_Dist;
 }
 void Robot_Stop(){
@@ -8752,15 +8744,13 @@ eusartSend(0);
 eusartSend(0);
 eusartSend(0);
 }
-
 int Get_VirtualWall_State(){
 eusartSend(142);
 eusartSend(13);
 int Vitual_Wall_Sensor = (eusartRec());
 return Vitual_Wall_Sensor;
 }
-
-Turn(int Angle, int Speed, int Dir) {
+Turn(int Angle, int Speed, int Dir){
 int Rad = 1;
 if (Dir == 0){
 Rad = 65535;
@@ -8783,23 +8773,76 @@ eusartSend(142);
 eusartSend(7);
 eusartRec();
 }
-int Travel(int Dist, int Test_ADC){
+int Travel(int direction, int Dist, int Test_ADC, int Spd){
 int Dist_Travelled = 0;
+int Req_Dir = 0;
+int Dir;
+if(direction == Current_Direction){
+printf("%d", Spd);
+printf("driving");
+Console_Render();
+}
+else {
+Req_Dir = direction - Current_Direction;
+if (Req_Dir < 0 ){
+Req_Dir = 83*Req_Dir*-1;
+Dir = 1;
+if(Req_Dir > 166){
+Req_Dir = 332 - Req_Dir;
+Dir = 0;
+}
+}
+else{
+Req_Dir = 83*Req_Dir;
+Dir = 0;
+if(Req_Dir > 166){
+Req_Dir = 332 - Req_Dir;
+Dir = 1;
+}
+}
+Turn(Req_Dir, 200, Dir);
+Current_Direction = direction;
+}
+
+Drive(Spd,Spd);
+
 while (Dist_Travelled<1000){
 printf("%c", (char)35);
 Dist_Travelled += UpdateDistance();
-printf("%d", Dist_Travelled);
+printf("%d \n", Dist_Travelled);
 Console_Render();
-if (Get_VirtualWall_State()>0){
-Robot_Stop();
-printf("WALL FOUND");
+if (Get_VirtualWall_State()){
+int rev_Dist = 0;
+
+printf("WALL FOUND\n");
 Console_Render();
-delay_ms(100);
-return Dist_Travelled;
+Drive(-Spd,-Spd);
+UpdateDistance();
+while(rev_Dist >= -Dist_Travelled){
+
+rev_Dist += UpdateDistance();
+Console_Render();
+printf("%c", (char)35);
+printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
+Console_Render();
 }
-if(Test_ADC && ADCAverage() < 50){
-break;
+return;
 }
+
+
+
+}
+if (direction == 0){
+X_Pos -= 1;
+}
+else if (direction == 1){
+Y_Pos += 1;
+}
+else if (direction == 2){
+X_Pos += 1;
+}
+else if (direction == 3){
+Y_Pos -= 1;
 }
 Robot_Stop();
 return 1000;
@@ -8807,32 +8850,23 @@ return 1000;
 
 
 void movement1(){
-Drive(200,200);
-Travel(1000, 0);
+Travel(3, 1000, 0, 200);
+printf("Pos: %d, %d", X_Pos, Y_Pos);
+Console_Render();
+Travel(0, 1000, 0, 200);
+printf("Pos: %d, %d", X_Pos, Y_Pos);
+Console_Render();
+Travel(1, 1000, 0, 200);
+printf("Pos: %d, %d", X_Pos, Y_Pos);
+Console_Render();
+Travel(0, 1000, 0, 200);
+printf("Pos: %d, %d", X_Pos, Y_Pos);
+Console_Render();
+while(1){};
 return;
 }
-void movement2(){
-Turn(83, 100, 0);
-Drive(200,200);
-Travel(1000, 0);
-}
-void untilVirtual (){
-int Rev_Dist = 0;
-Turn(83, 100, 0);
-Drive(200,200);
-Rev_Dist = Travel(1000,0);
-Turn(166,100,0);
-Drive(200, 200);
-Travel(Rev_Dist, 1);
 
-}
-
-void movement4(){
-Turn(83, 100, 0);
-Drive(200,200);
-Travel(1000, 0);
-}
-
+# 392
 int SteppingCCW(){
 STP4();
 delay_ms(2);
@@ -8858,7 +8892,7 @@ delay_ms(2);
 
 }
 
-# 352
+# 421
 void Find_Flag () {
 
 Sensor_Observe();

@@ -34,7 +34,6 @@ int T_VAR = 0;
 int Square_Dist = 0;
 int mod = 0;
 UINT8 BumpSensor = 0;
-UINT8 Vitual_Wall_Sensor = 0;
 UINT8 Cliff_FRight = 0;
 UINT8 Cliff_FLeft = 0;
 UINT8 Cliff_Right = 0;
@@ -111,21 +110,7 @@ void InitSerialCommunication(){
 
 
 
-<<<<<<< HEAD
 int Get_Sensor_State(){
-=======
-void Get_VirtualWall_State(){
-    eusartSend(142);    // get state of sensor
-    eusartSend(13);     // virtual wall detect 
-    Vitual_Wall_Sensor = (eusartRec());
-}
-
-int UpdateDistance() { // Update the distance from sensor reading 
-    eusartSend(142);
-    eusartSend(19);
-    Current_Dist1 = eusartRec();
-    Current_Dist2 = eusartRec();
->>>>>>> fc987f5a21ac58e0a84d8ea0a5f91bc3b9e3a42b
     
     eusartSend(142);        // get state of sensor
     eusartSend(7);     // bump sensor 
@@ -170,6 +155,7 @@ void Robot_Init(){
     eusartSend(128); // TURN IO ON
     eusartSend(132); // Full Mode
     Robot_Stop();
+    UpdateDistance();
 }
 
 
@@ -412,7 +398,8 @@ void main(){
             //delay_ms(350);
             //LED_Set(eLED2, 0);
             //Move_ADC_To (0);
-           // movement1();
+            Create_Maze();
+            movement1();
             //movement2();
             //untilVirtual();
             //movement4();

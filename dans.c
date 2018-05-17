@@ -5,6 +5,24 @@
 #include <math.h>
 #include "HMI.h"
 
+int Create_Maze(){
+int count = 0;
+    struct square maze[4][5];
+    for(int i = 0 ; i < 4; ++i){
+        for(int j = 0 ; j < 5; ++j){
+            maze[i][j].id = count;
+            ++count;
+        }
+    }
+    for(int i = 0 ; i < 4; ++i){
+        for(int j = 0 ; j < 5; ++j){
+            maze[i][j].victim = 0;
+        }
+    } 
+    X_Pos = 3;
+    Y_Pos = 1; 
+}
+
 void InitADC() // This function used to setup the ADC Module 
 {
     ADCON1 = 0b10101101;
@@ -50,10 +68,6 @@ int ADCAverage (){
         HMI_Render();
         return average;       
 }
-
-
-
-
 void eusartSend (UINT8 sendChar){
     while(!TXSTA1bits.TRMT){};
     TXREG1 = sendChar;
@@ -69,7 +83,6 @@ bool isempty() {
    else
       return 0;
 }
-   
 bool isfull() {
 
    if(top == MAXSIZE)
@@ -77,11 +90,9 @@ bool isfull() {
    else
       return 0;
 }
-
 int peek() {
    return stack[top];
 }
-
 int pop() {
    int data;
 	
@@ -94,7 +105,6 @@ int pop() {
       
    }
 }
-
 int push(int data) {
 
    if(!isfull()) {
@@ -104,7 +114,6 @@ int push(int data) {
       printf("Could not insert data, Stack is full.\n");
    }
 }
-
 void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
     
 	x_walls[0][0] = true;
@@ -164,8 +173,7 @@ void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
 	y_walls[5][3] = true;
 
 }
-
-void giveID (){
+/*void giveID (){
     struct square grid; // create instance of square struct 
     int id_count = 0; //give every grid a number id 
     int y;
@@ -186,7 +194,7 @@ void giveID (){
         printf("\n");
         
     }  
-}
+}*/
 void Init_Pos_Array(){
     short position[4][5] =
     {{0,0,0,0,0},
@@ -206,7 +214,6 @@ void Init_Pos_Array(){
     }
     
 }
-
 void Drive(int SpeedL, int SpeedR) {
     if (SpeedL < 0){
         SpeedL = -1*SpeedL;
@@ -229,7 +236,7 @@ int UpdateDistance() { // Update the distance from sensor reading
     Current_Dist1 = eusartRec();
     Current_Dist2 = eusartRec();
     
-    Current_Dist = Current_Dist2; // Using the low byte as the distance reading
+    Current_Dist = ((Current_Dist1 <<(8)) & 0b1111111100000000 | (Current_Dist2 & 255)); // Using the low byte as the distance reading
     return Current_Dist;
 }
 void Robot_Stop(){ 
@@ -239,16 +246,14 @@ void Robot_Stop(){
     eusartSend(0);
     eusartSend(0);
     }
-
 int Get_VirtualWall_State(){
     eusartSend(142);    // get state of sensor
     eusartSend(13);     // virtual wall detect 
     int Vitual_Wall_Sensor = (eusartRec());
     return Vitual_Wall_Sensor;
 }
-
-Turn(int Angle, int Speed, int Dir) { // function for wheel turn angle  
-    int Rad = 1;
+Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle  
+    int Rad = 1; //CCW
     if (Dir == 0){
         Rad = 65535; //turn cw
         Angle = ~Angle;
@@ -270,23 +275,76 @@ Turn(int Angle, int Speed, int Dir) { // function for wheel turn angle
     eusartSend(7);
     eusartRec();
 }
-int Travel(int Dist, int Test_ADC){
+int Travel(int direction, int Dist, int Test_ADC, int Spd){
     int Dist_Travelled = 0;
+    int Req_Dir = 0;
+    int Dir;
+    if(direction == Current_Direction){
+            printf("%d", Spd);
+            printf("driving");
+            Console_Render();
+    }
+    else {
+        Req_Dir = direction - Current_Direction;
+        if (Req_Dir < 0 ){
+            Req_Dir = 83*Req_Dir*-1;
+            Dir = 1;
+                    if(Req_Dir > 166){
+                        Req_Dir = 332 - Req_Dir;
+                        Dir = 0;
+                    }
+        }
+        else{
+            Req_Dir = 83*Req_Dir;
+            Dir = 0;
+            if(Req_Dir > 166){
+                        Req_Dir = 332 - Req_Dir;
+                        Dir = 1;
+            }
+        }
+        Turn(Req_Dir, 200, Dir);
+        Current_Direction = direction;
+    }
+    
+    Drive(Spd,Spd);
+        
     while (Dist_Travelled<1000){
         printf("%c", ENDOFTEXT);
         Dist_Travelled += UpdateDistance();
-        printf("%d", Dist_Travelled);
+        printf("%d \n", Dist_Travelled);
         Console_Render();
-        if (Get_VirtualWall_State()>0){
-            Robot_Stop();
-            printf("WALL FOUND");
+        if (Get_VirtualWall_State()){
+            int rev_Dist = 0;
+           // Robot_Stop();
+            printf("WALL FOUND\n");
             Console_Render();
-            delay_ms(100);
-            return Dist_Travelled;
+            Drive(-Spd,-Spd); 
+            UpdateDistance();
+            while(rev_Dist >= -Dist_Travelled){
+                
+                rev_Dist += UpdateDistance();
+                Console_Render();
+                printf("%c", ENDOFTEXT);
+                printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
+                Console_Render();
+                }
+            return;
         }
-        if(Test_ADC && ADCAverage() < 50){
-                break;
-        }  
+        //if(Test_ADC && ADCAverage() < 50){
+        //        break;
+      //  }
+    }
+    if (direction == 0){
+        X_Pos -= 1;
+    }
+    else if (direction == 1){
+        Y_Pos += 1;
+    }
+    else if (direction == 2){
+        X_Pos += 1;
+    }
+    else if (direction == 3){
+        Y_Pos -= 1;
     }
         Robot_Stop();
         return 1000;
@@ -294,11 +352,22 @@ int Travel(int Dist, int Test_ADC){
 
 
 void movement1(){
-    Drive(200,200);
-    Travel(1000, 0);
+    Travel(3, 1000, 0, 200);
+    printf("Pos: %d, %d", X_Pos, Y_Pos);
+    Console_Render();
+    Travel(0, 1000, 0, 200);
+    printf("Pos: %d, %d", X_Pos, Y_Pos);
+    Console_Render();
+    Travel(1, 1000, 0, 200);
+    printf("Pos: %d, %d", X_Pos, Y_Pos);
+    Console_Render();
+    Travel(0, 1000, 0, 200);
+    printf("Pos: %d, %d", X_Pos, Y_Pos);
+    Console_Render();
+    while(1){};
     return;
 }
-void movement2(){
+/*void movement2(){
     Turn(83, 100, 0);
     Drive(200,200);
     Travel(1000, 0);
@@ -319,7 +388,7 @@ void movement4(){
     Drive(200,200);
     Travel(1000, 0);
 }
-
+*/
 int SteppingCCW(){                   // turn motor rotate counter-clock wise
     STP4();
     delay_ms(DLY);
