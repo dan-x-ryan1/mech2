@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/BOOTLOADER/production\MX2_W6_Skeleton_-_Copy.production.hex">
+  <executable name="dist/BOOTLOADER/production\mech2.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>125944</length>
+<<<<<<< HEAD
       <used>23193</used>
       <free>102751</free>
+=======
+      <used>26121</used>
+      <free>99823</free>
+>>>>>>> fc987f5a21ac58e0a84d8ea0a5f91bc3b9e3a42b
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3904</length>
+<<<<<<< HEAD
       <used>1055</used>
       <free>2849</free>
+=======
+      <used>1053</used>
+      <free>2851</free>
+>>>>>>> fc987f5a21ac58e0a84d8ea0a5f91bc3b9e3a42b
     </memory>
   </executable>
 </project>
