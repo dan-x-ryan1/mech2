@@ -276,65 +276,66 @@ Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle
     eusartRec();
 }
 int Travel(int direction, int Dist, int Test_ADC, int Spd){
-    int Dist_Travelled = 0;
-    int Req_Dir = 0;
-    int Dir;
-    if(direction == Current_Direction){
+    int Dist_Travelled = 0
+    int Req_Dir = 0;    
+    int Dir;            // Dir is a varible to define which way the robot turns
+    if(direction == Current_Direction){ //if we are facing the right direction do nothing
             printf("%d", Spd);
             printf("driving");
             Console_Render();
     }
-    else {
-        Req_Dir = direction - Current_Direction;
-        if (Req_Dir < 0 ){
-            Req_Dir = 83*Req_Dir*-1;
-            Dir = 1;
-                    if(Req_Dir > 166){
+    else {                                       //if not oreient the robot to the right direction
+        Req_Dir = direction - Current_Direction; //Req_Dir is a holder for the difference numerically between 
+                                                 //required direction and current direction  
+        if (Req_Dir < 0){               //if the number is negative, we need to convert it to positive
+            Req_Dir = 83*Req_Dir*-1;    //multiply the required direction by 83* (makes robot turn 90) to convert between 
+            Dir = 1;                    // a numerical difference between to an angle
+                    if(Req_Dir > 166){  // if the turn is going to be over 166 (180 degrees), turn the other way 
                         Req_Dir = 332 - Req_Dir;
-                        Dir = 0;
+                        Dir = 0;        
                     }
         }
         else{
-            Req_Dir = 83*Req_Dir;
+            Req_Dir = 83*Req_Dir;       // as above but we don't need to convert to positive 
             Dir = 0;
             if(Req_Dir > 166){
                         Req_Dir = 332 - Req_Dir;
                         Dir = 1;
             }
         }
-        Turn(Req_Dir, 200, Dir);
-        Current_Direction = direction;
+        Turn(Req_Dir, 200, Dir);        //Turn(turn angle, speed, CW/CCW [1= CW, CCW = 0])
+        Current_Direction = direction;  // we have turned so we are now facing the way we wanted
     }
     
-    Drive(Spd,Spd);
+    Drive(Spd,Spd);  //drive forward with the speed set
         
-    while (Dist_Travelled<1000){
-        printf("%c", ENDOFTEXT);
+    while (Dist_Travelled<Dist){  // while we haven't gone far enough
+        printf("%c", ENDOFTEXT);        
         Dist_Travelled += UpdateDistance();
-        printf("%d \n", Dist_Travelled);
+        printf("%d \n", Dist_Travelled);  //print how far we have gone
         Console_Render();
-        if (Get_VirtualWall_State()){
-            int rev_Dist = 0;
+        if (Get_VirtualWall_State()){     // check if there is a V_Wall
+            int rev_Dist = 0;             //reverse distance
            // Robot_Stop();
             printf("WALL FOUND\n");
             Console_Render();
-            Drive(-Spd,-Spd); 
-            UpdateDistance();
-            while(rev_Dist >= -Dist_Travelled){
+            Drive(-Spd,-Spd);            //drive backward as the same speed
+            UpdateDistance();            //make sure this is 0 before we start 
+            while(rev_Dist >= -Dist_Travelled){  //reverse as far as we travelled since last turn
                 
                 rev_Dist += UpdateDistance();
                 Console_Render();
                 printf("%c", ENDOFTEXT);
-                printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
+                printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled); // print how far we went & the target distance
                 Console_Render();
                 }
-            return;
+            return;  //we are back where we started, so we don't want to change position
         }
         //if(Test_ADC && ADCAverage() < 50){
         //        break;
-      //  }
+        //}
     }
-    if (direction == 0){
+    if (direction == 0){  //if we havn't found a wall, the next 4 statements change our position depending on where we went
         X_Pos -= 1;
     }
     else if (direction == 1){
@@ -346,22 +347,28 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd){
     else if (direction == 3){
         Y_Pos -= 1;
     }
-        Robot_Stop();
-        return 1000;
+        Robot_Stop(); //stop
 }
-
+/*
+        N = 0
+ * W = 3  +  E = 1
+       S = 2
+ 
+ 
+ */
 
 void movement1(){
-    Travel(3, 1000, 0, 200);
+    Travel(3, SQUARE, 0, 200);              // travel(direction, Distance, test ADC, Speed
+    printf("Pos: %d, %d", X_Pos, Y_Pos);    // "test_ADC" is an if statement that will stop if the ADC gets below 50 
+                                            // (so we don't hit a wall [sensor straight forward or backward])
+    Console_Render();                       // SQUARE is defined as 1000mm, we can change this to make the robot go a more accurate distance
+    Travel(0, SQUARE, 0, 200);              
+    printf("Pos: %d, %d", X_Pos, Y_Pos);    //this prints the current position of the robot in the grid (x, y)
+    Console_Render();
+    Travel(1, SQUARE, 0, 200);
     printf("Pos: %d, %d", X_Pos, Y_Pos);
     Console_Render();
-    Travel(0, 1000, 0, 200);
-    printf("Pos: %d, %d", X_Pos, Y_Pos);
-    Console_Render();
-    Travel(1, 1000, 0, 200);
-    printf("Pos: %d, %d", X_Pos, Y_Pos);
-    Console_Render();
-    Travel(0, 1000, 0, 200);
+    Travel(0, SQUARE, 0, 200);
     printf("Pos: %d, %d", X_Pos, Y_Pos);
     Console_Render();
     while(1){};

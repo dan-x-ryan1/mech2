@@ -19,6 +19,7 @@ int stack[MAXSIZE];
 #define x_grid 5
 #define y_grid 4
 #define DLY 2 
+#define SQUARE 1000
 
 int Current_Dist = 0;
 int Current_Dist1 = 0;
