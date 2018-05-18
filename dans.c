@@ -5,6 +5,9 @@
 #include <math.h>
 #include "HMI.h"
 
+//enum{NORTH,SOUTH,EAST,WEST};
+
+
 int Create_Maze(){
 int count = 0;
     struct square maze[4][5];
@@ -252,6 +255,41 @@ int Get_VirtualWall_State(){
     int Vitual_Wall_Sensor = (eusartRec());
     return Vitual_Wall_Sensor;
 }
+int Detect_Victim(){
+    if (VictimCount>=2){
+        return 0;
+    }
+    eusartSend(142);    // get state of sensor 
+    eusartSend(17);     // Home Base detect 
+    int Home_Base_State = (eusartRec());
+    if (VictimCount==0){
+    if(Home_Base_State >= 240  && Home_Base_State <= 254){
+        printf("%c",ENDOFTEXT);
+        printf("\nHome Base found\n ");
+        printf("Home_Base_State: %d",Home_Base_State);
+        Console_Render;
+        VictimCount++;
+        return 1;
+    }
+    }
+    if (VictimCount==1){
+        if(Home_Base_State >= 240  && Home_Base_State <= 254){
+        printf("%c",ENDOFTEXT);
+        printf("\nHome Base found\n ");
+        printf("Home_Base_State: %d",Home_Base_State);
+        Console_Render;
+        VictimCount++;
+        return 2;
+    } 
+    }
+    else{
+        printf("%c",ENDOFTEXT);
+        printf("\nNOTHING!!!");
+        Console_Render();
+    }
+    return Home_Base_State;
+    
+}
 Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle  
     int Rad = 1; //CCW
     if (Dir == 0){
@@ -276,7 +314,7 @@ Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle
     eusartRec();
 }
 int Travel(int direction, int Dist, int Test_ADC, int Spd){
-    int Dist_Travelled = 0
+    int Dist_Travelled = 0;
     int Req_Dir = 0;    
     int Dir;            // Dir is a varible to define which way the robot turns
     if(direction == Current_Direction){ //if we are facing the right direction do nothing
@@ -308,12 +346,71 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd){
     }
     
     Drive(Spd,Spd);  //drive forward with the speed set
-        
+    
+    
+   // ADCAverage();   
+   // int Desired_Level = average;
+    k = 2; //this is the proportional controller value
+    int error;
+    int spd1 =0 ;
+    int spd2=0;
+    
     while (Dist_Travelled<Dist){  // while we haven't gone far enough
+         //left Wall
+        
+            ADCAverage();
+            error = Desired_Level - average;
+            error*=k;
+            if (error > 190){
+                error=190;
+            }
+             if (error < -190){
+                error = -190;
+            }
+             if (error == Desired_Level + 4 || error == Desired_Level - 4){
+                Drive(Spd,Spd);
+            }
+             if (error >= 0){
+            spd1 = Spd - error;
+            Drive(spd1,Spd);    
+            }
+             if (error <= 0){
+            error=abs(error);
+             spd2= Spd - error;
+            Drive(Spd,spd2);    
+            }
+            
+     /*   if (Wall=false){ //Right Wall
+
+            ADCAverage();
+
+            int error = Desired_Level - average;
+            error*=k;
+
+            if (error == 0 || error == Desired_Level + 1 || error == Desired_Level - 1){
+                Drive(Spd,Spd);
+            }
+
+            else if (error > 0){
+            Drive((Spd-error),Spd);    
+            }
+            else if (error < 0){
+            error=abs(error);    
+            Drive(Spd,(Spd-error));    
+            }
+        }
+        */
         printf("%c", ENDOFTEXT);        
         Dist_Travelled += UpdateDistance();
         printf("%d \n", Dist_Travelled);  //print how far we have gone
+        printf("\nspd1 %d",spd1);
+        printf("\nspd2 %d",spd2);
+        printf("\nADC %d",average);
+        printf("\nDesired: %d",Desired_Level);
+        printf("\nSpeed: %d",Spd);
+        printf("\nError: %d",error);
         Console_Render();
+        //Detect_Victim();
         if (Get_VirtualWall_State()){     // check if there is a V_Wall
             int rev_Dist = 0;             //reverse distance
            // Robot_Stop();
@@ -366,7 +463,7 @@ void movement1(){
     printf("Pos: %d, %d", X_Pos, Y_Pos);    //this prints the current position of the robot in the grid (x, y)
     Console_Render();
     Travel(1, SQUARE, 0, 200);
-    printf("Pos: %d, %d", X_Pos, Y_Pos);
+    printf("Pos: %d, %d", X_Pos, Y_Pos);//0 is north, 1 is east , 2 is south, 3 is west
     Console_Render();
     Travel(0, SQUARE, 0, 200);
     printf("Pos: %d, %d", X_Pos, Y_Pos);
@@ -421,10 +518,6 @@ int SteppingCW(){                                // turn motor rotate clock wise
  
 }
 
-
-
-
-
 void Find_Flag () {
     
     Sensor_Observe();
@@ -441,18 +534,29 @@ void Find_Flag () {
 
 
 void Move_ADC_To (int Angle) {
-   // Steps = (Angle/360);
+   
+    if (flag==0){
     Steps = (Angle * 1.42222)+200;
+    flag++;
+    }
+    else if (!flag==0){
+    Steps = (Angle * 1.42222);    
+    }
+    
     printf("%c", ENDOFTEXT); 
     printf("\nSteps %d", Steps);
+    printf("\nFlag %d", flag);
     Console_Render();
     while (Steps >= 0){
         Steps --;
         SteppingCW();
     }
+    while (Steps < 0){
+        Steps ++;
+        SteppingCCW();
+    }
     return;
 }
-
 
 
             

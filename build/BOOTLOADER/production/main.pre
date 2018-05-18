@@ -1,17 +1,17 @@
 
 # 1 "main.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h"
 extern volatile unsigned short PMSTAT @ 0xF40;
 
 asm("PMSTAT equ 0F40h");
@@ -7895,7 +7895,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -7936,7 +7936,7 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config MSSPMSK = MSK5
 #pragma config CCP2MX = DEFAULT
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
 typedef unsigned char bool;
 
 # 273 "Library\Types.h"
@@ -8482,7 +8482,7 @@ void FunctMotor();
 void FunctHMI();
 void FunctADC();
 
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -8533,10 +8533,10 @@ inline void Console_SetBackcolour (Colour pColour);
 inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
 inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -8545,17 +8545,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -8569,7 +8569,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -8762,7 +8762,7 @@ void HMI_SetSegments (str pString);
 
 void HMI_Poll ();
 
-# 13 "dans.h"
+# 14 "dans.h"
 int Current_Direction = 3;
 
 
@@ -8770,9 +8770,7 @@ int top = -1;
 
 int stack[20];
 
-
-
-
+# 25
 int Current_Dist = 0;
 int Current_Dist1 = 0;
 int Current_Dist2 = 0;
@@ -8794,6 +8792,15 @@ int x = 0;
 int X_Pos;
 int Y_Pos;
 
+
+int k;
+int Spd = 200;
+int Previous_Angle;
+int flag = 0;
+int Desired_Level;
+
+
+int VictimCount=0;
 
 void InitADC();
 int FunctReadADC(int channel);
@@ -8822,8 +8829,11 @@ int SteppingCW();
 void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
+int Create_Maze();
 
-# 80
+int Detect_Victim();
+
+# 93
 struct square
 {
 int id;
@@ -9116,7 +9126,7 @@ return;
 
 
 void main(){
-struct square square[4][5];
+
 
 
 
@@ -9179,14 +9189,18 @@ if (mode == 3){
 
 Console_Render();
 
-# 401
-Create_Maze();
-movement1();
+# 404
+for (int r =0; r <10; r++){
+ADCAverage();
+}
 
+Desired_Level = average;
 
+Travel(3, 2000, 0, 200);
 
-
+# 421
 Console_Render();
+
 mode=0;
 
 

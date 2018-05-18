@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"14890 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
+"14890 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
 [s S603 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S603 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
 "14898
@@ -87,9 +87,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXSTA1bits `VS377 ~T0 @X0 0 e@4013 ]
 "10156
 [v _SPBRG1 `Vuc ~T0 @X0 0 e@4016 ]
-"61 dans.h
+"72 dans.h
 [v _eusartSend `(v ~T0 @X0 0 ef1`uc ]
-"8603 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
+"8603 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
 [s S323 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S323 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PMPIF ]
 "8613
@@ -105,11 +105,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS322 ~T0 @X0 0 e@3998 ]
 "10144
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4015 ]
-"64 dans.h
+"75 dans.h
 [v _Robot_Stop `(v ~T0 @X0 0 ef ]
-"63
+"74
 [v _UpdateDistance `(i ~T0 @X0 0 ef ]
-"17944 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
+"17944 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
 [v _TRISA2 `Vb ~T0 @X0 0 e@31890 ]
 "17946
 [v _TRISA3 `Vb ~T0 @X0 0 e@31891 ]
@@ -127,27 +127,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RA2 `Vb ~T64 @X0 0 e@31746 ]
 "17390
 [v _RA3 `Vb ~T64 @X0 0 e@31747 ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
+"195 C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "28 Library\Console.h
 [v _Console_Render `(v ~T0 @X0 0 ef ]
-"47 dans.h
+"58 dans.h
 [v _ADCAverage `(i ~T0 @X0 0 ef ]
-"68
+"79
 [v _SteppingCW `(i ~T0 @X0 0 ef ]
-"67
+"78
 [v _SteppingCCW `(i ~T0 @X0 0 ef ]
 [p mainexit ]
-"80
-[s S652 `i 1 `i 1 ]
-[n S652 square id victim ]
 "40 Library\MXK.h
 [v _MXK_Init `(v ~T0 @X0 0 ef ]
 "19 Library\ISR.h
 [v _ISR_Enable `(v ~T0 @X0 0 ef ]
 "18 Functions.h
 [v _FunctInitButton `(v ~T0 @X0 0 ef ]
-"45 dans.h
+"56 dans.h
 [v _InitADC `(v ~T0 @X0 0 ef ]
 "340 main.c
 [c E7217 0 1 .. ]
@@ -203,15 +200,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S645 HMI . mRight mLeft mUp mDown mDIP ]
 "18
 [v _HMIBoard `S645 ~T0 @X0 0 e ]
-"401 main.c
-[v _Create_Maze `(i ~T0 @X0 0 ef ]
-"57 dans.h
-[v _movement1 `(v ~T0 @X0 0 ef ]
+"66 dans.h
+[v _Travel `(i ~T0 @X0 0 ef4`i`i`i`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f67j50.h: 50: extern volatile unsigned short PMSTAT @ 0xF40;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
 [; ;pic18f67j50.h: 52: asm("PMSTAT equ 0F40h");
 [; <" PMSTAT equ 0F40h ;# ">
 [; ;pic18f67j50.h: 57: extern volatile unsigned char PMSTATL @ 0xF40;
@@ -6755,137 +6750,166 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;HMI.h: 103: void HMI_SetNumber (int pInput);
 [; ;HMI.h: 104: void HMI_SetSegments (str pString);
 [; ;HMI.h: 106: void HMI_Poll ();
-"13 dans.h
+"14 dans.h
 [v _Current_Direction `i ~T0 @X0 1 e ]
 [i _Current_Direction
 -> 3 `i
 ]
-[; ;dans.h: 13: int Current_Direction = 3;
-"16
+[; ;dans.h: 14: int Current_Direction = 3;
+"17
 [v _top `i ~T0 @X0 1 e ]
 [i _top
 -U -> 1 `i
 ]
-[; ;dans.h: 16: int top = -1;
-"18
+[; ;dans.h: 17: int top = -1;
+"19
 [v _stack `i ~T0 @X0 -> 20 `i e ]
-[; ;dans.h: 18: int stack[20];
-"23
+[; ;dans.h: 19: int stack[20];
+"25
 [v _Current_Dist `i ~T0 @X0 1 e ]
 [i _Current_Dist
 -> 0 `i
 ]
-[; ;dans.h: 23: int Current_Dist = 0;
-"24
+[; ;dans.h: 25: int Current_Dist = 0;
+"26
 [v _Current_Dist1 `i ~T0 @X0 1 e ]
 [i _Current_Dist1
 -> 0 `i
 ]
-[; ;dans.h: 24: int Current_Dist1 = 0;
-"25
+[; ;dans.h: 26: int Current_Dist1 = 0;
+"27
 [v _Current_Dist2 `i ~T0 @X0 1 e ]
 [i _Current_Dist2
 -> 0 `i
 ]
-[; ;dans.h: 25: int Current_Dist2 = 0;
-"26
+[; ;dans.h: 27: int Current_Dist2 = 0;
+"28
 [v _Found_Flag `i ~T0 @X0 1 e ]
 [i _Found_Flag
 -> 0 `i
 ]
-[; ;dans.h: 26: int Found_Flag = 0;
-"27
+[; ;dans.h: 28: int Found_Flag = 0;
+"29
 [v _mode `i ~T0 @X0 1 e ]
 [i _mode
 -> 0 `i
 ]
-[; ;dans.h: 27: int mode = 0;
-"28
+[; ;dans.h: 29: int mode = 0;
+"30
 [v _Motor_Count `i ~T0 @X0 1 e ]
 [i _Motor_Count
 -> 0 `i
 ]
-[; ;dans.h: 28: int Motor_Count = 0;
-"29
+[; ;dans.h: 30: int Motor_Count = 0;
+"31
 [v _Steps `i ~T0 @X0 1 e ]
 [i _Steps
 -> 0 `i
 ]
-[; ;dans.h: 29: int Steps = 0;
-"32
+[; ;dans.h: 31: int Steps = 0;
+"34
 [v _numReadings `i ~T0 @X0 1 e ]
 [i _numReadings
 -> 10 `i
 ]
-[; ;dans.h: 32: int numReadings = 10;
-"33
-[v _thisReading `i ~T0 @X0 1 e ]
-[; ;dans.h: 33: int thisReading;
-"34
-[v _readings `i ~T0 @X0 -> 10 `i e ]
-[; ;dans.h: 34: int readings[10 ];
+[; ;dans.h: 34: int numReadings = 10;
 "35
+[v _thisReading `i ~T0 @X0 1 e ]
+[; ;dans.h: 35: int thisReading;
+"36
+[v _readings `i ~T0 @X0 -> 10 `i e ]
+[; ;dans.h: 36: int readings[10 ];
+"37
 [v _readIndex `i ~T0 @X0 1 e ]
 [i _readIndex
 -> 0 `i
 ]
-[; ;dans.h: 35: int readIndex = 0;
-"36
+[; ;dans.h: 37: int readIndex = 0;
+"38
 [v _total `i ~T0 @X0 1 e ]
 [i _total
 -> 0 `i
 ]
-[; ;dans.h: 36: int total = 0;
-"37
+[; ;dans.h: 38: int total = 0;
+"39
 [v _average `i ~T0 @X0 1 e ]
 [i _average
 -> 0 `i
 ]
-[; ;dans.h: 37: int average = 0;
-"38
+[; ;dans.h: 39: int average = 0;
+"40
 [v _x `i ~T0 @X0 1 e ]
 [i _x
 -> 0 `i
 ]
-[; ;dans.h: 38: int x = 0;
-"41
+[; ;dans.h: 40: int x = 0;
+"43
 [v _X_Pos `i ~T0 @X0 1 e ]
-[; ;dans.h: 41: int X_Pos;
-"42
+[; ;dans.h: 43: int X_Pos;
+"44
 [v _Y_Pos `i ~T0 @X0 1 e ]
-[; ;dans.h: 42: int Y_Pos;
-[; ;dans.h: 45: void InitADC();
-[; ;dans.h: 46: int FunctReadADC(int channel);
-[; ;dans.h: 47: int ADCAverage();
-[; ;dans.h: 48: bool isempty();
-[; ;dans.h: 49: bool isfull();
-[; ;dans.h: 50: int peek();
-[; ;dans.h: 51: int pop();
-[; ;dans.h: 52: int push(int data);
-[; ;dans.h: 53: void giveID();
-[; ;dans.h: 54: void Init_Pos_Array();
-[; ;dans.h: 55: int Travel(int direction, int Dist, int Test_ADC, int Spd);
-[; ;dans.h: 56: Turn(int Angle, int Speed, int Dir);
-[; ;dans.h: 57: void movement1();
-[; ;dans.h: 58: void movement2();
-[; ;dans.h: 59: void movement4();
-[; ;dans.h: 60: void Drive(int SpeedL, int SpeedR);
-[; ;dans.h: 61: void eusartSend(UINT8 sendChar);
-[; ;dans.h: 62: UINT8 eusartRec();
-[; ;dans.h: 63: int UpdateDistance();
-[; ;dans.h: 64: void Robot_Stop();
-[; ;dans.h: 65: void untilVirtual();
-[; ;dans.h: 66: int Get_VirtualWall_State();
-[; ;dans.h: 67: int SteppingCCW();
-[; ;dans.h: 68: int SteppingCW();
-[; ;dans.h: 69: void Sensor_Observe();
-[; ;dans.h: 70: void Move_ADC_To(int Angle);
-[; ;dans.h: 71: void Find_Flag();
-[; ;dans.h: 80: struct square
-[; ;dans.h: 81: {
-[; ;dans.h: 82: int id;
-[; ;dans.h: 83: int victim;
-[; ;dans.h: 85: };
+[; ;dans.h: 44: int Y_Pos;
+"47
+[v _k `i ~T0 @X0 1 e ]
+[; ;dans.h: 47: int k;
+"48
+[v _Spd `i ~T0 @X0 1 e ]
+[i _Spd
+-> 200 `i
+]
+[; ;dans.h: 48: int Spd = 200;
+"49
+[v _Previous_Angle `i ~T0 @X0 1 e ]
+[; ;dans.h: 49: int Previous_Angle;
+"50
+[v _flag `i ~T0 @X0 1 e ]
+[i _flag
+-> 0 `i
+]
+[; ;dans.h: 50: int flag = 0;
+"51
+[v _Desired_Level `i ~T0 @X0 1 e ]
+[; ;dans.h: 51: int Desired_Level;
+"54
+[v _VictimCount `i ~T0 @X0 1 e ]
+[i _VictimCount
+-> 0 `i
+]
+[; ;dans.h: 54: int VictimCount=0;
+[; ;dans.h: 56: void InitADC();
+[; ;dans.h: 57: int FunctReadADC(int channel);
+[; ;dans.h: 58: int ADCAverage();
+[; ;dans.h: 59: bool isempty();
+[; ;dans.h: 60: bool isfull();
+[; ;dans.h: 61: int peek();
+[; ;dans.h: 62: int pop();
+[; ;dans.h: 63: int push(int data);
+[; ;dans.h: 64: void giveID();
+[; ;dans.h: 65: void Init_Pos_Array();
+[; ;dans.h: 66: int Travel(int direction, int Dist, int Test_ADC, int Spd);
+[; ;dans.h: 67: Turn(int Angle, int Speed, int Dir);
+[; ;dans.h: 68: void movement1();
+[; ;dans.h: 69: void movement2();
+[; ;dans.h: 70: void movement4();
+[; ;dans.h: 71: void Drive(int SpeedL, int SpeedR);
+[; ;dans.h: 72: void eusartSend(UINT8 sendChar);
+[; ;dans.h: 73: UINT8 eusartRec();
+[; ;dans.h: 74: int UpdateDistance();
+[; ;dans.h: 75: void Robot_Stop();
+[; ;dans.h: 76: void untilVirtual();
+[; ;dans.h: 77: int Get_VirtualWall_State();
+[; ;dans.h: 78: int SteppingCCW();
+[; ;dans.h: 79: int SteppingCW();
+[; ;dans.h: 80: void Sensor_Observe();
+[; ;dans.h: 81: void Move_ADC_To(int Angle);
+[; ;dans.h: 82: void Find_Flag();
+[; ;dans.h: 83: int Create_Maze();
+[; ;dans.h: 85: int Detect_Victim();
+[; ;dans.h: 93: struct square
+[; ;dans.h: 94: {
+[; ;dans.h: 95: int id;
+[; ;dans.h: 96: int victim;
+[; ;dans.h: 98: };
 "33 main.c
 [v _T_VAR `i ~T0 @X0 1 e ]
 [i _T_VAR
@@ -7706,10 +7730,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 328: void main(){
 [e :U _main ]
 [f ]
-[v F7404 `S652 ~T0 @X0 -> 5 `i t ]
-"329
-[v _square `F7404 ~T0 @X0 -> 4 `i a ]
-[; ;main.c: 329: struct square square[4][5];
 [; ;main.c: 333: MXK_Init();
 "333
 [e ( _MXK_Init ..  ]
@@ -7847,47 +7867,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 393: Console_Render();
 "393
 [e ( _Console_Render ..  ]
-[; ;main.c: 401: Create_Maze();
-"401
-[e ( _Create_Maze ..  ]
-[; ;main.c: 402: movement1();
-"402
-[e ( _movement1 ..  ]
-[; ;main.c: 407: Console_Render();
-"407
-[e ( _Console_Render ..  ]
-[; ;main.c: 408: mode=0;
+[; ;main.c: 404: for (int r =0; r <10; r++){
+"404
+{
+[v _r `i ~T0 @X0 1 a ]
+[e = _r -> 0 `i ]
+[e $ < _r -> 10 `i 708  ]
+[e $U 709  ]
+[e :U 708 ]
+{
+[; ;main.c: 405: ADCAverage();
+"405
+[e ( _ADCAverage ..  ]
+"406
+}
+"404
+[e ++ _r -> 1 `i ]
+[e $ < _r -> 10 `i 708  ]
+[e :U 709 ]
+"406
+}
+[; ;main.c: 406: }
+[; ;main.c: 408: Desired_Level = average;
 "408
-[e = _mode -> 0 `i ]
-[; ;main.c: 411: Console_Render();
-"411
+[e = _Desired_Level _average ]
+[; ;main.c: 410: Travel(3, 2000, 0, 200);
+"410
+[e ( _Travel (4 , , , -> 3 `i -> 2000 `i -> 0 `i -> 200 `i ]
+[; ;main.c: 421: Console_Render();
+"421
 [e ( _Console_Render ..  ]
-"413
+[; ;main.c: 423: mode=0;
+"423
+[e = _mode -> 0 `i ]
+[; ;main.c: 426: Console_Render();
+"426
+[e ( _Console_Render ..  ]
+"428
 }
 [e :U 707 ]
-[; ;main.c: 413: }
-[; ;main.c: 415: Console_Render();
-"415
+[; ;main.c: 428: }
+[; ;main.c: 430: Console_Render();
+"430
 [e ( _Console_Render ..  ]
-[; ;main.c: 416: if (MXK_Release())
-"416
-[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 708  ]
-[; ;main.c: 417: MXK_Dequeue();
-"417
+[; ;main.c: 431: if (MXK_Release())
+"431
+[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 711  ]
+[; ;main.c: 432: MXK_Dequeue();
+"432
 [e ( _MXK_Dequeue ..  ]
-[e :U 708 ]
-"418
+[e :U 711 ]
+"433
 }
 [e :U 705 ]
-"419
+"434
 }
-[; ;main.c: 418: }
-[; ;main.c: 419: }
+[; ;main.c: 433: }
+[; ;main.c: 434: }
 [e $U 698  ]
 [e :U 699 ]
 }
-[; ;main.c: 420: }
-"420
+[; ;main.c: 435: }
+"435
 [e :UE 695 ]
 }
 [p f _printf 8913024 ]

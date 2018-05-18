@@ -8,6 +8,7 @@
 #ifndef DANS_H
 #define	DANS_H
 #include "Types.h"
+#include <math.h>
 
 
 int Current_Direction = 3;
@@ -19,7 +20,7 @@ int stack[MAXSIZE];
 #define x_grid 5
 #define y_grid 4
 #define DLY 2 
-#define SQUARE 1000
+#define SQUARE 10000
 
 int Current_Dist = 0;
 int Current_Dist1 = 0;
@@ -42,6 +43,15 @@ int x = 0;
 int X_Pos;
 int Y_Pos;
 
+//Controller Variables
+int k;
+int Spd = 200;
+int Previous_Angle;
+int flag = 0;
+int Desired_Level;
+
+//Victim Count
+int VictimCount=0;
 
 void InitADC();
 int FunctReadADC(int channel);
@@ -70,7 +80,9 @@ int SteppingCW();
 void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
+int Create_Maze(); 
 
+int Detect_Victim();
 
 
 

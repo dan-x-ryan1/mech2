@@ -1,10 +1,10 @@
 
 # 1 "dans.c"
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -13,17 +13,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -37,7 +37,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -64,17 +64,17 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h"
 extern volatile unsigned short PMSTAT @ 0xF40;
 
 asm("PMSTAT equ 0F40h");
@@ -7958,7 +7958,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -7985,7 +7985,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
 typedef unsigned char bool;
 
 # 273 "Library\Types.h"
@@ -8280,7 +8280,35 @@ void swap(UINT8Ptr pA, UINT8Ptr pB);
 void reverse(char * input , UINT16 length);
 void itos(UINT16 input, char* destination);
 
-# 13 "dans.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 14 "dans.h"
 int Current_Direction = 3;
 
 
@@ -8288,9 +8316,7 @@ int top = -1;
 
 int stack[20];
 
-
-
-
+# 25
 int Current_Dist = 0;
 int Current_Dist1 = 0;
 int Current_Dist2 = 0;
@@ -8312,6 +8338,15 @@ int x = 0;
 int X_Pos;
 int Y_Pos;
 
+
+int k;
+int Spd = 200;
+int Previous_Angle;
+int flag = 0;
+int Desired_Level;
+
+
+int VictimCount=0;
 
 void InitADC();
 int FunctReadADC(int channel);
@@ -8340,8 +8375,11 @@ int SteppingCW();
 void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
+int Create_Maze();
 
-# 80
+int Detect_Victim();
+
+# 93
 struct square
 {
 int id;
@@ -8371,34 +8409,6 @@ inline void Console_SetForecolour (Colour pColour);
 inline void Console_SetBackcolour (Colour pColour);
 inline void Console_SetForecolourRGB(UINT8 r, UINT8 g, UINT8 b);
 inline void Console_SetBackcolourRGB(UINT8 r, UINT8 g, UINT8 b);
-
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
 
 # 12 "./Events.h"
 typedef void (*EventFunction)(UINT8);
@@ -8522,7 +8532,7 @@ void HMI_SetSegments (str pString);
 
 void HMI_Poll ();
 
-# 8 "dans.c"
+# 11 "dans.c"
 int Create_Maze(){
 int count = 0;
 struct square maze[4][5];
@@ -8692,7 +8702,7 @@ y_walls[5][3] = 1;
 
 }
 
-# 198
+# 201
 void Init_Pos_Array(){
 short position[4][5] =
 {{0,0,0,0,0},
@@ -8750,6 +8760,41 @@ eusartSend(13);
 int Vitual_Wall_Sensor = (eusartRec());
 return Vitual_Wall_Sensor;
 }
+int Detect_Victim(){
+if (VictimCount>=2){
+return 0;
+}
+eusartSend(142);
+eusartSend(17);
+int Home_Base_State = (eusartRec());
+if (VictimCount==0){
+if(Home_Base_State >= 240 && Home_Base_State <= 254){
+printf("%c",(char)35);
+printf("\nHome Base found\n ");
+printf("Home_Base_State: %d",Home_Base_State);
+Console_Render;
+VictimCount++;
+return 1;
+}
+}
+if (VictimCount==1){
+if(Home_Base_State >= 240 && Home_Base_State <= 254){
+printf("%c",(char)35);
+printf("\nHome Base found\n ");
+printf("Home_Base_State: %d",Home_Base_State);
+Console_Render;
+VictimCount++;
+return 2;
+}
+}
+else{
+printf("%c",(char)35);
+printf("\nNOTHING!!!");
+Console_Render();
+}
+return Home_Base_State;
+
+}
 Turn(int Angle, int Speed, int Dir){
 int Rad = 1;
 if (Dir == 0){
@@ -8784,7 +8829,8 @@ Console_Render();
 }
 else {
 Req_Dir = direction - Current_Direction;
-if (Req_Dir < 0 ){
+
+if (Req_Dir < 0){
 Req_Dir = 83*Req_Dir*-1;
 Dir = 1;
 if(Req_Dir > 166){
@@ -8806,11 +8852,51 @@ Current_Direction = direction;
 
 Drive(Spd,Spd);
 
-while (Dist_Travelled<1000){
+
+
+
+k = 2;
+int error;
+int spd1 =0 ;
+int spd2=0;
+
+while (Dist_Travelled<Dist){
+
+
+ADCAverage();
+error = Desired_Level - average;
+error*=k;
+if (error > 190){
+error=190;
+}
+if (error < -190){
+error = -190;
+}
+if (error == Desired_Level + 4 || error == Desired_Level - 4){
+Drive(Spd,Spd);
+}
+if (error >= 0){
+spd1 = Spd - error;
+Drive(spd1,Spd);
+}
+if (error <= 0){
+error=((error<0)?-error:error);
+spd2= Spd - error;
+Drive(Spd,spd2);
+}
+
+# 403
 printf("%c", (char)35);
 Dist_Travelled += UpdateDistance();
 printf("%d \n", Dist_Travelled);
+printf("\nspd1 %d",spd1);
+printf("\nspd2 %d",spd2);
+printf("\nADC %d",average);
+printf("\nDesired: %d",Desired_Level);
+printf("\nSpeed: %d",Spd);
+printf("\nError: %d",error);
 Console_Render();
+
 if (Get_VirtualWall_State()){
 int rev_Dist = 0;
 
@@ -8845,28 +8931,28 @@ else if (direction == 3){
 Y_Pos -= 1;
 }
 Robot_Stop();
-return 1000;
 }
 
-
+# 457
 void movement1(){
-Travel(3, 1000, 0, 200);
+Travel(3, 10000, 0, 200);
+printf("Pos: %d, %d", X_Pos, Y_Pos);
+
+Console_Render();
+Travel(0, 10000, 0, 200);
 printf("Pos: %d, %d", X_Pos, Y_Pos);
 Console_Render();
-Travel(0, 1000, 0, 200);
+Travel(1, 10000, 0, 200);
 printf("Pos: %d, %d", X_Pos, Y_Pos);
 Console_Render();
-Travel(1, 1000, 0, 200);
-printf("Pos: %d, %d", X_Pos, Y_Pos);
-Console_Render();
-Travel(0, 1000, 0, 200);
+Travel(0, 10000, 0, 200);
 printf("Pos: %d, %d", X_Pos, Y_Pos);
 Console_Render();
 while(1){};
 return;
 }
 
-# 392
+# 496
 int SteppingCCW(){
 STP4();
 delay_ms(2);
@@ -8892,7 +8978,6 @@ delay_ms(2);
 
 }
 
-# 421
 void Find_Flag () {
 
 Sensor_Observe();
@@ -8910,13 +8995,25 @@ SteppingCCW();
 
 void Move_ADC_To (int Angle) {
 
+if (flag==0){
 Steps = (Angle * 1.42222)+200;
+flag++;
+}
+else if (!flag==0){
+Steps = (Angle * 1.42222);
+}
+
 printf("%c", (char)35);
 printf("\nSteps %d", Steps);
+printf("\nFlag %d", flag);
 Console_Render();
 while (Steps >= 0){
 Steps --;
 SteppingCW();
+}
+while (Steps < 0){
+Steps ++;
+SteppingCCW();
 }
 return;
 }

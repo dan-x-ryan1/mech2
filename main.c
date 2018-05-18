@@ -326,7 +326,7 @@ void Reset_variables(){     //A list of all the variables that need to be reset 
 
 //END SETUP
 void main(){
-    struct square square[4][5];
+   // struct square square[4][5];
     
     
     //Init MXK Pins
@@ -391,20 +391,35 @@ void main(){
             
            // Init_Pos_Array();
             Console_Render();
+           // Create_Maze();
             
-            //Sensor_Observe();
-            //Closest_Object();
+           // Sensor_Observe();
+           // Closest_Object();
+           
             //LED_Set(eLED2, 1);
             //delay_ms(350);
             //LED_Set(eLED2, 0);
-            //Move_ADC_To (0);
-            Create_Maze();
-            movement1();
+           // Move_ADC_To (-90);
+            //delay_ms(20);
+            for (int r =0; r <10; r++){
+            ADCAverage();    
+            }
+            
+            Desired_Level = average;
+            
+            Travel(3, SQUARE, 0, 200); 
+            //movement1; 
+          //  while(1){
+             
+           
+            
+             //movement1();
             //movement2();
             //untilVirtual();
             //movement4();
             //printf("done");
             Console_Render();
+            
             mode=0;
             
             
