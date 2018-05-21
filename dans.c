@@ -9,140 +9,167 @@
 
 
 int Create_Maze(){
+    //init the stack to 0 
 int count = 0;
 int x = 0;
 int y = 0;
-    struct square maze[4][5];
-    for(int i = 0 ; i < 4; ++i){
-        for(int j = 0 ; j < 5; ++j){
-            maze[i][j].id = count;
-            maze[i][j].victim = 0;
+for (int p = 0; p < MAXSIZE; p++){
+    stack[p]=4;
+}
+    for(x = 0 ; x < x_grid; ++x){
+        for(y = 0 ; y < y_grid; ++y){
+            maze[x][y].id = count;
+            maze[x][y].victim = 0;
             ++count;
         }
     }
-    
+x = 0;
+y = 0;
+        
     X_Pos = 3;
     Y_Pos = 1; 
+    //0
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options  = 2;
     //1
+        ++y;
         maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[1] = 0;
         maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //2 
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //2  
+        ++y;
         maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 3;
     //3    
+        ++y;
         maze[x][y].walls[0] = 1;
         maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //4    
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //4  
+        ++y;
         maze[x][y].walls[0] = 1;
         maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[2] = 0;
         maze[x][y].walls[3] = 1;
         maze[x][y].Options = 1;
     //5    
+        ++x;
+        y=0;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 3;
+    //6 
+        ++y;
         maze[x][y].walls[0] = 1;
         maze[x][y].walls[1] = 1;
         maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
+        maze[x][y].walls[3] = 0;
         maze[x][y].Options = 1;
-    //6    
+    //7 
+        ++y;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 2;
+    //8  
+        ++y;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 2;
+    //9 
+        ++y;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //10 
+         ++x;
+        y=0;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 3;
+    //11   
+        ++y;
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //12  
+        ++y;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 4;
+    //13  
+        ++y;
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //14
+        ++y;
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 0;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
+    //15 
+         ++x;
+        y=0;
+        maze[x][y].walls[0] = 0;
+        maze[x][y].walls[1] = 0;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 2;
+    //16   
+        ++y;
         maze[x][y].walls[0] = 1;
         maze[x][y].walls[1] = 1;
         maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //7    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //8    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //9    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //10    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //11    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //12    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //13    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //14    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //15    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //16    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
+        maze[x][y].walls[3] = 0;
         maze[x][y].Options = 1;
     //17    
-        maze[x][y].walls[0] = 1;
+        ++y;
+        maze[x][y].walls[0] = 0;
         maze[x][y].walls[1] = 1;
         maze[x][y].walls[2] = 1;
         maze[x][y].walls[3] = 1;
         maze[x][y].Options = 1;
-    //18    
+    //18 
+        ++y;
         maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[1] = 0;
         maze[x][y].walls[2] = 1;
         maze[x][y].walls[3] = 1;
         maze[x][y].Options = 1;
-    //19    
-        maze[x][y].walls[0] = 1;
+    //19 
+        ++y;
+        maze[x][y].walls[0] = 0;
         maze[x][y].walls[1] = 1;
         maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
-    //20    
-        maze[x][y].walls[0] = 1;
-        maze[x][y].walls[1] = 1;
-        maze[x][y].walls[2] = 1;
-        maze[x][y].walls[3] = 1;
-        maze[x][y].Options = 1;
+        maze[x][y].walls[3] = 0;
+        maze[x][y].Options = 2;
         
         
         
@@ -279,38 +306,19 @@ int Get_VirtualWall_State(){
     return Vitual_Wall_Sensor;
 }
 int Detect_Victim(){
-    if (VictimCount>=2){
-        return 0;
-    }
     eusartSend(142);    // get state of sensor 
     eusartSend(17);     // Home Base detect 
     int Home_Base_State = (eusartRec());
-    if (VictimCount==0){
     if(Home_Base_State >= 240  && Home_Base_State <= 254){
-        printf("%c",ENDOFTEXT);
-        printf("\nHome Base found\n ");
-        printf("Home_Base_State: %d",Home_Base_State);
-        Console_Render;
-        VictimCount++;
         return 1;
     }
-    }
-    if (VictimCount==1){
-        if(Home_Base_State >= 240  && Home_Base_State <= 254){
-        printf("%c",ENDOFTEXT);
-        printf("\nHome Base found\n ");
-        printf("Home_Base_State: %d",Home_Base_State);
-        Console_Render;
-        VictimCount++;
-        return 2;
-    } 
-    }
+
     else{
-        printf("%c",ENDOFTEXT);
         printf("\nNOTHING!!!");
         Console_Render();
     }
-    return Home_Base_State;
+     return 0;
+//    return Home_Base_State;
     
 }
 Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle  
@@ -336,14 +344,32 @@ Turn(int Angle, int Speed, int Dir){ // function for wheel turn angle
     eusartSend(7);
     eusartRec();
 }
-int Travel(int direction, int Dist, int Test_ADC, int Spd){
+int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall){
     int Dist_Travelled = 0;
     int Req_Dir = 0;    
     int Dir;            // Dir is a varible to define which way the robot turns
+    bool Prev_Angle;
+    if (Wall == 0 && flag == 0){ //left wall
+        
+       // Move_ADC_To(-45);
+        Prev_Angle = 0;
+    }
+    
+   
+    else if (Wall == 0 && flag != 0){
+        if (Prev_Angle != 0)
+        Move_ADC_To(-90);
+        Prev_Angle = 0;
+    }
+    
+    if (Wall == 1 && flag != 0){
+        if (Prev_Angle != 1)
+        Move_ADC_To(90);
+        Prev_Angle  = 1;
+    } 
+    
     if(direction == Current_Direction){ //if we are facing the right direction do nothing
-            printf("%d", Spd);
-            printf("driving");
-            Console_Render();
+
     }
     else {                                       //if not oreient the robot to the right direction
         Req_Dir = direction - Current_Direction; //Req_Dir is a holder for the difference numerically between 
@@ -371,70 +397,69 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd){
     Drive(Spd,Spd);  //drive forward with the speed set
     
     
-   // ADCAverage();   
+    ADCAverage();   
    // int Desired_Level = average;
-    k = 2; //this is the proportional controller value
+    k = 4; //this is the proportional controller value
     int error;
     int spd1 =0 ;
     int spd2=0;
     
     while (Dist_Travelled<Dist){  // while we haven't gone far enough
          //left Wall
-        
+       
             ADCAverage();
             error = Desired_Level - average;
             error*=k;
-            if (error > 190){
-                error=190;
+            
+            if (average<= 90){
+        
+            if (error > 300){ 
+                error=30;
             }
-             if (error < -190){
-                error = -190;
+             if (error < -30){
+                error = -30;
             }
              if (error == Desired_Level + 4 || error == Desired_Level - 4){
-                Drive(Spd,Spd);
+                 Drive(Spd,Spd);
             }
-             if (error >= 0){
-            spd1 = Spd - error;
-            Drive(spd1,Spd);    
+            if (error >= 0){
+                
+            spd1 = Spd - error;   //left wall follow, right wheel
+            if (Wall ==0){                
+            Drive(spd1,Spd);  
+             }
+            else if (Wall == 1){
+                Drive(Spd,spd1);     
             }
-             if (error <= 0){
+          
+            }
+            if (error <= 0){
             error=abs(error);
-             spd2= Spd - error;
-            Drive(Spd,spd2);    
+            spd2= Spd - error;
+            //left wall follow, left wheel
+            if (Wall == 0){   
+             Drive(Spd,spd2);  
+                }
+            else if (Wall == 1){
+                Drive(spd2,Spd);
             }
-            
-     /*   if (Wall=false){ //Right Wall
-
-            ADCAverage();
-
-            int error = Desired_Level - average;
-            error*=k;
-
-            if (error == 0 || error == Desired_Level + 1 || error == Desired_Level - 1){
+            }
+           
+            }
+            else 
                 Drive(Spd,Spd);
-            }
-
-            else if (error > 0){
-            Drive((Spd-error),Spd);    
-            }
-            else if (error < 0){
-            error=abs(error);    
-            Drive(Spd,(Spd-error));    
-            }
-        }
-        */
-        printf("%c", ENDOFTEXT);        
+        //printf("%c", ENDOFTEXT);        
         Dist_Travelled += UpdateDistance();
-        printf("%d \n", Dist_Travelled);  //print how far we have gone
-        printf("\nspd1 %d",spd1);
-        printf("\nspd2 %d",spd2);
-        printf("\nADC %d",average);
-        printf("\nDesired: %d",Desired_Level);
-        printf("\nSpeed: %d",Spd);
-        printf("\nError: %d",error);
-        Console_Render();
-        //Detect_Victim();
+        //printf("                     \n");
+        //printf("%d \n", Dist_Travelled);  //print how far we have gone
+        //printf("\nADC %d",average);
+        //printf("\nDesired: %d",Desired_Level);
+        //Console_Render();
+         
+       // Detect_Victim();
         if (Get_VirtualWall_State()){     // check if there is a V_Wall
+            maze[X_Pos][Y_Pos].walls[direction] = 1;
+            
             int rev_Dist = 0;             //reverse distance
            // Robot_Stop();
             printf("WALL FOUND\n");
@@ -467,55 +492,23 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd){
     else if (direction == 3){
         Y_Pos -= 1;
     }
+    if(maze[X_Pos][Y_Pos].Options > 0){
+            push(direction);
+    }
+    
+    maze[X_Pos][Y_Pos].Options -= 1;
         Robot_Stop(); //stop
+        
 }
 /*
         N = 0
  * W = 3  +  E = 1
-       S = 2
+        S = 2
  
  
  */
 
-void movement1(){
-    Travel(3, SQUARE, 0, 200);              // travel(direction, Distance, test ADC, Speed
-    printf("Pos: %d, %d", X_Pos, Y_Pos);    // "test_ADC" is an if statement that will stop if the ADC gets below 50 
-                                            // (so we don't hit a wall [sensor straight forward or backward])
-    Console_Render();                       // SQUARE is defined as 1000mm, we can change this to make the robot go a more accurate distance
-    Travel(0, SQUARE, 0, 200);              
-    printf("Pos: %d, %d", X_Pos, Y_Pos);    //this prints the current position of the robot in the grid (x, y)
-    Console_Render();
-    Travel(1, SQUARE, 0, 200);
-    printf("Pos: %d, %d", X_Pos, Y_Pos);//0 is north, 1 is east , 2 is south, 3 is west
-    Console_Render();
-    Travel(0, SQUARE, 0, 200);
-    printf("Pos: %d, %d", X_Pos, Y_Pos);
-    Console_Render();
-    while(1){};
-    return;
-}
-/*void movement2(){
-    Turn(83, 100, 0);
-    Drive(200,200);
-    Travel(1000, 0);
-}
-void untilVirtual (){
-    int Rev_Dist = 0;
-    Turn(83, 100, 0);
-    Drive(200,200);
-    Rev_Dist = Travel(1000,0);
-    Turn(166,100,0);
-    Drive(200, 200);
-    Travel(Rev_Dist, 1); 
-    
-}
 
-void movement4(){
-    Turn(83, 100, 0);
-    Drive(200,200);
-    Travel(1000, 0);
-}
-*/
 int SteppingCCW(){                   // turn motor rotate counter-clock wise
     STP4();
     delay_ms(DLY);
@@ -557,8 +550,9 @@ void Find_Flag () {
 
 
 void Move_ADC_To (int Angle) {
-   
+      
     if (flag==0){
+    //Angle = 90;
     Steps = (Angle * 1.42222)+200;
     flag++;
     }
@@ -580,10 +574,65 @@ void Move_ADC_To (int Angle) {
     }
     return;
 }
+void Go_Backward(int direction, int spd){
+    if(direction == 1)
+        direction = 3;
+    else if(direction == 3)
+        direction =1;
+    
+    else if(direction == 0)
+        direction = 2;
+    else if(direction == 2)
+        direction = 0;
+    
+    Travel(direction, SQUARE, 0, spd, 0); 
+    maze[X_Pos][Y_Pos].Options += 1;
+        
+}
 
 
-            
-            
-            
+
+void Navigate_Maze(){
+    int Direction;
+    int Follow;
+    printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
+    Console_Render();
+    if(maze[X_Pos][Y_Pos].Options > 0){
+
+        if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
+            Direction = 1;    
+        }
+        else if(maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos+1][Y_Pos].Options > 0){
+            Direction = 2;      
+        } 
+        else if(maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos-1].Options > 0){
+            Direction = 3;       
+        } 
+        else if(maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos-1][Y_Pos].Options > 0){
+            Direction = 0;         
+        }     
+        else{
+            printf("&&&&&\n");
+            Console_Render();
+            while(1);
+        }
+        
+        maze[X_Pos][Y_Pos].Options -= 1;
+        Travel(Direction, SQUARE, 0, 200, 0);   
+        
+    }
+    else {
+        printf("no options\n");
+        Console_Render();
+        Go_Backward(pop(), 200);
+    }
+        
+}
+
+void Go_Home(){
+    Go_Backward(pop(), 200);
+}
+
+
 
 

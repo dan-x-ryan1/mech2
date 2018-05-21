@@ -63,8 +63,6 @@ int timercount = 0;
 //temp vars 
 int test;
 //dans 
-
-
 int Init_Timer0()
 {
     T0CONbits.TMR0ON = 1;       //1:TMR0 ON
@@ -322,6 +320,7 @@ void Reset_variables(){     //A list of all the variables that need to be reset 
     
     return;
 }
+    
 
 
 //END SETUP
@@ -338,6 +337,9 @@ void main(){
     FunctInitButton();
     InitADC();
     LED_Init(eLED2);
+    Create_Maze();
+    
+    
    
    // dans new functions 
          
@@ -377,7 +379,7 @@ void main(){
        
         
         if (MXK_BlockSwitchTo(eMXK_HMI)) {
-            
+           
             if (mode==0){
                 
                 
@@ -390,10 +392,10 @@ void main(){
             if (mode == 3){
             
            // Init_Pos_Array();
-            Console_Render();
+            
            // Create_Maze();
             
-           // Sensor_Observe();
+           //Sensor_Observe();
            // Closest_Object();
            
             //LED_Set(eLED2, 1);
@@ -401,30 +403,54 @@ void main(){
             //LED_Set(eLED2, 0);
            // Move_ADC_To (-90);
             //delay_ms(20);
-            for (int r =0; r <10; r++){
-            ADCAverage();    
+            //Travel(3, SQUARE, 0, 200, 0);
+                      
+         /*   
+            for (int r =0; r < MAXSIZE; r++){
+                printf("%d ", stack[r]);
             }
-            
-            Desired_Level = average;
-            
-            Travel(3, SQUARE, 0, 200); 
-            //movement1; 
-          //  while(1){
-             
-           
-            
-             //movement1();
-            //movement2();
-            //untilVirtual();
-            //movement4();
-            //printf("done");
+            printf("\n");
+            printf("\n");
+            printf("The popped value: %d", pop());
+            printf("\nThe second popped value: %d", pop());
+            printf("\nThe third popped value: %d", pop());
+*/
+            while(VictimCount < 2 ){
+                printf("%c", ENDOFTEXT);
+                printf("\n       \n");
+                printf("vc: %d\n", VictimCount);
+                Navigate_Maze();
+
+
+                if(Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0){
+                        maze[X_Pos][Y_Pos].victim = 1;
+                        VictimCount++;
+                        //CHANGE LCD COLOUR #####
+                }
+                Console_Render();
+                delay_ms(350);
+                HMI_Poll();
+                if(HMIBoard.mLeft.mGetState()){
+                    Go_Home();
+                }
+            }
+            while(top >= 0){
+                printf("%c", ENDOFTEXT);
+                printf("\n       \n");
+                printf("Going Home");
+                Console_Render();
+                Go_Home();
+                
+            }
+            printf("HOME!!!@");
             Console_Render();
+            while(1);
             
-            mode=0;
-            
-            
-            Console_Render();  
-            
+            }
+            if (up){
+            Sensor_Observe();
+            Closest_Object();
+            Travel(3,SQUARE,0,200,0);
             }
             
             Console_Render();                                         

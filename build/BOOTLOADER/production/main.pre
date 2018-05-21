@@ -8768,7 +8768,7 @@ int Current_Direction = 3;
 
 int top = -1;
 
-int stack[20];
+int stack[20] = {};
 
 # 25
 int Current_Dist = 0;
@@ -8797,7 +8797,7 @@ int k;
 int Spd = 200;
 int Previous_Angle;
 int flag = 0;
-int Desired_Level;
+int Desired_Level = 60;
 
 
 int VictimCount=0;
@@ -8812,11 +8812,10 @@ int pop();
 int push(int data);
 void giveID();
 void Init_Pos_Array();
-int Travel(int direction, int Dist, int Test_ADC, int Spd);
+void Go_Backward(int direction, int spd);
+int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
 Turn(int Angle, int Speed, int Dir);
 void movement1();
-void movement2();
-void movement4();
 void Drive(int SpeedL, int SpeedR);
 void eusartSend(UINT8 sendChar);
 UINT8 eusartRec();
@@ -8831,9 +8830,11 @@ void Move_ADC_To(int Angle);
 void Find_Flag();
 int Create_Maze();
 int Detect_Victim();
-int Pos_Stack[20];
+void P_Controller();
+void Navigate_Maze();
+void Go_Home();
 
-# 93
+
 struct square
 {
 int id;
@@ -8841,6 +8842,10 @@ int victim;
 bool walls[4];
 int Options;
 };
+
+
+
+struct square maze[4][5];
 
 # 33 "main.c"
 int T_VAR = 0;
@@ -8876,8 +8881,6 @@ int timercount = 0;
 
 int test;
 
-
-
 int Init_Timer0()
 {
 T0CONbits.TMR0ON = 1;
@@ -8895,7 +8898,7 @@ INTCONbits.GIE = 1;
 
 }
 
-# 91
+# 89
 void InitSerialCommunication(){
 
 TRISCbits.TRISC6 = 0;
@@ -8996,7 +8999,7 @@ timercount=0;
 }
 }
 
-# 195
+# 193
 int STP1 (){
 TRISA2=0;
 TRISA3=0;
@@ -9120,9 +9123,10 @@ T_VAR = 0;
 
 mod = 0;
 
-# 323
+# 321
 return;
 }
+
 
 
 
@@ -9139,8 +9143,9 @@ ISR_Enable();
 FunctInitButton();
 InitADC();
 LED_Init(eLED2);
+Create_Maze();
 
-# 346
+# 348
 if (MXK_BlockSwitchTo(eMXK_HMI)) {
 HMI_Init();
 LCD_Init();
@@ -9187,26 +9192,43 @@ Console_Render();
 }
 if (mode == 3){
 
+# 418
+while(VictimCount < 2 ){
+printf("%c", (char)35);
+printf("\n       \n");
+printf("vc: %d\n", VictimCount);
+Navigate_Maze();
 
-Console_Render();
 
-# 404
-for (int r =0; r <10; r++){
-ADCAverage();
+if(Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0){
+maze[X_Pos][Y_Pos].victim = 1;
+VictimCount++;
+
 }
-
-Desired_Level = average;
-
-Travel(3, 10000, 0, 200);
-
-# 421
 Console_Render();
-
-mode=0;
-
-
+delay_ms(350);
+HMI_Poll();
+if(HMIBoard.mLeft.mGetState()){
+Go_Home();
+}
+}
+while(top >= 0){
+printf("%c", (char)35);
+printf("\n       \n");
+printf("Going Home");
 Console_Render();
+Go_Home();
 
+}
+printf("HOME!!!@");
+Console_Render();
+while(1);
+
+}
+if (up){
+Sensor_Observe();
+Closest_Object();
+Travel(3,970,0,200,0);
 }
 
 Console_Render();

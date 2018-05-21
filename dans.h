@@ -16,11 +16,11 @@ int Current_Direction = 3;
 //================================================//
 int top = -1;
 #define MAXSIZE 20
-int stack[MAXSIZE];
-#define x_grid 5
-#define y_grid 4
+int stack[MAXSIZE] = {};
+#define x_grid 4
+#define y_grid 5
 #define DLY 2 
-#define SQUARE 10000
+#define SQUARE 970
 
 int Current_Dist = 0;
 int Current_Dist1 = 0;
@@ -48,7 +48,7 @@ int k;
 int Spd = 200;
 int Previous_Angle;
 int flag = 0;
-int Desired_Level;
+int Desired_Level = 60;
 
 //Victim Count
 int VictimCount=0;
@@ -63,11 +63,10 @@ int pop();
 int push(int data);
 void giveID();
 void Init_Pos_Array();
-int Travel(int direction, int Dist, int Test_ADC, int Spd);
+void Go_Backward(int direction, int spd);
+int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
 Turn(int Angle, int Speed, int Dir);
 void movement1();
-void movement2();
-void movement4();
 void Drive(int SpeedL, int SpeedR);
 void eusartSend(UINT8 sendChar);
 UINT8 eusartRec();
@@ -82,12 +81,9 @@ void Move_ADC_To(int Angle);
 void Find_Flag();
 int Create_Maze(); 
 int Detect_Victim();
-int Pos_Stack[20];
-
-
-
-
-
+void P_Controller();
+void Navigate_Maze();
+void Go_Home();
 
 //======================================================//
 struct square
@@ -95,8 +91,12 @@ struct square
     int id;
     int victim;
     bool walls[4];
-    int  Options;   
+    int Options;   
 };
+
+
+
+struct square maze[4][5];
 
 #endif	/* DANS_H */
 
