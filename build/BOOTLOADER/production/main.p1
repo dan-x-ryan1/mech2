@@ -6904,12 +6904,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;dans.h: 81: void Move_ADC_To(int Angle);
 [; ;dans.h: 82: void Find_Flag();
 [; ;dans.h: 83: int Create_Maze();
-[; ;dans.h: 85: int Detect_Victim();
+[; ;dans.h: 84: int Detect_Victim();
+"85
+[v _Pos_Stack `i ~T0 @X0 -> 20 `i e ]
+[; ;dans.h: 85: int Pos_Stack[20];
 [; ;dans.h: 93: struct square
 [; ;dans.h: 94: {
 [; ;dans.h: 95: int id;
 [; ;dans.h: 96: int victim;
-[; ;dans.h: 98: };
+[; ;dans.h: 97: bool walls[4];
+[; ;dans.h: 98: int Options;
+[; ;dans.h: 99: };
 "33 main.c
 [v _T_VAR `i ~T0 @X0 1 e ]
 [i _T_VAR
@@ -7891,9 +7896,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 408: Desired_Level = average;
 "408
 [e = _Desired_Level _average ]
-[; ;main.c: 410: Travel(3, 2000, 0, 200);
+[; ;main.c: 410: Travel(3, 10000, 0, 200);
 "410
-[e ( _Travel (4 , , , -> 3 `i -> 2000 `i -> 0 `i -> 200 `i ]
+[e ( _Travel (4 , , , -> 3 `i -> 10000 `i -> 0 `i -> 200 `i ]
 [; ;main.c: 421: Console_Render();
 "421
 [e ( _Console_Render ..  ]

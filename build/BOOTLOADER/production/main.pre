@@ -8830,15 +8830,16 @@ void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
 int Create_Maze();
-
 int Detect_Victim();
+int Pos_Stack[20];
 
 # 93
 struct square
 {
 int id;
 int victim;
-
+bool walls[4];
+int Options;
 };
 
 # 33 "main.c"
@@ -9196,7 +9197,7 @@ ADCAverage();
 
 Desired_Level = average;
 
-Travel(3, 2000, 0, 200);
+Travel(3, 10000, 0, 200);
 
 # 421
 Console_Render();

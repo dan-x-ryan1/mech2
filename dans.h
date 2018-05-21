@@ -81,8 +81,8 @@ void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
 int Create_Maze(); 
-
 int Detect_Victim();
+int Pos_Stack[20];
 
 
 
@@ -94,7 +94,8 @@ struct square
 {
     int id;
     int victim;
-
+    bool walls[4];
+    int  Options;   
 };
 
 #endif	/* DANS_H */

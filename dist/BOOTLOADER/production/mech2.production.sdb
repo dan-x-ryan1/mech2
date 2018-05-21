@@ -645,35 +645,35 @@ eMXK_None 0
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"29 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"34 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _InitADC InitADC `(v  1 e 1 0 ]
-"37
+"42
 [v _FunctReadADC FunctReadADC `(i  1 e 2 0 ]
-"49
+"54
 [v _ADCAverage ADCAverage `(i  1 e 2 0 ]
-"74
+"79
 [v _eusartSend eusartSend `(v  1 e 1 0 ]
-"78
+"83
 [v _eusartRec eusartRec `(uc  1 e 1 0 ]
-"82
+"87
 [v _isempty isempty `(uc  1 e 1 0 ]
-"89
+"94
 [v _isfull isfull `(uc  1 e 1 0 ]
-"220
+"126
 [v _Drive Drive `(v  1 e 1 0 ]
-"236
+"142
 [v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
-"245
+"151
 [v _Robot_Stop Robot_Stop `(v  1 e 1 0 ]
-"252
+"158
 [v _Get_VirtualWall_State Get_VirtualWall_State `(i  1 e 2 0 ]
-"293
+"199
 [v _Turn Turn `(i  1 e 2 0 ]
-"316
+"222
 [v _Travel Travel `(i  1 e 2 0 ]
-"496
+"402
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
-"509
+"415
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
 "9 C:\Users\Daniel\Documents\GitHub\mech2\Events.c
 [v _Event_NULL Event_NULL `(v  1 e 1 0 ]
@@ -2263,29 +2263,29 @@ eMXK_None 0
 [v main@down down `uc  1 a 1 0 ]
 "435
 } 0
-"316 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"222 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _Travel Travel `(i  1 e 2 0 ]
 {
-"415
+"321
 [v Travel@rev_Dist rev_Dist `i  1 a 2 6 ]
-"354
+"260
 [v Travel@error error `i  1 a 2 12 ]
-"318
+"224
 [v Travel@Req_Dir Req_Dir `i  1 a 2 10 ]
-"317
+"223
 [v Travel@Dist_Travelled Dist_Travelled `i  1 a 2 8 ]
-"356
+"262
 [v Travel@spd2 spd2 `i  1 a 2 4 ]
-"355
+"261
 [v Travel@spd1 spd1 `i  1 a 2 2 ]
-"319
+"225
 [v Travel@Dir Dir `i  1 a 2 0 ]
-"316
+"222
 [v Travel@direction direction `i  1 p 2 145 ]
 [v Travel@Dist Dist `i  1 p 2 147 ]
 [v Travel@Test_ADC Test_ADC `i  1 p 2 149 ]
 [v Travel@Spd Spd `i  1 p 2 151 ]
-"448
+"354
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -2365,32 +2365,32 @@ eMXK_None 0
 {
 "315
 } 0
-"293 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"199 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _Turn Turn `(i  1 e 2 0 ]
 {
-"294
+"200
 [v Turn@Rad Rad `i  1 a 2 9 ]
-"305
+"211
 [v Turn@C_Angle C_Angle `i  1 a 2 7 ]
-"293
+"199
 [v Turn@Angle Angle `i  1 p 2 1 ]
 [v Turn@Speed Speed `i  1 p 2 3 ]
 [v Turn@Dir Dir `i  1 p 2 5 ]
-"315
+"221
 } 0
-"252
+"158
 [v _Get_VirtualWall_State Get_VirtualWall_State `(i  1 e 2 0 ]
 {
-"255
+"161
 [v Get_VirtualWall_State@Vitual_Wall_Sensor Vitual_Wall_Sensor `i  1 a 2 4 ]
-"257
+"163
 } 0
-"220
+"126
 [v _Drive Drive `(v  1 e 1 0 ]
 {
 [v Drive@SpeedL SpeedL `i  1 p 2 1 ]
 [v Drive@SpeedR SpeedR `i  1 p 2 3 ]
-"235
+"141
 } 0
 "377 C:\Users\Daniel\Documents\GitHub\mech2\Library/Console.c
 [v _Console_Render Console_Render `(v  1 e 1 0 ]
@@ -2577,10 +2577,10 @@ eMXK_None 0
 [v Byte_GetBit@pBit pBit `uc  1 p 1 2 ]
 "45
 } 0
-"49 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"54 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _ADCAverage ADCAverage `(i  1 e 2 0 ]
 {
-"73
+"78
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\pow.c
 [v _pow pow `(d  1 e 4 0 ]
@@ -2689,17 +2689,17 @@ eMXK_None 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S14462 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S14454 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S14467 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S14470 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14462 1 fAsBytes 4 0 `S14467 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S14470  1 a 4 33 ]
+[s S14459 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S14462 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14454 1 fAsBytes 4 0 `S14459 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S14462  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S14538 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S14530 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S14541 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14538 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S14541  1 a 2 37 ]
+[u S14533 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14530 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S14533  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -2799,39 +2799,39 @@ eMXK_None 0
 [v OutSeg@pInput pInput `uc  1 a 1 6 ]
 "101
 } 0
-"37 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"42 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _FunctReadADC FunctReadADC `(i  1 e 2 0 ]
 {
 [v FunctReadADC@channel channel `i  1 p 2 0 ]
-"47
+"52
 } 0
 "154 C:\Users\Daniel\Documents\GitHub\mech2\main.c
 [v _Robot_Init Robot_Init `(v  1 e 1 0 ]
 {
 "159
 } 0
-"236 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"142 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _UpdateDistance UpdateDistance `(i  1 e 2 0 ]
 {
-"244
+"150
 } 0
-"78
+"83
 [v _eusartRec eusartRec `(uc  1 e 1 0 ]
 {
-"81
+"86
 } 0
-"245
+"151
 [v _Robot_Stop Robot_Stop `(v  1 e 1 0 ]
 {
-"251
+"157
 } 0
-"74
+"79
 [v _eusartSend eusartSend `(v  1 e 1 0 ]
 {
 [v eusartSend@sendChar sendChar `uc  1 a 1 wreg ]
 [v eusartSend@sendChar sendChar `uc  1 a 1 wreg ]
 [v eusartSend@sendChar sendChar `uc  1 a 1 0 ]
-"77
+"82
 } 0
 "33 C:\Users\Daniel\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_Init MXK_Init `(v  1 e 1 0 ]
@@ -3907,10 +3907,10 @@ eMXK_None 0
 {
 "108
 } 0
-"29 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"34 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _InitADC InitADC `(v  1 e 1 0 ]
 {
-"35
+"40
 } 0
 "27 C:\Users\Daniel\Documents\GitHub\mech2\Library/ISR.c
 [v _ISR_Enable ISR_Enable `(v  1 e 1 0 ]

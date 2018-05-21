@@ -10,20 +10,142 @@
 
 int Create_Maze(){
 int count = 0;
+int x = 0;
+int y = 0;
     struct square maze[4][5];
     for(int i = 0 ; i < 4; ++i){
         for(int j = 0 ; j < 5; ++j){
             maze[i][j].id = count;
+            maze[i][j].victim = 0;
             ++count;
         }
     }
-    for(int i = 0 ; i < 4; ++i){
-        for(int j = 0 ; j < 5; ++j){
-            maze[i][j].victim = 0;
-        }
-    } 
+    
     X_Pos = 3;
     Y_Pos = 1; 
+    //1
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //2 
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //3    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //4    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //5    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //6    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //7    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //8    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //9    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //10    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //11    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //12    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //13    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //14    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //15    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //16    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //17    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //18    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //19    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+    //20    
+        maze[x][y].walls[0] = 1;
+        maze[x][y].walls[1] = 1;
+        maze[x][y].walls[2] = 1;
+        maze[x][y].walls[3] = 1;
+        maze[x][y].Options = 1;
+        
+        
+        
 }
 
 void InitADC() // This function used to setup the ADC Module 
@@ -117,106 +239,7 @@ int push(int data) {
       printf("Could not insert data, Stack is full.\n");
    }
 }
-void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
-    
-	x_walls[0][0] = true;
-	x_walls[0][1] = false;
-	x_walls[0][2] = true;
-	x_walls[0][3] = true;
-	x_walls[0][4] = false;
-	x_walls[0][5] = true;
 
-	x_walls[1][0] = true;
-	x_walls[1][1] = false;
-	x_walls[1][2] = false;
-	x_walls[1][3] = false;
-	x_walls[1][4] = true;
-	x_walls[1][5] = true;
-
-	x_walls[2][0] = true;
-	x_walls[2][1] = false;
-	x_walls[2][2] = true;
-	x_walls[2][3] = true;
-	x_walls[2][4] = false;
-	x_walls[2][5] = true;
-
-	x_walls[3][0] = true;
-	x_walls[3][1] = true;
-	x_walls[3][2] = false;
-	x_walls[3][3] = false;
-	x_walls[3][4] = false;
-	x_walls[3][5] = true;
-
-	y_walls[0][0] = true;
-	y_walls[1][0] = false;
-	y_walls[2][0] = true;
-	y_walls[3][0] = true;
-	y_walls[4][0] = false;
-	y_walls[5][0] = true;
-
-	y_walls[0][1] = true;
-	y_walls[1][1] = false;
-	y_walls[2][1] = false;
-	y_walls[3][1] = false;
-	y_walls[4][1] = true;
-	y_walls[5][1] = true;
-
-	y_walls[0][2] = true;
-	y_walls[1][2] = false;
-	y_walls[2][2] = true;
-	y_walls[3][2] = true;
-	y_walls[4][2] = false; 
-	y_walls[5][2] = true;
-
-	y_walls[0][3] = true;
-	y_walls[1][3] = true;
-	y_walls[2][3] = false;
-	y_walls[3][3] = false;
-	y_walls[4][3] = false;
-	y_walls[5][3] = true;
-
-}
-/*void giveID (){
-    struct square grid; // create instance of square struct 
-    int id_count = 0; //give every grid a number id 
-    int y;
-    for(y = 0; y < 4; y++) //rows
-    {
-        for(int x = 0; x < 5; x++) // columbs
-        {
-            //grid[x_grid][y_grid].visited=false;
-            grid.id_number=id_count;
-                       
-            
-            printf("%d \t", grid.id_number);
-            
-            id_count++;
-            Console_Render();
-            
-        }
-        printf("\n");
-        
-    }  
-}*/
-void Init_Pos_Array(){
-    short position[4][5] =
-    {{0,0,0,0,0},
-    {0,0,0,0,0},
-    {0,0,0,0,0}, 
-    {0,0,0,0,0}
-    };
-    
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 5; j++)
-        {
-        printf("%c",ENDOFTEXT);
-        printf("%d\t", position[i][j]);
-        Console_Render();
-        }
-        printf("\n");
-    }
-    
-}
 void Drive(int SpeedL, int SpeedR) {
     if (SpeedL < 0){
         SpeedL = -1*SpeedL;

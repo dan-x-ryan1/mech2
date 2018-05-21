@@ -8376,15 +8376,16 @@ void Sensor_Observe();
 void Move_ADC_To(int Angle);
 void Find_Flag();
 int Create_Maze();
-
 int Detect_Victim();
+int Pos_Stack[20];
 
 # 93
 struct square
 {
 int id;
 int victim;
-
+bool walls[4];
+int Options;
 };
 
 # 14 "Library\Colours.h"
@@ -8535,20 +8536,25 @@ void HMI_Poll ();
 # 11 "dans.c"
 int Create_Maze(){
 int count = 0;
+int x = 0;
+int y = 0;
 struct square maze[4][5];
 for(int i = 0 ; i < 4; ++i){
 for(int j = 0 ; j < 5; ++j){
 maze[i][j].id = count;
+maze[i][j].victim = 0;
 ++count;
 }
 }
-for(int i = 0 ; i < 4; ++i){
-for(int j = 0 ; j < 5; ++j){
-maze[i][j].victim = 0;
-}
-}
+
 X_Pos = 3;
 Y_Pos = 1;
+
+maze[x][y].walls[0] = 1;
+maze[x][y].walls[1] = 1;
+maze[x][y].walls[2] = 1;
+maze[x][y].walls[3] = 1;
+maze[x][y].Options = 1;
 }
 
 void InitADC()
@@ -8642,86 +8648,7 @@ stack[top] = data;
 printf("Could not insert data, Stack is full.\n");
 }
 }
-void populateWalls (bool(x_walls)[5][6], bool(y_walls)[6][5]) {
 
-x_walls[0][0] = 1;
-x_walls[0][1] = 0;
-x_walls[0][2] = 1;
-x_walls[0][3] = 1;
-x_walls[0][4] = 0;
-x_walls[0][5] = 1;
-
-x_walls[1][0] = 1;
-x_walls[1][1] = 0;
-x_walls[1][2] = 0;
-x_walls[1][3] = 0;
-x_walls[1][4] = 1;
-x_walls[1][5] = 1;
-
-x_walls[2][0] = 1;
-x_walls[2][1] = 0;
-x_walls[2][2] = 1;
-x_walls[2][3] = 1;
-x_walls[2][4] = 0;
-x_walls[2][5] = 1;
-
-x_walls[3][0] = 1;
-x_walls[3][1] = 1;
-x_walls[3][2] = 0;
-x_walls[3][3] = 0;
-x_walls[3][4] = 0;
-x_walls[3][5] = 1;
-
-y_walls[0][0] = 1;
-y_walls[1][0] = 0;
-y_walls[2][0] = 1;
-y_walls[3][0] = 1;
-y_walls[4][0] = 0;
-y_walls[5][0] = 1;
-
-y_walls[0][1] = 1;
-y_walls[1][1] = 0;
-y_walls[2][1] = 0;
-y_walls[3][1] = 0;
-y_walls[4][1] = 1;
-y_walls[5][1] = 1;
-
-y_walls[0][2] = 1;
-y_walls[1][2] = 0;
-y_walls[2][2] = 1;
-y_walls[3][2] = 1;
-y_walls[4][2] = 0;
-y_walls[5][2] = 1;
-
-y_walls[0][3] = 1;
-y_walls[1][3] = 1;
-y_walls[2][3] = 0;
-y_walls[3][3] = 0;
-y_walls[4][3] = 0;
-y_walls[5][3] = 1;
-
-}
-
-# 201
-void Init_Pos_Array(){
-short position[4][5] =
-{{0,0,0,0,0},
-{0,0,0,0,0},
-{0,0,0,0,0},
-{0,0,0,0,0}
-};
-
-for (int i = 0; i < 4; i++){
-for (int j = 0; j < 5; j++)
-{
-printf("%c",(char)35);
-printf("%d\t", position[i][j]);
-Console_Render();
-}
-printf("\n");
-}
-
-}
 void Drive(int SpeedL, int SpeedR) {
 if (SpeedL < 0){
 SpeedL = -1*SpeedL;
@@ -8885,7 +8812,7 @@ spd2= Spd - error;
 Drive(Spd,spd2);
 }
 
-# 403
+# 309
 printf("%c", (char)35);
 Dist_Travelled += UpdateDistance();
 printf("%d \n", Dist_Travelled);
@@ -8933,7 +8860,7 @@ Y_Pos -= 1;
 Robot_Stop();
 }
 
-# 457
+# 363
 void movement1(){
 Travel(3, 10000, 0, 200);
 printf("Pos: %d, %d", X_Pos, Y_Pos);
@@ -8952,7 +8879,7 @@ while(1){};
 return;
 }
 
-# 496
+# 402
 int SteppingCCW(){
 STP4();
 delay_ms(2);
