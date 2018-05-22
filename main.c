@@ -391,37 +391,16 @@ void main(){
             }
             if (mode == 3){
             
-           // Init_Pos_Array();
-            
-           // Create_Maze();
-            
            //Sensor_Observe();
-           // Closest_Object();
-           
-            //LED_Set(eLED2, 1);
-            //delay_ms(350);
-            //LED_Set(eLED2, 0);
-           // Move_ADC_To (-90);
-            //delay_ms(20);
-            //Travel(3, SQUARE, 0, 200, 0);
-                      
-         /*   
-            for (int r =0; r < MAXSIZE; r++){
-                printf("%d ", stack[r]);
-            }
-            printf("\n");
-            printf("\n");
-            printf("The popped value: %d", pop());
-            printf("\nThe second popped value: %d", pop());
-            printf("\nThe third popped value: %d", pop());
-*/
+           //Closest_Object();
+
             while(VictimCount < 2 ){
                 printf("%c", ENDOFTEXT);
                 printf("\n       \n");
                 printf("vc: %d\n", VictimCount);
+                printf("\n\n\nOptions: %d\n\n\n", maze[X_Pos][Y_Pos].Options);
                 Navigate_Maze();
-
-
+                
                 if(Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0){
                         maze[X_Pos][Y_Pos].victim = 1;
                         VictimCount++;
@@ -429,10 +408,6 @@ void main(){
                 }
                 Console_Render();
                 delay_ms(350);
-                HMI_Poll();
-                if(HMIBoard.mLeft.mGetState()){
-                    Go_Home();
-                }
             }
             while(top >= 0){
                 printf("%c", ENDOFTEXT);
@@ -442,15 +417,16 @@ void main(){
                 Go_Home();
                 
             }
+            
             printf("HOME!!!@");
             Console_Render();
             while(1);
-            
             }
+            
             if (up){
-            Sensor_Observe();
-            Closest_Object();
-            Travel(3,SQUARE,0,200,0);
+                Sensor_Observe();
+                Closest_Object();
+                Travel(3,SQUARE,0,200,0);
             }
             
             Console_Render();                                         

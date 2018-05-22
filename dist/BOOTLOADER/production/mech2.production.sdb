@@ -679,17 +679,17 @@ eMXK_None 0
 [v _Turn Turn `(i  1 e 2 0 ]
 "347
 [v _Travel Travel `(i  1 e 2 0 ]
-"512
+"511
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
-"525
+"524
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
-"552
+"551
 [v _Move_ADC_To Move_ADC_To `(v  1 e 1 0 ]
-"577
+"576
 [v _Go_Backward Go_Backward `(v  1 e 1 0 ]
-"595
+"594
 [v _Navigate_Maze Navigate_Maze `(v  1 e 1 0 ]
-"632
+"631
 [v _Go_Home Go_Home `(v  1 e 1 0 ]
 "9 C:\Users\Daniel\Documents\GitHub\mech2\Events.c
 [v _Event_NULL Event_NULL `(v  1 e 1 0 ]
@@ -2273,14 +2273,14 @@ eMXK_None 0
 [v _main main `(v  1 e 1 0 ]
 {
 "371
-[v main@up up `uc  1 a 1 11 ]
+[v main@up up `uc  1 a 1 7 ]
 "372
-[v main@left left `uc  1 a 1 10 ]
+[v main@left left `uc  1 a 1 6 ]
 "370
-[v main@right right `uc  1 a 1 9 ]
+[v main@right right `uc  1 a 1 5 ]
 "369
-[v main@down down `uc  1 a 1 8 ]
-"461
+[v main@down down `uc  1 a 1 4 ]
+"437
 } 0
 "239
 [v _Sensor_Observe Sensor_Observe `(v  1 e 1 0 ]
@@ -2295,12 +2295,12 @@ eMXK_None 0
 {
 "157
 } 0
-"595 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"594 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _Navigate_Maze Navigate_Maze `(v  1 e 1 0 ]
 {
-"596
+"595
 [v Navigate_Maze@Direction Direction `i  1 a 2 21 ]
-"630
+"629
 } 0
 "33 C:\Users\Daniel\Documents\GitHub\mech2\Library/MXK.c
 [v _MXK_Init MXK_Init `(v  1 e 1 0 ]
@@ -4232,10 +4232,10 @@ eMXK_None 0
 [v SPI_DCS@pInput pInput `*.39S509  1 p 2 0 ]
 "225
 } 0
-"632 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"631 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _Go_Home Go_Home `(v  1 e 1 0 ]
 {
-"634
+"633
 } 0
 "248
 [v _pop pop `(i  1 e 2 0 ]
@@ -4249,12 +4249,12 @@ eMXK_None 0
 {
 "237
 } 0
-"577
+"576
 [v _Go_Backward Go_Backward `(v  1 e 1 0 ]
 {
 [v Go_Backward@direction direction `i  1 p 2 15 ]
 [v Go_Backward@spd spd `i  1 p 2 17 ]
-"591
+"590
 } 0
 "347
 [v _Travel Travel `(i  1 e 2 0 ]
@@ -4281,7 +4281,7 @@ eMXK_None 0
 [v Travel@Test_ADC Test_ADC `i  1 p 2 149 ]
 [v Travel@Spd Spd `i  1 p 2 151 ]
 [v Travel@Wall Wall `i  1 p 2 153 ]
-"502
+"501
 } 0
 "260
 [v _push push `(i  1 e 2 0 ]
@@ -4317,16 +4317,16 @@ eMXK_None 0
 {
 "301
 } 0
-"552
+"551
 [v _Move_ADC_To Move_ADC_To `(v  1 e 1 0 ]
 {
 [v Move_ADC_To@Angle Angle `i  1 p 2 73 ]
-"576
+"575
 } 0
-"525
+"524
 [v _SteppingCW SteppingCW `(i  1 e 2 0 ]
 {
-"535
+"534
 } 0
 "302
 [v _Get_VirtualWall_State Get_VirtualWall_State `(i  1 e 2 0 ]
@@ -5332,10 +5332,10 @@ eMXK_None 0
 {
 "315
 } 0
-"512 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
+"511 C:\Users\Daniel\Documents\GitHub\mech2\dans.c
 [v _SteppingCCW SteppingCCW `(i  1 e 2 0 ]
 {
-"523
+"522
 } 0
 "240 C:\Users\Daniel\Documents\GitHub\mech2\Library/Types.c
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
@@ -5700,17 +5700,17 @@ eMXK_None 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S14481 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S14482 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S14486 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S14489 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14481 1 fAsBytes 4 0 `S14486 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S14489  1 a 4 33 ]
+[s S14487 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S14490 . 4 `l 1 i 4 0 `d 1 f 4 0 `S14482 1 fAsBytes 4 0 `S14487 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S14490  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S14557 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S14558 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S14560 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14557 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S14560  1 a 2 37 ]
+[u S14561 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S14558 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S14561  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11

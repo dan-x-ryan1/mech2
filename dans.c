@@ -492,9 +492,8 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall){
     else if (direction == 3){
         Y_Pos -= 1;
     }
-    if(maze[X_Pos][Y_Pos].Options > 0){
-            push(direction);
-    }
+    push(direction);
+   
     
     maze[X_Pos][Y_Pos].Options -= 1;
         Robot_Stop(); //stop
@@ -598,7 +597,6 @@ void Navigate_Maze(){
     printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
     Console_Render();
     if(maze[X_Pos][Y_Pos].Options > 0){
-
         if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
             Direction = 1;    
         }
@@ -625,6 +623,7 @@ void Navigate_Maze(){
         printf("no options\n");
         Console_Render();
         Go_Backward(pop(), 200);
+        top -= 1;
     }
         
 }
