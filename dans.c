@@ -486,12 +486,18 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
     } else if (direction == 3) {
         Y_Pos -= 1;
     }
+<<<<<<< HEAD
     Robot_Stop();
     Fix_Error(X_Pos, Y_Pos);
 
     push(direction);
 
 
+=======
+    push(direction);
+   
+    
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
     maze[X_Pos][Y_Pos].Options -= 1;
     Robot_Stop(); //stop
 
@@ -590,6 +596,7 @@ void Navigate_Maze() {
     int Follow;
     printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
     Console_Render();
+<<<<<<< HEAD
     if (maze[X_Pos][Y_Pos].Options > 0) {
         if (maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos + 1].Options > 0) {
             Direction = 1;
@@ -600,6 +607,22 @@ void Navigate_Maze() {
         } else if (maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos - 1][Y_Pos].Options > 0) {
             Direction = 0;
         } else {
+=======
+    if(maze[X_Pos][Y_Pos].Options > 0){
+        if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
+            Direction = 1;    
+        }
+        else if(maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos+1][Y_Pos].Options > 0){
+            Direction = 2;      
+        } 
+        else if(maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos-1].Options > 0){
+            Direction = 3;       
+        } 
+        else if(maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos-1][Y_Pos].Options > 0){
+            Direction = 0;         
+        }     
+        else{
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
             printf("&&&&&\n");
             Console_Render();
             while (1);
@@ -611,7 +634,12 @@ void Navigate_Maze() {
     } else {
         printf("no options\n");
         Console_Render();
+<<<<<<< HEAD
         Go_Backward(pop(), SPEED);
+=======
+        Go_Backward(pop(), 200);
+        top -= 1;
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
     }
 
     Fix_Error(X_Pos, Y_Pos);

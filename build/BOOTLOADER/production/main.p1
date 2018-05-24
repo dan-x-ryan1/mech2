@@ -7926,6 +7926,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "373
 [e $ ! == _mode -> 3 `i 707  ]
 {
+<<<<<<< HEAD
 [; ;main.c: 374: printf("%c", (char)35);
 "374
 [e ( _printf , (. :s 14C -> -> -> 35 `i `uc `i ]
@@ -8029,10 +8030,95 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _delay_ms (1 -> -> 200 `i `us ]
 [; ;main.c: 408: while(1);
 "408
+=======
+[; ;main.c: 397: while(VictimCount < 2 ){
+"397
+[e $U 708  ]
+[e :U 709 ]
+{
+[; ;main.c: 398: printf("%c", (char)35);
+"398
+[e ( _printf , (. :s 14C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 399: printf("\n       \n");
+"399
+[e ( _printf :s 15C ]
+[; ;main.c: 400: printf("vc: %d\n", VictimCount);
+"400
+[e ( _printf , (. :s 16C _VictimCount ]
+[; ;main.c: 401: printf("\n\n\nOptions: %d\n\n\n", maze[X_Pos][Y_Pos].Options);
+"401
+[e ( _printf , (. :s 17C . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 ]
+[; ;main.c: 402: Navigate_Maze();
+"402
+[e ( _Navigate_Maze ..  ]
+[; ;main.c: 404: if(Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0){
+"404
+[e $ ! && == ( _Detect_Victim ..  -> 1 `i == . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 1 -> 0 `i 711  ]
+{
+[; ;main.c: 405: maze[X_Pos][Y_Pos].victim = 1;
+"405
+[e = . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 1 -> 1 `i ]
+[; ;main.c: 406: VictimCount++;
+"406
+[e ++ _VictimCount -> 1 `i ]
+"408
+}
+[e :U 711 ]
+[; ;main.c: 408: }
+[; ;main.c: 409: Console_Render();
+"409
+[e ( _Console_Render ..  ]
+[; ;main.c: 410: delay_ms(350);
+"410
+[e ( _delay_ms (1 -> -> 350 `i `us ]
+"411
+}
+[e :U 708 ]
+"397
+[e $ < _VictimCount -> 2 `i 709  ]
+[e :U 710 ]
+[; ;main.c: 411: }
+[; ;main.c: 412: while(top >= 0){
+"412
+[e $U 712  ]
+[e :U 713 ]
+{
+[; ;main.c: 413: printf("%c", (char)35);
+"413
+[e ( _printf , (. :s 18C -> -> -> 35 `i `uc `i ]
+[; ;main.c: 414: printf("\n       \n");
+"414
+[e ( _printf :s 19C ]
+[; ;main.c: 415: printf("Going Home");
+"415
+[e ( _printf :s 20C ]
+[; ;main.c: 416: Console_Render();
+"416
+[e ( _Console_Render ..  ]
+[; ;main.c: 417: Go_Home();
+"417
+[e ( _Go_Home ..  ]
+"419
+}
+[e :U 712 ]
+"412
+[e $ >= _top -> 0 `i 713  ]
+[e :U 714 ]
+[; ;main.c: 419: }
+[; ;main.c: 421: printf("HOME!!!@");
+"421
+[e ( _printf :s 21C ]
+[; ;main.c: 422: Console_Render();
+"422
+[e ( _Console_Render ..  ]
+[; ;main.c: 423: while(1);
+"423
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 [e :U 716 ]
 [e :U 715 ]
 [e $U 716  ]
 [e :U 717 ]
+<<<<<<< HEAD
 "410
 }
 [e :U 707 ]
@@ -8076,11 +8162,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [; ;main.c: 424: }
 "424
+=======
+"424
+}
+[e :U 707 ]
+[; ;main.c: 424: }
+[; ;main.c: 426: if (up){
+"426
+[e $ ! != -> _up `i -> -> -> 0 `i `uc `i 718  ]
+{
+[; ;main.c: 427: Sensor_Observe();
+"427
+[e ( _Sensor_Observe ..  ]
+[; ;main.c: 428: Closest_Object();
+"428
+[e ( _Closest_Object ..  ]
+[; ;main.c: 429: Travel(3,970,0,200,0);
+"429
+[e ( _Travel (4 , , , , -> 3 `i -> 970 `i -> 0 `i -> 200 `i -> 0 `i ]
+"430
+}
+[e :U 718 ]
+[; ;main.c: 430: }
+[; ;main.c: 432: Console_Render();
+"432
+[e ( _Console_Render ..  ]
+[; ;main.c: 433: if (MXK_Release())
+"433
+[e $ ! != -> ( _MXK_Release ..  `i -> -> -> 0 `i `uc `i 719  ]
+[; ;main.c: 434: MXK_Dequeue();
+"434
+[e ( _MXK_Dequeue ..  ]
+[e :U 719 ]
+"435
+}
+[e :U 705 ]
+"436
+}
+[; ;main.c: 435: }
+[; ;main.c: 436: }
+[e $U 698  ]
+[e :U 699 ]
+}
+[; ;main.c: 437: }
+"437
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 [e :UE 695 ]
 }
 [p f _printf 8913024 ]
 [a 7C 83 116 101 112 112 101 100 32 51 54 48 32 100 101 103 114 101 101 115 0 ]
+<<<<<<< HEAD
 [a 21C 71 111 105 110 103 32 72 111 109 101 0 ]
+=======
+[a 20C 71 111 105 110 103 32 72 111 109 101 0 ]
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 [a 9C 10 71 111 105 110 103 32 98 97 99 107 32 116 111 58 32 37 100 0 ]
 [a 5C 10 32 70 111 117 110 100 32 70 108 97 103 58 32 37 100 0 ]
 [a 11C 10 83 116 101 112 115 32 84 114 97 118 101 108 108 101 100 58 32 37 100 0 ]
@@ -8091,6 +8226,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 10C 37 99 0 ]
 [a 12C 37 99 0 ]
 [a 14C 37 99 0 ]
+<<<<<<< HEAD
 [a 15C 37 99 0 ]
 [a 19C 37 99 0 ]
 [a 22C 72 79 77 69 33 33 33 64 0 ]
@@ -8099,5 +8235,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 2C 83 101 110 115 111 114 32 77 111 118 105 110 103 33 32 32 32 10 0 ]
 [a 16C 10 32 32 32 32 32 32 32 10 0 ]
 [a 20C 10 32 32 32 32 32 32 32 10 0 ]
+=======
+[a 18C 37 99 0 ]
+[a 21C 72 79 77 69 33 33 33 64 0 ]
+[a 16C 118 99 58 32 37 100 10 0 ]
+[a 2C 83 101 110 115 111 114 32 77 111 118 105 110 103 33 32 32 32 10 0 ]
+[a 15C 10 32 32 32 32 32 32 32 10 0 ]
+[a 19C 10 32 32 32 32 32 32 32 10 0 ]
+>>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 [a 4C 10 65 68 67 58 32 37 100 32 10 10 0 ]
 [a 13C 82 111 98 111 116 32 82 101 97 100 121 33 32 10 10 0 ]
+[a 17C 10 10 10 79 112 116 105 111 110 115 58 32 37 100 10 10 10 0 ]
