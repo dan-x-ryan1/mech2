@@ -20,7 +20,8 @@ int stack[MAXSIZE] = {};
 #define x_grid 4
 #define y_grid 5
 #define DLY 2 
-#define SQUARE 970
+#define SQUARE 960
+#define SPEED 500
 
 int Current_Dist = 0;
 int Current_Dist1 = 0;
@@ -29,6 +30,7 @@ int Found_Flag = 0;
 int mode = 0;
 int Motor_Count = 0;
 int Steps = 0;
+
 
 //adc vars
 int numReadings = 10;
@@ -49,10 +51,14 @@ int Spd = 200;
 int Previous_Angle;
 int flag = 0;
 int Desired_Level = 60;
-
+int Current_Angle;
 //Victim Count
 int VictimCount=0;
 
+//meme variable
+bool Prev_Angle;
+bool WallFlag=0;
+UINT8 BumpSensor = 0;
 void InitADC();
 int FunctReadADC(int channel);
 int ADCAverage();
@@ -84,6 +90,10 @@ int Detect_Victim();
 void P_Controller();
 void Navigate_Maze();
 void Go_Home();
+void Fix_Error(int X_Pos, int Y_Pos);
+int Get_BumpSensor_State();
+void Bump_Wall();
+
 
 //======================================================//
 struct square

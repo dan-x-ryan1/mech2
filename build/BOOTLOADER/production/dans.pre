@@ -8316,7 +8316,7 @@ int top = -1;
 
 int stack[20] = {};
 
-# 25
+# 26
 int Current_Dist = 0;
 int Current_Dist1 = 0;
 int Current_Dist2 = 0;
@@ -8324,6 +8324,7 @@ int Found_Flag = 0;
 int mode = 0;
 int Motor_Count = 0;
 int Steps = 0;
+
 
 
 int numReadings = 10;
@@ -8344,10 +8345,14 @@ int Spd = 200;
 int Previous_Angle;
 int flag = 0;
 int Desired_Level = 60;
-
+int Current_Angle;
 
 int VictimCount=0;
 
+
+bool Prev_Angle;
+bool WallFlag=0;
+UINT8 BumpSensor = 0;
 void InitADC();
 int FunctReadADC(int channel);
 int ADCAverage();
@@ -8379,6 +8384,10 @@ int Detect_Victim();
 void P_Controller();
 void Navigate_Maze();
 void Go_Home();
+void Fix_Error(int X_Pos, int Y_Pos);
+int Get_BumpSensor_State();
+void Bump_Wall();
+
 
 
 struct square
@@ -8538,17 +8547,17 @@ void HMI_SetSegments (str pString);
 
 void HMI_Poll ();
 
-# 11 "dans.c"
-int Create_Maze(){
+# 10 "dans.c"
+int Create_Maze() {
 
 int count = 0;
 int x = 0;
 int y = 0;
-for (int p = 0; p < 20; p++){
-stack[p]=4;
+for (int p = 0; p < 20; p++) {
+stack[p] = 100;
 }
-for(x = 0 ; x < 4; ++x){
-for(y = 0 ; y < 5; ++y){
+for (x = 0; x < 4; ++x) {
+for (y = 0; y < 5; ++y) {
 maze[x][y].id = count;
 maze[x][y].victim = 0;
 ++count;
@@ -8595,7 +8604,7 @@ maze[x][y].walls[3] = 1;
 maze[x][y].Options = 1;
 
 ++x;
-y=0;
+y = 0;
 maze[x][y].walls[0] = 0;
 maze[x][y].walls[1] = 0;
 maze[x][y].walls[2] = 0;
@@ -8631,7 +8640,7 @@ maze[x][y].walls[3] = 0;
 maze[x][y].Options = 2;
 
 ++x;
-y=0;
+y = 0;
 maze[x][y].walls[0] = 0;
 maze[x][y].walls[1] = 0;
 maze[x][y].walls[2] = 0;
@@ -8667,7 +8676,7 @@ maze[x][y].walls[3] = 0;
 maze[x][y].Options = 2;
 
 ++x;
-y=0;
+y = 0;
 maze[x][y].walls[0] = 0;
 maze[x][y].walls[1] = 0;
 maze[x][y].walls[2] = 1;
@@ -8716,17 +8725,17 @@ readings[thisReading] = 0;
 
 int FunctReadADC(int channel)
 {
-if(channel>4) return 0;
-ADCON0=0x00;
-ADCON0=(channel<<2);
-ADON=1;
-GODONE=1;
-while(GODONE);
-ADON=0;
+if (channel > 4) return 0;
+ADCON0 = 0x00;
+ADCON0 = (channel << 2);
+ADON = 1;
+GODONE = 1;
+while (GODONE);
+ADON = 0;
 return ADRES;
 }
 
-int ADCAverage (){
+int ADCAverage() {
 
 total = total - readings[readIndex];
 
@@ -8744,42 +8753,50 @@ readIndex = 0;
 
 
 average = total / numReadings;
-average = -0.0000009*pow(average, 3)+0.0015*pow(average, 2)-0.9208*average+227.33;
+average = -0.0000009 * pow(average, 3) + 0.0015 * pow(average, 2) - 0.9208 * average + 227.33;
 
 
 HMI_SetNumber(average);
 HMI_Render();
 return average;
 }
-void eusartSend (UINT8 sendChar){
-while(!TXSTA1bits.TRMT){};
+
+void eusartSend(UINT8 sendChar) {
+while (!TXSTA1bits.TRMT) {
+};
 TXREG1 = sendChar;
 }
-UINT8 eusartRec(){
-while(!PIR1bits.RC1IF){}
+
+UINT8 eusartRec() {
+while (!PIR1bits.RC1IF) {
+}
 return (int) RCREG1;
 }
+
 bool isempty() {
 
-if(top == -1)
+if (top == -1)
 return 1;
 else
 return 0;
 }
+
 bool isfull() {
 
-if(top == 20)
+if (top == 20)
 return 1;
 else
 return 0;
 }
+
 int peek() {
 return stack[top];
 }
+
 int pop() {
 int data;
 
-if(!isempty()) {
+if (!isempty()) {
 data = stack[top];
 top = top - 1;
 return data;
@@ -8788,9 +8805,10 @@ printf("Could not retrieve data, Stack is empty.\n");
 
 }
 }
+
 int push(int data) {
 
-if(!isfull()) {
+if (!isfull()) {
 top = top + 1;
 stack[top] = data;
 } else {
@@ -8799,12 +8817,12 @@ printf("Could not insert data, Stack is full.\n");
 }
 
 void Drive(int SpeedL, int SpeedR) {
-if (SpeedL < 0){
-SpeedL = -1*SpeedL;
+if (SpeedL < 0) {
+SpeedL = -1 * SpeedL;
 SpeedL = ~SpeedL;
 }
-if (SpeedR < 0){
-SpeedR = -1*SpeedR;
+if (SpeedR < 0) {
+SpeedR = -1 * SpeedR;
 SpeedR = ~SpeedR;
 }
 
@@ -8814,47 +8832,47 @@ eusartSend(((unsigned char)((SpeedL)&0xFF)));
 eusartSend(((unsigned char)(((SpeedR)>>8)&0xFF)));
 eusartSend(((unsigned char)((SpeedR)&0xFF)));
 }
+
 int UpdateDistance() {
 eusartSend(142);
 eusartSend(19);
 Current_Dist1 = eusartRec();
 Current_Dist2 = eusartRec();
 
-Current_Dist = ((Current_Dist1 <<(8)) & 0b1111111100000000 | (Current_Dist2 & 255));
+Current_Dist = ((Current_Dist1 << (8)) & 0b1111111100000000 | (Current_Dist2 & 255));
 return Current_Dist;
 }
-void Robot_Stop(){
+
+void Robot_Stop() {
 eusartSend(137);
 eusartSend(0);
 eusartSend(0);
 eusartSend(0);
 eusartSend(0);
 }
-int Get_VirtualWall_State(){
+
+int Get_VirtualWall_State() {
 eusartSend(142);
 eusartSend(13);
 int Vitual_Wall_Sensor = (eusartRec());
 return Vitual_Wall_Sensor;
 }
-int Detect_Victim(){
+
+int Detect_Victim() {
 eusartSend(142);
 eusartSend(17);
 int Home_Base_State = (eusartRec());
-if(Home_Base_State >= 240 && Home_Base_State <= 254){
+if (Home_Base_State == 254 || Home_Base_State == 250 || Home_Base_State == 246) {
 return 1;
-}
-
-else{
-printf("\nNOTHING!!!");
-Console_Render();
 }
 return 0;
 
 
 }
-Turn(int Angle, int Speed, int Dir){
+
+Turn(int Angle, int Speed, int Dir) {
 int Rad = 1;
-if (Dir == 0){
+if (Dir == 0) {
 Rad = 65535;
 Angle = ~Angle;
 }
@@ -8875,48 +8893,30 @@ eusartSend(142);
 eusartSend(7);
 eusartRec();
 }
-int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall){
+
+int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
+WallFlag = Wall;
 int Dist_Travelled = 0;
 int Req_Dir = 0;
 int Dir;
-bool Prev_Angle;
-if (Wall == 0 && flag == 0){
 
 
-Prev_Angle = 0;
-}
+if (direction == Current_Direction) {
 
-
-else if (Wall == 0 && flag != 0){
-if (Prev_Angle != 0)
-Move_ADC_To(-90);
-Prev_Angle = 0;
-}
-
-if (Wall == 1 && flag != 0){
-if (Prev_Angle != 1)
-Move_ADC_To(90);
-Prev_Angle = 1;
-}
-
-if(direction == Current_Direction){
-
-}
-else {
+} else {
 Req_Dir = direction - Current_Direction;
 
-if (Req_Dir < 0){
-Req_Dir = 83*Req_Dir*-1;
+if (Req_Dir < 0) {
+Req_Dir = 83 * Req_Dir*-1;
 Dir = 1;
-if(Req_Dir > 166){
+if (Req_Dir > 166) {
 Req_Dir = 332 - Req_Dir;
 Dir = 0;
 }
-}
-else{
-Req_Dir = 83*Req_Dir;
+} else {
+Req_Dir = 83 * Req_Dir;
 Dir = 0;
-if(Req_Dir > 166){
+if (Req_Dir > 166) {
 Req_Dir = 332 - Req_Dir;
 Dir = 1;
 }
@@ -8924,75 +8924,81 @@ Dir = 1;
 Turn(Req_Dir, 200, Dir);
 Current_Direction = direction;
 }
+if (Wall == 0 && flag == 0) {
 
-Drive(Spd,Spd);
+Prev_Angle = 0;
+} else if (Wall == 0 && flag != 0) {
+if (Prev_Angle != 0)
+Move_ADC_To(-90);
+Prev_Angle = 0;
+}
+if (Wall == 1 && flag != 0) {
+if (Prev_Angle != 1)
+Move_ADC_To(90);
+Prev_Angle = 1;
+}
+
+Drive(Spd, Spd);
 
 
 ADCAverage();
 
 k = 4;
 int error;
-int spd1 =0 ;
-int spd2=0;
+int spd1 = 0;
+int spd2 = 0;
 
-while (Dist_Travelled<Dist){
+while (Dist_Travelled < Dist) {
 
 
 ADCAverage();
 error = Desired_Level - average;
-error*=k;
+error *= k;
 
-if (average<= 90){
+if (average <= 90) {
 
-if (error > 300){
-error=30;
+# 425
+if (error == Desired_Level + k || error == Desired_Level - k) {
+Drive(Spd, Spd);
 }
-if (error < -30){
-error = -30;
-}
-if (error == Desired_Level + 4 || error == Desired_Level - 4){
-Drive(Spd,Spd);
-}
-if (error >= 0){
+if (error >= 0) {
 
 spd1 = Spd - error;
-if (Wall ==0){
-Drive(spd1,Spd);
-}
-else if (Wall == 1){
-Drive(Spd,spd1);
-}
-
-}
-if (error <= 0){
-error=((error<0)?-error:error);
-spd2= Spd - error;
-
-if (Wall == 0){
-Drive(Spd,spd2);
-}
-else if (Wall == 1){
-Drive(spd2,Spd);
-}
+if (Wall == 0) {
+Drive(spd1, Spd);
+} else if (Wall == 1) {
+Drive(Spd, spd1);
 }
 
 }
-else
-Drive(Spd,Spd);
+if (error <= 0) {
+error = ((error<0)?-error:error);
+spd2 = Spd - error;
+
+if (Wall == 0) {
+Drive(Spd, spd2);
+} else if (Wall == 1) {
+Drive(spd2, Spd);
+}
+}
+
+} else
+Drive(Spd, Spd);
 
 Dist_Travelled += UpdateDistance();
 
-# 460
-if (Get_VirtualWall_State()){
+
+
+if (Get_VirtualWall_State() && !Detect_Victim()) {
 maze[X_Pos][Y_Pos].walls[direction] = 1;
 
 int rev_Dist = 0;
-
+Robot_Stop();
 printf("WALL FOUND\n");
 Console_Render();
-Drive(-Spd,-Spd);
+Drive(-Spd, -Spd);
 UpdateDistance();
-while(rev_Dist >= -Dist_Travelled){
+while (rev_Dist >= -Dist_Travelled) {
 
 rev_Dist += UpdateDistance();
 Console_Render();
@@ -9000,35 +9006,35 @@ printf("%c", (char)35);
 printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
 Console_Render();
 }
+Robot_Stop();
 return;
 }
 
 
 
 }
-if (direction == 0){
+if (direction == 0) {
 X_Pos -= 1;
-}
-else if (direction == 1){
+} else if (direction == 1) {
 Y_Pos += 1;
-}
-else if (direction == 2){
+} else if (direction == 2) {
 X_Pos += 1;
-}
-else if (direction == 3){
+} else if (direction == 3) {
 Y_Pos -= 1;
 }
-if(maze[X_Pos][Y_Pos].Options > 0){
+Robot_Stop();
+Fix_Error(X_Pos, Y_Pos);
+
 push(direction);
-}
+
 
 maze[X_Pos][Y_Pos].Options -= 1;
 Robot_Stop();
 
 }
 
-# 512
-int SteppingCCW(){
+# 509
+int SteppingCCW() {
 STP4();
 delay_ms(2);
 STP3();
@@ -9041,7 +9047,7 @@ delay_ms(2);
 
 }
 
-int SteppingCW(){
+int SteppingCW() {
 STP1();
 delay_ms(2);
 STP2();
@@ -9053,7 +9059,7 @@ delay_ms(2);
 
 }
 
-void Find_Flag () {
+void Find_Flag() {
 
 Sensor_Observe();
 while (!Found_Flag <= 0) {
@@ -9067,15 +9073,13 @@ SteppingCCW();
 }
 }
 
+void Move_ADC_To(int Angle) {
 
-void Move_ADC_To (int Angle) {
+if (flag == 0) {
 
-if (flag==0){
-
-Steps = (Angle * 1.42222)+200;
+Steps = (Angle * 1.42222) + 200;
 flag++;
-}
-else if (!flag==0){
+} else if (!flag == 0) {
 Steps = (Angle * 1.42222);
 }
 
@@ -9083,72 +9087,173 @@ printf("%c", (char)35);
 printf("\nSteps %d", Steps);
 printf("\nFlag %d", flag);
 Console_Render();
-while (Steps >= 0){
-Steps --;
+while (Steps >= 0) {
+Steps--;
 SteppingCW();
 }
-while (Steps < 0){
-Steps ++;
+while (Steps < 0) {
+Steps++;
 SteppingCCW();
 }
 return;
 }
-void Go_Backward(int direction, int spd){
-if(direction == 1)
-direction = 3;
-else if(direction == 3)
-direction =1;
 
-else if(direction == 0)
+void Go_Backward(int direction, int spd) {
+if (direction == 1)
+direction = 3;
+else if (direction == 3)
+direction = 1;
+else if (direction == 0)
 direction = 2;
-else if(direction == 2)
+else if (direction == 2)
 direction = 0;
 
-Travel(direction, 970, 0, spd, 0);
+Travel(direction, 960, 0, spd, 1);
 maze[X_Pos][Y_Pos].Options += 1;
-
+top -= 1;
 }
 
-
-
-void Navigate_Maze(){
+void Navigate_Maze() {
 int Direction;
 int Follow;
 printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
 Console_Render();
-if(maze[X_Pos][Y_Pos].Options > 0){
-
-if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
+if (maze[X_Pos][Y_Pos].Options > 0) {
+if (maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos + 1].Options > 0) {
 Direction = 1;
-}
-else if(maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos+1][Y_Pos].Options > 0){
+} else if (maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos + 1][Y_Pos].Options > 0) {
 Direction = 2;
-}
-else if(maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos-1].Options > 0){
+} else if (maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos - 1].Options > 0) {
 Direction = 3;
-}
-else if(maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos-1][Y_Pos].Options > 0){
+} else if (maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos - 1][Y_Pos].Options > 0) {
 Direction = 0;
-}
-else{
+} else {
 printf("&&&&&\n");
 Console_Render();
-while(1);
+while (1);
 }
 
 maze[X_Pos][Y_Pos].Options -= 1;
-Travel(Direction, 970, 0, 200, 0);
+Travel(Direction, 960, 0, 500, 0);
 
-}
-else {
+} else {
 printf("no options\n");
 Console_Render();
-Go_Backward(pop(), 200);
+Go_Backward(pop(), 500);
+}
+
+Fix_Error(X_Pos, Y_Pos);
+}
+
+void Go_Home() {
+
+Go_Backward(pop(), 300);
+}
+
+void Fix_Error(int X_Pos, int Y_Pos) {
+int close_error = 38;
+int far_error = 45;
+
+if ((X_Pos == 0 && Y_Pos == 3) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) {
+if (WallFlag == 0) {
+Move_ADC_To(45);
+for (int i = 0; i < 10; i++) {
+ADCAverage();
+}
+if (average < close_error) {
+while (average != close_error - 2) {
+ADCAverage();
+Drive(-100, -100);
+}
+}
+Move_ADC_To(-45);
+delay_ms(200);
+return;
+if (average > far_error) {
+while (average != far_error + 2) {
+ADCAverage();
+Drive(50, 50);
+}
+Robot_Stop();
+Move_ADC_To(-45);
+return;
+}
+}
+if (WallFlag == 1) {
+Move_ADC_To(-45);
+for (int i = 0; i < 10; i++) {
+ADCAverage();
+}
+if (average < close_error) {
+while (average != close_error - 2) {
+ADCAverage();
+Drive(-100, -100);
+}
+}
+Move_ADC_To(45);
+delay_ms(200);
+return;
+if (average > far_error) {
+while (average != far_error + 2) {
+ADCAverage();
+Drive(50, 50);
+}
+Robot_Stop();
+Move_ADC_To(-45);
+return;
+}
 }
 
 }
+return;
 
-void Go_Home(){
-Go_Backward(pop(), 200);
+}
+
+int Get_BumpSensor_State() {
+
+eusartSend(142);
+
+eusartSend(7);
+
+int Bump_Sensor = (eusartRec());
+
+return Bump_Sensor;
+}
+
+void Bump_Wall() {
+int temp2 = 0;
+
+int revDist = 30;
+
+int distTrav = 0;
+Move_ADC_To(-45);
+delay_ms(300);
+
+
+while (temp2 == 0) {
+
+Drive(200, 200);
+
+Get_Sensor_State();
+
+temp2 = (BumpSensor & 0b00000011);
+
+}
+temp2=0;
+
+Drive(-200, -200);
+
+UpdateDistance();
+
+while (temp2 >= -300) {
+
+temp2 += UpdateDistance();
+
+printf("%c", (char)35);
+printf("\n\nrev:%d Tar:\n", temp2);
+Console_Render();
+}
+Robot_Stop();
+return;
 }
 

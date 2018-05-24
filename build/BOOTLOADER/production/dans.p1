@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"89 dans.h
+"99 dans.h
 [s S641 `i 1 `i 1 `uc -> 4 `i `i 1 ]
 [n S641 square id victim walls Options ]
 "11618 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h
@@ -58,22 +58,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4015 ]
 "195 C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"86 dans.h
+[v _Move_ADC_To `(v ~T0 @X0 0 ef1`i ]
 "28 Library\Console.h
 [v _Console_Render `(v ~T0 @X0 0 ef ]
-"80 dans.h
-[v _Move_ADC_To `(v ~T0 @X0 0 ef1`i ]
-"513 dans.c
+"93 dans.h
+[v _Fix_Error `(v ~T0 @X0 0 ef2`i`i ]
+"510 dans.c
 [v _STP4 `(i ~T0 @X0 0 ef ]
 "606 Library\Types.h
 [v _delay_ms `(v ~T0 @X0 0 ef1`us ]
-"515 dans.c
+"512 dans.c
 [v _STP3 `(i ~T0 @X0 0 ef ]
-"517
+"514
 [v _STP2 `(i ~T0 @X0 0 ef ]
-"519
+"516
 [v _STP1 `(i ~T0 @X0 0 ef ]
-"79 dans.h
+"85 dans.h
 [v _Sensor_Observe `(v ~T0 @X0 0 ef ]
+"709 dans.c
+[v _Get_Sensor_State `(i ~T0 @X0 0 ef ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -6323,162 +6327,183 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;dans.h: 19: int stack[20] = {};
-"25
+"26
 [v _Current_Dist `i ~T0 @X0 1 e ]
 [i _Current_Dist
 -> 0 `i
 ]
-[; ;dans.h: 25: int Current_Dist = 0;
-"26
+[; ;dans.h: 26: int Current_Dist = 0;
+"27
 [v _Current_Dist1 `i ~T0 @X0 1 e ]
 [i _Current_Dist1
 -> 0 `i
 ]
-[; ;dans.h: 26: int Current_Dist1 = 0;
-"27
+[; ;dans.h: 27: int Current_Dist1 = 0;
+"28
 [v _Current_Dist2 `i ~T0 @X0 1 e ]
 [i _Current_Dist2
 -> 0 `i
 ]
-[; ;dans.h: 27: int Current_Dist2 = 0;
-"28
+[; ;dans.h: 28: int Current_Dist2 = 0;
+"29
 [v _Found_Flag `i ~T0 @X0 1 e ]
 [i _Found_Flag
 -> 0 `i
 ]
-[; ;dans.h: 28: int Found_Flag = 0;
-"29
+[; ;dans.h: 29: int Found_Flag = 0;
+"30
 [v _mode `i ~T0 @X0 1 e ]
 [i _mode
 -> 0 `i
 ]
-[; ;dans.h: 29: int mode = 0;
-"30
+[; ;dans.h: 30: int mode = 0;
+"31
 [v _Motor_Count `i ~T0 @X0 1 e ]
 [i _Motor_Count
 -> 0 `i
 ]
-[; ;dans.h: 30: int Motor_Count = 0;
-"31
+[; ;dans.h: 31: int Motor_Count = 0;
+"32
 [v _Steps `i ~T0 @X0 1 e ]
 [i _Steps
 -> 0 `i
 ]
-[; ;dans.h: 31: int Steps = 0;
-"34
+[; ;dans.h: 32: int Steps = 0;
+"36
 [v _numReadings `i ~T0 @X0 1 e ]
 [i _numReadings
 -> 10 `i
 ]
-[; ;dans.h: 34: int numReadings = 10;
-"35
-[v _thisReading `i ~T0 @X0 1 e ]
-[; ;dans.h: 35: int thisReading;
-"36
-[v _readings `i ~T0 @X0 -> 10 `i e ]
-[; ;dans.h: 36: int readings[10 ];
+[; ;dans.h: 36: int numReadings = 10;
 "37
+[v _thisReading `i ~T0 @X0 1 e ]
+[; ;dans.h: 37: int thisReading;
+"38
+[v _readings `i ~T0 @X0 -> 10 `i e ]
+[; ;dans.h: 38: int readings[10 ];
+"39
 [v _readIndex `i ~T0 @X0 1 e ]
 [i _readIndex
 -> 0 `i
 ]
-[; ;dans.h: 37: int readIndex = 0;
-"38
+[; ;dans.h: 39: int readIndex = 0;
+"40
 [v _total `i ~T0 @X0 1 e ]
 [i _total
 -> 0 `i
 ]
-[; ;dans.h: 38: int total = 0;
-"39
+[; ;dans.h: 40: int total = 0;
+"41
 [v _average `i ~T0 @X0 1 e ]
 [i _average
 -> 0 `i
 ]
-[; ;dans.h: 39: int average = 0;
-"40
+[; ;dans.h: 41: int average = 0;
+"42
 [v _x `i ~T0 @X0 1 e ]
 [i _x
 -> 0 `i
 ]
-[; ;dans.h: 40: int x = 0;
-"43
+[; ;dans.h: 42: int x = 0;
+"45
 [v _X_Pos `i ~T0 @X0 1 e ]
-[; ;dans.h: 43: int X_Pos;
-"44
+[; ;dans.h: 45: int X_Pos;
+"46
 [v _Y_Pos `i ~T0 @X0 1 e ]
-[; ;dans.h: 44: int Y_Pos;
-"47
+[; ;dans.h: 46: int Y_Pos;
+"49
 [v _k `i ~T0 @X0 1 e ]
-[; ;dans.h: 47: int k;
-"48
+[; ;dans.h: 49: int k;
+"50
 [v _Spd `i ~T0 @X0 1 e ]
 [i _Spd
 -> 200 `i
 ]
-[; ;dans.h: 48: int Spd = 200;
-"49
+[; ;dans.h: 50: int Spd = 200;
+"51
 [v _Previous_Angle `i ~T0 @X0 1 e ]
-[; ;dans.h: 49: int Previous_Angle;
-"50
+[; ;dans.h: 51: int Previous_Angle;
+"52
 [v _flag `i ~T0 @X0 1 e ]
 [i _flag
 -> 0 `i
 ]
-[; ;dans.h: 50: int flag = 0;
-"51
+[; ;dans.h: 52: int flag = 0;
+"53
 [v _Desired_Level `i ~T0 @X0 1 e ]
 [i _Desired_Level
 -> 60 `i
 ]
-[; ;dans.h: 51: int Desired_Level = 60;
+[; ;dans.h: 53: int Desired_Level = 60;
 "54
+[v _Current_Angle `i ~T0 @X0 1 e ]
+[; ;dans.h: 54: int Current_Angle;
+"56
 [v _VictimCount `i ~T0 @X0 1 e ]
 [i _VictimCount
 -> 0 `i
 ]
-[; ;dans.h: 54: int VictimCount=0;
-[; ;dans.h: 56: void InitADC();
-[; ;dans.h: 57: int FunctReadADC(int channel);
-[; ;dans.h: 58: int ADCAverage();
-[; ;dans.h: 59: bool isempty();
-[; ;dans.h: 60: bool isfull();
-[; ;dans.h: 61: int peek();
-[; ;dans.h: 62: int pop();
-[; ;dans.h: 63: int push(int data);
-[; ;dans.h: 64: void giveID();
-[; ;dans.h: 65: void Init_Pos_Array();
-[; ;dans.h: 66: void Go_Backward(int direction, int spd);
-[; ;dans.h: 67: int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
-[; ;dans.h: 68: Turn(int Angle, int Speed, int Dir);
-[; ;dans.h: 69: void movement1();
-[; ;dans.h: 70: void Drive(int SpeedL, int SpeedR);
-[; ;dans.h: 71: void eusartSend(UINT8 sendChar);
-[; ;dans.h: 72: UINT8 eusartRec();
-[; ;dans.h: 73: int UpdateDistance();
-[; ;dans.h: 74: void Robot_Stop();
-[; ;dans.h: 75: void untilVirtual();
-[; ;dans.h: 76: int Get_VirtualWall_State();
-[; ;dans.h: 77: int SteppingCCW();
-[; ;dans.h: 78: int SteppingCW();
-[; ;dans.h: 79: void Sensor_Observe();
-[; ;dans.h: 80: void Move_ADC_To(int Angle);
-[; ;dans.h: 81: void Find_Flag();
-[; ;dans.h: 82: int Create_Maze();
-[; ;dans.h: 83: int Detect_Victim();
-[; ;dans.h: 84: void P_Controller();
-[; ;dans.h: 85: void Navigate_Maze();
-[; ;dans.h: 86: void Go_Home();
-[; ;dans.h: 89: struct square
-[; ;dans.h: 90: {
-[; ;dans.h: 91: int id;
-[; ;dans.h: 92: int victim;
-[; ;dans.h: 93: bool walls[4];
-[; ;dans.h: 94: int Options;
-[; ;dans.h: 95: };
-[v F6939 `S641 ~T0 @X0 -> 5 `i t ]
-"99
-[v _maze `F6939 ~T0 @X0 -> 4 `i e ]
-[; ;dans.h: 99: struct square maze[4][5];
+[; ;dans.h: 56: int VictimCount=0;
+"59
+[v _Prev_Angle `uc ~T0 @X0 1 e ]
+[; ;dans.h: 59: bool Prev_Angle;
+"60
+[v _WallFlag `uc ~T0 @X0 1 e ]
+[i _WallFlag
+-> -> 0 `i `uc
+]
+[; ;dans.h: 60: bool WallFlag=0;
+"61
+[v _BumpSensor `uc ~T0 @X0 1 e ]
+[i _BumpSensor
+-> -> 0 `i `uc
+]
+[; ;dans.h: 61: UINT8 BumpSensor = 0;
+[; ;dans.h: 62: void InitADC();
+[; ;dans.h: 63: int FunctReadADC(int channel);
+[; ;dans.h: 64: int ADCAverage();
+[; ;dans.h: 65: bool isempty();
+[; ;dans.h: 66: bool isfull();
+[; ;dans.h: 67: int peek();
+[; ;dans.h: 68: int pop();
+[; ;dans.h: 69: int push(int data);
+[; ;dans.h: 70: void giveID();
+[; ;dans.h: 71: void Init_Pos_Array();
+[; ;dans.h: 72: void Go_Backward(int direction, int spd);
+[; ;dans.h: 73: int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
+[; ;dans.h: 74: Turn(int Angle, int Speed, int Dir);
+[; ;dans.h: 75: void movement1();
+[; ;dans.h: 76: void Drive(int SpeedL, int SpeedR);
+[; ;dans.h: 77: void eusartSend(UINT8 sendChar);
+[; ;dans.h: 78: UINT8 eusartRec();
+[; ;dans.h: 79: int UpdateDistance();
+[; ;dans.h: 80: void Robot_Stop();
+[; ;dans.h: 81: void untilVirtual();
+[; ;dans.h: 82: int Get_VirtualWall_State();
+[; ;dans.h: 83: int SteppingCCW();
+[; ;dans.h: 84: int SteppingCW();
+[; ;dans.h: 85: void Sensor_Observe();
+[; ;dans.h: 86: void Move_ADC_To(int Angle);
+[; ;dans.h: 87: void Find_Flag();
+[; ;dans.h: 88: int Create_Maze();
+[; ;dans.h: 89: int Detect_Victim();
+[; ;dans.h: 90: void P_Controller();
+[; ;dans.h: 91: void Navigate_Maze();
+[; ;dans.h: 92: void Go_Home();
+[; ;dans.h: 93: void Fix_Error(int X_Pos, int Y_Pos);
+[; ;dans.h: 94: int Get_BumpSensor_State();
+[; ;dans.h: 95: void Bump_Wall();
+[; ;dans.h: 99: struct square
+[; ;dans.h: 100: {
+[; ;dans.h: 101: int id;
+[; ;dans.h: 102: int victim;
+[; ;dans.h: 103: bool walls[4];
+[; ;dans.h: 104: int Options;
+[; ;dans.h: 105: };
+[v F6948 `S641 ~T0 @X0 -> 5 `i t ]
+"109
+[v _maze `F6948 ~T0 @X0 -> 4 `i e ]
+[; ;dans.h: 109: struct square maze[4][5];
 [; ;Colours.h: 14: typedef UINT16 Colour;
 [; ;Colours.h: 15: typedef Colour * ColourPtr;
 [; ;Colours.h: 33: Colour Colour_To565(UINT8 r, UINT8 g, UINT8 b);
@@ -6580,26 +6605,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;HMI.h: 103: void HMI_SetNumber (int pInput);
 [; ;HMI.h: 104: void HMI_SetSegments (str pString);
 [; ;HMI.h: 106: void HMI_Poll ();
-"11 dans.c
+"10 dans.c
 [v _Create_Maze `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 11: int Create_Maze(){
+[; ;dans.c: 10: int Create_Maze() {
 [e :U _Create_Maze ]
 [f ]
-"13
+"12
 [v _count `i ~T0 @X0 1 a ]
-[; ;dans.c: 13: int count = 0;
+[; ;dans.c: 12: int count = 0;
 [e = _count -> 0 `i ]
 [v _x `i ~T0 @X0 1 a ]
-[; ;dans.c: 14: int x = 0;
-"14
+[; ;dans.c: 13: int x = 0;
+"13
 [e = _x -> 0 `i ]
-"15
+"14
 [v _y `i ~T0 @X0 1 a ]
-[; ;dans.c: 15: int y = 0;
+[; ;dans.c: 14: int y = 0;
 [e = _y -> 0 `i ]
-[; ;dans.c: 16: for (int p = 0; p < 20; p++){
-"16
+[; ;dans.c: 15: for (int p = 0; p < 20; p++) {
+"15
 {
 [v _p `i ~T0 @X0 1 a ]
 [e = _p -> 0 `i ]
@@ -6607,1018 +6632,1010 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 652  ]
 [e :U 651 ]
 {
-[; ;dans.c: 17: stack[p]=4;
-"17
-[e = *U + &U _stack * -> -> _p `ui `ux -> -> # *U &U _stack `ui `ux -> 4 `i ]
-"18
-}
+[; ;dans.c: 16: stack[p] = 100;
 "16
+[e = *U + &U _stack * -> -> _p `ui `ux -> -> # *U &U _stack `ui `ux -> 100 `i ]
+"17
+}
+"15
 [e ++ _p -> 1 `i ]
 [e $ < _p -> 20 `i 651  ]
 [e :U 652 ]
-"18
+"17
 }
-[; ;dans.c: 18: }
-[; ;dans.c: 19: for(x = 0 ; x < 4; ++x){
-"19
+[; ;dans.c: 17: }
+[; ;dans.c: 18: for (x = 0; x < 4; ++x) {
+"18
 {
 [e = _x -> 0 `i ]
 [e $ < _x -> 4 `i 654  ]
 [e $U 655  ]
 [e :U 654 ]
 {
-[; ;dans.c: 20: for(y = 0 ; y < 5; ++y){
-"20
+[; ;dans.c: 19: for (y = 0; y < 5; ++y) {
+"19
 {
 [e = _y -> 0 `i ]
 [e $ < _y -> 5 `i 657  ]
 [e $U 658  ]
 [e :U 657 ]
 {
-[; ;dans.c: 21: maze[x][y].id = count;
-"21
-[e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 0 _count ]
-[; ;dans.c: 22: maze[x][y].victim = 0;
-"22
-[e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 1 -> 0 `i ]
-[; ;dans.c: 23: ++count;
-"23
-[e =+ _count -> 1 `i ]
-"24
-}
+[; ;dans.c: 20: maze[x][y].id = count;
 "20
+[e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 0 _count ]
+[; ;dans.c: 21: maze[x][y].victim = 0;
+"21
+[e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 1 -> 0 `i ]
+[; ;dans.c: 22: ++count;
+"22
+[e =+ _count -> 1 `i ]
+"23
+}
+"19
 [e =+ _y -> 1 `i ]
 [e $ < _y -> 5 `i 657  ]
 [e :U 658 ]
+"23
+}
 "24
 }
-"25
-}
-"19
+"18
 [e =+ _x -> 1 `i ]
 [e $ < _x -> 4 `i 654  ]
 [e :U 655 ]
-"25
+"24
 }
+[; ;dans.c: 23: }
 [; ;dans.c: 24: }
-[; ;dans.c: 25: }
-[; ;dans.c: 26: x = 0;
-"26
+[; ;dans.c: 25: x = 0;
+"25
 [e = _x -> 0 `i ]
-[; ;dans.c: 27: y = 0;
-"27
+[; ;dans.c: 26: y = 0;
+"26
 [e = _y -> 0 `i ]
-[; ;dans.c: 29: X_Pos = 3;
-"29
+[; ;dans.c: 28: X_Pos = 3;
+"28
 [e = _X_Pos -> 3 `i ]
-[; ;dans.c: 30: Y_Pos = 1;
-"30
+[; ;dans.c: 29: Y_Pos = 1;
+"29
 [e = _Y_Pos -> 1 `i ]
-[; ;dans.c: 32: maze[x][y].walls[0] = 1;
+[; ;dans.c: 31: maze[x][y].walls[0] = 1;
+"31
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 32: maze[x][y].walls[1] = 0;
 "32
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 33: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 33: maze[x][y].walls[2] = 0;
 "33
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 34: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 34: maze[x][y].walls[3] = 1;
 "34
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 35: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 35: maze[x][y].Options = 2;
 "35
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 36: maze[x][y].Options = 2;
-"36
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 38: ++y;
+[; ;dans.c: 37: ++y;
+"37
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 38: maze[x][y].walls[0] = 1;
 "38
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 39: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 39: maze[x][y].walls[1] = 0;
 "39
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 40: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 40: maze[x][y].walls[2] = 1;
 "40
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 41: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 41: maze[x][y].walls[3] = 0;
 "41
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 42: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 42: maze[x][y].Options = 2;
 "42
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 43: maze[x][y].Options = 2;
-"43
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 45: ++y;
+[; ;dans.c: 44: ++y;
+"44
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 45: maze[x][y].walls[0] = 1;
 "45
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 46: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 46: maze[x][y].walls[1] = 0;
 "46
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 47: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 47: maze[x][y].walls[2] = 0;
 "47
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 48: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 48: maze[x][y].walls[3] = 0;
 "48
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 49: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 49: maze[x][y].Options = 3;
 "49
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 50: maze[x][y].Options = 3;
-"50
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 3 `i ]
-[; ;dans.c: 52: ++y;
+[; ;dans.c: 51: ++y;
+"51
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 52: maze[x][y].walls[0] = 1;
 "52
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 53: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 53: maze[x][y].walls[1] = 1;
 "53
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 54: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 54: maze[x][y].walls[2] = 0;
 "54
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 55: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 55: maze[x][y].walls[3] = 0;
 "55
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 56: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 56: maze[x][y].Options = 2;
 "56
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 57: maze[x][y].Options = 2;
-"57
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 59: ++y;
+[; ;dans.c: 58: ++y;
+"58
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 59: maze[x][y].walls[0] = 1;
 "59
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 60: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 60: maze[x][y].walls[1] = 1;
 "60
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 61: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 61: maze[x][y].walls[2] = 0;
 "61
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 62: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 62: maze[x][y].walls[3] = 1;
 "62
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 63: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 63: maze[x][y].Options = 1;
 "63
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 64: maze[x][y].Options = 1;
-"64
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 66: ++x;
+[; ;dans.c: 65: ++x;
+"65
+[e =+ _x -> 1 `i ]
+[; ;dans.c: 66: y = 0;
 "66
-[e =+ _x -> 1 `i ]
-[; ;dans.c: 67: y=0;
+[e = _y -> 0 `i ]
+[; ;dans.c: 67: maze[x][y].walls[0] = 0;
 "67
-[e = _y -> 0 `i ]
-[; ;dans.c: 68: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 68: maze[x][y].walls[1] = 0;
 "68
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 69: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 69: maze[x][y].walls[2] = 0;
 "69
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 70: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 70: maze[x][y].walls[3] = 1;
 "70
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 71: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 71: maze[x][y].Options = 3;
 "71
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 72: maze[x][y].Options = 3;
-"72
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 3 `i ]
-[; ;dans.c: 74: ++y;
+[; ;dans.c: 73: ++y;
+"73
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 74: maze[x][y].walls[0] = 1;
 "74
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 75: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 75: maze[x][y].walls[1] = 1;
 "75
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 76: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 76: maze[x][y].walls[2] = 1;
 "76
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 77: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 77: maze[x][y].walls[3] = 0;
 "77
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 78: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 78: maze[x][y].Options = 1;
 "78
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 79: maze[x][y].Options = 1;
-"79
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 81: ++y;
+[; ;dans.c: 80: ++y;
+"80
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 81: maze[x][y].walls[0] = 0;
 "81
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 82: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 82: maze[x][y].walls[1] = 1;
 "82
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 83: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 83: maze[x][y].walls[2] = 0;
 "83
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 84: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 84: maze[x][y].walls[3] = 1;
 "84
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 85: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 85: maze[x][y].Options = 2;
 "85
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 86: maze[x][y].Options = 2;
-"86
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 88: ++y;
+[; ;dans.c: 87: ++y;
+"87
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 88: maze[x][y].walls[0] = 0;
 "88
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 89: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 89: maze[x][y].walls[1] = 0;
 "89
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 90: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 90: maze[x][y].walls[2] = 1;
 "90
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 91: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 91: maze[x][y].walls[3] = 1;
 "91
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 92: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 92: maze[x][y].Options = 2;
 "92
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 93: maze[x][y].Options = 2;
-"93
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 95: ++y;
+[; ;dans.c: 94: ++y;
+"94
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 95: maze[x][y].walls[0] = 0;
 "95
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 96: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 96: maze[x][y].walls[1] = 1;
 "96
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 97: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 97: maze[x][y].walls[2] = 1;
 "97
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 98: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 98: maze[x][y].walls[3] = 0;
 "98
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 99: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 99: maze[x][y].Options = 2;
 "99
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 100: maze[x][y].Options = 2;
-"100
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 102: ++x;
+[; ;dans.c: 101: ++x;
+"101
+[e =+ _x -> 1 `i ]
+[; ;dans.c: 102: y = 0;
 "102
-[e =+ _x -> 1 `i ]
-[; ;dans.c: 103: y=0;
+[e = _y -> 0 `i ]
+[; ;dans.c: 103: maze[x][y].walls[0] = 0;
 "103
-[e = _y -> 0 `i ]
-[; ;dans.c: 104: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 104: maze[x][y].walls[1] = 0;
 "104
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 105: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 105: maze[x][y].walls[2] = 0;
 "105
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 106: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 106: maze[x][y].walls[3] = 1;
 "106
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 107: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 107: maze[x][y].Options = 3;
 "107
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 108: maze[x][y].Options = 3;
-"108
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 3 `i ]
-[; ;dans.c: 110: ++y;
+[; ;dans.c: 109: ++y;
+"109
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 110: maze[x][y].walls[0] = 1;
 "110
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 111: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 111: maze[x][y].walls[1] = 0;
 "111
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 112: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 112: maze[x][y].walls[2] = 1;
 "112
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 113: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 113: maze[x][y].walls[3] = 0;
 "113
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 114: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 114: maze[x][y].Options = 2;
 "114
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 115: maze[x][y].Options = 2;
-"115
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 117: ++y;
+[; ;dans.c: 116: ++y;
+"116
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 117: maze[x][y].walls[0] = 0;
 "117
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 118: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 118: maze[x][y].walls[1] = 0;
 "118
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 119: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 119: maze[x][y].walls[2] = 0;
 "119
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 120: maze[x][y].walls[2] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 120: maze[x][y].walls[3] = 0;
 "120
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 121: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 121: maze[x][y].Options = 4;
 "121
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 122: maze[x][y].Options = 4;
-"122
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 4 `i ]
-[; ;dans.c: 124: ++y;
+[; ;dans.c: 123: ++y;
+"123
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 124: maze[x][y].walls[0] = 1;
 "124
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 125: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 125: maze[x][y].walls[1] = 0;
 "125
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 126: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 126: maze[x][y].walls[2] = 1;
 "126
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 127: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 127: maze[x][y].walls[3] = 0;
 "127
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 128: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 128: maze[x][y].Options = 2;
 "128
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 129: maze[x][y].Options = 2;
-"129
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 131: ++y;
+[; ;dans.c: 130: ++y;
+"130
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 131: maze[x][y].walls[0] = 1;
 "131
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 132: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 132: maze[x][y].walls[1] = 1;
 "132
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 133: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 133: maze[x][y].walls[2] = 0;
 "133
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 134: maze[x][y].walls[2] = 0;
-"134
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 135: maze[x][y].walls[3] = 0;
+[; ;dans.c: 134: maze[x][y].walls[3] = 0;
+"134
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 135: maze[x][y].Options = 2;
 "135
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 136: maze[x][y].Options = 2;
-"136
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 138: ++x;
-"138
+[; ;dans.c: 137: ++x;
+"137
 [e =+ _x -> 1 `i ]
-[; ;dans.c: 139: y=0;
-"139
+[; ;dans.c: 138: y = 0;
+"138
 [e = _y -> 0 `i ]
-[; ;dans.c: 140: maze[x][y].walls[0] = 0;
+[; ;dans.c: 139: maze[x][y].walls[0] = 0;
+"139
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 140: maze[x][y].walls[1] = 0;
 "140
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 141: maze[x][y].walls[1] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 141: maze[x][y].walls[2] = 1;
 "141
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 142: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 142: maze[x][y].walls[3] = 1;
 "142
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 143: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 143: maze[x][y].Options = 2;
 "143
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 144: maze[x][y].Options = 2;
-"144
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 146: ++y;
+[; ;dans.c: 145: ++y;
+"145
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 146: maze[x][y].walls[0] = 1;
 "146
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 147: maze[x][y].walls[0] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 147: maze[x][y].walls[1] = 1;
 "147
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 148: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 148: maze[x][y].walls[2] = 1;
 "148
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 149: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 149: maze[x][y].walls[3] = 0;
 "149
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 150: maze[x][y].walls[3] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 150: maze[x][y].Options = 1;
 "150
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 151: maze[x][y].Options = 1;
-"151
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 153: ++y;
+[; ;dans.c: 152: ++y;
+"152
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 153: maze[x][y].walls[0] = 0;
 "153
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 154: maze[x][y].walls[0] = 0;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
+[; ;dans.c: 154: maze[x][y].walls[1] = 1;
 "154
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 155: maze[x][y].walls[1] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 155: maze[x][y].walls[2] = 1;
 "155
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 156: maze[x][y].walls[2] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 156: maze[x][y].walls[3] = 1;
 "156
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 157: maze[x][y].walls[3] = 1;
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 157: maze[x][y].Options = 1;
 "157
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 158: maze[x][y].Options = 1;
-"158
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 160: ++y;
+[; ;dans.c: 159: ++y;
+"159
+[e =+ _y -> 1 `i ]
+[; ;dans.c: 160: maze[x][y].walls[0] = 1;
 "160
-[e =+ _y -> 1 `i ]
-[; ;dans.c: 161: maze[x][y].walls[0] = 1;
-"161
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 162: maze[x][y].walls[1] = 0;
-"162
+[; ;dans.c: 161: maze[x][y].walls[1] = 0;
+"161
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 163: maze[x][y].walls[2] = 1;
+[; ;dans.c: 162: maze[x][y].walls[2] = 1;
+"162
+[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
+[; ;dans.c: 163: maze[x][y].walls[3] = 1;
 "163
-[e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 164: maze[x][y].walls[3] = 1;
-"164
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 165: maze[x][y].Options = 1;
-"165
+[; ;dans.c: 164: maze[x][y].Options = 1;
+"164
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 167: ++y;
-"167
+[; ;dans.c: 166: ++y;
+"166
 [e =+ _y -> 1 `i ]
-[; ;dans.c: 168: maze[x][y].walls[0] = 0;
-"168
+[; ;dans.c: 167: maze[x][y].walls[0] = 0;
+"167
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 169: maze[x][y].walls[1] = 1;
-"169
+[; ;dans.c: 168: maze[x][y].walls[1] = 1;
+"168
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 170: maze[x][y].walls[2] = 1;
-"170
+[; ;dans.c: 169: maze[x][y].walls[2] = 1;
+"169
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-[; ;dans.c: 171: maze[x][y].walls[3] = 0;
-"171
+[; ;dans.c: 170: maze[x][y].walls[3] = 0;
+"170
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 0 `i `uc ]
-[; ;dans.c: 172: maze[x][y].Options = 2;
-"172
+[; ;dans.c: 171: maze[x][y].Options = 2;
+"171
 [e = . *U + &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _y `ui `ux -> -> # *U &U *U + &U _maze * -> -> _x `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 2 `i ]
-[; ;dans.c: 176: }
-"176
+[; ;dans.c: 175: }
+"175
 [e :UE 650 ]
 }
-"178
+"177
 [v _InitADC `(v ~T0 @X0 1 ef ]
-"179
+"178
 {
-[; ;dans.c: 178: void InitADC()
-[; ;dans.c: 179: {
+[; ;dans.c: 177: void InitADC()
+[; ;dans.c: 178: {
 [e :U _InitADC ]
 [f ]
-[; ;dans.c: 180: ADCON1 = 0b10101101;
-"180
+[; ;dans.c: 179: ADCON1 = 0b10101101;
+"179
 [e = _ADCON1 -> -> 173 `i `uc ]
-[; ;dans.c: 181: for (thisReading = 0; thisReading < numReadings; thisReading++) {
-"181
+[; ;dans.c: 180: for (thisReading = 0; thisReading < numReadings; thisReading++) {
+"180
 {
 [e = _thisReading -> 0 `i ]
 [e $U 664  ]
 [e :U 661 ]
 {
-[; ;dans.c: 182: readings[thisReading] = 0;
-"182
-[e = *U + &U _readings * -> -> _thisReading `ui `ux -> -> # *U &U _readings `ui `ux -> 0 `i ]
-"183
-}
+[; ;dans.c: 181: readings[thisReading] = 0;
 "181
+[e = *U + &U _readings * -> -> _thisReading `ui `ux -> -> # *U &U _readings `ui `ux -> 0 `i ]
+"182
+}
+"180
 [e ++ _thisReading -> 1 `i ]
 [e :U 664 ]
 [e $ < _thisReading _numReadings 661  ]
 [e :U 662 ]
-"183
+"182
 }
+[; ;dans.c: 182: }
 [; ;dans.c: 183: }
-[; ;dans.c: 184: }
-"184
+"183
 [e :UE 660 ]
 }
-"186
+"185
 [v _FunctReadADC `(i ~T0 @X0 1 ef1`i ]
-"187
-{
-[; ;dans.c: 186: int FunctReadADC(int channel)
-[; ;dans.c: 187: {
-[e :U _FunctReadADC ]
 "186
+{
+[; ;dans.c: 185: int FunctReadADC(int channel)
+[; ;dans.c: 186: {
+[e :U _FunctReadADC ]
+"185
 [v _channel `i ~T0 @X0 1 r1 ]
-"187
+"186
 [f ]
-[; ;dans.c: 188: if(channel>4) return 0;
-"188
+[; ;dans.c: 187: if (channel > 4) return 0;
+"187
 [e $ ! > _channel -> 4 `i 666  ]
 [e ) -> 0 `i ]
 [e $UE 665  ]
 [e :U 666 ]
-[; ;dans.c: 189: ADCON0=0x00;
-"189
+[; ;dans.c: 188: ADCON0 = 0x00;
+"188
 [e = _ADCON0 -> -> 0 `i `uc ]
-[; ;dans.c: 190: ADCON0=(channel<<2);
-"190
+[; ;dans.c: 189: ADCON0 = (channel << 2);
+"189
 [e = _ADCON0 -> << _channel -> 2 `i `uc ]
-[; ;dans.c: 191: ADON=1;
-"191
+[; ;dans.c: 190: ADON = 1;
+"190
 [e = _ADON -> -> 1 `i `b ]
-[; ;dans.c: 192: GODONE=1;
-"192
+[; ;dans.c: 191: GODONE = 1;
+"191
 [e = _GODONE -> -> 1 `i `b ]
-[; ;dans.c: 193: while(GODONE);
-"193
+[; ;dans.c: 192: while (GODONE);
+"192
 [e $U 667  ]
 [e :U 668 ]
 [e :U 667 ]
 [e $ _GODONE 668  ]
 [e :U 669 ]
-[; ;dans.c: 194: ADON=0;
-"194
+[; ;dans.c: 193: ADON = 0;
+"193
 [e = _ADON -> -> 0 `i `b ]
-[; ;dans.c: 195: return ADRES;
-"195
+[; ;dans.c: 194: return ADRES;
+"194
 [e ) -> _ADRES `i ]
 [e $UE 665  ]
-[; ;dans.c: 196: }
-"196
+[; ;dans.c: 195: }
+"195
 [e :UE 665 ]
 }
-"198
+"197
 [v _ADCAverage `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 198: int ADCAverage (){
+[; ;dans.c: 197: int ADCAverage() {
 [e :U _ADCAverage ]
 [f ]
-[; ;dans.c: 200: total = total - readings[readIndex];
-"200
+[; ;dans.c: 199: total = total - readings[readIndex];
+"199
 [e = _total - _total *U + &U _readings * -> -> _readIndex `ui `ux -> -> # *U &U _readings `ui `ux ]
-[; ;dans.c: 202: readings[readIndex] = (FunctReadADC(0));
-"202
+[; ;dans.c: 201: readings[readIndex] = (FunctReadADC(0));
+"201
 [e = *U + &U _readings * -> -> _readIndex `ui `ux -> -> # *U &U _readings `ui `ux ( _FunctReadADC (1 -> 0 `i ]
-[; ;dans.c: 204: total = total + readings[readIndex];
-"204
+[; ;dans.c: 203: total = total + readings[readIndex];
+"203
 [e = _total + _total *U + &U _readings * -> -> _readIndex `ui `ux -> -> # *U &U _readings `ui `ux ]
-[; ;dans.c: 206: readIndex++;
-"206
+[; ;dans.c: 205: readIndex++;
+"205
 [e ++ _readIndex -> 1 `i ]
-[; ;dans.c: 209: if (readIndex >= numReadings) {
-"209
+[; ;dans.c: 208: if (readIndex >= numReadings) {
+"208
 [e $ ! >= _readIndex _numReadings 671  ]
 {
-[; ;dans.c: 211: readIndex = 0;
-"211
+[; ;dans.c: 210: readIndex = 0;
+"210
 [e = _readIndex -> 0 `i ]
-"212
+"211
 }
 [e :U 671 ]
-[; ;dans.c: 212: }
-[; ;dans.c: 215: average = total / numReadings;
-"215
+[; ;dans.c: 211: }
+[; ;dans.c: 214: average = total / numReadings;
+"214
 [e = _average / _total _numReadings ]
-[; ;dans.c: 216: average = -0.0000009*pow(average, 3)+0.0015*pow(average, 2)-0.9208*average+227.33;
-"216
+[; ;dans.c: 215: average = -0.0000009 * pow(average, 3) + 0.0015 * pow(average, 2) - 0.9208 * average + 227.33;
+"215
 [e = _average -> + - + * -U .0.0000009 ( _pow (2 , -> _average `d -> -> 3 `i `d * .0.0015 ( _pow (2 , -> _average `d -> -> 2 `i `d * .0.9208 -> _average `d .227.33 `i ]
-[; ;dans.c: 219: HMI_SetNumber(average);
-"219
+[; ;dans.c: 218: HMI_SetNumber(average);
+"218
 [e ( _HMI_SetNumber (1 _average ]
-[; ;dans.c: 220: HMI_Render();
-"220
+[; ;dans.c: 219: HMI_Render();
+"219
 [e ( _HMI_Render ..  ]
-[; ;dans.c: 221: return average;
-"221
+[; ;dans.c: 220: return average;
+"220
 [e ) _average ]
 [e $UE 670  ]
-[; ;dans.c: 222: }
-"222
+[; ;dans.c: 221: }
+"221
 [e :UE 670 ]
 }
 "223
 [v _eusartSend `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;dans.c: 223: void eusartSend (UINT8 sendChar){
+[; ;dans.c: 223: void eusartSend(UINT8 sendChar) {
 [e :U _eusartSend ]
 [v _sendChar `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;dans.c: 224: while(!TXSTA1bits.TRMT){};
+[; ;dans.c: 224: while (!TXSTA1bits.TRMT) {
 "224
 [e $U 673  ]
 [e :U 674 ]
 {
+"225
 }
 [e :U 673 ]
+"224
 [e $ ! != -> . . _TXSTA1bits 0 1 `i -> -> -> 0 `i `Vuc `i 674  ]
 [e :U 675 ]
-[; ;dans.c: 225: TXREG1 = sendChar;
-"225
-[e = _TXREG1 _sendChar ]
-[; ;dans.c: 226: }
+[; ;dans.c: 225: };
+[; ;dans.c: 226: TXREG1 = sendChar;
 "226
+[e = _TXREG1 _sendChar ]
+[; ;dans.c: 227: }
+"227
 [e :UE 672 ]
 }
-"227
+"229
 [v _eusartRec `(uc ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 227: UINT8 eusartRec(){
+[; ;dans.c: 229: UINT8 eusartRec() {
 [e :U _eusartRec ]
 [f ]
-[; ;dans.c: 228: while(!PIR1bits.RC1IF){}
-"228
+[; ;dans.c: 230: while (!PIR1bits.RC1IF) {
+"230
 [e $U 677  ]
 [e :U 678 ]
 {
+"231
 }
 [e :U 677 ]
+"230
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 678  ]
 [e :U 679 ]
-[; ;dans.c: 229: return (int) RCREG1;
-"229
+[; ;dans.c: 231: }
+[; ;dans.c: 232: return (int) RCREG1;
+"232
 [e ) -> -> _RCREG1 `i `uc ]
 [e $UE 676  ]
-[; ;dans.c: 230: }
-"230
+[; ;dans.c: 233: }
+"233
 [e :UE 676 ]
 }
-"231
+"235
 [v _isempty `(uc ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 231: bool isempty() {
+[; ;dans.c: 235: bool isempty() {
 [e :U _isempty ]
 [f ]
-[; ;dans.c: 233: if(top == -1)
-"233
+[; ;dans.c: 237: if (top == -1)
+"237
 [e $ ! == _top -U -> 1 `i 681  ]
-[; ;dans.c: 234: return 1;
-"234
+[; ;dans.c: 238: return 1;
+"238
 [e ) -> -> 1 `i `uc ]
 [e $UE 680  ]
 [e $U 682  ]
-"235
+"239
 [e :U 681 ]
-[; ;dans.c: 235: else
-[; ;dans.c: 236: return 0;
-"236
+[; ;dans.c: 239: else
+[; ;dans.c: 240: return 0;
+"240
 [e ) -> -> 0 `i `uc ]
 [e $UE 680  ]
 [e :U 682 ]
-[; ;dans.c: 237: }
-"237
+[; ;dans.c: 241: }
+"241
 [e :UE 680 ]
 }
-"238
+"243
 [v _isfull `(uc ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 238: bool isfull() {
+[; ;dans.c: 243: bool isfull() {
 [e :U _isfull ]
 [f ]
-[; ;dans.c: 240: if(top == 20)
-"240
+[; ;dans.c: 245: if (top == 20)
+"245
 [e $ ! == _top -> 20 `i 684  ]
-[; ;dans.c: 241: return 1;
-"241
+[; ;dans.c: 246: return 1;
+"246
 [e ) -> -> 1 `i `uc ]
 [e $UE 683  ]
 [e $U 685  ]
-"242
+"247
 [e :U 684 ]
-[; ;dans.c: 242: else
-[; ;dans.c: 243: return 0;
-"243
+[; ;dans.c: 247: else
+[; ;dans.c: 248: return 0;
+"248
 [e ) -> -> 0 `i `uc ]
 [e $UE 683  ]
 [e :U 685 ]
-[; ;dans.c: 244: }
-"244
+[; ;dans.c: 249: }
+"249
 [e :UE 683 ]
 }
-"245
+"251
 [v _peek `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 245: int peek() {
+[; ;dans.c: 251: int peek() {
 [e :U _peek ]
 [f ]
-[; ;dans.c: 246: return stack[top];
-"246
+[; ;dans.c: 252: return stack[top];
+"252
 [e ) *U + &U _stack * -> -> _top `ui `ux -> -> # *U &U _stack `ui `ux ]
 [e $UE 686  ]
-[; ;dans.c: 247: }
-"247
+[; ;dans.c: 253: }
+"253
 [e :UE 686 ]
 }
-"248
+"255
 [v _pop `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 248: int pop() {
+[; ;dans.c: 255: int pop() {
 [e :U _pop ]
 [f ]
-"249
+"256
 [v _data `i ~T0 @X0 1 a ]
-[; ;dans.c: 249: int data;
-[; ;dans.c: 251: if(!isempty()) {
-"251
+[; ;dans.c: 256: int data;
+[; ;dans.c: 258: if (!isempty()) {
+"258
 [e $ ! ! != -> ( _isempty ..  `i -> -> -> 0 `i `uc `i 688  ]
 {
-[; ;dans.c: 252: data = stack[top];
-"252
+[; ;dans.c: 259: data = stack[top];
+"259
 [e = _data *U + &U _stack * -> -> _top `ui `ux -> -> # *U &U _stack `ui `ux ]
-[; ;dans.c: 253: top = top - 1;
-"253
+[; ;dans.c: 260: top = top - 1;
+"260
 [e = _top - _top -> 1 `i ]
-[; ;dans.c: 254: return data;
-"254
+[; ;dans.c: 261: return data;
+"261
 [e ) _data ]
 [e $UE 687  ]
-"255
+"262
 }
-[; ;dans.c: 255: } else {
+[; ;dans.c: 262: } else {
 [e $U 689  ]
 [e :U 688 ]
 {
-[; ;dans.c: 256: printf("Could not retrieve data, Stack is empty.\n");
-"256
+[; ;dans.c: 263: printf("Could not retrieve data, Stack is empty.\n");
+"263
 [e ( _printf :s 1C ]
-"258
+"265
 }
 [e :U 689 ]
-[; ;dans.c: 258: }
-[; ;dans.c: 259: }
-"259
+[; ;dans.c: 265: }
+[; ;dans.c: 266: }
+"266
 [e :UE 687 ]
 }
-"260
+"268
 [v _push `(i ~T0 @X0 1 ef1`i ]
 {
-[; ;dans.c: 260: int push(int data) {
+[; ;dans.c: 268: int push(int data) {
 [e :U _push ]
 [v _data `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;dans.c: 262: if(!isfull()) {
-"262
+[; ;dans.c: 270: if (!isfull()) {
+"270
 [e $ ! ! != -> ( _isfull ..  `i -> -> -> 0 `i `uc `i 691  ]
 {
-[; ;dans.c: 263: top = top + 1;
-"263
+[; ;dans.c: 271: top = top + 1;
+"271
 [e = _top + _top -> 1 `i ]
-[; ;dans.c: 264: stack[top] = data;
-"264
+[; ;dans.c: 272: stack[top] = data;
+"272
 [e = *U + &U _stack * -> -> _top `ui `ux -> -> # *U &U _stack `ui `ux _data ]
-"265
+"273
 }
-[; ;dans.c: 265: } else {
+[; ;dans.c: 273: } else {
 [e $U 692  ]
 [e :U 691 ]
 {
-[; ;dans.c: 266: printf("Could not insert data, Stack is full.\n");
-"266
+[; ;dans.c: 274: printf("Could not insert data, Stack is full.\n");
+"274
 [e ( _printf :s 2C ]
-"267
+"275
 }
 [e :U 692 ]
-[; ;dans.c: 267: }
-[; ;dans.c: 268: }
-"268
+[; ;dans.c: 275: }
+[; ;dans.c: 276: }
+"276
 [e :UE 690 ]
 }
-"270
+"278
 [v _Drive `(v ~T0 @X0 1 ef2`i`i ]
 {
-[; ;dans.c: 270: void Drive(int SpeedL, int SpeedR) {
+[; ;dans.c: 278: void Drive(int SpeedL, int SpeedR) {
 [e :U _Drive ]
 [v _SpeedL `i ~T0 @X0 1 r1 ]
 [v _SpeedR `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;dans.c: 271: if (SpeedL < 0){
-"271
+[; ;dans.c: 279: if (SpeedL < 0) {
+"279
 [e $ ! < _SpeedL -> 0 `i 694  ]
 {
-[; ;dans.c: 272: SpeedL = -1*SpeedL;
-"272
+[; ;dans.c: 280: SpeedL = -1 * SpeedL;
+"280
 [e = _SpeedL * -U -> 1 `i _SpeedL ]
-[; ;dans.c: 273: SpeedL = ~SpeedL;
-"273
+[; ;dans.c: 281: SpeedL = ~SpeedL;
+"281
 [e = _SpeedL ~ _SpeedL ]
-"274
+"282
 }
 [e :U 694 ]
-[; ;dans.c: 274: }
-[; ;dans.c: 275: if (SpeedR < 0){
-"275
+[; ;dans.c: 282: }
+[; ;dans.c: 283: if (SpeedR < 0) {
+"283
 [e $ ! < _SpeedR -> 0 `i 695  ]
 {
-[; ;dans.c: 276: SpeedR = -1*SpeedR;
-"276
+[; ;dans.c: 284: SpeedR = -1 * SpeedR;
+"284
 [e = _SpeedR * -U -> 1 `i _SpeedR ]
-[; ;dans.c: 277: SpeedR = ~SpeedR;
-"277
+[; ;dans.c: 285: SpeedR = ~SpeedR;
+"285
 [e = _SpeedR ~ _SpeedR ]
-"278
+"286
 }
 [e :U 695 ]
-[; ;dans.c: 278: }
-[; ;dans.c: 280: eusartSend(145);
-"280
+[; ;dans.c: 286: }
+[; ;dans.c: 288: eusartSend(145);
+"288
 [e ( _eusartSend (1 -> -> 145 `i `uc ]
-[; ;dans.c: 281: eusartSend(((unsigned char)(((SpeedL)>>8)&0xFF)));
-"281
+[; ;dans.c: 289: eusartSend(((unsigned char)(((SpeedL)>>8)&0xFF)));
+"289
 [e ( _eusartSend (1 -> & >> _SpeedL -> 8 `i -> 255 `i `uc ]
-[; ;dans.c: 282: eusartSend(((unsigned char)((SpeedL)&0xFF)));
-"282
+[; ;dans.c: 290: eusartSend(((unsigned char)((SpeedL)&0xFF)));
+"290
 [e ( _eusartSend (1 -> & _SpeedL -> 255 `i `uc ]
-[; ;dans.c: 283: eusartSend(((unsigned char)(((SpeedR)>>8)&0xFF)));
-"283
+[; ;dans.c: 291: eusartSend(((unsigned char)(((SpeedR)>>8)&0xFF)));
+"291
 [e ( _eusartSend (1 -> & >> _SpeedR -> 8 `i -> 255 `i `uc ]
-[; ;dans.c: 284: eusartSend(((unsigned char)((SpeedR)&0xFF)));
-"284
+[; ;dans.c: 292: eusartSend(((unsigned char)((SpeedR)&0xFF)));
+"292
 [e ( _eusartSend (1 -> & _SpeedR -> 255 `i `uc ]
-[; ;dans.c: 285: }
-"285
+[; ;dans.c: 293: }
+"293
 [e :UE 693 ]
 }
-"286
+"295
 [v _UpdateDistance `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 286: int UpdateDistance() {
+[; ;dans.c: 295: int UpdateDistance() {
 [e :U _UpdateDistance ]
 [f ]
-[; ;dans.c: 287: eusartSend(142);
-"287
+[; ;dans.c: 296: eusartSend(142);
+"296
 [e ( _eusartSend (1 -> -> 142 `i `uc ]
-[; ;dans.c: 288: eusartSend(19);
-"288
+[; ;dans.c: 297: eusartSend(19);
+"297
 [e ( _eusartSend (1 -> -> 19 `i `uc ]
-[; ;dans.c: 289: Current_Dist1 = eusartRec();
-"289
+[; ;dans.c: 298: Current_Dist1 = eusartRec();
+"298
 [e = _Current_Dist1 -> ( _eusartRec ..  `i ]
-[; ;dans.c: 290: Current_Dist2 = eusartRec();
-"290
+[; ;dans.c: 299: Current_Dist2 = eusartRec();
+"299
 [e = _Current_Dist2 -> ( _eusartRec ..  `i ]
-[; ;dans.c: 292: Current_Dist = ((Current_Dist1 <<(8)) & 0b1111111100000000 | (Current_Dist2 & 255));
-"292
+[; ;dans.c: 301: Current_Dist = ((Current_Dist1 << (8)) & 0b1111111100000000 | (Current_Dist2 & 255));
+"301
 [e = _Current_Dist -> | & -> << _Current_Dist1 -> 8 `i `ui -> 65280 `ui -> & _Current_Dist2 -> 255 `i `ui `i ]
-[; ;dans.c: 293: return Current_Dist;
-"293
+[; ;dans.c: 302: return Current_Dist;
+"302
 [e ) _Current_Dist ]
 [e $UE 696  ]
-[; ;dans.c: 294: }
-"294
+[; ;dans.c: 303: }
+"303
 [e :UE 696 ]
 }
-"295
+"305
 [v _Robot_Stop `(v ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 295: void Robot_Stop(){
+[; ;dans.c: 305: void Robot_Stop() {
 [e :U _Robot_Stop ]
 [f ]
-[; ;dans.c: 296: eusartSend(137);
-"296
+[; ;dans.c: 306: eusartSend(137);
+"306
 [e ( _eusartSend (1 -> -> 137 `i `uc ]
-[; ;dans.c: 297: eusartSend(0);
-"297
+[; ;dans.c: 307: eusartSend(0);
+"307
 [e ( _eusartSend (1 -> -> 0 `i `uc ]
-[; ;dans.c: 298: eusartSend(0);
-"298
+[; ;dans.c: 308: eusartSend(0);
+"308
 [e ( _eusartSend (1 -> -> 0 `i `uc ]
-[; ;dans.c: 299: eusartSend(0);
-"299
+[; ;dans.c: 309: eusartSend(0);
+"309
 [e ( _eusartSend (1 -> -> 0 `i `uc ]
-[; ;dans.c: 300: eusartSend(0);
-"300
+[; ;dans.c: 310: eusartSend(0);
+"310
 [e ( _eusartSend (1 -> -> 0 `i `uc ]
-[; ;dans.c: 301: }
-"301
+[; ;dans.c: 311: }
+"311
 [e :UE 697 ]
 }
-"302
+"313
 [v _Get_VirtualWall_State `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 302: int Get_VirtualWall_State(){
+[; ;dans.c: 313: int Get_VirtualWall_State() {
 [e :U _Get_VirtualWall_State ]
 [f ]
-[; ;dans.c: 303: eusartSend(142);
-"303
+[; ;dans.c: 314: eusartSend(142);
+"314
 [e ( _eusartSend (1 -> -> 142 `i `uc ]
-[; ;dans.c: 304: eusartSend(13);
-"304
+[; ;dans.c: 315: eusartSend(13);
+"315
 [e ( _eusartSend (1 -> -> 13 `i `uc ]
-"305
+"316
 [v _Vitual_Wall_Sensor `i ~T0 @X0 1 a ]
-[; ;dans.c: 305: int Vitual_Wall_Sensor = (eusartRec());
+[; ;dans.c: 316: int Vitual_Wall_Sensor = (eusartRec());
 [e = _Vitual_Wall_Sensor -> ( _eusartRec ..  `i ]
-[; ;dans.c: 306: return Vitual_Wall_Sensor;
-"306
+[; ;dans.c: 317: return Vitual_Wall_Sensor;
+"317
 [e ) _Vitual_Wall_Sensor ]
 [e $UE 698  ]
-[; ;dans.c: 307: }
-"307
+[; ;dans.c: 318: }
+"318
 [e :UE 698 ]
 }
-"308
+"320
 [v _Detect_Victim `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 308: int Detect_Victim(){
+[; ;dans.c: 320: int Detect_Victim() {
 [e :U _Detect_Victim ]
 [f ]
-[; ;dans.c: 309: eusartSend(142);
-"309
+[; ;dans.c: 321: eusartSend(142);
+"321
 [e ( _eusartSend (1 -> -> 142 `i `uc ]
-[; ;dans.c: 310: eusartSend(17);
-"310
+[; ;dans.c: 322: eusartSend(17);
+"322
 [e ( _eusartSend (1 -> -> 17 `i `uc ]
-"311
+"323
 [v _Home_Base_State `i ~T0 @X0 1 a ]
-[; ;dans.c: 311: int Home_Base_State = (eusartRec());
+[; ;dans.c: 323: int Home_Base_State = (eusartRec());
 [e = _Home_Base_State -> ( _eusartRec ..  `i ]
-[; ;dans.c: 312: if(Home_Base_State >= 240 && Home_Base_State <= 254){
-"312
-[e $ ! && >= _Home_Base_State -> 240 `i <= _Home_Base_State -> 254 `i 700  ]
+[; ;dans.c: 324: if (Home_Base_State == 254 || Home_Base_State == 250 || Home_Base_State == 246) {
+"324
+[e $ ! || || == _Home_Base_State -> 254 `i == _Home_Base_State -> 250 `i == _Home_Base_State -> 246 `i 700  ]
 {
-[; ;dans.c: 313: return 1;
-"313
+[; ;dans.c: 325: return 1;
+"325
 [e ) -> 1 `i ]
 [e $UE 699  ]
-"314
+"326
 }
-[; ;dans.c: 314: }
-[e $U 701  ]
-"316
 [e :U 700 ]
-[; ;dans.c: 316: else{
-{
-[; ;dans.c: 317: printf("\nNOTHING!!!");
-"317
-[e ( _printf :s 3C ]
-[; ;dans.c: 318: Console_Render();
-"318
-[e ( _Console_Render ..  ]
-"319
-}
-[e :U 701 ]
-[; ;dans.c: 319: }
-[; ;dans.c: 320: return 0;
-"320
+[; ;dans.c: 326: }
+[; ;dans.c: 327: return 0;
+"327
 [e ) -> 0 `i ]
 [e $UE 699  ]
-[; ;dans.c: 323: }
-"323
+[; ;dans.c: 330: }
+"330
 [e :UE 699 ]
 }
-"324
+"332
 [v _Turn `(i ~T0 @X0 1 ef3`i`i`i ]
 {
-[; ;dans.c: 324: Turn(int Angle, int Speed, int Dir){
+[; ;dans.c: 332: Turn(int Angle, int Speed, int Dir) {
 [e :U _Turn ]
 [v _Angle `i ~T0 @X0 1 r1 ]
 [v _Speed `i ~T0 @X0 1 r2 ]
 [v _Dir `i ~T0 @X0 1 r3 ]
 [f ]
-"325
-[v _Rad `i ~T0 @X0 1 a ]
-[; ;dans.c: 325: int Rad = 1;
-[e = _Rad -> 1 `i ]
-[; ;dans.c: 326: if (Dir == 0){
-"326
-[e $ ! == _Dir -> 0 `i 703  ]
-{
-[; ;dans.c: 327: Rad = 65535;
-"327
-[e = _Rad -> -> 65535 `l `i ]
-[; ;dans.c: 328: Angle = ~Angle;
-"328
-[e = _Angle ~ _Angle ]
-"329
-}
-[e :U 703 ]
-[; ;dans.c: 329: }
-[; ;dans.c: 331: eusartSend(137);
-"331
-[e ( _eusartSend (1 -> -> 137 `i `uc ]
-[; ;dans.c: 332: eusartSend(((unsigned char)(((Speed)>>8)&0xFF)));
-"332
-[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
-[; ;dans.c: 333: eusartSend(((unsigned char)((Speed)&0xFF)));
 "333
-[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
-[; ;dans.c: 334: eusartSend(((unsigned char)(((Rad)>>8)&0xFF)));
+[v _Rad `i ~T0 @X0 1 a ]
+[; ;dans.c: 333: int Rad = 1;
+[e = _Rad -> 1 `i ]
+[; ;dans.c: 334: if (Dir == 0) {
 "334
-[e ( _eusartSend (1 -> & >> _Rad -> 8 `i -> 255 `i `uc ]
-[; ;dans.c: 335: eusartSend(((unsigned char)((Rad)&0xFF)));
+[e $ ! == _Dir -> 0 `i 702  ]
+{
+[; ;dans.c: 335: Rad = 65535;
 "335
-[e ( _eusartSend (1 -> & _Rad -> 255 `i `uc ]
+[e = _Rad -> -> 65535 `l `i ]
+[; ;dans.c: 336: Angle = ~Angle;
 "336
-[v _C_Angle `i ~T0 @X0 1 a ]
-[; ;dans.c: 336: int C_Angle = 0;
-[e = _C_Angle -> 0 `i ]
-[; ;dans.c: 337: eusartSend(157);
+[e = _Angle ~ _Angle ]
 "337
-[e ( _eusartSend (1 -> -> 157 `i `uc ]
-[; ;dans.c: 338: eusartSend(((unsigned char)(((Angle)>>8)&0xFF)));
-"338
-[e ( _eusartSend (1 -> & >> _Angle -> 8 `i -> 255 `i `uc ]
-[; ;dans.c: 339: eusartSend(((unsigned char)((Angle)&0xFF)));
-"339
-[e ( _eusartSend (1 -> & _Angle -> 255 `i `uc ]
-[; ;dans.c: 341: Robot_Stop();
-"341
-[e ( _Robot_Stop ..  ]
-[; ;dans.c: 343: eusartSend(142);
-"343
-[e ( _eusartSend (1 -> -> 142 `i `uc ]
-[; ;dans.c: 344: eusartSend(7);
-"344
-[e ( _eusartSend (1 -> -> 7 `i `uc ]
-[; ;dans.c: 345: eusartRec();
-"345
-[e ( _eusartRec ..  ]
-[; ;dans.c: 346: }
-"346
-[e :UE 702 ]
 }
+[e :U 702 ]
+[; ;dans.c: 337: }
+[; ;dans.c: 339: eusartSend(137);
+"339
+[e ( _eusartSend (1 -> -> 137 `i `uc ]
+[; ;dans.c: 340: eusartSend(((unsigned char)(((Speed)>>8)&0xFF)));
+"340
+[e ( _eusartSend (1 -> & >> _Speed -> 8 `i -> 255 `i `uc ]
+[; ;dans.c: 341: eusartSend(((unsigned char)((Speed)&0xFF)));
+"341
+[e ( _eusartSend (1 -> & _Speed -> 255 `i `uc ]
+[; ;dans.c: 342: eusartSend(((unsigned char)(((Rad)>>8)&0xFF)));
+"342
+[e ( _eusartSend (1 -> & >> _Rad -> 8 `i -> 255 `i `uc ]
+[; ;dans.c: 343: eusartSend(((unsigned char)((Rad)&0xFF)));
+"343
+[e ( _eusartSend (1 -> & _Rad -> 255 `i `uc ]
+"344
+[v _C_Angle `i ~T0 @X0 1 a ]
+[; ;dans.c: 344: int C_Angle = 0;
+[e = _C_Angle -> 0 `i ]
+[; ;dans.c: 345: eusartSend(157);
+"345
+[e ( _eusartSend (1 -> -> 157 `i `uc ]
+[; ;dans.c: 346: eusartSend(((unsigned char)(((Angle)>>8)&0xFF)));
+"346
+[e ( _eusartSend (1 -> & >> _Angle -> 8 `i -> 255 `i `uc ]
+[; ;dans.c: 347: eusartSend(((unsigned char)((Angle)&0xFF)));
 "347
+[e ( _eusartSend (1 -> & _Angle -> 255 `i `uc ]
+[; ;dans.c: 349: Robot_Stop();
+"349
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 351: eusartSend(142);
+"351
+[e ( _eusartSend (1 -> -> 142 `i `uc ]
+[; ;dans.c: 352: eusartSend(7);
+"352
+[e ( _eusartSend (1 -> -> 7 `i `uc ]
+[; ;dans.c: 353: eusartRec();
+"353
+[e ( _eusartRec ..  ]
+[; ;dans.c: 354: }
+"354
+[e :UE 701 ]
+}
+"356
 [v _Travel `(i ~T0 @X0 1 ef5`i`i`i`i`i ]
 {
-[; ;dans.c: 347: int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall){
+[; ;dans.c: 356: int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
 [e :U _Travel ]
 [v _direction `i ~T0 @X0 1 r1 ]
 [v _Dist `i ~T0 @X0 1 r2 ]
@@ -7626,843 +7643,1149 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Spd `i ~T0 @X0 1 r4 ]
 [v _Wall `i ~T0 @X0 1 r5 ]
 [f ]
-"348
+[; ;dans.c: 357: WallFlag = Wall;
+"357
+[e = _WallFlag -> _Wall `uc ]
+"358
 [v _Dist_Travelled `i ~T0 @X0 1 a ]
-[; ;dans.c: 348: int Dist_Travelled = 0;
+[; ;dans.c: 358: int Dist_Travelled = 0;
 [e = _Dist_Travelled -> 0 `i ]
-"349
-[v _Req_Dir `i ~T0 @X0 1 a ]
-[; ;dans.c: 349: int Req_Dir = 0;
-[e = _Req_Dir -> 0 `i ]
-"350
-[v _Dir `i ~T0 @X0 1 a ]
-"351
-[v _Prev_Angle `uc ~T0 @X0 1 a ]
-[; ;dans.c: 350: int Dir;
-[; ;dans.c: 351: bool Prev_Angle;
-[; ;dans.c: 352: if (Wall == 0 && flag == 0){
-"352
-[e $ ! && == _Wall -> 0 `i == _flag -> 0 `i 705  ]
-{
-[; ;dans.c: 355: Prev_Angle = 0;
-"355
-[e = _Prev_Angle -> -> 0 `i `uc ]
-"356
-}
-[; ;dans.c: 356: }
-[e $U 706  ]
 "359
-[e :U 705 ]
-[; ;dans.c: 359: else if (Wall == 0 && flag != 0){
-[e $ ! && == _Wall -> 0 `i != _flag -> 0 `i 707  ]
-{
-[; ;dans.c: 360: if (Prev_Angle != 0)
+[v _Req_Dir `i ~T0 @X0 1 a ]
+[; ;dans.c: 359: int Req_Dir = 0;
+[e = _Req_Dir -> 0 `i ]
 "360
-[e $ ! != -> _Prev_Angle `i -> 0 `i 708  ]
-[; ;dans.c: 361: Move_ADC_To(-90);
-"361
-[e ( _Move_ADC_To (1 -U -> 90 `i ]
-[e :U 708 ]
-[; ;dans.c: 362: Prev_Angle = 0;
-"362
-[e = _Prev_Angle -> -> 0 `i `uc ]
+[v _Dir `i ~T0 @X0 1 a ]
+[; ;dans.c: 360: int Dir;
+[; ;dans.c: 363: if (direction == Current_Direction) {
 "363
+[e $ ! == _direction _Current_Direction 704  ]
+{
+"365
+}
+[; ;dans.c: 365: } else {
+[e $U 705  ]
+[e :U 704 ]
+{
+[; ;dans.c: 366: Req_Dir = direction - Current_Direction;
+"366
+[e = _Req_Dir - _direction _Current_Direction ]
+[; ;dans.c: 368: if (Req_Dir < 0) {
+"368
+[e $ ! < _Req_Dir -> 0 `i 706  ]
+{
+[; ;dans.c: 369: Req_Dir = 83 * Req_Dir*-1;
+"369
+[e = _Req_Dir * * -> 83 `i _Req_Dir -U -> 1 `i ]
+[; ;dans.c: 370: Dir = 1;
+"370
+[e = _Dir -> 1 `i ]
+[; ;dans.c: 371: if (Req_Dir > 166) {
+"371
+[e $ ! > _Req_Dir -> 166 `i 707  ]
+{
+[; ;dans.c: 372: Req_Dir = 332 - Req_Dir;
+"372
+[e = _Req_Dir - -> 332 `i _Req_Dir ]
+[; ;dans.c: 373: Dir = 0;
+"373
+[e = _Dir -> 0 `i ]
+"374
 }
 [e :U 707 ]
-"365
+"375
+}
+[; ;dans.c: 374: }
+[; ;dans.c: 375: } else {
+[e $U 708  ]
 [e :U 706 ]
-[; ;dans.c: 363: }
-[; ;dans.c: 365: if (Wall == 1 && flag != 0){
-[e $ ! && == _Wall -> 1 `i != _flag -> 0 `i 709  ]
 {
-[; ;dans.c: 366: if (Prev_Angle != 1)
-"366
-[e $ ! != -> _Prev_Angle `i -> 1 `i 710  ]
-[; ;dans.c: 367: Move_ADC_To(90);
-"367
-[e ( _Move_ADC_To (1 -> 90 `i ]
-[e :U 710 ]
-[; ;dans.c: 368: Prev_Angle = 1;
-"368
-[e = _Prev_Angle -> -> 1 `i `uc ]
-"369
+[; ;dans.c: 376: Req_Dir = 83 * Req_Dir;
+"376
+[e = _Req_Dir * -> 83 `i _Req_Dir ]
+[; ;dans.c: 377: Dir = 0;
+"377
+[e = _Dir -> 0 `i ]
+[; ;dans.c: 378: if (Req_Dir > 166) {
+"378
+[e $ ! > _Req_Dir -> 166 `i 709  ]
+{
+[; ;dans.c: 379: Req_Dir = 332 - Req_Dir;
+"379
+[e = _Req_Dir - -> 332 `i _Req_Dir ]
+[; ;dans.c: 380: Dir = 1;
+"380
+[e = _Dir -> 1 `i ]
+"381
 }
 [e :U 709 ]
-[; ;dans.c: 369: }
-[; ;dans.c: 371: if(direction == Current_Direction){
-"371
-[e $ ! == _direction _Current_Direction 711  ]
-{
-"373
-}
-[; ;dans.c: 373: }
-[e $U 712  ]
-"374
-[e :U 711 ]
-[; ;dans.c: 374: else {
-{
-[; ;dans.c: 375: Req_Dir = direction - Current_Direction;
-"375
-[e = _Req_Dir - _direction _Current_Direction ]
-[; ;dans.c: 377: if (Req_Dir < 0){
-"377
-[e $ ! < _Req_Dir -> 0 `i 713  ]
-{
-[; ;dans.c: 378: Req_Dir = 83*Req_Dir*-1;
-"378
-[e = _Req_Dir * * -> 83 `i _Req_Dir -U -> 1 `i ]
-[; ;dans.c: 379: Dir = 1;
-"379
-[e = _Dir -> 1 `i ]
-[; ;dans.c: 380: if(Req_Dir > 166){
-"380
-[e $ ! > _Req_Dir -> 166 `i 714  ]
-{
-[; ;dans.c: 381: Req_Dir = 332 - Req_Dir;
-"381
-[e = _Req_Dir - -> 332 `i _Req_Dir ]
-[; ;dans.c: 382: Dir = 0;
 "382
-[e = _Dir -> 0 `i ]
+}
+[e :U 708 ]
+[; ;dans.c: 381: }
+[; ;dans.c: 382: }
+[; ;dans.c: 383: Turn(Req_Dir, 200, Dir);
 "383
-}
-[e :U 714 ]
-"384
-}
-[; ;dans.c: 383: }
-[; ;dans.c: 384: }
-[e $U 715  ]
-"385
-[e :U 713 ]
-[; ;dans.c: 385: else{
-{
-[; ;dans.c: 386: Req_Dir = 83*Req_Dir;
-"386
-[e = _Req_Dir * -> 83 `i _Req_Dir ]
-[; ;dans.c: 387: Dir = 0;
-"387
-[e = _Dir -> 0 `i ]
-[; ;dans.c: 388: if(Req_Dir > 166){
-"388
-[e $ ! > _Req_Dir -> 166 `i 716  ]
-{
-[; ;dans.c: 389: Req_Dir = 332 - Req_Dir;
-"389
-[e = _Req_Dir - -> 332 `i _Req_Dir ]
-[; ;dans.c: 390: Dir = 1;
-"390
-[e = _Dir -> 1 `i ]
-"391
-}
-[e :U 716 ]
-"392
-}
-[e :U 715 ]
-[; ;dans.c: 391: }
-[; ;dans.c: 392: }
-[; ;dans.c: 393: Turn(Req_Dir, 200, Dir);
-"393
 [e ( _Turn (3 , , _Req_Dir -> 200 `i _Dir ]
-[; ;dans.c: 394: Current_Direction = direction;
-"394
+[; ;dans.c: 384: Current_Direction = direction;
+"384
 [e = _Current_Direction _direction ]
-"395
+"385
+}
+[e :U 705 ]
+[; ;dans.c: 385: }
+[; ;dans.c: 386: if (Wall == 0 && flag == 0) {
+"386
+[e $ ! && == _Wall -> 0 `i == _flag -> 0 `i 710  ]
+{
+[; ;dans.c: 388: Prev_Angle = 0;
+"388
+[e = _Prev_Angle -> -> 0 `i `uc ]
+"389
+}
+[; ;dans.c: 389: } else if (Wall == 0 && flag != 0) {
+[e $U 711  ]
+[e :U 710 ]
+[e $ ! && == _Wall -> 0 `i != _flag -> 0 `i 712  ]
+{
+[; ;dans.c: 390: if (Prev_Angle != 0)
+"390
+[e $ ! != -> _Prev_Angle `i -> 0 `i 713  ]
+[; ;dans.c: 391: Move_ADC_To(-90);
+"391
+[e ( _Move_ADC_To (1 -U -> 90 `i ]
+[e :U 713 ]
+[; ;dans.c: 392: Prev_Angle = 0;
+"392
+[e = _Prev_Angle -> -> 0 `i `uc ]
+"393
 }
 [e :U 712 ]
-[; ;dans.c: 395: }
-[; ;dans.c: 397: Drive(Spd,Spd);
+"394
+[e :U 711 ]
+[; ;dans.c: 393: }
+[; ;dans.c: 394: if (Wall == 1 && flag != 0) {
+[e $ ! && == _Wall -> 1 `i != _flag -> 0 `i 714  ]
+{
+[; ;dans.c: 395: if (Prev_Angle != 1)
+"395
+[e $ ! != -> _Prev_Angle `i -> 1 `i 715  ]
+[; ;dans.c: 396: Move_ADC_To(90);
+"396
+[e ( _Move_ADC_To (1 -> 90 `i ]
+[e :U 715 ]
+[; ;dans.c: 397: Prev_Angle = 1;
 "397
-[e ( _Drive (2 , _Spd _Spd ]
-[; ;dans.c: 400: ADCAverage();
+[e = _Prev_Angle -> -> 1 `i `uc ]
+"398
+}
+[e :U 714 ]
+[; ;dans.c: 398: }
+[; ;dans.c: 400: Drive(Spd, Spd);
 "400
-[e ( _ADCAverage ..  ]
-[; ;dans.c: 402: k = 4;
-"402
-[e = _k -> 4 `i ]
-"403
-[v _error `i ~T0 @X0 1 a ]
-"404
-[v _spd1 `i ~T0 @X0 1 a ]
-[; ;dans.c: 403: int error;
-[; ;dans.c: 404: int spd1 =0 ;
-[e = _spd1 -> 0 `i ]
-"405
-[v _spd2 `i ~T0 @X0 1 a ]
-[; ;dans.c: 405: int spd2=0;
-[e = _spd2 -> 0 `i ]
-[; ;dans.c: 407: while (Dist_Travelled<Dist){
-"407
-[e $U 717  ]
-[e :U 718 ]
-{
-[; ;dans.c: 410: ADCAverage();
-"410
-[e ( _ADCAverage ..  ]
-[; ;dans.c: 411: error = Desired_Level - average;
-"411
-[e = _error - _Desired_Level _average ]
-[; ;dans.c: 412: error*=k;
-"412
-[e =* _error _k ]
-[; ;dans.c: 414: if (average<= 90){
-"414
-[e $ ! <= _average -> 90 `i 720  ]
-{
-[; ;dans.c: 416: if (error > 300){
-"416
-[e $ ! > _error -> 300 `i 721  ]
-{
-[; ;dans.c: 417: error=30;
-"417
-[e = _error -> 30 `i ]
-"418
-}
-[e :U 721 ]
-[; ;dans.c: 418: }
-[; ;dans.c: 419: if (error < -30){
-"419
-[e $ ! < _error -U -> 30 `i 722  ]
-{
-[; ;dans.c: 420: error = -30;
-"420
-[e = _error -U -> 30 `i ]
-"421
-}
-[e :U 722 ]
-[; ;dans.c: 421: }
-[; ;dans.c: 422: if (error == Desired_Level + 4 || error == Desired_Level - 4){
-"422
-[e $ ! || == _error + _Desired_Level -> 4 `i == _error - _Desired_Level -> 4 `i 723  ]
-{
-[; ;dans.c: 423: Drive(Spd,Spd);
-"423
 [e ( _Drive (2 , _Spd _Spd ]
-"424
-}
-[e :U 723 ]
-[; ;dans.c: 424: }
-[; ;dans.c: 425: if (error >= 0){
+[; ;dans.c: 403: ADCAverage();
+"403
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 405: k = 4;
+"405
+[e = _k -> 4 `i ]
+"406
+[v _error `i ~T0 @X0 1 a ]
+"407
+[v _spd1 `i ~T0 @X0 1 a ]
+[; ;dans.c: 406: int error;
+[; ;dans.c: 407: int spd1 = 0;
+[e = _spd1 -> 0 `i ]
+"408
+[v _spd2 `i ~T0 @X0 1 a ]
+[; ;dans.c: 408: int spd2 = 0;
+[e = _spd2 -> 0 `i ]
+[; ;dans.c: 410: while (Dist_Travelled < Dist) {
+"410
+[e $U 716  ]
+[e :U 717 ]
+{
+[; ;dans.c: 413: ADCAverage();
+"413
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 414: error = Desired_Level - average;
+"414
+[e = _error - _Desired_Level _average ]
+[; ;dans.c: 415: error *= k;
+"415
+[e =* _error _k ]
+[; ;dans.c: 417: if (average <= 90) {
+"417
+[e $ ! <= _average -> 90 `i 719  ]
+{
+[; ;dans.c: 425: if (error == Desired_Level + k || error == Desired_Level - k) {
 "425
-[e $ ! >= _error -> 0 `i 724  ]
+[e $ ! || == _error + _Desired_Level _k == _error - _Desired_Level _k 720  ]
 {
-[; ;dans.c: 427: spd1 = Spd - error;
+[; ;dans.c: 426: Drive(Spd, Spd);
+"426
+[e ( _Drive (2 , _Spd _Spd ]
 "427
-[e = _spd1 - _Spd _error ]
-[; ;dans.c: 428: if (Wall ==0){
-"428
-[e $ ! == _Wall -> 0 `i 725  ]
-{
-[; ;dans.c: 429: Drive(spd1,Spd);
-"429
-[e ( _Drive (2 , _spd1 _Spd ]
-"430
 }
-[; ;dans.c: 430: }
-[e $U 726  ]
-"431
-[e :U 725 ]
-[; ;dans.c: 431: else if (Wall == 1){
-[e $ ! == _Wall -> 1 `i 727  ]
+[e :U 720 ]
+[; ;dans.c: 427: }
+[; ;dans.c: 428: if (error >= 0) {
+"428
+[e $ ! >= _error -> 0 `i 721  ]
 {
-[; ;dans.c: 432: Drive(Spd,spd1);
+[; ;dans.c: 430: spd1 = Spd - error;
+"430
+[e = _spd1 - _Spd _error ]
+[; ;dans.c: 431: if (Wall == 0) {
+"431
+[e $ ! == _Wall -> 0 `i 722  ]
+{
+[; ;dans.c: 432: Drive(spd1, Spd);
 "432
-[e ( _Drive (2 , _Spd _spd1 ]
+[e ( _Drive (2 , _spd1 _Spd ]
 "433
 }
-[e :U 727 ]
+[; ;dans.c: 433: } else if (Wall == 1) {
+[e $U 723  ]
+[e :U 722 ]
+[e $ ! == _Wall -> 1 `i 724  ]
+{
+[; ;dans.c: 434: Drive(Spd, spd1);
+"434
+[e ( _Drive (2 , _Spd _spd1 ]
 "435
-[e :U 726 ]
 }
 [e :U 724 ]
-[; ;dans.c: 433: }
-[; ;dans.c: 435: }
-[; ;dans.c: 436: if (error <= 0){
-"436
-[e $ ! <= _error -> 0 `i 728  ]
-{
-[; ;dans.c: 437: error=((error<0)?-error:error);
 "437
-[e = _error ? < _error -> 0 `i : -U _error _error ]
-[; ;dans.c: 438: spd2= Spd - error;
+[e :U 723 ]
+}
+[e :U 721 ]
+[; ;dans.c: 435: }
+[; ;dans.c: 437: }
+[; ;dans.c: 438: if (error <= 0) {
 "438
-[e = _spd2 - _Spd _error ]
-[; ;dans.c: 440: if (Wall == 0){
+[e $ ! <= _error -> 0 `i 725  ]
+{
+[; ;dans.c: 439: error = ((error<0)?-error:error);
+"439
+[e = _error ? < _error -> 0 `i : -U _error _error ]
+[; ;dans.c: 440: spd2 = Spd - error;
 "440
-[e $ ! == _Wall -> 0 `i 729  ]
-{
-[; ;dans.c: 441: Drive(Spd,spd2);
-"441
-[e ( _Drive (2 , _Spd _spd2 ]
+[e = _spd2 - _Spd _error ]
+[; ;dans.c: 442: if (Wall == 0) {
 "442
-}
-[; ;dans.c: 442: }
-[e $U 730  ]
-"443
-[e :U 729 ]
-[; ;dans.c: 443: else if (Wall == 1){
-[e $ ! == _Wall -> 1 `i 731  ]
+[e $ ! == _Wall -> 0 `i 726  ]
 {
-[; ;dans.c: 444: Drive(spd2,Spd);
+[; ;dans.c: 443: Drive(Spd, spd2);
+"443
+[e ( _Drive (2 , _Spd _spd2 ]
 "444
-[e ( _Drive (2 , _spd2 _Spd ]
-"445
 }
-[e :U 731 ]
+[; ;dans.c: 444: } else if (Wall == 1) {
+[e $U 727  ]
+[e :U 726 ]
+[e $ ! == _Wall -> 1 `i 728  ]
+{
+[; ;dans.c: 445: Drive(spd2, Spd);
+"445
+[e ( _Drive (2 , _spd2 _Spd ]
 "446
-[e :U 730 ]
 }
 [e :U 728 ]
-"448
+"447
+[e :U 727 ]
 }
-[; ;dans.c: 445: }
-[; ;dans.c: 446: }
-[; ;dans.c: 448: }
-[e $U 732  ]
+[e :U 725 ]
 "449
-[e :U 720 ]
-[; ;dans.c: 449: else
-[; ;dans.c: 450: Drive(Spd,Spd);
+}
+[; ;dans.c: 446: }
+[; ;dans.c: 447: }
+[; ;dans.c: 449: } else
+[e $U 729  ]
+[e :U 719 ]
+[; ;dans.c: 450: Drive(Spd, Spd);
 "450
 [e ( _Drive (2 , _Spd _Spd ]
-[e :U 732 ]
+[e :U 729 ]
 [; ;dans.c: 452: Dist_Travelled += UpdateDistance();
 "452
 [e =+ _Dist_Travelled ( _UpdateDistance ..  ]
-[; ;dans.c: 460: if (Get_VirtualWall_State()){
-"460
-[e $ ! != ( _Get_VirtualWall_State ..  -> 0 `i 733  ]
+[; ;dans.c: 456: if (Get_VirtualWall_State() && !Detect_Victim()) {
+"456
+[e $ ! && != ( _Get_VirtualWall_State ..  -> 0 `i ! != ( _Detect_Victim ..  -> 0 `i 730  ]
 {
-[; ;dans.c: 461: maze[X_Pos][Y_Pos].walls[direction] = 1;
-"461
+[; ;dans.c: 457: maze[X_Pos][Y_Pos].walls[direction] = 1;
+"457
 [e = *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> _direction `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux -> -> 1 `i `uc ]
-"463
+"459
 [v _rev_Dist `i ~T0 @X0 1 a ]
-[; ;dans.c: 463: int rev_Dist = 0;
+[; ;dans.c: 459: int rev_Dist = 0;
 [e = _rev_Dist -> 0 `i ]
-[; ;dans.c: 465: printf("WALL FOUND\n");
-"465
-[e ( _printf :s 4C ]
-[; ;dans.c: 466: Console_Render();
-"466
+[; ;dans.c: 460: Robot_Stop();
+"460
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 461: printf("WALL FOUND\n");
+"461
+[e ( _printf :s 3C ]
+[; ;dans.c: 462: Console_Render();
+"462
 [e ( _Console_Render ..  ]
-[; ;dans.c: 467: Drive(-Spd,-Spd);
-"467
+[; ;dans.c: 463: Drive(-Spd, -Spd);
+"463
 [e ( _Drive (2 , -U _Spd -U _Spd ]
-[; ;dans.c: 468: UpdateDistance();
-"468
+[; ;dans.c: 464: UpdateDistance();
+"464
 [e ( _UpdateDistance ..  ]
-[; ;dans.c: 469: while(rev_Dist >= -Dist_Travelled){
-"469
-[e $U 734  ]
-[e :U 735 ]
+[; ;dans.c: 465: while (rev_Dist >= -Dist_Travelled) {
+"465
+[e $U 731  ]
+[e :U 732 ]
 {
-[; ;dans.c: 471: rev_Dist += UpdateDistance();
-"471
+[; ;dans.c: 467: rev_Dist += UpdateDistance();
+"467
 [e =+ _rev_Dist ( _UpdateDistance ..  ]
-[; ;dans.c: 472: Console_Render();
-"472
+[; ;dans.c: 468: Console_Render();
+"468
 [e ( _Console_Render ..  ]
-[; ;dans.c: 473: printf("%c", (char)35);
-"473
-[e ( _printf , (. :s 5C -> -> -> 35 `i `uc `i ]
-[; ;dans.c: 474: printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
-"474
-[e ( _printf , , (. :s 6C _rev_Dist _Dist_Travelled ]
-[; ;dans.c: 475: Console_Render();
-"475
-[e ( _Console_Render ..  ]
-"476
-}
-[e :U 734 ]
+[; ;dans.c: 469: printf("%c", (char)35);
 "469
-[e $ >= _rev_Dist -U _Dist_Travelled 735  ]
-[e :U 736 ]
-[; ;dans.c: 476: }
-[; ;dans.c: 477: return;
-"477
-[e $UE 704  ]
-"478
+[e ( _printf , (. :s 4C -> -> -> 35 `i `uc `i ]
+[; ;dans.c: 470: printf("rev:%d Tar: %d\n", rev_Dist, Dist_Travelled);
+"470
+[e ( _printf , , (. :s 5C _rev_Dist _Dist_Travelled ]
+[; ;dans.c: 471: Console_Render();
+"471
+[e ( _Console_Render ..  ]
+"472
 }
+[e :U 731 ]
+"465
+[e $ >= _rev_Dist -U _Dist_Travelled 732  ]
 [e :U 733 ]
+[; ;dans.c: 472: }
+[; ;dans.c: 473: Robot_Stop();
+"473
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 474: return;
+"474
+[e $UE 703  ]
+"475
+}
+[e :U 730 ]
+"479
+}
+[e :U 716 ]
+"410
+[e $ < _Dist_Travelled _Dist 717  ]
+[e :U 718 ]
+[; ;dans.c: 475: }
+[; ;dans.c: 479: }
+[; ;dans.c: 480: if (direction == 0) {
+"480
+[e $ ! == _direction -> 0 `i 734  ]
+{
+[; ;dans.c: 481: X_Pos -= 1;
+"481
+[e =- _X_Pos -> 1 `i ]
 "482
 }
-[e :U 717 ]
-"407
-[e $ < _Dist_Travelled _Dist 718  ]
-[e :U 719 ]
-[; ;dans.c: 478: }
-[; ;dans.c: 482: }
-[; ;dans.c: 483: if (direction == 0){
+[; ;dans.c: 482: } else if (direction == 1) {
+[e $U 735  ]
+[e :U 734 ]
+[e $ ! == _direction -> 1 `i 736  ]
+{
+[; ;dans.c: 483: Y_Pos += 1;
 "483
-[e $ ! == _direction -> 0 `i 737  ]
-{
-[; ;dans.c: 484: X_Pos -= 1;
-"484
-[e =- _X_Pos -> 1 `i ]
-"485
-}
-[; ;dans.c: 485: }
-[e $U 738  ]
-"486
-[e :U 737 ]
-[; ;dans.c: 486: else if (direction == 1){
-[e $ ! == _direction -> 1 `i 739  ]
-{
-[; ;dans.c: 487: Y_Pos += 1;
-"487
 [e =+ _Y_Pos -> 1 `i ]
+"484
+}
+[; ;dans.c: 484: } else if (direction == 2) {
+[e $U 737  ]
+[e :U 736 ]
+[e $ ! == _direction -> 2 `i 738  ]
+{
+[; ;dans.c: 485: X_Pos += 1;
+"485
+[e =+ _X_Pos -> 1 `i ]
+"486
+}
+[; ;dans.c: 486: } else if (direction == 3) {
+[e $U 739  ]
+[e :U 738 ]
+[e $ ! == _direction -> 3 `i 740  ]
+{
+[; ;dans.c: 487: Y_Pos -= 1;
+"487
+[e =- _Y_Pos -> 1 `i ]
 "488
 }
-[; ;dans.c: 488: }
-[e $U 740  ]
+[e :U 740 ]
 "489
 [e :U 739 ]
-[; ;dans.c: 489: else if (direction == 2){
-[e $ ! == _direction -> 2 `i 741  ]
-{
-[; ;dans.c: 490: X_Pos += 1;
-"490
-[e =+ _X_Pos -> 1 `i ]
-"491
-}
-[; ;dans.c: 491: }
-[e $U 742  ]
-"492
-[e :U 741 ]
-[; ;dans.c: 492: else if (direction == 3){
-[e $ ! == _direction -> 3 `i 743  ]
-{
-[; ;dans.c: 493: Y_Pos -= 1;
-"493
-[e =- _Y_Pos -> 1 `i ]
-"494
-}
-[e :U 743 ]
-"495
-[e :U 742 ]
-[e :U 740 ]
-[e :U 738 ]
-[; ;dans.c: 494: }
-[; ;dans.c: 495: if(maze[X_Pos][Y_Pos].Options > 0){
-[e $ ! > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 744  ]
-{
-[; ;dans.c: 496: push(direction);
-"496
-[e ( _push (1 _direction ]
-"497
-}
-[e :U 744 ]
-[; ;dans.c: 497: }
-[; ;dans.c: 499: maze[X_Pos][Y_Pos].Options -= 1;
-"499
-[e =- . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 500: Robot_Stop();
-"500
+[e :U 737 ]
+[e :U 735 ]
+[; ;dans.c: 488: }
+[; ;dans.c: 489: Robot_Stop();
 [e ( _Robot_Stop ..  ]
-[; ;dans.c: 502: }
-"502
-[e :UE 704 ]
+[; ;dans.c: 490: Fix_Error(X_Pos, Y_Pos);
+"490
+[e ( _Fix_Error (2 , _X_Pos _Y_Pos ]
+[; ;dans.c: 492: push(direction);
+"492
+[e ( _push (1 _direction ]
+[; ;dans.c: 495: maze[X_Pos][Y_Pos].Options -= 1;
+"495
+[e =- . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
+[; ;dans.c: 496: Robot_Stop();
+"496
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 498: }
+"498
+[e :UE 703 ]
 }
-"512
+"509
 [v _SteppingCCW `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 512: int SteppingCCW(){
+[; ;dans.c: 509: int SteppingCCW() {
 [e :U _SteppingCCW ]
 [f ]
-[; ;dans.c: 513: STP4();
-"513
+[; ;dans.c: 510: STP4();
+"510
 [e ( _STP4 ..  ]
-[; ;dans.c: 514: delay_ms(2);
-"514
+[; ;dans.c: 511: delay_ms(2);
+"511
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 515: STP3();
-"515
+[; ;dans.c: 512: STP3();
+"512
 [e ( _STP3 ..  ]
-[; ;dans.c: 516: delay_ms(2);
-"516
+[; ;dans.c: 513: delay_ms(2);
+"513
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 517: STP2();
-"517
+[; ;dans.c: 514: STP2();
+"514
 [e ( _STP2 ..  ]
-[; ;dans.c: 518: delay_ms(2);
-"518
+[; ;dans.c: 515: delay_ms(2);
+"515
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 519: STP1();
-"519
+[; ;dans.c: 516: STP1();
+"516
 [e ( _STP1 ..  ]
-[; ;dans.c: 520: delay_ms(2);
-"520
+[; ;dans.c: 517: delay_ms(2);
+"517
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 523: }
-"523
-[e :UE 745 ]
+[; ;dans.c: 520: }
+"520
+[e :UE 741 ]
 }
-"525
+"522
 [v _SteppingCW `(i ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 525: int SteppingCW(){
+[; ;dans.c: 522: int SteppingCW() {
 [e :U _SteppingCW ]
 [f ]
-[; ;dans.c: 526: STP1();
-"526
+[; ;dans.c: 523: STP1();
+"523
 [e ( _STP1 ..  ]
-[; ;dans.c: 527: delay_ms(2);
-"527
+[; ;dans.c: 524: delay_ms(2);
+"524
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 528: STP2();
-"528
+[; ;dans.c: 525: STP2();
+"525
 [e ( _STP2 ..  ]
-[; ;dans.c: 529: delay_ms(2);
-"529
+[; ;dans.c: 526: delay_ms(2);
+"526
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 530: STP3();
-"530
+[; ;dans.c: 527: STP3();
+"527
 [e ( _STP3 ..  ]
-[; ;dans.c: 531: delay_ms(2);
-"531
+[; ;dans.c: 528: delay_ms(2);
+"528
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 532: STP4();
-"532
+[; ;dans.c: 529: STP4();
+"529
 [e ( _STP4 ..  ]
-[; ;dans.c: 533: delay_ms(2);
-"533
+[; ;dans.c: 530: delay_ms(2);
+"530
 [e ( _delay_ms (1 -> -> 2 `i `us ]
-[; ;dans.c: 535: }
-"535
-[e :UE 746 ]
+[; ;dans.c: 532: }
+"532
+[e :UE 742 ]
 }
-"537
+"534
 [v _Find_Flag `(v ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 537: void Find_Flag () {
+[; ;dans.c: 534: void Find_Flag() {
 [e :U _Find_Flag ]
 [f ]
-[; ;dans.c: 539: Sensor_Observe();
-"539
+[; ;dans.c: 536: Sensor_Observe();
+"536
 [e ( _Sensor_Observe ..  ]
-[; ;dans.c: 540: while (!Found_Flag <= 0) {
-"540
-[e $U 748  ]
-[e :U 749 ]
+[; ;dans.c: 537: while (!Found_Flag <= 0) {
+"537
+[e $U 744  ]
+[e :U 745 ]
 {
-[; ;dans.c: 541: Found_Flag--;
-"541
+[; ;dans.c: 538: Found_Flag--;
+"538
 [e -- _Found_Flag -> 1 `i ]
-[; ;dans.c: 542: printf("%c", (char)35);
-"542
-[e ( _printf , (. :s 7C -> -> -> 35 `i `uc `i ]
-[; ;dans.c: 543: printf("\nSteps Travelled: %d \n\n", Found_Flag);
-"543
-[e ( _printf , (. :s 8C _Found_Flag ]
-[; ;dans.c: 545: Console_Render();
-"545
-[e ( _Console_Render ..  ]
-[; ;dans.c: 546: ADCAverage();
-"546
-[e ( _ADCAverage ..  ]
-[; ;dans.c: 547: SteppingCCW();
-"547
-[e ( _SteppingCCW ..  ]
-"548
-}
-[e :U 748 ]
+[; ;dans.c: 539: printf("%c", (char)35);
+"539
+[e ( _printf , (. :s 6C -> -> -> 35 `i `uc `i ]
+[; ;dans.c: 540: printf("\nSteps Travelled: %d \n\n", Found_Flag);
 "540
-[e $ <= -> ! != _Found_Flag -> 0 `i `i -> 0 `i 749  ]
-[e :U 750 ]
-[; ;dans.c: 548: }
-[; ;dans.c: 549: }
-"549
-[e :UE 747 ]
+[e ( _printf , (. :s 7C _Found_Flag ]
+[; ;dans.c: 542: Console_Render();
+"542
+[e ( _Console_Render ..  ]
+[; ;dans.c: 543: ADCAverage();
+"543
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 544: SteppingCCW();
+"544
+[e ( _SteppingCCW ..  ]
+"545
 }
-"552
+[e :U 744 ]
+"537
+[e $ <= -> ! != _Found_Flag -> 0 `i `i -> 0 `i 745  ]
+[e :U 746 ]
+[; ;dans.c: 545: }
+[; ;dans.c: 546: }
+"546
+[e :UE 743 ]
+}
+"548
 [v _Move_ADC_To `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;dans.c: 552: void Move_ADC_To (int Angle) {
+[; ;dans.c: 548: void Move_ADC_To(int Angle) {
 [e :U _Move_ADC_To ]
 [v _Angle `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;dans.c: 554: if (flag==0){
-"554
-[e $ ! == _flag -> 0 `i 752  ]
+[; ;dans.c: 550: if (flag == 0) {
+"550
+[e $ ! == _flag -> 0 `i 748  ]
 {
-[; ;dans.c: 556: Steps = (Angle * 1.42222)+200;
-"556
+[; ;dans.c: 552: Steps = (Angle * 1.42222) + 200;
+"552
 [e = _Steps -> + * -> _Angle `d .1.42222 -> -> 200 `i `d `i ]
-[; ;dans.c: 557: flag++;
-"557
+[; ;dans.c: 553: flag++;
+"553
 [e ++ _flag -> 1 `i ]
-"558
+"554
 }
-[; ;dans.c: 558: }
-[e $U 753  ]
-"559
-[e :U 752 ]
-[; ;dans.c: 559: else if (!flag==0){
-[e $ ! == -> ! != _flag -> 0 `i `i -> 0 `i 754  ]
+[; ;dans.c: 554: } else if (!flag == 0) {
+[e $U 749  ]
+[e :U 748 ]
+[e $ ! == -> ! != _flag -> 0 `i `i -> 0 `i 750  ]
 {
-[; ;dans.c: 560: Steps = (Angle * 1.42222);
-"560
+[; ;dans.c: 555: Steps = (Angle * 1.42222);
+"555
 [e = _Steps -> * -> _Angle `d .1.42222 `i ]
+"556
+}
+[e :U 750 ]
+"558
+[e :U 749 ]
+[; ;dans.c: 556: }
+[; ;dans.c: 558: printf("%c", (char)35);
+[e ( _printf , (. :s 8C -> -> -> 35 `i `uc `i ]
+[; ;dans.c: 559: printf("\nSteps %d", Steps);
+"559
+[e ( _printf , (. :s 9C _Steps ]
+[; ;dans.c: 560: printf("\nFlag %d", flag);
+"560
+[e ( _printf , (. :s 10C _flag ]
+[; ;dans.c: 561: Console_Render();
 "561
+[e ( _Console_Render ..  ]
+[; ;dans.c: 562: while (Steps >= 0) {
+"562
+[e $U 751  ]
+[e :U 752 ]
+{
+[; ;dans.c: 563: Steps--;
+"563
+[e -- _Steps -> 1 `i ]
+[; ;dans.c: 564: SteppingCW();
+"564
+[e ( _SteppingCW ..  ]
+"565
+}
+[e :U 751 ]
+"562
+[e $ >= _Steps -> 0 `i 752  ]
+[e :U 753 ]
+[; ;dans.c: 565: }
+[; ;dans.c: 566: while (Steps < 0) {
+"566
+[e $U 754  ]
+[e :U 755 ]
+{
+[; ;dans.c: 567: Steps++;
+"567
+[e ++ _Steps -> 1 `i ]
+[; ;dans.c: 568: SteppingCCW();
+"568
+[e ( _SteppingCCW ..  ]
+"569
 }
 [e :U 754 ]
-"563
-[e :U 753 ]
-[; ;dans.c: 561: }
-[; ;dans.c: 563: printf("%c", (char)35);
-[e ( _printf , (. :s 9C -> -> -> 35 `i `uc `i ]
-[; ;dans.c: 564: printf("\nSteps %d", Steps);
-"564
-[e ( _printf , (. :s 10C _Steps ]
-[; ;dans.c: 565: printf("\nFlag %d", flag);
-"565
-[e ( _printf , (. :s 11C _flag ]
-[; ;dans.c: 566: Console_Render();
 "566
-[e ( _Console_Render ..  ]
-[; ;dans.c: 567: while (Steps >= 0){
-"567
-[e $U 755  ]
+[e $ < _Steps -> 0 `i 755  ]
 [e :U 756 ]
-{
-[; ;dans.c: 568: Steps --;
-"568
-[e -- _Steps -> 1 `i ]
-[; ;dans.c: 569: SteppingCW();
-"569
-[e ( _SteppingCW ..  ]
+[; ;dans.c: 569: }
+[; ;dans.c: 570: return;
 "570
-}
-[e :U 755 ]
-"567
-[e $ >= _Steps -> 0 `i 756  ]
-[e :U 757 ]
-[; ;dans.c: 570: }
-[; ;dans.c: 571: while (Steps < 0){
+[e $UE 747  ]
+[; ;dans.c: 571: }
 "571
-[e $U 758  ]
-[e :U 759 ]
-{
-[; ;dans.c: 572: Steps ++;
-"572
-[e ++ _Steps -> 1 `i ]
-[; ;dans.c: 573: SteppingCCW();
+[e :UE 747 ]
+}
 "573
-[e ( _SteppingCCW ..  ]
-"574
-}
-[e :U 758 ]
-"571
-[e $ < _Steps -> 0 `i 759  ]
-[e :U 760 ]
-[; ;dans.c: 574: }
-[; ;dans.c: 575: return;
-"575
-[e $UE 751  ]
-[; ;dans.c: 576: }
-"576
-[e :UE 751 ]
-}
-"577
 [v _Go_Backward `(v ~T0 @X0 1 ef2`i`i ]
 {
-[; ;dans.c: 577: void Go_Backward(int direction, int spd){
+[; ;dans.c: 573: void Go_Backward(int direction, int spd) {
 [e :U _Go_Backward ]
 [v _direction `i ~T0 @X0 1 r1 ]
 [v _spd `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;dans.c: 578: if(direction == 1)
-"578
-[e $ ! == _direction -> 1 `i 762  ]
-[; ;dans.c: 579: direction = 3;
-"579
+[; ;dans.c: 574: if (direction == 1)
+"574
+[e $ ! == _direction -> 1 `i 758  ]
+[; ;dans.c: 575: direction = 3;
+"575
 [e = _direction -> 3 `i ]
+[e $U 759  ]
+"576
+[e :U 758 ]
+[; ;dans.c: 576: else if (direction == 3)
+[e $ ! == _direction -> 3 `i 760  ]
+[; ;dans.c: 577: direction = 1;
+"577
+[e = _direction -> 1 `i ]
+[e $U 761  ]
+"578
+[e :U 760 ]
+[; ;dans.c: 578: else if (direction == 0)
+[e $ ! == _direction -> 0 `i 762  ]
+[; ;dans.c: 579: direction = 2;
+"579
+[e = _direction -> 2 `i ]
 [e $U 763  ]
 "580
 [e :U 762 ]
-[; ;dans.c: 580: else if(direction == 3)
-[e $ ! == _direction -> 3 `i 764  ]
-[; ;dans.c: 581: direction =1;
+[; ;dans.c: 580: else if (direction == 2)
+[e $ ! == _direction -> 2 `i 764  ]
+[; ;dans.c: 581: direction = 0;
 "581
-[e = _direction -> 1 `i ]
-[e $U 765  ]
-"583
-[e :U 764 ]
-[; ;dans.c: 583: else if(direction == 0)
-[e $ ! == _direction -> 0 `i 766  ]
-[; ;dans.c: 584: direction = 2;
-"584
-[e = _direction -> 2 `i ]
-[e $U 767  ]
-"585
-[e :U 766 ]
-[; ;dans.c: 585: else if(direction == 2)
-[e $ ! == _direction -> 2 `i 768  ]
-[; ;dans.c: 586: direction = 0;
-"586
 [e = _direction -> 0 `i ]
-[e :U 768 ]
-"588
-[e :U 767 ]
-[e :U 765 ]
+[e :U 764 ]
+"583
 [e :U 763 ]
-[; ;dans.c: 588: Travel(direction, 970, 0, spd, 0);
-[e ( _Travel (4 , , , , _direction -> 970 `i -> 0 `i _spd -> 0 `i ]
-[; ;dans.c: 589: maze[X_Pos][Y_Pos].Options += 1;
-"589
+[e :U 761 ]
+[e :U 759 ]
+[; ;dans.c: 583: Travel(direction, 960, 0, spd, 1);
+[e ( _Travel (4 , , , , _direction -> 960 `i -> 0 `i _spd -> 1 `i ]
+[; ;dans.c: 584: maze[X_Pos][Y_Pos].Options += 1;
+"584
 [e =+ . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 591: }
-"591
-[e :UE 761 ]
+[; ;dans.c: 585: top -= 1;
+"585
+[e =- _top -> 1 `i ]
+[; ;dans.c: 586: }
+"586
+[e :UE 757 ]
 }
-"595
+"588
 [v _Navigate_Maze `(v ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 595: void Navigate_Maze(){
+[; ;dans.c: 588: void Navigate_Maze() {
 [e :U _Navigate_Maze ]
 [f ]
-"596
+"589
 [v _Direction `i ~T0 @X0 1 a ]
-"597
+"590
 [v _Follow `i ~T0 @X0 1 a ]
-[; ;dans.c: 596: int Direction;
-[; ;dans.c: 597: int Follow;
-[; ;dans.c: 598: printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
-"598
-[e ( _printf , , (. :s 12C _X_Pos _Y_Pos ]
-[; ;dans.c: 599: Console_Render();
-"599
+[; ;dans.c: 589: int Direction;
+[; ;dans.c: 590: int Follow;
+[; ;dans.c: 591: printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
+"591
+[e ( _printf , , (. :s 11C _X_Pos _Y_Pos ]
+[; ;dans.c: 592: Console_Render();
+"592
 [e ( _Console_Render ..  ]
-[; ;dans.c: 600: if(maze[X_Pos][Y_Pos].Options > 0){
-"600
-[e $ ! > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 770  ]
+[; ;dans.c: 593: if (maze[X_Pos][Y_Pos].Options > 0) {
+"593
+[e $ ! > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 766  ]
 {
-[; ;dans.c: 602: if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
-"602
-[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> + _Y_Pos -> 1 `i `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 771  ]
+[; ;dans.c: 594: if (maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos + 1].Options > 0) {
+"594
+[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> + _Y_Pos -> 1 `i `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 767  ]
 {
-[; ;dans.c: 603: Direction = 1;
-"603
+[; ;dans.c: 595: Direction = 1;
+"595
 [e = _Direction -> 1 `i ]
-"604
+"596
 }
-[; ;dans.c: 604: }
-[e $U 772  ]
-"605
-[e :U 771 ]
-[; ;dans.c: 605: else if(maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos+1][Y_Pos].Options > 0){
-[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> + _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> + _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 773  ]
+[; ;dans.c: 596: } else if (maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos + 1][Y_Pos].Options > 0) {
+[e $U 768  ]
+[e :U 767 ]
+[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> + _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> + _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 769  ]
 {
-[; ;dans.c: 606: Direction = 2;
-"606
+[; ;dans.c: 597: Direction = 2;
+"597
 [e = _Direction -> 2 `i ]
-"607
+"598
 }
-[; ;dans.c: 607: }
-[e $U 774  ]
-"608
-[e :U 773 ]
-[; ;dans.c: 608: else if(maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos-1].Options > 0){
-[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> - _Y_Pos -> 1 `i `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 775  ]
+[; ;dans.c: 598: } else if (maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos - 1].Options > 0) {
+[e $U 770  ]
+[e :U 769 ]
+[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> - _Y_Pos -> 1 `i `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 771  ]
 {
-[; ;dans.c: 609: Direction = 3;
-"609
+[; ;dans.c: 599: Direction = 3;
+"599
 [e = _Direction -> 3 `i ]
-"610
+"600
 }
-[; ;dans.c: 610: }
-[e $U 776  ]
-"611
-[e :U 775 ]
-[; ;dans.c: 611: else if(maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos-1][Y_Pos].Options > 0){
-[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> - _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> - _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 777  ]
+[; ;dans.c: 600: } else if (maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos - 1][Y_Pos].Options > 0) {
+[e $U 772  ]
+[e :U 771 ]
+[e $ ! && == -> *U + &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 2 `ui `ux `i -> 0 `i > . *U + &U *U + &U _maze * -> -> - _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> - _X_Pos -> 1 `i `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 0 `i 773  ]
 {
-[; ;dans.c: 612: Direction = 0;
-"612
+[; ;dans.c: 601: Direction = 0;
+"601
 [e = _Direction -> 0 `i ]
-"613
+"602
 }
-[; ;dans.c: 613: }
-[e $U 778  ]
-"614
-[e :U 777 ]
-[; ;dans.c: 614: else{
+[; ;dans.c: 602: } else {
+[e $U 774  ]
+[e :U 773 ]
 {
-[; ;dans.c: 615: printf("&&&&&\n");
-"615
-[e ( _printf :s 13C ]
-[; ;dans.c: 616: Console_Render();
-"616
+[; ;dans.c: 603: printf("&&&&&\n");
+"603
+[e ( _printf :s 12C ]
+[; ;dans.c: 604: Console_Render();
+"604
 [e ( _Console_Render ..  ]
-[; ;dans.c: 617: while(1);
-"617
-[e :U 780 ]
-[e :U 779 ]
-[e $U 780  ]
-[e :U 781 ]
-"618
-}
-[e :U 778 ]
+[; ;dans.c: 605: while (1);
+"605
 [e :U 776 ]
+[e :U 775 ]
+[e $U 776  ]
+[e :U 777 ]
+"606
+}
 [e :U 774 ]
 [e :U 772 ]
-[; ;dans.c: 618: }
-[; ;dans.c: 620: maze[X_Pos][Y_Pos].Options -= 1;
-"620
-[e =- . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
-[; ;dans.c: 621: Travel(Direction, 970, 0, 200, 0);
-"621
-[e ( _Travel (4 , , , , _Direction -> 970 `i -> 0 `i -> 200 `i -> 0 `i ]
-"623
-}
-[; ;dans.c: 623: }
-[e $U 782  ]
-"624
 [e :U 770 ]
-[; ;dans.c: 624: else {
+[e :U 768 ]
+[; ;dans.c: 606: }
+[; ;dans.c: 608: maze[X_Pos][Y_Pos].Options -= 1;
+"608
+[e =- . *U + &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux * -> -> _Y_Pos `ui `ux -> -> # *U &U *U + &U _maze * -> -> _X_Pos `ui `ux -> * -> # *U &U *U &U _maze `ui -> -> 5 `i `ui `ux `ui `ux 3 -> 1 `i ]
+[; ;dans.c: 609: Travel(Direction, 960, 0, 500, 0);
+"609
+[e ( _Travel (4 , , , , _Direction -> 960 `i -> 0 `i -> 500 `i -> 0 `i ]
+"611
+}
+[; ;dans.c: 611: } else {
+[e $U 778  ]
+[e :U 766 ]
 {
-[; ;dans.c: 625: printf("no options\n");
-"625
-[e ( _printf :s 14C ]
-[; ;dans.c: 626: Console_Render();
-"626
+[; ;dans.c: 612: printf("no options\n");
+"612
+[e ( _printf :s 13C ]
+[; ;dans.c: 613: Console_Render();
+"613
 [e ( _Console_Render ..  ]
-[; ;dans.c: 627: Go_Backward(pop(), 200);
-"627
-[e ( _Go_Backward (2 , ( _pop ..  -> 200 `i ]
-"628
+[; ;dans.c: 614: Go_Backward(pop(), 500);
+"614
+[e ( _Go_Backward (2 , ( _pop ..  -> 500 `i ]
+"615
 }
-[e :U 782 ]
-[; ;dans.c: 628: }
-[; ;dans.c: 630: }
-"630
-[e :UE 769 ]
+[e :U 778 ]
+[; ;dans.c: 615: }
+[; ;dans.c: 617: Fix_Error(X_Pos, Y_Pos);
+"617
+[e ( _Fix_Error (2 , _X_Pos _Y_Pos ]
+[; ;dans.c: 618: }
+"618
+[e :UE 765 ]
 }
-"632
+"620
 [v _Go_Home `(v ~T0 @X0 1 ef ]
 {
-[; ;dans.c: 632: void Go_Home(){
+[; ;dans.c: 620: void Go_Home() {
 [e :U _Go_Home ]
 [f ]
-[; ;dans.c: 633: Go_Backward(pop(), 200);
+[; ;dans.c: 622: Go_Backward(pop(), 300);
+"622
+[e ( _Go_Backward (2 , ( _pop ..  -> 300 `i ]
+[; ;dans.c: 623: }
+"623
+[e :UE 779 ]
+}
+"625
+[v _Fix_Error `(v ~T0 @X0 1 ef2`i`i ]
+{
+[; ;dans.c: 625: void Fix_Error(int X_Pos, int Y_Pos) {
+[e :U _Fix_Error ]
+[v _X_Pos `i ~T0 @X0 1 r1 ]
+[v _Y_Pos `i ~T0 @X0 1 r2 ]
+[f ]
+"626
+[v _close_error `i ~T0 @X0 1 a ]
+[; ;dans.c: 626: int close_error = 38;
+[e = _close_error -> 38 `i ]
+"627
+[v _far_error `i ~T0 @X0 1 a ]
+[; ;dans.c: 627: int far_error = 45;
+[e = _far_error -> 45 `i ]
+[; ;dans.c: 629: if ((X_Pos == 0 && Y_Pos == 3) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) {
+"629
+[e $ ! || || && == _X_Pos -> 0 `i == _Y_Pos -> 3 `i && == _X_Pos -> 3 `i == _Y_Pos -> 3 `i && == _X_Pos -> 0 `i == _Y_Pos -> 0 `i 781  ]
+{
+[; ;dans.c: 630: if (WallFlag == 0) {
+"630
+[e $ ! == -> _WallFlag `i -> 0 `i 782  ]
+{
+[; ;dans.c: 631: Move_ADC_To(45);
+"631
+[e ( _Move_ADC_To (1 -> 45 `i ]
+[; ;dans.c: 632: for (int i = 0; i < 10; i++) {
+"632
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 783  ]
+[e $U 784  ]
+[e :U 783 ]
+{
+[; ;dans.c: 633: ADCAverage();
 "633
-[e ( _Go_Backward (2 , ( _pop ..  -> 200 `i ]
-[; ;dans.c: 634: }
+[e ( _ADCAverage ..  ]
 "634
-[e :UE 783 ]
+}
+"632
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 783  ]
+[e :U 784 ]
+"634
+}
+[; ;dans.c: 634: }
+[; ;dans.c: 635: if (average < close_error) {
+"635
+[e $ ! < _average _close_error 786  ]
+{
+[; ;dans.c: 636: while (average != close_error - 2) {
+"636
+[e $U 787  ]
+[e :U 788 ]
+{
+[; ;dans.c: 637: ADCAverage();
+"637
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 638: Drive(-100, -100);
+"638
+[e ( _Drive (2 , -U -> 100 `i -U -> 100 `i ]
+"639
+}
+[e :U 787 ]
+"636
+[e $ != _average - _close_error -> 2 `i 788  ]
+[e :U 789 ]
+"640
+}
+[e :U 786 ]
+[; ;dans.c: 639: }
+[; ;dans.c: 640: }
+[; ;dans.c: 641: Move_ADC_To(-45);
+"641
+[e ( _Move_ADC_To (1 -U -> 45 `i ]
+[; ;dans.c: 642: delay_ms(200);
+"642
+[e ( _delay_ms (1 -> -> 200 `i `us ]
+[; ;dans.c: 643: return;
+"643
+[e $UE 780  ]
+[; ;dans.c: 644: if (average > far_error) {
+"644
+[e $ ! > _average _far_error 790  ]
+{
+[; ;dans.c: 645: while (average != far_error + 2) {
+"645
+[e $U 791  ]
+[e :U 792 ]
+{
+[; ;dans.c: 646: ADCAverage();
+"646
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 647: Drive(50, 50);
+"647
+[e ( _Drive (2 , -> 50 `i -> 50 `i ]
+"648
+}
+[e :U 791 ]
+"645
+[e $ != _average + _far_error -> 2 `i 792  ]
+[e :U 793 ]
+[; ;dans.c: 648: }
+[; ;dans.c: 649: Robot_Stop();
+"649
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 650: Move_ADC_To(-45);
+"650
+[e ( _Move_ADC_To (1 -U -> 45 `i ]
+[; ;dans.c: 651: return;
+"651
+[e $UE 780  ]
+"652
+}
+[e :U 790 ]
+"653
+}
+[e :U 782 ]
+[; ;dans.c: 652: }
+[; ;dans.c: 653: }
+[; ;dans.c: 654: if (WallFlag == 1) {
+"654
+[e $ ! == -> _WallFlag `i -> 1 `i 794  ]
+{
+[; ;dans.c: 655: Move_ADC_To(-45);
+"655
+[e ( _Move_ADC_To (1 -U -> 45 `i ]
+[; ;dans.c: 656: for (int i = 0; i < 10; i++) {
+"656
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 795  ]
+[e $U 796  ]
+[e :U 795 ]
+{
+[; ;dans.c: 657: ADCAverage();
+"657
+[e ( _ADCAverage ..  ]
+"658
+}
+"656
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 795  ]
+[e :U 796 ]
+"658
+}
+[; ;dans.c: 658: }
+[; ;dans.c: 659: if (average < close_error) {
+"659
+[e $ ! < _average _close_error 798  ]
+{
+[; ;dans.c: 660: while (average != close_error - 2) {
+"660
+[e $U 799  ]
+[e :U 800 ]
+{
+[; ;dans.c: 661: ADCAverage();
+"661
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 662: Drive(-100, -100);
+"662
+[e ( _Drive (2 , -U -> 100 `i -U -> 100 `i ]
+"663
+}
+[e :U 799 ]
+"660
+[e $ != _average - _close_error -> 2 `i 800  ]
+[e :U 801 ]
+"664
+}
+[e :U 798 ]
+[; ;dans.c: 663: }
+[; ;dans.c: 664: }
+[; ;dans.c: 665: Move_ADC_To(45);
+"665
+[e ( _Move_ADC_To (1 -> 45 `i ]
+[; ;dans.c: 666: delay_ms(200);
+"666
+[e ( _delay_ms (1 -> -> 200 `i `us ]
+[; ;dans.c: 667: return;
+"667
+[e $UE 780  ]
+[; ;dans.c: 668: if (average > far_error) {
+"668
+[e $ ! > _average _far_error 802  ]
+{
+[; ;dans.c: 669: while (average != far_error + 2) {
+"669
+[e $U 803  ]
+[e :U 804 ]
+{
+[; ;dans.c: 670: ADCAverage();
+"670
+[e ( _ADCAverage ..  ]
+[; ;dans.c: 671: Drive(50, 50);
+"671
+[e ( _Drive (2 , -> 50 `i -> 50 `i ]
+"672
+}
+[e :U 803 ]
+"669
+[e $ != _average + _far_error -> 2 `i 804  ]
+[e :U 805 ]
+[; ;dans.c: 672: }
+[; ;dans.c: 673: Robot_Stop();
+"673
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 674: Move_ADC_To(-45);
+"674
+[e ( _Move_ADC_To (1 -U -> 45 `i ]
+[; ;dans.c: 675: return;
+"675
+[e $UE 780  ]
+"676
+}
+[e :U 802 ]
+"677
+}
+[e :U 794 ]
+"679
+}
+[e :U 781 ]
+[; ;dans.c: 676: }
+[; ;dans.c: 677: }
+[; ;dans.c: 679: }
+[; ;dans.c: 680: return;
+"680
+[e $UE 780  ]
+[; ;dans.c: 682: }
+"682
+[e :UE 780 ]
+}
+"684
+[v _Get_BumpSensor_State `(i ~T0 @X0 1 ef ]
+{
+[; ;dans.c: 684: int Get_BumpSensor_State() {
+[e :U _Get_BumpSensor_State ]
+[f ]
+[; ;dans.c: 686: eusartSend(142);
+"686
+[e ( _eusartSend (1 -> -> 142 `i `uc ]
+[; ;dans.c: 688: eusartSend(7);
+"688
+[e ( _eusartSend (1 -> -> 7 `i `uc ]
+"690
+[v _Bump_Sensor `i ~T0 @X0 1 a ]
+[; ;dans.c: 690: int Bump_Sensor = (eusartRec());
+[e = _Bump_Sensor -> ( _eusartRec ..  `i ]
+[; ;dans.c: 692: return Bump_Sensor;
+"692
+[e ) _Bump_Sensor ]
+[e $UE 806  ]
+[; ;dans.c: 693: }
+"693
+[e :UE 806 ]
+}
+"695
+[v _Bump_Wall `(v ~T0 @X0 1 ef ]
+{
+[; ;dans.c: 695: void Bump_Wall() {
+[e :U _Bump_Wall ]
+[f ]
+"696
+[v _temp2 `i ~T0 @X0 1 a ]
+[; ;dans.c: 696: int temp2 = 0;
+[e = _temp2 -> 0 `i ]
+"698
+[v _revDist `i ~T0 @X0 1 a ]
+[; ;dans.c: 698: int revDist = 30;
+[e = _revDist -> 30 `i ]
+"700
+[v _distTrav `i ~T0 @X0 1 a ]
+[; ;dans.c: 700: int distTrav = 0;
+[e = _distTrav -> 0 `i ]
+[; ;dans.c: 701: Move_ADC_To(-45);
+"701
+[e ( _Move_ADC_To (1 -U -> 45 `i ]
+[; ;dans.c: 702: delay_ms(300);
+"702
+[e ( _delay_ms (1 -> -> 300 `i `us ]
+[; ;dans.c: 705: while (temp2 == 0) {
+"705
+[e $U 808  ]
+[e :U 809 ]
+{
+[; ;dans.c: 707: Drive(200, 200);
+"707
+[e ( _Drive (2 , -> 200 `i -> 200 `i ]
+[; ;dans.c: 709: Get_Sensor_State();
+"709
+[e ( _Get_Sensor_State ..  ]
+[; ;dans.c: 711: temp2 = (BumpSensor & 0b00000011);
+"711
+[e = _temp2 & -> _BumpSensor `i -> 3 `i ]
+"713
+}
+[e :U 808 ]
+"705
+[e $ == _temp2 -> 0 `i 809  ]
+[e :U 810 ]
+[; ;dans.c: 713: }
+[; ;dans.c: 714: temp2=0;
+"714
+[e = _temp2 -> 0 `i ]
+[; ;dans.c: 716: Drive(-200, -200);
+"716
+[e ( _Drive (2 , -U -> 200 `i -U -> 200 `i ]
+[; ;dans.c: 718: UpdateDistance();
+"718
+[e ( _UpdateDistance ..  ]
+[; ;dans.c: 720: while (temp2 >= -300) {
+"720
+[e $U 811  ]
+[e :U 812 ]
+{
+[; ;dans.c: 722: temp2 += UpdateDistance();
+"722
+[e =+ _temp2 ( _UpdateDistance ..  ]
+[; ;dans.c: 724: printf("%c", (char)35);
+"724
+[e ( _printf , (. :s 14C -> -> -> 35 `i `uc `i ]
+[; ;dans.c: 725: printf("\n\nrev:%d Tar:\n", temp2);
+"725
+[e ( _printf , (. :s 15C _temp2 ]
+[; ;dans.c: 726: Console_Render();
+"726
+[e ( _Console_Render ..  ]
+"727
+}
+[e :U 811 ]
+"720
+[e $ >= _temp2 -U -> 300 `i 812  ]
+[e :U 813 ]
+[; ;dans.c: 727: }
+[; ;dans.c: 728: Robot_Stop();
+"728
+[e ( _Robot_Stop ..  ]
+[; ;dans.c: 729: return;
+"729
+[e $UE 807  ]
+[; ;dans.c: 730: }
+"730
+[e :UE 807 ]
 }
 [p f _printf 8913024 ]
-[a 10C 10 83 116 101 112 115 32 37 100 0 ]
-[a 11C 10 70 108 97 103 32 37 100 0 ]
-[a 5C 37 99 0 ]
-[a 7C 37 99 0 ]
-[a 9C 37 99 0 ]
-[a 3C 10 78 79 84 72 73 78 71 33 33 33 0 ]
-[a 14C 110 111 32 111 112 116 105 111 110 115 10 0 ]
-[a 12C 88 61 37 100 44 32 89 61 37 100 10 0 ]
-[a 6C 114 101 118 58 37 100 32 84 97 114 58 32 37 100 10 0 ]
-[a 4C 87 65 76 76 32 70 79 85 78 68 10 0 ]
+[a 9C 10 83 116 101 112 115 32 37 100 0 ]
+[a 10C 10 70 108 97 103 32 37 100 0 ]
+[a 4C 37 99 0 ]
+[a 6C 37 99 0 ]
+[a 8C 37 99 0 ]
+[a 14C 37 99 0 ]
+[a 13C 110 111 32 111 112 116 105 111 110 115 10 0 ]
+[a 11C 88 61 37 100 44 32 89 61 37 100 10 0 ]
+[a 5C 114 101 118 58 37 100 32 84 97 114 58 32 37 100 10 0 ]
+[a 3C 87 65 76 76 32 70 79 85 78 68 10 0 ]
+[a 15C 10 10 114 101 118 58 37 100 32 84 97 114 58 10 0 ]
 [a 1C 67 111 117 108 100 32 110 111 116 32 114 101 116 114 105 101 118 101 32 100 97 116 97 44 32 83 116 97 99 107 32 105 115 32 101 109 112 116 121 46 10 0 ]
 [a 2C 67 111 117 108 100 32 110 111 116 32 105 110 115 101 114 116 32 100 97 116 97 44 32 83 116 97 99 107 32 105 115 32 102 117 108 108 46 10 0 ]
-[a 13C 38 38 38 38 38 10 0 ]
-[a 8C 10 83 116 101 112 115 32 84 114 97 118 101 108 108 101 100 58 32 37 100 32 10 10 0 ]
+[a 12C 38 38 38 38 38 10 0 ]
+[a 7C 10 83 116 101 112 115 32 84 114 97 118 101 108 108 101 100 58 32 37 100 32 10 10 0 ]
