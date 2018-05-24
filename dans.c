@@ -414,7 +414,7 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
         error = Desired_Level - average;
         error *= k;
 
-        if (average <= 90) {
+        if (average <= 80) {
 
             /*  if (error > 30) {
                  error = 30;
@@ -460,7 +460,7 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
             Robot_Stop();
             printf("WALL FOUND\n");
             Console_Render();
-            Drive(-Spd, -Spd); //drive backward as the same speed
+            Drive(-200, -200); //drive backward as the same speed
             UpdateDistance(); //make sure this is 0 before we start 
             while (rev_Dist >= -Dist_Travelled) { //reverse as far as we travelled since last turn
 
@@ -486,18 +486,12 @@ int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall) {
     } else if (direction == 3) {
         Y_Pos -= 1;
     }
-<<<<<<< HEAD
     Robot_Stop();
     Fix_Error(X_Pos, Y_Pos);
 
     push(direction);
 
 
-=======
-    push(direction);
-   
-    
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
     maze[X_Pos][Y_Pos].Options -= 1;
     Robot_Stop(); //stop
 
@@ -576,7 +570,7 @@ void Move_ADC_To(int Angle) {
     return;
 }
 
-void Go_Backward(int direction, int spd) {
+void Go_Backward(int direction, int spd, int Wall) {
     if (direction == 1)
         direction = 3;
     else if (direction == 3)
@@ -586,7 +580,7 @@ void Go_Backward(int direction, int spd) {
     else if (direction == 2)
         direction = 0;
 
-    Travel(direction, SQUARE, 0, spd, 1);
+    Travel(direction, SQUARE, 0, spd, Wall);
     maze[X_Pos][Y_Pos].Options += 1;
     top -= 1;
 }
@@ -596,7 +590,6 @@ void Navigate_Maze() {
     int Follow;
     printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
     Console_Render();
-<<<<<<< HEAD
     if (maze[X_Pos][Y_Pos].Options > 0) {
         if (maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos + 1].Options > 0) {
             Direction = 1;
@@ -607,22 +600,6 @@ void Navigate_Maze() {
         } else if (maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos - 1][Y_Pos].Options > 0) {
             Direction = 0;
         } else {
-=======
-    if(maze[X_Pos][Y_Pos].Options > 0){
-        if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
-            Direction = 1;    
-        }
-        else if(maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos+1][Y_Pos].Options > 0){
-            Direction = 2;      
-        } 
-        else if(maze[X_Pos][Y_Pos].walls[3] == 0 && maze[X_Pos][Y_Pos-1].Options > 0){
-            Direction = 3;       
-        } 
-        else if(maze[X_Pos][Y_Pos].walls[0] == 0 && maze[X_Pos-1][Y_Pos].Options > 0){
-            Direction = 0;         
-        }     
-        else{
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
             printf("&&&&&\n");
             Console_Render();
             while (1);
@@ -634,74 +611,60 @@ void Navigate_Maze() {
     } else {
         printf("no options\n");
         Console_Render();
-<<<<<<< HEAD
-        Go_Backward(pop(), SPEED);
-=======
-        Go_Backward(pop(), 200);
-        top -= 1;
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
+        Go_Backward(pop(), SPEED, 0);
     }
 
     Fix_Error(X_Pos, Y_Pos);
-}
-
-void Go_Home() {
-
-    Go_Backward(pop(), 300);
 }
 
 void Fix_Error(int X_Pos, int Y_Pos) {
     int close_error = 38; //values robot will adjust itself to
     int far_error = 45;
 
-    if ((X_Pos == 0 && Y_Pos == 3) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) { //lachlan please looks here, will discuss 23/5/17
+    if ((X_Pos == 0 && Y_Pos == 3 && Current_Direction == 1) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) { //lachlan please looks here, will discuss 23/5/17
         if (WallFlag == 0) {
             Move_ADC_To(45); //points ADC forwards 
             for (int i = 0; i < 10; i++) {
                 ADCAverage(); //take 10 adc readings to make sure it is smooth
             }
             if (average < close_error) { //if too close reverse till close error minus 2
-                while (average != close_error - 2) {
-                    ADCAverage();
-                    Drive(-100, -100);
-                }
-            }
-            Move_ADC_To(-45);
-            delay_ms(200);
-            return;
-            if (average > far_error) { //if too far drive forwards till far error
-                while (average != far_error + 2) {
-                    ADCAverage();
-                    Drive(50, 50);
+                Drive(-100, -100);
+                while (average < close_error) {
+                    ADCAverage(); 
                 }
                 Robot_Stop();
-                Move_ADC_To(-45);
-                return;
             }
+            else if (average > far_error) {
+                Drive(50, 50);//if too far drive forwards till far error
+                while (average > far_error) {
+                    ADCAverage();
+                }
+                Robot_Stop();
+            }
+            Move_ADC_To(-45);
+            return;
         }
-        if (WallFlag == 1) {
+        else if (WallFlag == 1) {
             Move_ADC_To(-45); //points ADC forwards 
             for (int i = 0; i < 10; i++) {
                 ADCAverage(); //take 10 adc readings to make sure it is smooth
             }
             if (average < close_error) { //if too close reverse till close error minus 2
-                while (average != close_error - 2) {
-                    ADCAverage();
-                    Drive(-100, -100);
-                }
-            }
-            Move_ADC_To(45);
-            delay_ms(200);
-            return;
-            if (average > far_error) { //if too far drive forwards till far error
-                while (average != far_error + 2) {
-                    ADCAverage();
-                    Drive(50, 50);
+                Drive(-100, -100);
+                while (average < close_error) {
+                    ADCAverage(); 
                 }
                 Robot_Stop();
-                Move_ADC_To(-45);
-                return;
             }
+            else if (average > far_error) { //if too far drive forwards till far error
+                Drive(50, 50);//if too far drive forwards till far error
+                while (average > far_error) {
+                    ADCAverage();
+                }
+                Robot_Stop();
+            }
+            Move_ADC_To(45);
+            return;
         }
 
     }

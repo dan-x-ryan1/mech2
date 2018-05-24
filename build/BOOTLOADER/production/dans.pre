@@ -1,10 +1,10 @@
 
 # 1 "dans.c"
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -13,17 +13,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -37,7 +37,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -64,17 +64,17 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f67j50.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f67j50.h"
 extern volatile unsigned short PMSTAT @ 0xF40;
 
 asm("PMSTAT equ 0F40h");
@@ -7958,7 +7958,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -7985,7 +7985,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
 # 273 "Library\Types.h"
@@ -8280,7 +8280,7 @@ void swap(UINT8Ptr pA, UINT8Ptr pB);
 void reverse(char * input , UINT16 length);
 void itos(UINT16 input, char* destination);
 
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -8363,7 +8363,7 @@ int pop();
 int push(int data);
 void giveID();
 void Init_Pos_Array();
-void Go_Backward(int direction, int spd);
+void Go_Backward(int direction, int spd, int Wall);
 int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
 Turn(int Angle, int Speed, int Dir);
 void movement1();
@@ -8955,7 +8955,7 @@ ADCAverage();
 error = Desired_Level - average;
 error *= k;
 
-if (average <= 90) {
+if (average <= 80) {
 
 # 425
 if (error == Desired_Level + k || error == Desired_Level - k) {
@@ -8996,7 +8996,7 @@ int rev_Dist = 0;
 Robot_Stop();
 printf("WALL FOUND\n");
 Console_Render();
-Drive(-Spd, -Spd);
+Drive(-200, -200);
 UpdateDistance();
 while (rev_Dist >= -Dist_Travelled) {
 
@@ -9022,12 +9022,9 @@ X_Pos += 1;
 } else if (direction == 3) {
 Y_Pos -= 1;
 }
-<<<<<<< HEAD
 Robot_Stop();
 Fix_Error(X_Pos, Y_Pos);
 
-=======
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 push(direction);
 
 
@@ -9036,13 +9033,8 @@ Robot_Stop();
 
 }
 
-<<<<<<< HEAD
 # 509
 int SteppingCCW() {
-=======
-# 511
-int SteppingCCW(){
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 STP4();
 delay_ms(2);
 STP3();
@@ -9106,7 +9098,7 @@ SteppingCCW();
 return;
 }
 
-void Go_Backward(int direction, int spd) {
+void Go_Backward(int direction, int spd, int Wall) {
 if (direction == 1)
 direction = 3;
 else if (direction == 3)
@@ -9116,7 +9108,7 @@ direction = 2;
 else if (direction == 2)
 direction = 0;
 
-Travel(direction, 960, 0, spd, 1);
+Travel(direction, 950, 0, spd, Wall);
 maze[X_Pos][Y_Pos].Options += 1;
 top -= 1;
 }
@@ -9126,13 +9118,8 @@ int Direction;
 int Follow;
 printf("X=%d, Y=%d\n", X_Pos, Y_Pos);
 Console_Render();
-<<<<<<< HEAD
 if (maze[X_Pos][Y_Pos].Options > 0) {
 if (maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos + 1].Options > 0) {
-=======
-if(maze[X_Pos][Y_Pos].Options > 0){
-if(maze[X_Pos][Y_Pos].walls[1] == 0 && maze[X_Pos][Y_Pos+1].Options > 0){
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
 Direction = 1;
 } else if (maze[X_Pos][Y_Pos].walls[2] == 0 && maze[X_Pos + 1][Y_Pos].Options > 0) {
 Direction = 2;
@@ -9147,79 +9134,65 @@ while (1);
 }
 
 maze[X_Pos][Y_Pos].Options -= 1;
-Travel(Direction, 960, 0, 500, 0);
+Travel(Direction, 950, 0, 400, 0);
 
 } else {
 printf("no options\n");
 Console_Render();
-<<<<<<< HEAD
-Go_Backward(pop(), 500);
-=======
-Go_Backward(pop(), 200);
-top -= 1;
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
+Go_Backward(pop(), 400, 0);
 }
 
 Fix_Error(X_Pos, Y_Pos);
-}
-
-void Go_Home() {
-
-Go_Backward(pop(), 300);
 }
 
 void Fix_Error(int X_Pos, int Y_Pos) {
 int close_error = 38;
 int far_error = 45;
 
-if ((X_Pos == 0 && Y_Pos == 3) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) {
+if ((X_Pos == 0 && Y_Pos == 3 && Current_Direction == 1) || (X_Pos == 3 && Y_Pos == 3) || (X_Pos == 0 && Y_Pos == 0)) {
 if (WallFlag == 0) {
 Move_ADC_To(45);
 for (int i = 0; i < 10; i++) {
 ADCAverage();
 }
 if (average < close_error) {
-while (average != close_error - 2) {
-ADCAverage();
 Drive(-100, -100);
-}
-}
-Move_ADC_To(-45);
-delay_ms(200);
-return;
-if (average > far_error) {
-while (average != far_error + 2) {
+while (average < close_error) {
 ADCAverage();
-Drive(50, 50);
 }
 Robot_Stop();
+}
+else if (average > far_error) {
+Drive(50, 50);
+while (average > far_error) {
+ADCAverage();
+}
+Robot_Stop();
+}
 Move_ADC_To(-45);
 return;
 }
-}
-if (WallFlag == 1) {
+else if (WallFlag == 1) {
 Move_ADC_To(-45);
 for (int i = 0; i < 10; i++) {
 ADCAverage();
 }
 if (average < close_error) {
-while (average != close_error - 2) {
-ADCAverage();
 Drive(-100, -100);
-}
-}
-Move_ADC_To(45);
-delay_ms(200);
-return;
-if (average > far_error) {
-while (average != far_error + 2) {
+while (average < close_error) {
 ADCAverage();
-Drive(50, 50);
 }
 Robot_Stop();
-Move_ADC_To(-45);
-return;
 }
+else if (average > far_error) {
+Drive(50, 50);
+while (average > far_error) {
+ADCAverage();
+}
+Robot_Stop();
+}
+Move_ADC_To(45);
+return;
 }
 
 }

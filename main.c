@@ -363,7 +363,6 @@ void main() {
 
 
         if (MXK_BlockSwitchTo(eMXK_HMI)) {
-<<<<<<< HEAD
 
             if (mode == 0) {
                 printf("%c", ENDOFTEXT);
@@ -387,44 +386,18 @@ void main() {
 
                     Navigate_Maze();
                     if (Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0) {
-=======
-           
-            if (mode==0){
-                
-                
-            printf("%c", ENDOFTEXT); 
-            printf("Robot Ready! \n\n");
-            
-            Console_Render();
-            
-            }
-            if (mode == 3){
-            
-           //Sensor_Observe();
-           //Closest_Object();
-
-            while(VictimCount < 2 ){
-                printf("%c", ENDOFTEXT);
-                printf("\n       \n");
-                printf("vc: %d\n", VictimCount);
-                printf("\n\n\nOptions: %d\n\n\n", maze[X_Pos][Y_Pos].Options);
-                Navigate_Maze();
-                
-                if(Detect_Victim() == 1 && maze[X_Pos][Y_Pos].victim == 0){
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
                         maze[X_Pos][Y_Pos].victim = 1;
                         VictimCount++;
                         //CHANGE LCD COLOUR #####
                     }
                     Console_Render();
                 }
-<<<<<<< HEAD
                 while (!(X_Pos == 3 && Y_Pos== 1)) {
                     printf("%c", ENDOFTEXT);
                     printf("\n       \n");
                     printf("Going Home");
                     Console_Render(); 
-                    Go_Backward(pop(), SPEED); //u can put go home back in i just tested if putting go backwards fixed anything      
+                    Go_Backward(pop(), SPEED, 1); //u can put go home back in i just tested if putting go backwards fixed anything      
                 }
 
                 printf("HOME!!!@");
@@ -440,30 +413,7 @@ void main() {
                 
                     Bump_Wall();
                     while(1);
-                
-=======
-                Console_Render();
-                delay_ms(350);
-            }
-            while(top >= 0){
-                printf("%c", ENDOFTEXT);
-                printf("\n       \n");
-                printf("Going Home");
-                Console_Render();
-                Go_Home();
-                
-            }
-            
-            printf("HOME!!!@");
-            Console_Render();
-            while(1);
-            }
-            
-            if (up){
-                Sensor_Observe();
-                Closest_Object();
-                Travel(3,SQUARE,0,200,0);
->>>>>>> 8117479f9287dcdc2a69402d11308f7fcadb8e1e
+                //hey lach
             }
 
             Console_Render();

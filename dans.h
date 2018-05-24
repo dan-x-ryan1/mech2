@@ -20,8 +20,8 @@ int stack[MAXSIZE] = {};
 #define x_grid 4
 #define y_grid 5
 #define DLY 2 
-#define SQUARE 960
-#define SPEED 500
+#define SQUARE 950
+#define SPEED 400
 
 int Current_Dist = 0;
 int Current_Dist1 = 0;
@@ -69,7 +69,7 @@ int pop();
 int push(int data);
 void giveID();
 void Init_Pos_Array();
-void Go_Backward(int direction, int spd);
+void Go_Backward(int direction, int spd, int Wall);
 int Travel(int direction, int Dist, int Test_ADC, int Spd, int Wall);
 Turn(int Angle, int Speed, int Dir);
 void movement1();
